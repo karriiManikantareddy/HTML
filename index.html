@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Overview</title>
+    <style>
+      /* p {
+        font-size: 30px;
+      }
+      a:link {
+        color: green;
+        background-color: transparent;
+        text-decoration: none;
+      }
+
+      a:visited {
+        color: pink;
+        background-color: transparent;
+        text-decoration: none;
+      }
+
+      a:hover {
+        color: red;
+        background-color: transparent;
+        text-decoration: underline;
+      }
+
+      a:active {
+        color: yellow;
+        background-color: transparent;
+        text-decoration: underline;
+      } */
+      /* body {
+  background-image: url('./monkey.jpeg');
+} */
+      table,
+      td,
+      th {
+        border: 1px solid grey;
+        border-collapse: collapse;
+      }
+      .nameHeader {
+        background-color: aqua;
+      }
+      .nameHeaderTwo {
+        font-size: 40px;
+      }
+
+      #idOne,
+      #idTwo,
+      #idThree {
+        border: 1px solid red;
+        text-align: center;
+        background-color: lightgray;
+      }
+      .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <!--HEADINGS...-->
+    <h1>Experiment with headings..!</h1>
+    <!--chainging font size-->
+    <h1 style="font-size: 10px">Experiment with headings..!</h1>
+    <!--it contains 1 to 6 headings-->
+    <h2>Experiment with headings..!</h2>
+    <h3>Experiment with headings..!</h3>
+    <h4>Experiment with headings..!</h4>
+    <h5>Experiment with headings..!</h5>
+    <h6>Experiment with headings..!</h6>
+
+    <!--Styling...-->
+    <!--Styling can be done in 3 ways inline,internal & external...-->
+    <p style="color: brown; font-size: 80px">In-line Styling</p>
+    <!--In-line styling-->
+
+    <!--Links...-->
+    <a
+      href="https://github.com/karriiManikantareddy/HTML?files=1"
+      target="_blank"
+      >github</a
+    >
+    <br />
+
+    <!--Image...-->
+    <img
+      src="./monkey.jpeg"
+      alt="Monkey image"
+      style="width: 128px; height: 128px"
+    />
+    <p>Alt attribute - describes about the image</p>
+    <br />
+    <p>src - location of the image</p>
+
+    <!--Table...-->
+
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Company</th>
+        <th>age</th>
+      </tr>
+      <tbody>
+        <tr>
+          <td>swamy</td>
+          <td>Databeats</td>
+          <td>22</td>
+        </tr>
+        <tr>
+          <td>Manikanta</td>
+          <td>Databeats</td>
+          <td>22</td>
+        </tr>
+        <tr>
+          <td>Reddy</td>
+          <td>Databeats</td>
+          <td>22</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!--Classes...-->
+    <p>Classes are used to style same division elements</p>
+    <br />
+
+    <table>
+      <tr>
+        <th class="nameHeader">Name</th>
+        <th>Company</th>
+        <th>age</th>
+      </tr>
+      <tbody>
+        <tr>
+          <td class="nameHeader nameHeaderTwo">swamy</td>
+          <td>Databeats</td>
+          <td>22</td>
+        </tr>
+        <tr>
+          <td>Manikanta</td>
+          <td>Databeats</td>
+          <td>22</td>
+        </tr>
+        <tr>
+          <td>Reddy</td>
+          <td>Databeats</td>
+          <td>22</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!--ID...-->
+    <p>ID's are used to style individual elements.</p>
+    <br />
+    <p id="idOne">One</p>
+    <p id="idTwo">Two</p>
+    <p id="idThree">Three</p>
+    <br />
+
+    <!--iFrame...-->
+    <p>An HTML iframe is used to display a web page within a web page.</p>
+    <iframe
+      src="https://www.daks.me/html_iframe.php"
+      name="i_frame"
+      height="100%"
+      width="100%"
+      title="iframe"
+    ></iframe>
+    <a href="https://www.w3schools.com" target="i_frame">Click this link</a>
+
+    <!--File Path...-->
+    <img src="./monkey.jpeg" alt="monkey image not found" /> <br />
+
+    <!--Forms...-->
+    <form>
+      <label for="inputField">First Name</label> <br />
+      <input type="text" id="inputField" />
+      <br />
+      <label for="lastName">Last Name</label> <br />
+      <input type="text" id="lastName" />
+      <br />
+      <input type="submit" />
+
+      <input type="checkbox" />
+      <input type="date" />
+      <input type="radio" />
+      <br />
+      <label for="bikes">Bikes</label>
+      <select name="bikes" id="bikes">
+        <option value="zx10r">ZX10R</option>
+        <option value="s1000r">S1000R</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+      </select>
+    </form>
+
+    <!--Drag and Drop...-->
+
+    <div class="container">
+        <div
+        class="boxes"
+        id="Box1"
+        style="background-color: grey; width: 400px; height: 400px"
+        draggable="true"
+      >
+      <img
+        src="./monkey.jpeg"
+        alt="monkey image"
+        draggable="true"
+        height="400px"
+        width="400px"
+        class="imgbox"
+        id="img1"
+        style="cursor: pointer"
+      />
+    </div>
+      
+      <div
+      class="boxes"
+      id="Box2"
+        style="background-color: grey; width: 400px; height: 400px"
+        draggable="true"
+      ></div>
+    </div>
+    <script type="text/javascript">
+      let image = document.getElementById("img1")
+      let containers = document.getElementsByClassName("boxes")
+console.log(containers)
+
+      image.addEventListener("dragstart", (e) => {
+        console.log("drag start has been triggred");
+      });
+
+      image.addEventListener("dragend", (e) => {
+        console.log("drag end has been triggred");
+      });
+      for(container of containers){
+        container.addEventListener("dragover", (e) => {
+        console.log("dragover has been triggred");
+        e.preventDefault();
+      });
+
+      container.addEventListener("dragenter", (e) => {
+        console.log("dragenter has been triggred");
+      });
+
+      container.addEventListener("drop", (e) => {
+        e.target.append(image);
+      });
+      } 
+    </script>
+
+
+
+  </body>
+</html>
