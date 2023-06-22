@@ -1,0 +1,105 @@
+.boxmodel{
+    margin: 20px 10px;
+    border: 2px solid tomato;
+    padding: 10px 10px;
+
+}
+.textDecoration{
+    text-decoration: line-through;
+}
+.textTransformation{
+    text-transform: uppercase;
+}
+.position{
+    margin: 400px;
+}
+.static{
+    position: relative;
+    border: 1px solid green;
+}
+.relative{
+    position: relative;
+    border: 1px solid green;
+}
+.fixed{
+    position:fixed;
+    border: 1px solid green;
+}
+.absolute{
+    position: absolute;
+    border: 1px solid green;
+  
+}
+.sticky{
+    position: sticky;
+    border: 1px solid green;
+    bottom: 10px;}
+
+    .card1{
+position: relative;
+background-color: red;
+height: 200px;
+width: 200px;
+z-index: 1;
+
+    }
+    .card2{
+        position:absolute;
+        background-color: orange;
+        height: 200px;
+        width: 200px;
+        top: 100px;
+        z-index: 2;
+    }
+    .card3{
+        position: absolute;
+        background-color: blue;
+        height: 200px;
+        width: 200px;
+        top: 140px;
+        z-index: 3;
+    }
+    .containerBox{
+        width: 100px;
+        height: 100px;
+        background-color: aquamarine;
+        overflow: scroll;
+    }
+    .align{
+        display: flex;
+        justify-content: center;
+        background-color: tomato;
+    }
+    .paraDiv {
+        display: none;
+        background-color: yellow;
+        padding: 20px;
+      }
+      
+      .para:hover .paraDiv {
+        display: block;
+      }
+      .pseudoClassElements::selection{
+color: red;
+      }
+      .pseudoClassElements::after{
+        content: "Reddy"
+      }
+
+      .items{
+       display: none;
+       position:absolute;
+       background-color: aqua;
+      }
+      .dropDown{
+        position: relative;
+        display: inline-block;
+      }
+      .dropDown:hover .items{
+        display: block
+      }
+      .items>div{
+        text-align: center;
+        padding: 20px 10px;
+        border: 1px solid black;
+      }

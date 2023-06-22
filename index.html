@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Practise Sheet</title>
+    <link rel="stylesheet" href="stylesheet.css"/>
+    <style>
+      /* body {
+        background-color: grey;
+        background-image: url("./monkey.jpeg");
+        height: 200px;
+        width: 200px;
+        background-repeat: no-repeat;
+        background-position: right top;
+        background-attachment: scroll;
+      } */
+      h1 {
+        color: blue;
+      }
+      .class {
+        color: green;
+      }
+      #id {
+        color: orange;
+      }
+      h2.exp {
+        font-size: 60px;
+      }
+      * {
+        margin: 0px;
+        padding: 0px;
+        font-size: 30px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Syntax</p>
+    in above example body - selector background-color - property grey - value
+    <br />
+
+    <h1>Element Selector</h1>
+    <div class="class">Class selector</div>
+    <div id="id">ID selector</div>
+
+    <p>selects only h2 elements with class exp</p>
+    <h2 class="exp exprement">1</h2>
+    <h2 class="exp">2</h2>
+    <h2>3</h2>
+    <h2>4</h2>
+
+    <h1>COLORS</h1>
+
+    <p style="background-color: orange">
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
+      nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut
+      wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit
+      lobortis nisl ut aliquip ex ea commodo consequat. Example
+    </p>
+    <p style="color: tomato; opacity: 0.2">
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
+      nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut
+      wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit
+      lobortis nisl ut aliquip ex ea commodo consequat. Example
+    </p>
+
+    <p>
+      order of shortand background-color background-image background-repeat
+      background-attachment background-position
+    </p>
+
+    <h1 style="padding: 30px 30px; border: 1px solid red; margin: 40px; text-align: center;">
+        PADDING
+    </h1>
+
+    <div class="boxmodel">
+        <p>
+            Box model Content
+        </p>
+    </div>
+
+    <div class="text">
+        <div class="textAlignment">
+            <p>
+                vertical-align - baseline,texttop,textbottom,sub,super
+            </p>
+            <p>text-align property is set to "justify", each line is stretched so that every line has equal width, and the left and right margins are straight </p>
+        </div>
+        <div class="textDecoration">
+            text-decoration-line
+text-decoration-color
+text-decoration-style
+text-decoration-thickness
+        </div>
+        <div class="textTransformation">
+            textTransformation
+        </div>
+        <br/>
+        <div class="textSpacing">
+            text indent - the white space betwn the starting of paragraph
+            letter spacing 
+            line height
+            word spacing
+            whitespace - nowrap -it will delet white gap btwn words
+        </div>
+        <br/>
+        <div class="lists">
+            Order lists,unorderlists
+        </div>
+    </div>
+    <div class="position">
+        CSS Position
+        <div class="static">
+            position: static;
+An element with position: static; is not positioned in any special way; it is always positioned according to the normal flow of the page:
+        </div>
+        <div class="relative">
+            An element with position: relative; is positioned relative to its normal position:
+        </div>
+        <div class="fixed">
+            An element with position: fixed; is positioned relative to the viewport, which means it always stays in the same place even if the page is scrolled:
+
+        </div>
+        <div class="absolute">
+            However; if an absolute positioned element has no positioned ancestors, it uses the document body, and moves along with page scrolling.
+
+Note: Absolute positioned elements are removed from the normal flow, and can overlap elements.
+        </div>
+        <div class="sticky">
+            An element with position: sticky; is positioned based on the user's scroll position
+        </div>
+    </div>
+
+    <div class="zIndexContainer" style="width: 100%; height: 600px; position: relative; display: flex; justify-content: center;">
+        <div class="card1"></div>
+        <div class="card2"></div>
+        <div class="card3"></div>
+    </div>
+
+    <div class="overFlow">
+        <div class="containerBox">
+            <P>jsdbjasbcfjwebnk;jvcnwekjdnvkjwndvkjndkjsvnkdjsss
+                sssssssssssssssssssssssssssssssssnojcnqwobcjqwbckjbkwjbckwjbsckbwqkbkswcbkwjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj</P>
+        </div>
+    </div>
+    <div class="align">
+        <p>Center this Div</p>
+    </div>
+    <div class="Pseudoclass">
+        <div class="para">
+            hii r u there?
+            <div class="paraDiv">
+                yes..!
+            </div>
+        </div>
+    </div>
+    <div class="pseudoClassElements">
+  hi my name is manikanta
+    </div>
+
+    <div class="dropDown">
+      Drop Down
+      <div class="items">
+        <div class="item1">dropDown 1</div>
+        <div class="item2">dropdown 2</div>
+        <div class="item3">dropDown 3</div>
+      </div>
+    </div>
+    <br/>
+
+    <section>
+      <p>
+       rem is unit default value is 16px (root font size ) and can be changed by the developers.
+       if we change 1rem=32px then default value will overrided by current value.
+
+       em - if we set font size 16px to parent then child font size will be p-2em = 2x16=32px
+      </p>
+    </section>
+  </body>
+</html>
