@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regular Expressions</title>
+</head>
+<body>
+    <p>
+        <!-- [a-zA-z]match  
+        amatch | Amatch (both will match [firstposition match letter]matching letters) -->
+<!-- 
+[a-z]{5,8}
+aaaaa | aaaaaaaa (5 letter word and 8 letter word will also matchs) -->
+
+<!-- match a phone number
+[0-9]{10}
+7337460023 (pass 10 digit condition) -->
+
+<!-- 
+  \d (matchs all digits btw 0 to 9)
+  \w (matchs all digits atoz Atoz 0to9)
+  \s (matchs spaces and tabspaces)
+
+  ex - \d\s\w  (1 a)
+\d{5}\s\w{5} (12345 swamy) -->
+
+<!-- optional(?)
+a[a-z]? ( first letter 'a' should be matched and [a-z] will become optional)
+o/p - a(matches)
+ab(matches) -->
+
+<!-- .(any one character ,number or special character)
+mani.
+o/p - manik or mani1 or mani@ (passed) -->
+
+<!-- 
+*(matchs selected char or num at unlimited range)
+m[a-z]* 
+manikadjijbifbriebf8urniwnd (passed)
+mani9e9(fail because we donot included numbers) -->
+
+<!-- 
+excact 6 letters
+^[a-z]{6}$ (matchs only 6 char if overloaded then no match found) -->
+
+<!-- 
+(p|t)re
+pre or tre matchs. -->
+
+
+    </p>
+    <script src="script.js">
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes</title>
+</head>
+<body>
+
+    <h1>Classes and inherentance</h1>
+    <script>
+class Employee{
+ constructor(firstName,givenAge,givenCompany){
+    this.name = firstName;
+    this.age = givenAge;
+    this.company = givenCompany
+ }
+ randomText(){
+    return `this is my ${this.name} and this is my age ${this.age} and this is my company ${this.company}`
+ }
+ static math(a,b){
+    return a*b
+ }
+}
+mani=new Employee('mani',22,'databeats')
+console.log(mani)
+console.log(mani.randomText())
+console.log(Employee.math(2,3))  //static functions should access from its class name.
+
+class salary extends Employee{
+    constructor(firstName,givenAge,givenCompany,givenSalary,givenId){
+        super(firstName,givenAge,givenCompany);
+        this.givenSalary=givenSalary;
+        this.givenId=givenId;
+
+    }
+    static random(name,message){
+        return `hi this is ${name} and im currently working in ${message}`
+    }
+}
+test = new salary('mani',22,'databeats',22222,22)
+console.log(test);
+console.log(salary.random('manikanta reddy','data beats'))
+    </script>
+</body>
+</html>

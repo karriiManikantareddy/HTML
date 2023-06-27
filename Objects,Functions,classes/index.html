@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+<body>
+    <h1>Objects</h1>
+    <p id="blank">
+
+    </p>
+    <script>
+        // var car={
+        //     name:'bmw',
+        //     model:2021,
+        //     fuelCapacity:'21 liters' ,
+        //     get fuel(){
+        //         return this.fuelCapacity
+        //     }
+   
+        // }
+        // let para = document.getElementById('blank')
+        // para.innerHTML=car.fuel
+        var car={
+            name:'bmw',
+            model:2021,
+            fuelCapacity:' ' ,
+            set fuel(a){
+                return this.fuelCapacity = a;
+                console.log(a);
+            }
+        }
+        car.fuelCapacity='21 L'
+         let para = document.getElementById('blank')
+        para.innerHTML=car.fuelCapacity
+
+        function stud(name,age,company){
+            this.name=name;
+            this.age=age;
+            this.company=company;
+        }
+        var students = stud('mani',22,'databeats');
+
+       //send method of declr objects
+        // var student = new Object();
+        // student.name='mani',
+        // student.age=23 ,
+        // student.company ='data beats'
+
+        
+
+        //FUNCTIONS
+//bind (combine)
+        const person = {
+  firstName:"John",
+  lastName: "Doe",
+  fullName: function() {
+    return this.firstName + " " + this.lastName;
+  }
+}
+
+const member = {
+  firstName:"Hege",
+  lastName: "Nilsen",
+}
+
+let fullName = person.fullName.bind(member);
+
+document.getElementById("demo").innerHTML = fullName();
+
+//closures
+function greeting(message) {
+   return function(name){
+        return message + ' ' + name;
+   }
+}
+let sayHi = greeting('Hi');
+let sayHello = greeting('Hello');
+
+console.log(sayHi('John')); 
+console.log(sayHello('John')); 
+    </script>
+</body>
+</html>
