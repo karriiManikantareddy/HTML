@@ -1,0 +1,16 @@
+{
+  "info": [
+    {
+        "id":"1",
+      "name": "manikanta",
+      "age": "22",
+      "company": "data beat"
+    },
+    {
+        "id":"2",
+      "name": "reddy",
+      "age": "22",
+      "company": "data beat"
+    }
+  ]
+}

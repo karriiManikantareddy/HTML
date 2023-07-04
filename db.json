@@ -1,0 +1,24 @@
+{
+  "posts": [
+    {
+      "fullName": "swamymanikantareddy",
+      "id": 1
+    },
+    {
+      "fullName": "kavya reddy",
+      "id": 2
+    },
+    {
+      "fullName": "srinivas",
+      "id": 3
+    },
+    {
+      "fullName": "sudhakar",
+      "id": 4
+    },
+    {
+      "fullName": "vinusha",
+      "id": 5
+    }
+  ]
+}
