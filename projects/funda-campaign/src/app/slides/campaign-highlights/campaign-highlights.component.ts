@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrl: './campaign-highlights.component.css'
 })
 export class CampaignHighlightsComponent {
-
+  headerContent: string = 'Campaign <span class="highlight">&nbsp;Highlights</span>';
+  greyBox: boolean = true;
 }

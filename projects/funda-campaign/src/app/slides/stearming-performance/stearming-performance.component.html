@@ -1,0 +1,64 @@
+<div class="main-container">
+  <div class="header-container">
+    <app-header [headerTitle]="headerContent"></app-header>
+  </div>
+  <div class="body-container">
+    <div class="left-container">
+      <div class="style-container">
+        <div class="card-component" [ngStyle]="{ 'background-color': boxOne }">
+          <div class="title-one" [ngStyle]="{ color: titleColor }">
+            Impressions Delivered
+          </div>
+          <div class="sub-title" [ngStyle]="{ color: subTitleColor }">
+            No. of times your message was shown
+          </div>
+        </div>
+        <div class="style-div"></div>
+      </div>
+      <div class="style-container">
+        <div class="card-component" [ngStyle]="{ 'background-color': boxTwo }">
+          <div class="title-two">Video Completion Rate</div>
+          <div class="sub-title">
+            Percentage of views where the video was watched to completion
+          </div>
+        </div>
+        <div class="style-div"></div>
+      </div>
+      <div class="style-container">
+        <div
+          class="card-component"
+          [ngStyle]="{ 'background-color': boxThree }"
+        >
+          <div class="title-three">
+            Video Completions
+          </div>
+          <div class="sub-title">
+            No. of views that completed 100%% of your ad (by quartile)
+          </div>
+        </div>
+        <div class="style-div"></div>
+      </div>
+      <div class="style-container">
+        <div class="card-component" [ngStyle]="{ 'background-color': boxFour }">
+          <div class="title-four">Unique Reach</div>
+          <div class="sub-title">
+            No. of unique users that the campaign potentially reached
+          </div>
+        </div>
+        <div class="style-div"></div>
+      </div>
+    </div>
+    <div class="right-container">
+      <div class="heading">Streaming Package</div>
+      <div class="cards">
+        <div class="card-one">87,084</div>
+        <div class="card-two">98.31%</div>
+        <div class="card-three">85,858</div>
+        <div class="card-four">17,110</div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <app-footer-box></app-footer-box>
+  </div>
+</div>

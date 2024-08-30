@@ -42,6 +42,8 @@ import {PageComponent} from './slides/page/page.component'
 import { HeaderComponent } from './slides/header/header.component'
 import { FooterBoxComponent } from './slides/footer-box/footer-box.component'
 import { CampaignHighlightsComponent } from './slides/campaign-highlights/campaign-highlights.component'
+import { StreamingVideoComponent } from './slides/streaming-video/streaming-video.component'
+import { StearmingPerformanceComponent } from './slides/stearming-performance/stearming-performance.component'
 
 
 
@@ -82,6 +84,8 @@ import { CampaignHighlightsComponent } from './slides/campaign-highlights/campai
     DevicePlatformComponent,
     PageComponent,
     CampaignHighlightsComponent,
+    StreamingVideoComponent,
+    StearmingPerformanceComponent,
   ],
   imports: [
     TemplateModule,

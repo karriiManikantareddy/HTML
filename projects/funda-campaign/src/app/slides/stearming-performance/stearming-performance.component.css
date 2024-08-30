@@ -1,0 +1,164 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+  background-image: url("../../../assets/img/backgroundImage.png");
+  height: 100vh;
+  justify-content: space-between;
+}
+.body-container {
+  display: flex;
+}
+
+.left-container {
+  height: 380px;
+  width: 44%;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  text-align: start;
+  gap: 8px;
+  padding-top: 100px;
+  padding-left: 40px;
+}
+.style-container {
+  position: relative;
+}
+.card-component {
+  /* height: auto !important;
+     */
+  border-radius: 10px;
+  height: 72px;
+  width: 380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 12px;
+  gap: 6px;
+  padding-right: 40px;
+  box-sizing: border-box;
+  opacity: 0.8;
+}
+
+
+
+.style-div {
+  height: 72px;
+  position: absolute;
+  background-color: white;
+  width: 20px;
+  right: 20px;
+  top: 0px;
+}
+.right-container {
+  height: 380px;
+  width: 56%;
+  background-color: #ccccd1;
+  margin-top: 100px;
+  border-radius: 40px;
+  margin-right: 50px;
+  padding-top: 30px;
+  box-sizing: border-box;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 10px;
+}
+
+.title-one {
+  font-size: 20px;
+  font-family: "calibri";
+  color: #455051;
+  border-bottom: 2px solid #0F155B; 
+  padding-bottom: 3px; 
+  display: inline; 
+  width: 55%;
+}
+.title-two {
+    font-size: 20px;
+    font-family: "calibri";
+    color: #455051;
+    border-bottom: 2px solid #455051; 
+    padding-bottom: 3px; 
+    display: inline; 
+    width: 58%;
+  }
+  .title-three {
+    font-size: 20px;
+    font-family: "calibri";
+    color: #455051;
+    border-bottom: 2px solid #455051; 
+    padding-bottom: 3px; 
+    display: inline; 
+    width: 47%;
+  }
+  .title-four {
+    font-size: 20px;
+    font-family: "calibri";
+    color: #455051;
+    border-bottom: 2px solid #455051; 
+    padding-bottom: 3px; 
+    display: inline; 
+    width: 35%;
+  }
+.sub-title {
+  font-size: 11px;
+  font-family: "calibri";
+  color: #455051;
+}
+
+.heading {
+  color: #0f155b;
+  font-size: 24px;
+  font-weight: bold;
+  font-family: "calibri";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cards {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.card-one {
+  height: 66px;
+  border-radius: 6px;
+  border: 2px solid white;
+  color: white;
+  background-color: #0f155b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card-two {
+  height: 66px;
+  border-radius: 6px;
+  border: 2px solid white;
+  color: white;
+  background-color: #00aaf4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card-three {
+  height: 66px;
+  border-radius: 6px;
+  border: 2px solid white;
+  color: white;
+  background-color: #80d5f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card-four {
+  height: 66px;
+  border-radius: 6px;
+  border: 2px solid white;
+  color: white;
+  background-color: #c899c1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
