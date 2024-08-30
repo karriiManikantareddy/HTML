@@ -39,6 +39,12 @@ import { CreativesComponent } from './slides/creatives/creatives.component';
 import { AnalyseComponent } from './slides/analyse/analyse.component';
 import { DevicePlatformComponent } from './slides/device-platform/device-platform.component'
 import {PageComponent} from './slides/page/page.component'
+import { HeaderComponent } from './slides/header/header.component'
+import { FooterBoxComponent } from './slides/footer-box/footer-box.component'
+import { CampaignHighlightsComponent } from './slides/campaign-highlights/campaign-highlights.component'
+
+
+
 
 @NgModule({
   declarations: [
@@ -47,6 +53,8 @@ import {PageComponent} from './slides/page/page.component'
     HeaderLineComponent,
     FooterLineComponent,
     CreativePreviewComponent,
+    HeaderComponent,
+    FooterBoxComponent,
 
     CoverSlide,
     TableOfContentsSlide,
@@ -72,7 +80,8 @@ import {PageComponent} from './slides/page/page.component'
     CreativesComponent,
     AnalyseComponent,
     DevicePlatformComponent,
-    PageComponent
+    PageComponent,
+    CampaignHighlightsComponent,
   ],
   imports: [
     TemplateModule,

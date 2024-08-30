@@ -1,0 +1,9 @@
+.footer-box {
+  height: 50px;
+  width: 100%;
+  background: linear-gradient(to right, #904683, #745e9c, #527cbc, #37aad6);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

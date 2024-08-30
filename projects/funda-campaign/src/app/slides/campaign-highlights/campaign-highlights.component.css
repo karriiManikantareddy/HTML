@@ -1,0 +1,36 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  background-image: url("../../../assets/img/backgroundImage.png");
+}
+.header-container {
+  margin-bottom: 140px;
+}
+.content-container {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  padding-left: 60px;
+}
+.body-container {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+#title {
+  font-size: 21px;
+  font-weight: bold;
+  font-family: "calibri";
+}
+.text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+
+.footer-container {
+  margin-top: 40px;
+}
