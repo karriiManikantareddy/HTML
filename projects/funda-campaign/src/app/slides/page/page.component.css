@@ -9,8 +9,10 @@ body {
   padding: 0px;
   margin: 0px;
   height: 100vh;
+  width: 100%;
   position: relative;
   overflow: hidden;
+  background-image: url('../../../assets/img/backgroundImage.png');
 }
 .header-container {
   display: flex;
