@@ -1,0 +1,60 @@
+<slide *ngIf="topCreatives && !topCreatives.isEmpty()" [loading]="loading" name="Top Creatives by Viewability">
+  <section class="slide top-creatives-by-viewability">
+    <header class="slide-header">
+      <h2>
+        Top Creatives by Viewability
+      </h2>
+    </header>
+    <div class="main">
+      <div class="row">
+        <ng-container>
+          <div class="col-one-of-two wrap-left-block">
+            <top-creative-info [creative]="topCreatives[0]"></top-creative-info>
+            <span toggle name="Left creative URL" enabled="false" class="creative-link">{{topCreatives[0].previewUrl}}</span>
+            <top-creative-preview toggle name="Left creative preview" [creative]="topCreatives[0]"></top-creative-preview>
+            <div toggle name="Left creative upload" enabled="false" class="wrap-img">
+              <image-upload id="top-creatives-by-viewability-left" class="image-upload"></image-upload>
+            </div>
+            <div class="col-bottom">
+              <top-creative-metrics
+                [creative]="topCreatives[0]"
+                [totalMetrics]="totalMetrics"
+                [primaryColorImpressions]="primaryColor"
+                [secondaryColorImpressions]="secondaryColor"
+                [primaryColorClicks]="primaryColor"
+                [secondaryColorClicks]="secondaryColor"
+              >
+              </top-creative-metrics>
+            </div>
+        </div>
+        </ng-container>
+        <ng-container>
+          <div class="col-one-of-two">
+              <top-creative-info [creative]="topCreatives[1]"></top-creative-info>
+              <span toggle name="Right creative URL" enabled="false" class="creative-link">{{topCreatives[1].previewUrl}}</span>
+              <top-creative-preview toggle name="Right creative preview" [creative]="topCreatives[1]"></top-creative-preview>
+              <div toggle name="Right creative upload" enabled="false" class="wrap-img">
+                <image-upload id="top-creatives-by-viewability-right" class="image-upload"></image-upload>
+              </div>
+              <div class="col-bottom">
+                <top-creative-metrics
+                  [creative]="topCreatives[1]"
+                  [totalMetrics]="totalMetrics"
+                  [primaryColorImpressions]="primaryColor"
+                  [secondaryColorImpressions]="secondaryColor"
+                  [primaryColorClicks]="primaryColor"
+                  [secondaryColorClicks]="secondaryColor"
+                >
+                </top-creative-metrics>
+              </div>
+          </div>
+        </ng-container>
+      </div>
+      <div class="summary">
+        <text-editor class="summary-text" id="top-creatives-by-viewability-summary" [plainText]="true" placeholder="Summary text"></text-editor>
+      </div>
+    </div>
+    <footer class="slide-footer">
+    </footer>
+  </section>
+</slide>

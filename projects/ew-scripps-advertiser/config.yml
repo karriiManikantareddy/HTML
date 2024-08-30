@@ -1,0 +1,406 @@
+params: [advertiser]
+rename_dimensions:
+  mapped_google_ad_manager:
+    order: campaign
+data:
+  metadata:
+    dataset: combined
+    dimensions: [advertiser]
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+      - vcr
+  totals:
+    dataset: combined
+    dimensions: [advertiser]
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+      - vcr
+      - visits
+  totals_by_day:
+    dataset: combined
+    dimensions: [advertiser]
+    rollup: day
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+      - vcr
+      - visits
+  total_attribution:
+    dataset: combined_attribution
+    dimensions: [advertiser]
+    metrics:
+      - total_conversions
+      - seed_google_ads_all_conv
+      - seed_google_ad_manager_total_conversions
+      - seed_groundtruth_website
+      - seed_callrail_total_calls
+      - facebook_conversions
+  mapped_google_ad_manager_totals:
+    dataset: mapped_google_ad_manager
+    dimensions: [advertiser]
+    rollup: total
+    metrics:
+      - total_line_item_level_impressions
+      - total_line_item_level_clicks
+      - ctr
+      - vcr
+  mapped_google_ad_manager_day:
+    dataset: mapped_google_ad_manager
+    dimensions: [advertiser]
+    rollup: day
+    metrics:
+      - total_line_item_level_impressions
+      - total_line_item_level_clicks
+      - ctr
+      - vcr
+  mapped_google_ad_manager_line_items:
+    dataset: mapped_google_ad_manager
+    dimensions: [advertiser, line_item]
+    rollup: total
+    metrics:
+      - total_line_item_level_impressions
+      - total_line_item_level_clicks
+      - ctr
+      - vcr
+  mapped_google_ad_manager_breakdown:
+    dataset: mapped_google_ad_manager
+    dimensions: [advertiser, line_item, creative]
+    rollup: total
+    metrics:
+      - total_line_item_level_impressions
+      - total_line_item_level_clicks
+      - ctr
+      - vcr
+  mapped_madhive_totals:
+    dataset: mapped_madhive
+    dimensions: [advertiser]
+    rollup: total
+    metrics:
+      - impressions_total
+      - video_complete
+      - vcr
+  mapped_madhive_by_day:
+    dataset: mapped_madhive
+    dimensions: [advertiser]
+    rollup: day
+    metrics:
+      - impressions_total
+      - vcr
+  mapped_madhive_breakdown:
+    dataset: mapped_madhive
+    dimensions: [advertiser, creative]
+    rollup: total
+    metrics:
+      - impressions_total
+      - vcr
+  mapped_madhive_publisher_breakdown:
+    dataset: mapped_madhive
+    dimensions: [advertiser, publisher]
+    rollup: total
+    metrics:
+      - impressions_total
+      - vcr
+  mapped_google_ads_display_totals:
+    dataset: mapped_google_ads_display
+    dimensions: [advertiser]
+    rollup: total
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+      - all_conv
+  mapped_google_ads_display_by_day:
+    dataset: mapped_google_ads_display
+    dimensions: [advertiser]
+    rollup: day
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+      - all_conv
+  mapped_google_ads_display_ad_groups:
+    dataset: mapped_google_ads_display
+    dimensions: [advertiser, ad_group]
+    rollup: total
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+      - all_conv
+  mapped_google_ads_display_breakdown:
+    dataset: mapped_google_ads_display
+    dimensions: [advertiser, ad_group, ad]
+    rollup: total
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+      - all_conv
+  mapped_google_ads_search_totals:
+    dataset: mapped_google_ads_search
+    dimensions: [advertiser]
+    rollup: total
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+      - all_conv
+  mapped_google_ads_search_by_day:
+    dataset: mapped_google_ads_search
+    dimensions: [advertiser]
+    rollup: day
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+      - all_conv
+  mapped_google_ads_search_ad_groups:
+    dataset: mapped_google_ads_search
+    dimensions: [advertiser, ad_group]
+    rollup: total
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+      - all_conv
+  mapped_google_ads_search_breakdown:
+    dataset: mapped_google_ads_search
+    dimensions: [advertiser, ad_group, ad]
+    rollup: total
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+      - all_conv
+  mapped_google_ads_performance_max_totals:
+    dataset: mapped_google_ads_performance_max
+    dimensions: [advertiser]
+    rollup: total
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+      - all_conv
+  mapped_google_ads_performance_max_by_day:
+    dataset: mapped_google_ads_performance_max
+    dimensions: [advertiser]
+    rollup: day
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+      - all_conv
+  mapped_google_ads_performance_max_breakdown:
+    dataset: mapped_google_ads_search
+    dimensions: [advertiser, campaign]
+    rollup: total
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+      - all_conv
+  mapped_google_ads_youtube_totals:
+    dataset: mapped_google_ads_youtube
+    dimensions: [advertiser]
+    rollup: total
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+      - vcr
+  mapped_google_ads_youtube_by_day:
+    dataset: mapped_google_ads_youtube
+    dimensions: [advertiser]
+    rollup: day
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+      - vcr
+  mapped_google_ads_youtube_breakdown:
+    dataset: mapped_google_ads_youtube
+    dimensions: [advertiser, ad_group]
+    rollup: total
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+      - vcr
+  mapped_groundtruth_totals:
+    dataset: mapped_groundtruth
+    dimensions: [advertiser]
+    rollup: total
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+      - vcr
+      - visits
+      - website
+  mapped_groundtruth_by_day:
+    dataset: mapped_groundtruth
+    dimensions: [advertiser]
+    rollup: day
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+      - vcr
+      - visits
+      - website
+  mapped_groundtruth_adgroups:
+    dataset: mapped_groundtruth
+    dimensions: [advertiser, adgroup]
+    rollup: total
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+      - visits
+  mapped_groundtruth_breakdown:
+    dataset: mapped_groundtruth
+    dimensions: [advertiser, adgroup, creative]
+    rollup: total
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+      - visits
+  mapped_groundtruth_zips:
+    dataset: mapped_groundtruth
+    dimensions: [advertiser, adgroup, zip]
+    rollup: total
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+      - visits
+  mapped_simplifi_totals:
+    dataset: mapped_simplifi
+    dimensions: [advertiser]
+    rollup: total
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+      - total_visits
+      - conversions
+  mapped_simplifi_by_day:
+    dataset: mapped_simplifi
+    dimensions: [advertiser]
+    rollup: day
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+      - total_visits
+      - conversions
+  mapped_simplifi_campaigns:
+    dataset: mapped_simplifi
+    dimensions: [advertiser, campaign]
+    rollup: total
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+      - total_visits
+      - conversions
+  mapped_simplifi_breakdown:
+    dataset: mapped_simplifi
+    dimensions: [advertiser, campaign, ad]
+    rollup: total
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+      - total_visits
+      - conversions
+  mapped_site_impact_totals:
+    dataset: mapped_site_impact
+    dimensions: [advertiser]
+    rollup: total
+    metrics:
+      - opens
+      - open_rate
+      - clicks
+      - ctr
+  mapped_site_impact_by_day:
+    dataset: mapped_site_impact
+    dimensions: [advertiser]
+    rollup: day
+    metrics:
+      - opens
+      - open_rate
+      - clicks
+      - ctr
+  mapped_site_impact_breakdown:
+    dataset: mapped_site_impact
+    dimensions: [advertiser, campaign]
+    rollup: total
+    metrics:
+      - opens
+      - open_rate
+      - clicks
+      - ctr
+  mapped_callrail_totals:
+    dataset: mapped_callrail
+    dimensions: [advertiser]
+    rollup: total
+    metrics:
+        - total_calls
+        - answer_rate
+        - average_duration
+  mapped_callrail_by_day:
+    dataset: mapped_callrail
+    dimensions: [advertiser]
+    rollup: day
+    metrics:
+        - total_calls
+        - answer_rate
+        - average_duration
+  mapped_callrail_breakdown:
+    dataset: mapped_callrail
+    dimensions: [advertiser, call]
+    rollup: total
+    metrics:
+        - total_calls
+        - answer_rate
+        - average_duration
+  mapped_facebook_totals:
+    dataset: mapped_facebook
+    dimensions: [advertiser]
+    rollup: total
+    metrics:
+        - impressions
+        - clicks
+        - link_clicks
+        - ctr
+        - conversions
+        - conversion_rate
+  mapped_facebook_by_day:
+    dataset: mapped_facebook
+    dimensions: [advertiser]
+    rollup: day
+    metrics:
+        - impressions
+        - clicks
+        - link_clicks
+        - ctr
+        - conversions
+        - conversion_rate
+  mapped_facebook_breakdown:
+    dataset: mapped_facebook
+    dimensions: [advertiser, ad_set, ad]
+    rollup: total
+    metrics:
+        - impressions
+        - clicks
+        - link_clicks
+        - ctr
+        - conversions
+        - conversion_rate

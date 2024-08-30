@@ -1,0 +1,171 @@
+<slide [loading]="loading" *ngIf="totals" name="Paid Posts">
+  <section class="slide native-content" [style.background-color]="backgroundColor">
+    <header class="slide-header">
+      <h2 [ngClass]="fontStyling">Paid Posts</h2>
+    </header>
+    <div class="main">
+      <div class="native-content-total">
+        <div class="head-title">
+          <span [ngClass]="fontStyling">totals</span>
+        </div>
+        <div class="native-content-row">
+          <div class="native-content-item">
+            <div class="wrap-item">
+              <icon color="#7a7b8d" type="pageviews" [ngClass]="fontStyling"></icon>
+              <div class="data">
+                <span class="num">
+                  <text-editor [ngClass]="fontStyling" [plainText]="true" placeholder="Number.."
+                    id="native-content-booked-pws" style="width: 130px; height: 1.5em;"></text-editor>
+                </span>
+                <span class="title" [ngClass]="fontStyling">
+                  Booked<br />pageviews
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="native-content-item">
+            <div class="wrap-item">
+              <icon color="#7a7b8d" type="pageviews" [ngClass]="fontStyling"></icon>
+              <div class="data">
+                <span class="num">
+                  <number-editor [ngClass]="fontStyling" [plainText]="true" placeholder="Number.."
+                    [defaultText]="totals?.ga_pageviews | localeNumber" id="nyt-totals-pageviews"
+                    style="width: 130px; height: 1.5em;"></number-editor>
+                </span>
+                <span class="title" [ngClass]="fontStyling">
+                  Total<br />pageviews
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="native-content-item">
+            <div class="wrap-item">
+              <icon color="#7a7b8d" type="user" [ngClass]="fontStyling"></icon>
+              <div class="data">
+                <span class="num">
+                  <number-editor [ngClass]="fontStyling" [plainText]="true" placeholder="Number.."
+                    [defaultText]="totals?.ga_unique_pageviews | localeNumber" id="nyt-totals-unique-pageviews"
+                    style="width: 130px; height: 1.5em;"></number-editor>
+                </span>
+                <span class="title" [ngClass]="fontStyling">
+                  Unique<br />Pageviews
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="native-content-item">
+            <div class="wrap-item">
+              <icon color="#7a7b8d" type="total-time" [ngClass]="fontStyling"></icon>
+              <div class="data">
+                <span class="num">
+                  <number-editor [ngClass]="fontStyling" [plainText]="true" placeholder="Number.."
+                    [defaultText]="totals?.ga_session_duration | duration" id="nyt-totals-session-duration"
+                    style="width: 130px; height: 1.5em;"></number-editor>
+                </span>
+                <span class="title" [ngClass]="fontStyling">
+                  Total viewable<br>time
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="native-content-item">
+            <div class="wrap-item">
+              <icon color="#7a7b8d" type="avg-time" [ngClass]="fontStyling"></icon>
+              <div class="data">
+                <span class="num">
+                  <number-editor [ngClass]="fontStyling" [plainText]="true" placeholder="Number.."
+                    [defaultText]="totals?.ga_avg_session_duration | duration" id="nyt-totals-avg-session-duration"
+                    style="width: 130px; height: 1.5em;"></number-editor>
+                </span>
+                <span class="title" [ngClass]="fontStyling">
+                  Average Viewable Time
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="native-content-item">
+            <div class="wrap-item">
+              <icon color="#7a7b8d" type="avg-time" [ngClass]="fontStyling"></icon>
+              <div class="data">
+                <span class="num">
+                  <number-editor [ngClass]="fontStyling" [plainText]="true" placeholder="Number.." defaultText="n/a"
+                    id="nyt-totals-avg-scroll-depth" style="width: 130px; height: 1.5em;"></number-editor>
+                </span>
+                <span class="title" [ngClass]="fontStyling">
+                  Avg. Scroll<br>Depth
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="native-content-item">
+            <div class="wrap-item">
+              <icon color="#7a7b8d" type="facebook-shares" [ngClass]="fontStyling"></icon>
+              <div class="data">
+                <span class="num">
+                  <text-editor [ngClass]="fontStyling" [plainText]="true" id="native-content-shares"
+                    placeholder="Number.." style="width: 130px; height: 1.5em;"></text-editor>
+                </span>
+                <span class="title" [ngClass]="fontStyling">
+                  Social Shares From Paid Post
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="native-content-item">
+            <div class="wrap-item">
+              <icon color="#7a7b8d" type="facebook-shares" [ngClass]="fontStyling"></icon>
+              <div class="data">
+                <span class="num">
+                  <number-editor [ngClass]="fontStyling" [plainText]="true" placeholder="Number.."
+                    [defaultText]="totals?.fb_post_shares | localeNumber" id="nyt-fb-totals-post-shares"
+                    style="width: 130px; height: 1.5em;"></number-editor>
+                </span>
+                <span class="title" [ngClass]="fontStyling">
+                  Facebook Post Shares
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="native-content-item">
+            <div class="wrap-item">
+              <icon color="#7a7b8d" type="user" [ngClass]="fontStyling"></icon>
+              <div class="data">
+                <span class="num">
+                  <number-editor [ngClass]="fontStyling" [plainText]="true" placeholder="Number.."
+                    [defaultText]="totals?.fb_post_engagement | localeNumber" id="nyt-fb-totals-post-engagement"
+                    style="width: 130px; height: 1.5em;"></number-editor>
+                </span>
+                <span class="title" [ngClass]="fontStyling">
+                  Facebook Post Engagements
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th [ngClass]="fontStyling+'_grey'">pageviews driven by t brand studio</th>
+            <th class="metric" [ngClass]="fontStyling+'_grey'">pageviews</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let post of paidPosts">
+            <td [ngClass]="fontStyling">{{post.name}}</td>
+            <td class="num"><number-editor class="td" [ngClass]="fontStyling" [plainText]="true" placeholder="Number"
+                [defaultText]="post.metrics.ga_pageviews | localeNumber" id="nyt-{{post.name}}"
+                style="width: 100px; height: 1.5em;"></number-editor></td>
+          </tr>
+          <tr>
+            <td [ngClass]="fontStyling">Totals</td>
+            <td class="num"><number-editor class="td" [ngClass]="fontStyling" [plainText]="true" placeholder="Number"
+                [defaultText]="totalPVs | localeNumber" id="nyt-totalPVs"
+                style="width: 100px; height: 1.5em;"></number-editor></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <footer class="slide-footer"></footer>
+  </section>
+</slide>

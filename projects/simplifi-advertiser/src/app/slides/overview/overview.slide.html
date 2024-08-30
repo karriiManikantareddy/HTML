@@ -1,0 +1,81 @@
+<slide *ngIf="hasTotals" [loading]="loading" name="KPIs">
+  <section class="slide overview">
+    <slide-header text="KPIs"></slide-header>
+    <table>
+      <thead>
+        <th>KPI</th>
+        <th>Goal</th>
+        <th>Result</th>
+        <th>Notes</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Impressions</td>
+          <td><text-editor id="impressions_goal" [plainText]=true placeholder="Input goal"></text-editor></td>
+          <td class="num">{{totals?.impressions.value | format:setFormatting('number')}}</td>
+          <td><text-editor id="impressions_notes" [plainText]=true placeholder="Input notes"></text-editor></td>
+        </tr>
+        <tr *ngIf="totals?.reach">
+          <td>Reach</td>
+          <td><text-editor id="reach_goal" [plainText]=true placeholder="Input goal"></text-editor></td>
+          <td class="num">{{totals?.reach.value | format:setFormatting('number')}}</td>
+          <td><text-editor id="reach_notes" [plainText]=true placeholder="Input notes"></text-editor></td>
+        </tr>
+        <tr *ngIf="totals?.frequency">
+          <td>Frequency</td>
+          <td><text-editor id="frequency_goal" [plainText]=true placeholder="Input goal"></text-editor></td>
+          <td class="num">{{totals?.frequency.value | format:setFormatting('decimal')}}</td>
+          <td><text-editor id="frequency_notes" [plainText]=true placeholder="Input notes"></text-editor></td>
+        </tr>
+        <tr *ngIf="totals?.ctr  && (goal === 'ctr' || goal === 'ctr_vcr' || goal === 'ctr_cpc' || goal === 'ctr_cpc_actions' || goal === 'all' || goal == 'ctr_actions')">
+          <td>Clicks</td>
+          <td><text-editor id="clicks_goal" [plainText]=true placeholder="Input goal"></text-editor></td>
+          <td class="num">{{totals?.clicks.value | format:setFormatting('number')}}</td>
+          <td><text-editor id="clicks_notes" [plainText]=true placeholder="Input notes"></text-editor></td>
+        </tr>
+        <tr *ngIf="totals?.ctr  && (goal === 'ctr' || goal === 'ctr_vcr' || goal === 'ctr_cpc' || goal === 'ctr_cpc_actions' || goal === 'all' || goal == 'ctr_actions')">
+          <td>Display/Native Clicks</td>
+          <td><text-editor id="clicks_goal" [plainText]=true placeholder="Input goal"></text-editor></td>
+          <td class="num">{{totals?.display_native_clicks.value | format:setFormatting('number')}}</td>
+          <td><text-editor id="display_native_clicks_notes" [plainText]=true placeholder="Input notes"></text-editor></td>
+        </tr>
+        <tr *ngIf="totals?.display_native_ctr  && (goal === 'ctr' || goal === 'ctr_vcr' || goal === 'ctr_cpc' || goal === 'ctr_cpc_actions' || goal === 'all' || goal == 'ctr_actions')">
+          <td>Display/Native CTR</td>
+          <td><text-editor id="ctr_goal" [plainText]=true placeholder="Input goal"></text-editor></td>
+          <td class="num">{{totals?.display_native_ctr.value | format:setFormatting('percent')}}</td>
+          <td><text-editor id="ctr_notes" [plainText]=true placeholder="Input notes"></text-editor></td>
+        </tr>
+        <tr *ngIf="totals?.cpa && (goal === 'ctr_cpc' || goal === 'ctr_cpc_actions' || goal === 'all')">
+          <td>CPC</td>
+          <td><text-editor id="cpc_goal" [plainText]=true placeholder="Input goal"></text-editor></td>
+          <td class="num">{{totals?.cpc.value | format:setFormatting('currency')}}</td>
+          <td><text-editor id="cpc_notes" [plainText]=true placeholder="Input notes"></text-editor></td>
+        </tr>
+        <tr *ngIf="totals?.vcr && (goal === 'vcr' || goal === 'ctr_vcr' || goal === 'vcr_actions' || goal === 'vcr_actions_visits' || goal === 'all')">
+          <td>VCR</td>
+          <td><text-editor id="vcr_goal" [plainText]=true placeholder="Input goal"></text-editor></td>
+          <td class="num">{{totals?.vcr.value | format:setFormatting('percent')}}</td>
+          <td><text-editor id="vcr_notes" [plainText]=true placeholder="Input notes"></text-editor></td>
+        </tr>
+        <tr *ngIf="totals?.cpa && (goal === 'ctr_cpc_actions' || goal === 'all')">
+          <td>CPA</td>
+          <td><text-editor id="cpa_goal" [plainText]=true placeholder="Input goal"></text-editor></td>
+          <td class="num">{{totals?.cpa.value | format:setFormatting('currency')}}</td>
+          <td><text-editor id="cpa_notes" [plainText]=true placeholder="Input notes"></text-editor></td>
+        </tr>
+        <tr *ngIf="totals?.online_visits && (goal === 'ctr_actions' || goal === 'ctr_cpc_actions' || goal === 'vcr_actions_visits' || goal === 'all')">
+          <td>Online Visits</td>
+          <td><text-editor id="online_visits" [plainText]=true placeholder="Input goal"></text-editor></td>
+          <td class="num">{{totals?.online_visits.value | format:setFormatting('number')}}</td>
+          <td><text-editor id="online_visits_notes" [plainText]=true placeholder="Input notes"></text-editor></td>
+        </tr>
+        <tr *ngIf="totals?.total_visits && (goal === 'ctr_actions' || goal === 'vcr_actions' || goal === 'ctr_cpc_actions' || goal === 'vcr_actions_visits' || goal === 'all')">
+          <td>Visits</td>
+          <td><text-editor id="foot_traffic_goal" [plainText]=true placeholder="Input goal"></text-editor></td>
+          <td class="num">{{totals?.total_visits.value | format:setFormatting('number')}}</td>
+          <td><text-editor id="foot_traffic_goal_notes" [plainText]=true placeholder="Input notes"></text-editor></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</slide>

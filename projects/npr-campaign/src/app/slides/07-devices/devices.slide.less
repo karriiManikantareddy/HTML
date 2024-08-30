@@ -1,0 +1,54 @@
+@import '../../../styles/base/_variables';
+
+.devices-slide {
+  color: black;
+  &.slide {
+    background: white;
+    padding: 50px 80px 50px 80px;
+  }
+  .main {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    flex-direction: column;
+  }
+  .header {
+    margin:50px 100px 0 100px;
+    font-family: @extrabold-font;
+    font-size:4em; 
+    text-align:center; 
+  }
+  .devices {
+    width: 100%;
+    height: fit-content;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    justify-items: center;
+    align-items: center;
+    .device {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+    }
+    .icon {
+      height:300px; 
+      padding-bottom: 20px;
+    }
+    .imp-data {
+      font-size: 3em;
+      font-family: @extrabold-font;
+    }
+    .device-type {
+      font-size: 1.5em;
+    }
+  }
+  .data-source {
+    margin-bottom: 12px;
+    margin-left: 150px;
+    width: fit-content;
+    font-family: @primary-font;  
+  }
+}

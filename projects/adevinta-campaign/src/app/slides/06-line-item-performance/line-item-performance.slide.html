@@ -1,0 +1,40 @@
+<slide [loading]="loading" name="Line Item Performance" *ngFor="let lineItems of lineItemsGroups; index as groupIdx">
+  <section class="slide slide-line-item-performance">
+    <header class="slide-header">
+      <h2>
+        Line Item Performance
+      </h2>
+    </header>
+    <div class="main">
+      <table>
+        <thead>
+        <tr>
+          <th class="static">Line Item</th>
+          <th class="metric small impressions">Delivered impressions</th>
+          <th class="metric small clicks">Clicks</th>
+          <th class="metric small">CTR</th>
+          <th class="metric small viewability">Viewability</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let li of lineItems">
+          <td>{{li.name}}</td>
+          <td class="metric impressions">{{li.metrics?.gam_impressions?.value | number}}</td>
+          <td class="metric clicks">{{li.metrics?.gam_clicks?.value | number}}</td>
+          <td class="metric">{{li.metrics?.ctr?.value | percent}}</td>
+          <td class="metric viewability">{{li.metrics?.gam_viewability?.value | percent}}</td>
+        </tr>
+        </tbody>
+      </table>
+      <div class="summary">
+        <text-editor
+          class="summary-text"
+          placeholder="Summary text"
+          [id]="'line-item-performance-summary-' + groupIdx"
+          [plainText]="true">
+        </text-editor>
+      </div>
+    </div>
+    <footer class="slide-footer"></footer>
+  </section>
+</slide>

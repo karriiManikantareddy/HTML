@@ -1,0 +1,21 @@
+<slide name="Data Definitions">
+  <div class="content">
+    <h1>
+			<span class="flag"></span>
+			Data Definitions
+		</h1>
+    <section class="slide">
+			<div class="list">
+				<div *ngFor="let d of dataDefinitions" class="list-item">
+					<span>{{d.data}}</span>
+					<span>{{d.definition}}</span>
+					<div *ngIf="d.explanation" class="gold-text">{{d.explanation}}</div>
+				</div>
+			</div>
+			<div class="side-img">
+				<img src="assets/img/page10.png" />
+			</div>
+    </section>
+  </div>
+  <footer class="slide-footer"></footer>
+</slide>

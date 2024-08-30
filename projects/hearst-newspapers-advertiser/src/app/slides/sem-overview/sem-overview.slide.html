@@ -1,0 +1,76 @@
+<slide *ngIf="hasSem" [loading]="loading" name="Search Engine Marketing Overview">
+  <sidebar text="Search Engine Marketing"></sidebar>
+  <section class="slide slide-sem-overview">
+    <header class="slide-header">
+      <h3>KPIs</h3>
+    </header>
+    <div class="kpis">
+      <div class="kpi">
+        <div class="kpi-value">
+          {{totals?.impressions.value | localeNumber}}
+        </div>
+        <div class="kpi-name">
+          Impressions
+        </div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-value">
+          {{totals?.clicks.value | localeNumber}}
+        </div>
+        <div class="kpi-name">
+          Clicks
+        </div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-value">
+          {{totals?.ctr.value | percent}}
+        </div>
+        <div class="kpi-name">
+          CTR
+        </div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-value">
+          {{totals?.cpc.value | currency}}
+        </div>
+        <div class="kpi-name">
+          CPC
+        </div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-value">
+          {{totals?.spend.value | currency}}
+        </div>
+        <div class="kpi-name">
+          Spend
+        </div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-value">
+          {{totals?.conversions.value | localeNumber}}
+        </div>
+        <div class="kpi-name">
+          Conversions
+        </div>
+      </div>
+    </div>
+    <div class="charts">
+      <div class="left-chart">
+        <h6>
+          Weekly: Spend vs Clicks
+        </h6>
+        <div class="chart-content">
+          <chart type="column" [series]="chartSeriesLeft" [options]="chartOptionsLeft"></chart>
+        </div>
+      </div>
+      <div class="right-chart">
+        <h6>
+          Weekly: CPC vs CTR
+        </h6>
+        <div class="chart-content">
+          <chart type="column" [series]="chartSeriesRight" [options]="chartOptionsRight"></chart>
+        </div>
+      </div>
+    </div>
+  </section>
+</slide>

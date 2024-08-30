@@ -1,0 +1,21 @@
+<slide [loading]="loading" name="Device & Ad Type CTR Performance Benchmarks">
+  <section class="slide overview" [style.background-color]="backgroundColor">
+    <header class="slide-header">
+      <h2 [ngClass]="fontStyling">{{metadata?.advertiser || metadata?.name}} Device & Ad Type CTR Performance</h2>
+    </header>
+    <div class="main">
+      <div class="charts-container">
+        <div class="chart-content">
+          <chart type="column" [series]="deviceCtrChartSeries" [options]="deviceCtrChartOptions" [bgcolor]="backgroundColor"></chart>
+        </div>
+        <div class="chart-content">
+          <chart type="column" [series]="adTypeCtrChartSeries" [options]="adTypeCtrChartOptions" [bgcolor]="backgroundColor"></chart>
+        </div>
+      </div>
+    </div>
+    <div class="source" [ngClass]="fontStyling">
+      Source: NYT Google Ad Manager local delivery
+    </div>
+    <footer class="slide-footer"></footer>
+  </section>
+</slide>

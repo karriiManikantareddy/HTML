@@ -1,0 +1,26 @@
+@import '../../../styles/base/_variables';
+
+.slide-cover {
+  color: @white;
+  &.slide {
+    background: url('/assets/img/frontpage.png');
+    background-size: cover;
+    padding: 50px 80px 50px 80px;
+  }
+  .wrap-head {
+    max-width: 1450px;
+    padding-top: 150px;
+    text-transform: uppercase;
+    font-size: 4em;
+    font-family: @extrabold-font;
+  }
+  .main {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    -ms-align-items: center;
+    align-items: center;
+  }
+}

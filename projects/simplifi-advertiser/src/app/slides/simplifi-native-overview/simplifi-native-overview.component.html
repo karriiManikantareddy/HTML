@@ -1,0 +1,12 @@
+<slide *ngIf="loading || totals" [loading]="loading" name="Simplifi Native Overview">
+  <section class="slide overview">
+    <slide-header text="Simplifi Native Overview"></slide-header>
+    <overview-cmp
+      [totals]="totals"
+      [series]="series"
+      [chartConfig]="chartConfig"
+      [kpis]="kpis"
+      ></overview-cmp>
+    <slide-footer slideName="simplifi-native-overview"></slide-footer>
+  </section>
+</slide>

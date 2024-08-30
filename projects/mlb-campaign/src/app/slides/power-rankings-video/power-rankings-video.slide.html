@@ -1,0 +1,48 @@
+<slide [loading]="loading" name="Power Rankings Video Topic Page">
+  <section class="slide slide-pover-rankings-video">
+    <header class="slide-header">
+      <h3>Power Rankings</h3>
+      <div class="sub-header">Video Topic Page</div>
+      <img src="assets/img/mlblogo.png" alt="">
+    </header>
+    <div class="main">
+      <div class="metrics">
+        <div class="metric-box">
+          <div class="logo"><img src="assets/img/camera.png" height="100px" alt=""></div>
+          <div class="metric">
+            {{totals?.video_viewership_complete?.value | number}}
+            <div class="metric-name">Video Views</div>
+          </div>
+        </div>
+        <div class="metric-box">
+          <div class="logo"><img src="assets/img/eye.png" height="100px" alt=""></div>
+          <div class="metric">
+            {{totals?.total_line_item_level_impressions?.value | number}}
+          <div class="metric-name">Display Impressions</div>
+          </div>
+        </div>
+        <div class="metric-box">
+          <div class="logo"><img src="assets/img/trophy.png" height="100px" alt=""></div>
+          <div class="metric">
+            <text-editor id="top-video-text" placeholder="Top Video Name" [plainText]="true"></text-editor>
+            <div class="metric-name">Top Performing Video</div>
+          </div>
+        </div>
+      </div>
+      <div class="devices">
+        <div class="desktop">
+          <image-upload id="desktop-power-rankings-video" class="desktop-power-rankings-video"></image-upload>
+        </div>
+        <div class="desktop-2">
+          <image-upload id="desktop-2-power-rankings-video" class="desktop-2-power-rankings-video"></image-upload>
+        </div>
+      </div>
+    </div>
+    <div class="white-dots">
+      <img src="assets/img/white_dots.png" alt="">
+    </div>
+    <div class="red-dots">
+      <img src="assets/img/red_dots.png" alt="">
+    </div>
+  </section>
+</slide>

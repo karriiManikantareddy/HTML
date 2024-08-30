@@ -1,0 +1,16 @@
+<slide *ngFor="let creatives of creativeGroups" [loading]="loading" name="Steraming TV Ads">
+  <divider></divider>
+  <section class="slide campaigns">
+    <slide-header text="Streaming TV Ads"></slide-header>
+    <the-advocate-table [items]="creatives" [kpis]="kpis" [totals]="totals" header="Creatives"></the-advocate-table>
+    <slide-footer></slide-footer>
+  </section>
+</slide>
+<slide *ngFor="let creatives of creativeGroups" [loading]="loading" name="Steraming TV Ads - Video Performance">
+  <divider></divider>
+  <section class="slide campaigns">
+    <slide-header text="Streaming TV Ads - Video Performance"></slide-header>
+    <the-advocate-table [items]="creatives" [kpis]="kpis" [totals]="totals" header="Creatives"></the-advocate-table>
+    <slide-footer></slide-footer>
+  </section>
+</slide>

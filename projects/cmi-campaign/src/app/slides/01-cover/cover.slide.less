@@ -1,0 +1,70 @@
+@import '../../../styles/base/_variables';
+
+.slide-cover {
+  color: @white;
+
+  &.slide {
+    padding-left: 111px;
+    background: @white;
+    background-image: url('../../../assets/img/cover-page.png');
+    background-repeat: no-repeat;
+    background-position-x: -100px;
+  }
+
+  .wrap-head {
+    width: 1200px;
+    letter-spacing: 0.15em;
+  }
+
+  .logo {
+    position: absolute;
+    top: 60px;
+    right: 100px;
+  }
+
+  .main {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    -ms-align-items: center;
+    align-items: center;
+  }
+
+  .name {
+    display: block;
+
+    ::ng-deep .ql-editor {
+      &.ql-blank::before,
+      p {
+        font-size: 3em;
+        color: @white;
+      }
+    }
+  }
+
+  .title {
+    display: block;
+
+    ::ng-deep .ql-editor {
+      &.ql-blank::before,
+      p {
+        font-size: 4em;
+        color: @white;
+      }
+    }
+  }
+
+  .date {
+    display: block;
+
+    ::ng-deep .ql-editor {
+      &.ql-blank::before,
+      p {
+        font-size: 2.5em;
+        color: @white;
+      }
+    }
+  }
+}

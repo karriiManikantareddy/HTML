@@ -1,0 +1,16 @@
+<slide [loading]="loading" name="Google Analytics Default User Channel">
+  <divider></divider>
+  <section class="slide google-analytics-channel-breakdown">
+    <slide-header text="Google Analytics Default User Channel"></slide-header>
+    <div class="row">
+      <div class="col-one-of-two left-block">
+        <chart class="pie-chart" type="pie" [series]="series" [options]="options"></chart>
+        <legend *ngIf="series" [items]="legendItems"></legend>
+      </div>
+      <div class="col-one-of-two right-block">
+        <the-advocate-table [items]="channels" [kpis]="kpis" header="Default User Channels"></the-advocate-table>
+      </div>
+    </div>
+    <slide-footer></slide-footer>
+  </section>
+</slide>

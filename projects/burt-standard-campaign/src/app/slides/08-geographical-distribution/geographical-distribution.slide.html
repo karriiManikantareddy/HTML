@@ -1,0 +1,36 @@
+<slide *ngIf="topRegions && !topRegions.isEmpty()" [loading]="loading" name="Geographical Distribution">
+  <section class="slide geographical">
+    <header class="slide-header">
+      <h2>
+        Geographical distribution
+        <header-logo></header-logo>
+      </h2>
+    </header>
+    <div class="main">
+      <div class="row">
+        <div class="col-one-of-two left-block">
+          <map [series]="mapSeries" [options]="mapOptions"></map>
+        </div>
+        <div class="col-one-of-two right-block">
+          <table>
+            <thead>
+            <tr>
+              <th class="static">Top States</th>
+              <th class="metric small">{{metrics?.total_line_item_level_impressions?.displayName}}</th>
+              <th class="metric">{{metrics?.ctr?.displayName}}</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let r of topRegions">
+              <td>{{r?.name}}</td>
+              <td class="metric">{{r?.metrics?.total_line_item_level_impressions?.value | number}}</td>
+              <td class="metric">{{r?.metrics?.ctr?.value | percent}}</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <footer class="slide-footer"></footer>
+  </section>
+</slide>

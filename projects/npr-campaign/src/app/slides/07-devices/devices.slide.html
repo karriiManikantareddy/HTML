@@ -1,0 +1,20 @@
+<slide [loading]="loading" name="Devices">
+  <section class="slide devices-slide">
+    <div class="main">
+      <p class="header">Devices</p>
+      <text-editor id="devices-description" [plainText]=true placeholder="Input text..." class="description"></text-editor>
+      <div class="devices">
+        <ng-container *ngFor="let p of platforms">
+          <div class="device">
+            <img class="icon" src="{{p?.url}}" alt="device_icon">
+            <p class="imp-data">{{numFormatter(p?.metrics?.impressions?.value,2)}}</p>
+            <p class="imp-data">imps</p>
+            <p class="device-type">{{p?.name}}</p>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+    <footer></footer>
+    <p class="data-source">Data Source: {{metadata?.source}} (first party data) pulled {{currentDate}}</p>
+  </section>
+</slide>

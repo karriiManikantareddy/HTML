@@ -1,0 +1,18 @@
+<slide [loading]="loading" name="Delivery By Age">
+  <section class="slide delivery-by-age-slide">
+    <p class="header">Delivery by Age: Dynamic Podcasts</p>
+    <text-editor id="delivery-by-age-description" [plainText]=true placeholder="Input text..." class="description"></text-editor>
+    <div class="main">
+      <div class="chart-content">
+        <chart [series]="chartSeries" [options]="chartOptions"></chart>
+      </div>
+    </div>
+    <footer></footer>
+    <div class="data-source">
+      <p>Data Source: {{metadata?.source}}</p>
+      <p class="note-txt">
+        NOTE: The age and gender data is probabilistic, and the ad server is making decisions after the podcast download happens about what “bucket” users might fall into. There may be some instances in which it “assigns” a user to more than one bucket or doesn’t know what bucket that user falls into so that user may be omitted.
+      </p>
+    </div>
+  </section>
+</slide>

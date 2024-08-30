@@ -1,0 +1,43 @@
+<slide *ngIf="hasDisplay" [loading]="loading" name="Display Overview">
+  <sidebar text="Display"></sidebar>
+  <section class="slide slide-display-overview" [ngStyle]="{'color': colorTheme?.primary_color}">
+    <header class="slide-header">
+      <h3>KPIs</h3>
+    </header>
+    <div class="kpis">
+      <div class="kpi">
+        <div class="kpi-value" [ngStyle]="{'background-color': colorTheme?.primary_color}">
+          {{totals?.impressions.value | localeNumber}}
+        </div>
+        <div class="kpi-name">
+          Impressions
+        </div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-value" [ngStyle]="{'background-color': colorTheme?.primary_color}">
+          {{totals?.clicks.value | localeNumber}}
+        </div>
+        <div class="kpi-name">
+          Clicks
+        </div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-value" [ngStyle]="{'background-color': colorTheme?.primary_color}">
+          {{totals?.ctr.value | percent}}
+        </div>
+        <div class="kpi-name">
+          CTR
+        </div>
+      </div>
+    </div>
+    <div class="charts">
+      <h6>
+        Weekly Performance
+        <legend [items]="legendItems" class="right"></legend>
+      </h6>
+      <div class="chart-content">
+        <chart type="column" [series]="chartSeries" [options]="chartOptions"></chart>
+      </div>
+    </div>
+  </section>
+</slide>

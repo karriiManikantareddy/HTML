@@ -1,0 +1,69 @@
+:host {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  .dropzone {
+    display: table;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #eee;
+    border: dashed 1px #aaa;
+
+    input[type=file] {
+       position:absolute;
+       width:100%;
+       height:100%;
+       top: 0;
+       left: 0;
+       opacity: 0;
+       cursor: pointer;
+    }
+
+    .text-wrapper {
+      display: table-cell;
+      vertical-align: middle;
+      text-align: center;
+
+      .centered {
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.8);
+        padding: 5px;
+        text-align: center;
+        font-weight: bold;
+        color: #444;
+        text-transform: uppercase;
+      }
+    }
+
+    .delete-image {
+      position: absolute;
+      right: 0;
+      cursor: pointer;
+    }
+
+    &.exporting {
+      display: none;
+    }
+  }
+
+  .preview {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    visibility: hidden;
+
+    &.loaded {
+      visibility: visible;
+    }
+  }
+}

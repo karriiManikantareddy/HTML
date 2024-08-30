@@ -1,0 +1,68 @@
+<slide *ngIf="totals" [loading]="loading" name="Overview">
+  <section class="slide overview">
+    <header name="Overview"></header>
+    <div class="main">
+      <div class="statistic-icons">
+        <div class="statistic-icons-item">
+          <img src="assets/img/impressions.png" class="icon"/>
+          <div class="wrap-title">
+            <span class="num">{{totals?.total_line_item_level_impressions | number}}</span>
+            <span class="title">delivered impressions</span>
+          </div>
+        </div>
+        <div class="statistic-icons-item">
+          <img src="assets/img/planned_impressions.png" class="icon"/>
+          <div class="wrap-title">
+            <span class="num">{{totals?.contractedUnits | number}}</span>
+            <span class="title">booked impressions</span>
+          </div>
+        </div>
+        <div class="statistic-icons-item">
+          <img src="assets/img/cpm.png" class="icon"/>
+          <div class="wrap-title">
+            <span class="num">{{totals?.ecpm | currency}}</span>
+            <span class="title">E-CPM</span>
+          </div>
+        </div>
+        <div class="statistic-icons-item">
+          <img src="assets/img/spend.png" class="icon"/>
+          <div class="wrap-title">
+            <span class="num">{{totals?.total_line_item_level_all_revenue | currency}}</span>
+            <span class="title">Spend</span>
+          </div>
+        </div>
+        <div class="statistic-icons-item">
+          <img src="assets/img/percent_delivered.png" class="icon"/>
+          <div class="wrap-title">
+            <span class="num">{{totals?.deliveredRate | percent}}</span>
+            <span class="title">% Delivered</span>
+          </div>
+        </div>
+        <div class="statistic-icons-item">
+          <img src="assets/img/clicks.png" class="icon"/>
+          <div class="wrap-title">
+            <span class="num">{{totals?.total_line_item_level_clicks | number}}</span>
+            <span class="title">Clicks</span>
+          </div>
+        </div>
+        <div class="statistic-icons-item">
+          <img src="assets/img/ctr.png" class="icon"/>
+          <div class="wrap-title">
+            <span class="num">{{totals?.click_rate | percent}}</span>
+            <span class="title">CTR</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h6>
+          Delivery by day
+          <legend [items]="legendItems" class="right"></legend>
+        </h6>
+        <div class="chart-content">
+          <chart type="column" [series]="chartSeries" [options]="chartOptions"></chart>
+        </div>
+      </div>
+    </div>
+    <footer class="slide-footer"></footer>
+  </section>
+</slide>

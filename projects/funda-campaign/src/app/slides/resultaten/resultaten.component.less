@@ -1,0 +1,52 @@
+@import '../../../styles/base/_variables';
+
+.slide {
+  background-color: #fff;
+  padding: 55;
+
+  &.business {
+    background: @dark-blue;
+  }
+}
+
+.slide-class {
+  padding-bottom: 55px;
+}
+
+.image {
+  min-height: calc(100vh - 110px);
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../../../assets/img/resultaten.jpg");
+  background-size: cover;
+  height: 100%;
+}
+
+.image::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  font-size: 36px;
+  color: #fff;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 60px;
+  font-family: arial, sans-serif;
+}

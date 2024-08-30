@@ -1,0 +1,820 @@
+params: [advertiser]
+rename_dimensions:
+  dm_combiner_all_data:
+    mapped_advertiser: advertiser
+  dm_seed_facebook_ads:
+    mapped_advertiser_id: advertiser
+  dm_seed_google_ads:
+    advertiser_id: advertiser
+  onsite_display:
+    advertiser_id: advertiser
+    order: campaign
+  onsite_video:
+    advertiser_id: advertiser
+    order: campaign
+  newsletters:
+    advertiser_id: advertiser
+    order: campaign
+  dm_seed_site_impact:
+    advertiser_id: advertiser
+  streaming_tv:
+    advertiser_id: advertiser
+  streaming_radio:
+    advertiser_id: advertiser
+  youtube:
+    advertiser_id: advertiser
+  extended_network_display:
+    advertiser_id: advertiser
+  pre_roll_video:
+    advertiser_id: advertiser
+  dm_cfr_google_analytics_data:
+    advertiser_id: advertiser
+    property: campaign
+  amazon_video:
+    mapped_advertiser_id: advertiser
+  amazon_display:
+    mapped_advertiser_id: advertiser
+  social:
+    advertiser_id: advertiser
+  premium_programmatic_video:
+    mapped_advertiser_id: advertiser
+  dm_seed_tiktok:
+    mapped_advertiser_id: advertiser
+    mapped_advertiser: campaign 
+  dm_seed_dv360:
+    advertiser_integration_code: advertiser
+  dm_seed_google_ad_manager:
+    advertiser_external_id: advertiser
+    order: campaign
+  dm_csv_adcellerent_ttd:
+    advertiser_id: advertiser
+  dm_seed_linkedin:
+    advertiser_id: advertiser
+data:
+  metadata:
+    dataset: dm_combiner_all_data
+    dimensions: [mapped_advertiser, advertiser_name]
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+      - vcr
+      - total_conversions
+  totals:
+    dataset: dm_combiner_all_data
+    dimensions: [mapped_advertiser]
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+      - vcr
+      - total_conversions
+  totals_by_day:
+    dataset: dm_combiner_all_data
+    dimensions: [mapped_advertiser]
+    rollup: day
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+      - vcr
+      - total_conversions
+  facebook_totals:
+    dataset: dm_seed_facebook_ads
+    dimensions: [mapped_advertiser_id]
+    metrics:
+      - impressions
+      - link_clicks
+      - ctr
+      - vcr
+      - post_engagements
+  facebook_by_day:
+    dataset: dm_seed_facebook_ads
+    dimensions: [mapped_advertiser_id]
+    rollup: day
+    metrics:
+      - impressions
+      - link_clicks
+      - ctr
+      - vcr
+      - post_engagements
+  facebook_breakdown:
+    dataset: dm_seed_facebook_ads
+    dimensions: [mapped_advertiser_id, ad_set, ad]
+    metrics:
+      - impressions
+      - link_clicks
+      - ctr
+      - vcr
+      - video_plays
+      - video_p25_views
+      - video_p50_views
+      - video_p75_views
+      - video_p100_views
+      - time_watched
+      - post_reactions
+      - clicks
+      - posts
+      - comments
+      - post_engagements
+  facebook_campaign_breakdown:
+    dataset: dm_seed_facebook_ads
+    dimensions: [mapped_advertiser_id, campaign]
+    metrics:
+      - impressions
+      - link_clicks
+      - ctr
+      - post_engagements
+  facebook_ad_set_breakdown:
+    dataset: dm_seed_facebook_ads
+    dimensions: [mapped_advertiser_id, ad_set]
+    metrics:
+      - impressions
+      - link_clicks
+      - ctr
+      - post_engagements
+  google_ads_totals:
+    dataset: dm_seed_google_ads
+    dimensions: [advertiser_id]
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+      - all_conv
+      - search_impr_share
+  google_ads_by_day:
+    dataset: dm_seed_google_ads
+    dimensions: [advertiser_id]
+    rollup: day
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+      - all_conv
+  google_ads_breakdown:
+    dataset: dm_seed_google_ads
+    dimensions: [advertiser_id, ad_group]
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+      - all_conv
+      - search_impr_share
+  onsite_display_totals:
+    dataset: onsite_display
+    dimensions: [advertiser_id]
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+      - total_time_in_view
+      - conversions
+  onsite_display_by_day:
+    dataset: onsite_display
+    dimensions: [advertiser_id]
+    rollup: day
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+  onsite_display_breakdown:
+    dataset: onsite_display
+    dimensions: [advertiser_id, line_item, creative, creative_preview_url, creative_height, creative_width]
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+      - conversions
+  onsite_display_breakdown_clean_name:
+    dataset: dm_seed_google_ad_manager
+    dimensions: [advertiser_external_id, line_item, creative, creative_size, creative_clean_name]
+    metrics:
+      - total_line_item_level_impressions
+      - total_line_item_level_clicks
+      - ctr
+      - total_conversions
+  onsite_display_line_item_breakdown:
+    dataset: onsite_display
+    dimensions: [advertiser_id, line_item]
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+      - total_time_in_view
+      - conversions
+  onsite_display_metro_breakdown:
+    dataset: dm_seed_google_ad_manager
+    dimensions: [advertiser_external_id,city]
+    metrics:
+      - total_line_item_level_impressions
+      - total_line_item_level_clicks
+      - ctr
+  newsletters_totals:
+    dataset: newsletters
+    dimensions: [advertiser_id]
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+      - total_time_in_view
+      - conversions
+  newsletters_by_day:
+    dataset: newsletters
+    dimensions: [advertiser_id]
+    rollup: day
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+  newsletters_breakdown:
+    dataset: newsletters
+    dimensions: [advertiser_id, line_item, creative, creative_preview_url, creative_height, creative_width]
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+  newsletters_breakdown_clean_name:
+    dataset: dm_seed_google_ad_manager
+    dimensions: [advertiser_external_id, line_item, creative, creative_size, creative_clean_name]
+    metrics:
+      - total_line_item_level_impressions
+      - total_line_item_level_clicks
+      - ctr
+  newsletters_line_item_breakdown:
+    dataset: newsletters
+    dimensions: [advertiser_id, line_item]
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+      - total_time_in_view
+      - conversions
+  newsletters_metro_breakdown:
+    dataset: dm_seed_google_ad_manager
+    dimensions: [advertiser_external_id, city, line_item]
+    metrics:
+      - total_line_item_level_impressions
+      - total_line_item_level_clicks
+      - ctr
+  site_impact_totals:
+    dataset: dm_seed_site_impact
+    dimensions: [advertiser_id]
+    metrics:
+      - quantity
+      - opens
+      - open_rate
+      - clicks
+      - ctr
+      - ctvr
+  site_impact_by_day:
+    dataset: dm_seed_site_impact
+    dimensions: [advertiser_id]
+    rollup: day
+    metrics:
+      - quantity
+      - opens
+      - views
+      - clicks
+      - open_rate
+      - ctvr
+  site_impact_breakdown:
+    dataset: dm_seed_site_impact
+    dimensions: [advertiser_id, campaign, campaign_broadcast_date]
+    metrics:
+      - quantity
+      - opens
+      - open_rate
+      - clicks
+      - ctr
+      - ctvr
+  site_impact_device_breakdown:
+    dataset: dm_seed_site_impact
+    dimensions: [advertiser_id, device]
+    metrics:
+      - clicks
+  streaming_tv_totals:
+    dataset: streaming_tv
+    dimensions: [advertiser_id]
+    metrics:
+      - impressions
+      - clicks
+      - completion_rate
+      - postview_conversions
+      - postclick_conversions
+      - conversions
+  streaming_tv_by_day:
+    dataset: streaming_tv
+    dimensions: [advertiser_id]
+    rollup: day
+    metrics:
+      - impressions
+      - clicks
+      - completion_rate
+      - conversions
+  streaming_tv_breakdown:
+    dataset: streaming_tv
+    dimensions: [advertiser_id, line_item, creative]
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+      - video_completes
+      - completion_rate
+      - conversions
+      - 25_complete
+      - 50_complete
+      - 75_complete
+  streaming_tv_line_item_breakdown:
+    dataset: streaming_tv
+    dimensions: [advertiser_id, line_item]
+    metrics:
+      - impressions
+      - clicks
+      - completion_rate
+      - conversions
+  streaming_tv_app_breakdown:
+    dataset: streaming_tv
+    dimensions: [advertiser_id, app_url]
+    sort: '-impressions'
+    limit: '15'
+    metrics:
+      - impressions
+      - clicks
+      - completion_rate
+      - conversions
+  streaming_radio_totals:
+    dataset: streaming_radio
+    dimensions: [advertiser_id]
+    metrics:
+      - impressions
+      - completion_rate
+      - postview_conversions
+      - postclick_conversions
+      - conversions
+  streaming_radio_by_day:
+    dataset: streaming_radio
+    dimensions: [advertiser_id]
+    rollup: day
+    metrics:
+      - impressions
+      - completion_rate
+      - conversions
+  streaming_radio_breakdown:
+    dataset: streaming_radio
+    dimensions: [advertiser_id, line_item, creative]
+    metrics:
+      - impressions
+      - complete_listens_audio
+      - completion_rate
+      - postclick_conversions
+      - postview_conversions
+  streaming_radio_line_item_breakdown:
+    dataset: streaming_radio
+    dimensions: [advertiser_id, line_item]
+    metrics:
+      - impressions
+      - completion_rate
+      - postclick_conversions
+      - postview_conversions  
+  streaming_radio_app_breakdown:
+    dataset: streaming_radio
+    dimensions: [advertiser_id, app_url]
+    sort: '-impressions'
+    limit: '15'
+    metrics:
+      - impressions
+      - completion_rate
+      - conversions
+  youtube_totals:
+    dataset: youtube
+    dimensions: [advertiser_id]
+    metrics:
+      - impressions
+      - video_completes
+      - completion_rate
+      - conversions
+      - postclick_conversions
+      - postview_conversions
+  youtube_by_day:
+    dataset: youtube
+    dimensions: [advertiser_id]
+    rollup: day
+    metrics:
+      - impressions
+      - video_completes
+      - completion_rate
+  youtube_breakdown:
+    dataset: youtube
+    dimensions: [advertiser_id, line_item]
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+      - video_completes
+      - completion_rate
+      - conversions
+      - 25_complete
+      - 50_complete
+      - 75_complete
+  preroll_video_totals:
+    dataset: pre_roll_video
+    dimensions: [advertiser_id]
+    metrics:
+      - impressions
+      - video_completes
+      - completion_rate
+      - conversions
+      - postclick_conversions
+      - postview_conversions
+  preroll_video_by_day:
+    dataset: pre_roll_video
+    dimensions: [advertiser_id]
+    rollup: day
+    metrics:
+      - impressions
+      - video_completes
+      - completion_rate
+  preroll_video_breakdown:
+    dataset: pre_roll_video
+    dimensions: [advertiser_id, line_item, creative]
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+      - video_completes
+      - completion_rate
+      - conversions
+      - 25_complete
+      - 50_complete
+      - 75_complete
+  preroll_video_app_breakdown:
+    dataset: pre_roll_video
+    dimensions: [advertiser_id, app_url]
+    sort: '-impressions'
+    limit: '15'
+    metrics:
+      - impressions
+  extended_display_totals:
+    dataset: extended_network_display
+    dimensions: [advertiser_id]
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+      - postclick_conversions
+      - postview_conversions
+      - conversions
+  extended_display_by_day:
+    dataset: extended_network_display
+    dimensions: [advertiser_id]
+    rollup: day
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+  extended_display_breakdown:
+    dataset: extended_network_display
+    dimensions: [advertiser_id, line_item, creative]
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+      - postclick_conversions
+      - postview_conversions
+  extended_display_line_item_breakdown:
+    dataset: extended_network_display
+    dimensions: [advertiser_id, line_item]
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+      - postclick_conversions
+      - postview_conversions
+  extended_display_city_breakdown:
+    dataset: dm_seed_dv360
+    dimensions: [advertiser_integration_code, city, insertion_order]
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+  google_analytics_totals:
+    dataset: dm_cfr_google_analytics_data
+    dimensions: [advertiser_id]
+    metrics:
+      - event_count
+      - active_users
+      - sessions
+  google_analytics_by_day:
+    dataset: dm_cfr_google_analytics_data
+    dimensions: [advertiser_id]
+    rollup: day
+    metrics:
+      - active_users
+      - sessions
+  google_analytics_channel:
+    dataset: dm_cfr_google_analytics_data
+    dimensions: [advertiser_id, first_user_default_channel_group]
+    metrics:
+      - daily_sessions
+      - total_revenue
+  onsite_video_totals:
+    dataset: onsite_video
+    dimensions: [advertiser_id]
+    metrics:
+      - impressions
+      - clicks
+      - completion_rate
+      - conversions
+  onsite_video_by_day:
+    dataset: onsite_video
+    dimensions: [advertiser_id]
+    rollup: day
+    metrics:
+      - impressions
+      - clicks
+      - completion_rate
+      - conversions
+  onsite_video_breakdown:
+    dataset: onsite_video
+    dimensions: [advertiser_id, line_item, creative]
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+      - completion_rate
+      - conversions
+      - 25_complete
+      - 50_complete
+      - 75_complete
+      - video_completes
+  onsite_video_metro_breakdown:
+    dataset: onsite_video
+    dimensions: [advertiser_id, metro]
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+  branded_content_totals:
+    dataset: sponsored
+    dimensions: [advertiser]
+    metrics:
+      - article_page_views
+      - total_time_in_view
+      - article_ad_clicks
+      - article_ad_impressions
+  branded_content_by_day:
+    dataset: sponsored
+    dimensions: [advertiser]
+    rollup: day
+    metrics:
+      - article_page_views
+      - total_time_in_view
+      - article_ad_clicks
+      - article_ad_impressions
+  branded_content_article_breakdown:
+    dataset: sponsored
+    dimensions: [advertiser, branded_content_article]
+    metrics:
+      - article_page_views
+      - total_time_in_view
+      - article_ad_clicks
+      - article_ad_impressions
+  sem_keywords_breakdown:
+    dataset: dm_seed_google_ads
+    dimensions: [campaign, keyword, ad_group]
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+      - cpc
+      - conversions 
+  amazon_video_totals:
+    dataset: amazon_video
+    dimensions: [mapped_advertiser_id]
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+  amazon_video_by_day:
+    dataset: amazon_video
+    dimensions: [mapped_advertiser_id]
+    rollup: day
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+  amazon_video_breakdown:
+    dataset: amazon_video
+    dimensions: [mapped_advertiser_id, line_item, creative]
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+  amazon_video_line_item_breakdown:
+    dataset: amazon_video
+    dimensions: [mapped_advertiser_id, line_item]
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+  amazon_display_totals:
+    dataset: amazon_display
+    dimensions: [mapped_advertiser_id]
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+  amazon_display_by_day:
+    dataset: amazon_display
+    dimensions: [mapped_advertiser_id]
+    rollup: day
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+  amazon_display_breakdown:
+    dataset: amazon_display
+    dimensions: [mapped_advertiser_id, line_item, creative]
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+  amazon_display_line_item_breakdown:
+    dataset: amazon_display
+    dimensions: [mapped_advertiser_id, line_item]
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+  social_totals:
+    dataset: social
+    dimensions: [advertiser_id]
+    metrics:
+      - total_impressions
+      - total_clicks
+      - ctr
+  social_by_day:
+    dataset: social
+    dimensions: [advertiser_id]
+    rollup: day
+    metrics:
+      - total_impressions
+      - total_clicks
+      - ctr
+  programmatic_video_totals:
+    dataset: premium_programmatic_video
+    dimensions: [mapped_advertiser_id]
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+  programmatic_video_by_day:
+    dataset: premium_programmatic_video
+    dimensions: [mapped_advertiser_id]
+    rollup: day
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+  programmatic_video_breakdown:
+    dataset: premium_programmatic_video
+    dimensions: [mapped_advertiser_id, ad_group, creative]
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+  programmatic_video_line_item_breakdown:
+    dataset: premium_programmatic_video
+    dimensions: [mapped_advertiser_id, ad_group]
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+  tiktok_display_totals:
+    dataset: dm_seed_tiktok
+    dimensions: [mapped_advertiser_id,mapped_advertiser]
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+      - conversion
+      - vcr
+  tiktok_display_by_day:
+    dataset: dm_seed_tiktok
+    dimensions: [mapped_advertiser_id,mapped_advertiser]
+    rollup: day
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+      - conversion
+      - vcr
+  tiktok_breakdown:
+    dataset: dm_seed_tiktok
+    dimensions: [mapped_advertiser_id, adgroup, ad]
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+      - conversion
+  tiktok_line_item_breakdown:
+    dataset: dm_seed_tiktok
+    dimensions: [mapped_advertiser_id, adgroup]
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+      - conversion
+  google_ads_geo:
+    dataset: dm_seed_google_ads
+    dimensions: [advertiser_id, city]
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+  geofencing_breakdown:
+    dataset: dm_csv_adcellerent_ttd
+    dimensions: [advertiser_id]
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+      - conversions 
+      - 01_click_conversion
+      - 01_view_through_conversion
+  geofencing_by_day:
+    dataset: dm_csv_adcellerent_ttd
+    dimensions: [advertiser_id]
+    rollup: day
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+      - conversions 
+  geofencing_campaigns:
+    dataset: dm_csv_adcellerent_ttd
+    dimensions: [advertiser_id, ad_group]
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+      - conversions 
+      - 01_click_conversion
+      - 01_view_through_conversion
+  geofencing_creatives:
+    dataset: dm_csv_adcellerent_ttd
+    dimensions: [advertiser_id, creative]
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+      - conversions 
+      - 01_click_conversion
+      - 01_view_through_conversion
+  geofencing_geo:
+    dataset: dm_csv_adcellerent_ttd
+    dimensions: [advertiser_id, city]
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+  linkedin_totals:
+    dataset: dm_seed_linkedin
+    dimensions: [advertiser_id]
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+      - total_engagements
+  linkedin_by_day:
+    dataset: dm_seed_linkedin
+    dimensions: [advertiser_id]
+    rollup: day
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+      - total_engagements
+  linkedin_campaign:
+    dataset: dm_seed_linkedin
+    dimensions: [advertiser_id, campaign]
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+      - total_engagements
+  linkedin_creative:
+    dataset: dm_seed_linkedin
+    dimensions: [advertiser_id, campaign, creative]
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+      - total_engagements
+  linked_geo:
+    dataset: dm_seed_linkedin
+    dimensions: [advertiser_id, member_region]
+    metrics:
+      - impressions
+      - clicks
+      - ctr

@@ -1,0 +1,14 @@
+<slide [loading]="loading" name="Cover">
+  <section class="slide slide-cover">
+    <div class="wrap-head">
+      <img class="logo" [src]="logo" />
+      <div class="divider"></div>
+      <h2>
+        <text-editor id="cover-slide-header" [plainText]=true [defaultText]="metadata?.name"></text-editor><br>
+      </h2>
+    </div>
+    <div class="dates">
+      <span *ngIf="metadata?.startDate && metadata?.endDate">{{metadata?.startDate | date}} - {{metadata?.endDate | date}}</span>
+    </div>
+  </section>
+</slide>

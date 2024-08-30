@@ -1,0 +1,16 @@
+<slide [loading]="loading" name="Table of Contents">
+  <section class="slide table-of-contents">
+    <header name="Table of Contents"></header>
+    <div class="main">
+      <div class="list">
+        <ul>
+          <li *ngFor="let entry of entries">
+            <span>{{entry.name}}</span>
+            <span class="num primary-text">{{entry.page}}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <footer class="slide-footer"></footer>
+  </section>
+</slide>

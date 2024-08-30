@@ -1,0 +1,411 @@
+params: [advertiser]
+rename_dimensions:
+  mapped_seed_amazon_dsp_display:
+    mapping_advertiser: advertiser
+  dm_mapped_seed_google_ads:
+    mapping_advertiser: advertiser
+  dm_mapped_seed_bing:
+    mapping_advertiser: advertiser
+  dm_mapped_seed_facebook_ads:
+    mapping_advertiser: advertiser
+  dm_mapped_groundtruth:
+    mapping_advertiser: advertiser
+  dm_mapped_seed_birdeye:
+    mapping_advertiser: advertiser
+  dm_mapped_seed_el_toro:
+    mapping_advertiser: advertiser
+  dm_mapped_seed_gamut:
+    mapping_advertiser: advertiser
+  mapped_marchex_combined:
+    mapping_advertiser: advertiser
+  dm_mapped_seed_yext:
+    mapping_advertiser: advertiser
+  dm_mapped_speedshift:
+    mapping_advertiser: advertiser
+  dm_mapped_seed_brightedge:
+    mapping_advertiser: advertiser
+  dm_mapped_seed_site_impact:
+    mapping_advertiser: advertiser
+  dm_mapped_seed_vistar:
+    mapping_advertiser: advertiser
+  mapped_seed_semrush:
+    mapping_advertiser: advertiser
+  mapped_seed_dv360_video:
+    mapping_advertiser: advertiser
+  mapped_seed_dv360_display:
+    mapping_advertiser: advertiser
+  mapped_seed_google_ad_manager_video:
+    mapping_advertiser: advertiser
+  mapped_seed_google_ad_manager_display:
+    mapping_advertiser: advertiser
+  mapped_seed_amazon_dsp_ott:
+    mapping_advertiser: advertiser
+  mapped_seed_amazon_dsp_display:
+    mapping_advertiser: advertiser
+  mapped_seed_dv360_audio:
+    mapping_advertiser: advertiser
+  dm_mapped_cfr_adswizz:
+    mapping_advertiser: advertiser
+  mapped_seed_google_ad_manager_preroll:
+    mapping_advertiser: advertiser
+data:
+  google_ads_overview:
+    dataset: dm_mapped_seed_google_ads
+    dimensions: [mapping_advertiser]
+    metrics:
+      - impressions
+      - clicks
+      - click_rate
+      - cpc
+  google_ads_overview_daily:
+    dataset: dm_mapped_seed_google_ads
+    dimensions: [mapping_advertiser]
+    rollup: day
+    metrics:
+      - impressions
+      - clicks
+      - click_rate
+      - cpc
+  google_ads_overview_conversions:
+    dataset: dm_mapped_seed_google_ads
+    dimensions: [mapping_advertiser]
+    rollup: total
+    metrics:
+      - all_conversions
+  bing_overview:
+    dataset: dm_mapped_seed_bing
+    dimensions: [mapping_advertiser]
+    metrics:
+      - impressions
+      - clicks
+      - click_rate
+      - cpc
+  bing_overview_daily:
+    dataset: dm_mapped_seed_bing
+    dimensions: [mapping_advertiser]
+    rollup: day
+    metrics:
+      - impressions
+      - clicks
+      - click_rate
+      - cpc
+  facebook_ads_overview:
+    dataset: dm_mapped_seed_facebook_ads
+    dimensions: [mapping_advertiser]
+    metrics:
+      - impressions
+      - link_clicks
+      - link_clicks_ctr
+  facebook_ads_overview_daily:
+    dataset: dm_mapped_seed_facebook_ads
+    dimensions: [mapping_advertiser]
+    rollup: day
+    metrics:
+      - impressions
+      - link_clicks
+      - link_clicks_ctr
+  groundtruth_overview:
+    dataset: dm_mapped_groundtruth
+    dimensions: [mapping_advertiser]
+    metrics:
+      - impressions
+      - clicks
+      - total_sa
+      - click_rate
+      - secondary_action_rate_sar_
+  groundtruth_overview_daily:
+    dataset: dm_mapped_groundtruth
+    dimensions: [mapping_advertiser]
+    rollup: day
+    metrics:
+      - impressions
+      - clicks
+      - total_sa
+      - click_rate
+      - secondary_action_rate_sar_
+  birdeye_overview:
+    dataset: dm_mapped_seed_birdeye
+    dimensions: [mapping_advertiser]
+    metrics:
+      - reviews
+      - rating_sum
+      - avg_sentiment
+  birdeye_overview_daily:
+    dataset: dm_mapped_seed_birdeye
+    dimensions: [mapping_advertiser]
+    rollup: day
+    metrics:
+      - reviews
+      - rating_sum
+      - avg_sentiment
+  el_toro_overview:
+    dataset: dm_mapped_seed_el_toro
+    dimensions: [mapping_advertiser]
+    metrics:
+      - imps
+      - clicks
+      - click_rate
+  el_toro_overview_daily:
+    dataset: dm_mapped_seed_el_toro
+    dimensions: [mapping_advertiser]
+    rollup: day
+    metrics:
+      - imps
+      - clicks
+      - click_rate
+  gamut_overview:
+    dataset: dm_mapped_seed_gamut
+    dimensions: [mapping_advertiser]
+    metrics:
+      - impressions
+      - video_completes
+      - video_completion_rate
+  gamut_overview_daily:
+    dataset: dm_mapped_seed_gamut
+    dimensions: [mapping_advertiser]
+    rollup: day
+    metrics:
+      - impressions
+      - video_completes
+      - video_completion_rate
+  marchex_overview:
+    dataset: mapped_marchex_combined
+    dimensions: [mapping_advertiser]
+    metrics:
+      - calls
+      - average_duration
+  marchex_overview_daily:
+    dataset: mapped_marchex_combined
+    dimensions: [mapping_advertiser]
+    rollup: day
+    metrics:
+      - calls
+      - average_duration
+  yext_overview:
+    dataset: dm_mapped_seed_yext
+    dimensions: [mapping_advertiser]
+    metrics:
+      - searches
+      - profile_views
+      - yelp_page_views
+      - active_listings_live
+  yext_overview_daily:
+    dataset: dm_mapped_seed_yext
+    dimensions: [mapping_advertiser]
+    rollup: day
+    metrics:
+      - searches
+      - profile_views
+      - yelp_page_views
+      - active_listings_live
+  speedshift_overview:
+    dataset: dm_mapped_speedshift
+    dimensions: [mapping_advertiser]
+    metrics:
+      - impressions
+      - clicks_delivered
+      - click_rate
+  speedshift_overview_daily:
+    dataset: dm_mapped_speedshift
+    dimensions: [mapping_advertiser]
+    rollup: day
+    metrics:
+      - impressions
+      - clicks_delivered
+      - click_rate
+  brightedge_overview:
+    dataset: dm_mapped_seed_brightedge
+    dimensions: [mapping_advertiser]
+    metrics:
+      - impressions
+      - clicks
+  brightedge_overview_daily:
+    dataset: dm_mapped_seed_brightedge
+    dimensions: [mapping_advertiser]
+    rollup: day
+    metrics:
+      - impressions
+      - clicks
+  site_impact_overview:
+    dataset: dm_mapped_seed_site_impact
+    dimensions: [mapping_advertiser]
+    metrics:
+      - quantity
+      - clicks
+      - ctr
+      - opens
+      - open_rate
+  site_impact_overview_daily:
+    dataset: dm_mapped_seed_site_impact
+    dimensions: [mapping_advertiser]
+    rollup: day
+    metrics:
+      - quantity
+      - clicks
+      - ctr
+      - opens
+      - open_rate
+  dv360_video_overview:
+    dataset: mapped_seed_dv360_video
+    dimensions: [mapping_advertiser]
+    metrics:
+      - impressions
+      - complete_views_video
+      - vcr
+  dv360_video_overview_daily:
+    dataset: mapped_seed_dv360_video
+    dimensions: [mapping_advertiser]
+    rollup: day
+    metrics:
+      - impressions
+      - complete_views_video
+      - vcr
+  dv360_display_overview:
+    dataset: mapped_seed_dv360_display
+    dimensions: [mapping_advertiser]
+    metrics:
+      - impressions
+      - clicks
+      - click_rate
+  dv360_display_overview_daily:
+    dataset: mapped_seed_dv360_display
+    dimensions: [mapping_advertiser]
+    rollup: day
+    metrics:
+      - impressions
+      - clicks
+      - click_rate
+  google_ad_manager_video_overview:
+    dataset: mapped_seed_google_ad_manager_video
+    dimensions: [mapping_advertiser]
+    metrics:
+      - total_line_item_level_impressions
+      - video_viewership_complete
+      - vcr
+  google_ad_manager_video_overview_daily:
+    dataset: mapped_seed_google_ad_manager_video
+    dimensions: [mapping_advertiser]
+    rollup: day
+    metrics:
+      - total_line_item_level_impressions
+      - video_viewership_complete
+      - vcr
+  google_ad_manager_display_overview:
+    dataset: mapped_seed_google_ad_manager_display
+    dimensions: [mapping_advertiser]
+    metrics:
+      - total_line_item_level_impressions
+      - total_line_item_level_clicks
+      - click_rate
+  google_ad_manager_display_overview_daily:
+    dataset: mapped_seed_google_ad_manager_display
+    dimensions: [mapping_advertiser]
+    rollup: day
+    metrics:
+      - total_line_item_level_impressions
+      - total_line_item_level_clicks
+      - click_rate
+  amazon_dsp_ott_overview:
+    dataset: mapped_seed_amazon_dsp_ott
+    dimensions: [mapping_advertiser]
+    metrics:
+      - impressions
+      - video_complete
+      - vcr
+  amazon_dsp_ott_overview_daily:
+    dataset: mapped_seed_amazon_dsp_ott
+    dimensions: [mapping_advertiser]
+    rollup: day
+    metrics:
+      - impressions
+      - video_complete
+      - vcr
+  amazon_dsp_display_overview:
+    dataset: mapped_seed_amazon_dsp_display
+    dimensions: [mapping_advertiser]
+    metrics:
+      - impressions
+      - click_throughs
+      - ctr
+  amazon_dsp_display_overview_daily:
+    dataset: mapped_seed_amazon_dsp_display
+    dimensions: [mapping_advertiser]
+    rollup: day
+    metrics:
+      - impressions
+      - click_throughs
+      - ctr
+  audience_extension_audio:
+    dataset: mapped_seed_dv360_audio
+    dimensions: [mapping_advertiser]
+    metrics:
+      - impressions
+      - clicks
+      - complete_listens_audio
+      - audio_completion_rate
+  audience_extension_audio_daily:
+    dataset: mapped_seed_dv360_audio
+    dimensions: [mapping_advertiser]
+    rollup: day
+    metrics:
+      - impressions
+      - clicks
+      - audio_completion_rate
+  oo_audio_streaming:
+    dataset: dm_mapped_cfr_adswizz
+    dimensions: [mapping_advertiser]
+    metrics:
+      - impressions
+      - listen_through_rate
+  oo_audio_streaming_daily:
+    dataset: dm_mapped_cfr_adswizz
+    dimensions: [mapping_advertiser]
+    rollup: day
+    metrics:
+      - impressions
+      - listen_through_rate
+  dooh_vistar:
+    dataset: dm_mapped_seed_vistar
+    dimensions: [mapping_advertiser]
+    rollup: total
+    metrics:
+      - impressions
+      - client_revenue
+      - fixed_ecpm
+  dooh_vistar_daily:
+    dataset: dm_mapped_seed_vistar
+    dimensions: [mapping_advertiser]
+    rollup: day
+    metrics:
+      - impressions
+      - client_revenue
+      - fixed_ecpm
+  google_ad_manager_preroll:
+    dataset: mapped_seed_google_ad_manager_preroll
+    dimensions: [mapping_advertiser]
+    metrics:
+      - total_line_item_level_impressions
+      - total_line_item_level_clicks
+      - click_rate
+  google_ad_manager_preroll_daily:
+    dataset: mapped_seed_google_ad_manager_preroll
+    dimensions: [mapping_advertiser]
+    rollup: day
+    metrics:
+      - total_line_item_level_impressions
+      - total_line_item_level_clicks
+      - click_rate
+  semrush_domain_overview:
+    dataset: mapped_seed_semrush
+    dimensions: [mapping_advertiser]
+    rollup: week
+    metrics:
+      - organic_keywords
+      - organic_traffic
+  semrush_domain_overview_weekly:
+    dataset: mapped_seed_semrush
+    dimensions: [mapping_advertiser]
+    rollup: week
+    metrics:
+      - organic_keywords
+      - organic_traffic

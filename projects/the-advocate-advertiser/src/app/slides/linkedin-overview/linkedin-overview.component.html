@@ -1,0 +1,12 @@
+<slide *ngIf="loading || totals" [loading]="loading" name="LinkedIn Overview">
+  <divider></divider>
+  <section class="slide overview">
+    <slide-header text="LinkedIn Display"></slide-header>
+    <overview-cmp
+      [totals]="totals"
+      [series]="series"
+      [chartConfig]="chartConfig"
+    ></overview-cmp>
+    <slide-footer></slide-footer>
+  </section>
+</slide>

@@ -1,0 +1,8 @@
+<slide *ngFor="let creatives of creativeGroups" [loading]="loading" name="TikTok Display">
+  <divider></divider>
+  <section class="slide campaigns">
+    <slide-header text="TikTok Display"></slide-header>
+    <the-advocate-table [items]="creatives" [kpis]="kpis" [totals]="totals" header="Creatives"></the-advocate-table>
+    <slide-footer></slide-footer>
+  </section>
+</slide>

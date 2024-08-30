@@ -1,0 +1,28 @@
+<slide [loading]="loading" name="GAM Creatives" *ngIf="loading || !empty">
+  <sidebar text="GAM"></sidebar>
+  <section class="slide slide-gam-ads">
+    <header class="slide-header">
+      <h3>Top Creatives by CTR</h3>
+    </header>
+    <div class="main table">
+      <table>
+        <thead>
+          <th>Ad Set</th>
+          <th>Desktop Preview</th>
+          <th>Impressions</th>
+          <th>Link Clicks</th>
+          <th>CTR</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let ad of ads">
+            <td class="name">{{ad.name}}</td>
+            <td class="name"><img src="{{ad.thumbnailUrl}}" height="100" width="100"/></td>
+            <td class="metric">{{ad.metrics.total_line_item_level_impressions.value | number}}</td>
+            <td class="metric">{{ad.metrics.total_line_item_level_clicks.value | number}}</td>
+            <td class="metric">{{ad.metrics.ctr.value | percent}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</slide>

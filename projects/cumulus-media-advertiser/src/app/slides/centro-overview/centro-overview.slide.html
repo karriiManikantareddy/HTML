@@ -1,0 +1,60 @@
+<slide [loading]="loading" name="Centro Overview" *ngIf="loading || !empty">
+  <sidebar text="Centro"></sidebar>
+  <section class="slide slide-centro-overview">
+    <header class="slide-header">
+      <h3>KPIs</h3>
+    </header>
+    <div class="kpis">
+      <div class="kpi">
+        <div class="kpi-value">
+          {{totals?.impressions.value | number}}
+        </div>
+        <div class="kpi-name">
+          Impressions
+        </div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-value">
+          {{totals?.clicks.value | number}}
+        </div>
+        <div class="kpi-name">
+          Clicks
+        </div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-value">
+          {{totals?.ctr.value | percent}}
+        </div>
+        <div class="kpi-name">
+          CTR
+        </div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-value">
+          {{totals?.total_conversions.value | number}}
+        </div>
+        <div class="kpi-name">
+          Total Conversions
+        </div>
+      </div>
+    </div>
+    <div class="charts">
+      <div class="left-chart">
+        <h6>
+          Weekly: Impressions vs CTR
+        </h6>
+        <div class="chart-content">
+          <chart type="column" [series]="chartSeriesLeft" [options]="chartOptionsLeft"></chart>
+        </div>
+      </div>
+      <div class="right-chart">
+        <h6>
+          Weekly: Impressions vs Total Conversions
+        </h6>
+        <div class="chart-content">
+          <chart type="column" [series]="chartSeriesRight" [options]="chartOptionsRight"></chart>
+        </div>
+      </div>
+    </div>
+  </section>
+</slide>

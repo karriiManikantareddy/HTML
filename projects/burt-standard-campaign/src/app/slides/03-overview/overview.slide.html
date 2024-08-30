@@ -1,0 +1,59 @@
+<slide *ngIf="totals" [loading]="loading" name="Overview">
+  <section class="slide overview">
+    <header class="slide-header">
+      <h2>
+        Overview
+        <header-logo></header-logo>
+      </h2>
+    </header>
+    <div class="main">
+      <div class="statistic-icons">
+        <div *ngIf="totals?.booked_impressions" class="statistic-icons-item">
+          <icon type="checkmark"></icon>
+          <div class="wrap-title">
+            <span class="num">{{totals.booked_impressions | number}}</span>
+            <span class="title">Booked Impressions</span>
+          </div>
+        </div>
+        <div class="statistic-icons-item">
+          <icon type="image"></icon>
+          <div class="wrap-title">
+            <span class="num">{{totals?.total_line_item_level_impressions?.value | number}}</span>
+            <span class="title">{{totals?.total_line_item_level_impressions?.displayName}}</span>
+          </div>
+        </div>
+        <div *ngIf="totals?.delivered_rate" class="statistic-icons-item">
+          <icon type="percent"></icon>
+          <div class="wrap-title">
+            <span class="num">{{totals.delivered_rate | percent}}</span>
+            <span class="title">% Delivered</span>
+          </div>
+        </div>
+        <div class="statistic-icons-item">
+          <icon type="hand"></icon>
+          <div class="wrap-title">
+            <span class="num">{{totals?.total_line_item_level_clicks?.value | number}}</span>
+            <span class="title">{{totals?.total_line_item_level_clicks?.displayName}}</span>
+          </div>
+        </div>
+        <div class="statistic-icons-item">
+          <icon type="click"></icon>
+          <div class="wrap-title">
+            <span class="num">{{totals?.ctr?.value | percent}}</span>
+            <span class="title">{{totals?.ctr?.displayName}}</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h6>
+          Delivery by day
+          <legend [items]="legendItems" class="right"></legend>
+        </h6>
+        <div class="chart-content">
+          <chart type="column" [series]="chartSeries" [options]="chartOptions"></chart>
+        </div>
+      </div>
+    </div>
+    <footer class="slide-footer"></footer>
+  </section>
+</slide>

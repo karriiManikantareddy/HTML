@@ -1,0 +1,59 @@
+<slide *ngIf="hasEmail" [loading]="loading" name="Email Overview">
+  <sidebar text="Email"></sidebar>
+  <section class="slide slide-email-overview" [ngStyle]="{'color': colorTheme?.primary_color}">
+    <header class="slide-header">
+      <h3>KPIs</h3>
+    </header>
+    <div class="kpis">
+      <div class="kpi">
+        <div class="kpi-value" [ngStyle]="{'background-color': colorTheme?.primary_color}">
+          {{totals?.records.value | localeNumber}}
+        </div>
+        <div class="kpi-name">
+          Emails Sent
+        </div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-value" [ngStyle]="{'background-color': colorTheme?.primary_color}">
+          {{totals?.opens.value | localeNumber}}
+        </div>
+        <div class="kpi-name">
+          Opens
+        </div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-value" [ngStyle]="{'background-color': colorTheme?.primary_color}">
+          {{totals?.clicks.value | localeNumber}}
+        </div>
+        <div class="kpi-name">
+          Clicks
+        </div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-value" [ngStyle]="{'background-color': colorTheme?.primary_color}">
+          {{totals?.click_rate.value | percent}}
+        </div>
+        <div class="kpi-name">
+          CTR
+        </div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-value" [ngStyle]="{'background-color': colorTheme?.primary_color}">
+          {{totals?.open_rate.value | percent}}
+        </div>
+        <div class="kpi-name">
+          Open Rate
+        </div>
+      </div>
+    </div>
+    <div class="charts">
+      <h6>
+        Weekly Performance
+        <legend [items]="legendItems" class="right"></legend>
+      </h6>
+      <div class="chart-content">
+        <chart type="column" [series]="chartSeries" [options]="chartOptions"></chart>
+      </div>
+    </div>
+  </section>
+</slide>

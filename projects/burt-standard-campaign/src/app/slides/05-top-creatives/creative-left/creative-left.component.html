@@ -1,0 +1,87 @@
+<div class="section-subtitle">
+  <p class="subtitle">{{creative.name}}</p>
+</div>
+<div class="section-part divided-content">
+  <div class="section-left-content divided-content">
+    <div class="section-preview">
+      <img [src]="creative.previewUrl">
+    </div>
+    <div class="chart top-creatives-chart">
+      <div class="graph circle-graph">
+        <div class="pie-container">
+          <chart type="pie" [series]="pieSeries" [options]="pieOptions"></chart>
+          <span class="pie-label">25%</span>
+          <span class="subtitle">of total <br>impressions</span>
+        </div>
+        <div class="pie-container dark-pie">
+          <chart type="pie" [series]="purplePieSeries" [options]="purplePieOptions"></chart>
+
+          <span class="pie-label">17%</span>
+          <span class="subtitle">of total <br>clicks</span>
+        </div>
+      </div>
+      <div class="top-creatives-statistic">
+        <ul class="list list-top-creatives-statistic">
+          <li class="list-item">
+            <div class="card card-statistic">
+              <div class="card-left">
+                <div class="card-icon">
+                  <icon type="eye"></icon>
+                </div>
+              </div>
+              <div class="card-right">
+                <div class="card-amount">
+                  <p class="main-amount">16 451 783</p></div>
+                <div class="card-description">
+                  <p class="darker-subtitle">
+                    delivered impressions</p>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="list-item">
+            <div class="card card-statistic">
+              <div class="card-left">
+                <div class="card-icon">
+                  <icon type="hand"></icon>
+                </div>
+              </div>
+              <div class="card-right">
+                <div class="card-amount"><p class="main-amount">69702</p></div>
+                <div class="card-description"><p class="darker-subtitle">clicks</p></div>
+              </div>
+            </div>
+          </li>
+          <li class="list-item">
+            <div class="card card-statistic">
+              <div class="card-left">
+                <div class="card-icon">
+                  <icon type="eye"></icon>
+                </div>
+              </div>
+              <div class="card-right">
+                <div class="card-amount">
+                  <p class="main-amount">96%</p></div>
+                <div class="card-description"><p class="darker-subtitle">% Viewable</p></div>
+              </div>
+            </div>
+          </li>
+          <li class="list-item">
+            <div class="card card-statistic">
+              <div class="card-left">
+                <div class="card-icon">
+                  <icon type="hand"></icon>
+                </div>
+              </div>
+              <div class="card-right">
+                <div class="card-amount">
+                  <p class="main-amount">0,3%</p></div>
+                <div class="card-description"><p class="darker-subtitle">CTR</p></div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

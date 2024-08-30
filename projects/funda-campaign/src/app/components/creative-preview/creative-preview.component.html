@@ -1,0 +1,15 @@
+<span class="title-block">{{creative.name}}</span>
+<div class="row">
+  <div class="wrap-img" #iframeWrap>
+    <iframe
+      #iframe
+      [src]="creative.previewUrl | trustResourceUrl"
+      frameborder="0"
+      scrolling="no"
+      [style.width.px]="creative.width"
+      [style.height.px]="creative.height"
+      [style.min-width.px]="90"
+      [style.min-height.px]="90"
+    ></iframe>
+  </div>
+</div>

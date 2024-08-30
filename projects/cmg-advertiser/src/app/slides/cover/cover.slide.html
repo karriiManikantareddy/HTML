@@ -1,0 +1,18 @@
+<slide [loading]="loading" name="Cover">
+  <section class="slide slide-cover">
+    <header class="slide-header">
+      <img class="logo" src="assets/images/cmg_logo_white.png"/>
+    </header>
+    <div class="main">
+      <div class="wrap-head">
+        <h3>{{metadata?.name}}</h3>
+      </div>
+
+    </div>
+    <div class="slide-footer">
+      <div class="footer-title">
+        <span *ngIf="metadata?.startDate && metadata?.endDate">{{metadata?.startDate | date}} - {{metadata?.endDate | date}}</span>
+      </div>
+    </div>
+  </section>
+</slide>

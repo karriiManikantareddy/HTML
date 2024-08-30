@@ -1,0 +1,8 @@
+<slide *ngFor="let articles of articleGroups" [loading]="loading" name="Branded Content Article breakdown">
+  <divider></divider>
+  <section class="slide campaigns">
+    <slide-header text="Branded Content Article"></slide-header>
+    <the-advocate-table [items]="articles" [kpis]="kpis" header="Articles"></the-advocate-table>
+    <slide-footer></slide-footer>
+  </section>
+</slide>

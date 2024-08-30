@@ -1,0 +1,49 @@
+@import '../../../styles/base/_variables';
+
+legend {
+ color: @primary-color;
+}
+
+.overview {
+  color: @primary-color;
+  &.slide {
+    padding-left: 111px;
+    background-color: #FFF;
+  
+    .num {
+      text-align: right;
+    }
+    
+    th {
+      font-size: 18px;
+      border-bottom: 3px solid black;
+    }
+    
+    td {
+      font-size: 18px;
+      padding: 12px;
+      padding-left: 0;
+    }
+
+    ::ng-deep .ql-snow .ql-editor {
+      font-size: 18px;
+      font-family: @base-fontfamily;
+      line-height: 45px;
+    }
+
+    table {
+      margin-top: 1em;
+      th:first-child, table td:first-child {
+        width: 300px;
+      }
+
+      th:nth-child(2), table td:nth-child(2) {
+        width: 150px;
+      }
+
+      th:nth-child(3), table td:nth-child(3) {
+        width: 150px;
+      }
+    }
+  }
+}

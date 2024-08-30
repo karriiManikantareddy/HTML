@@ -1,0 +1,53 @@
+<slide [loading]="loading" name="Line Items" *ngFor="let lineItems of lineItemGroups">
+  <section class="slide">
+    <div class="white-box">
+    <header class="slide-header">
+      <h1>
+        Line items niveau
+      </h1>
+    </header>
+    <header-line></header-line>
+    <div class="box"><h6>Resultaten</h6></div>
+    <div class="main-container">
+      <table class="table-class left-section">
+        <thead>
+        <tr>
+          <th>Line Item</th>
+          <th class="metric">Uitgeleverde<br>impressies</th>
+          <th class="metric">Klikken</th>
+          <th class="metric">CTR</th>
+          <th name="Viewability" toggle class="metric">Viewability</th>
+          <th name="Revenue" toggle class="metric">Revenue</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let li of lineItems">
+          <td>{{li.name}}</td>
+          <td class="metric">{{li.metrics.dfp_total_line_item_level_impressions | number}}</td>
+          <td class="metric">{{li.metrics.dfp_total_line_item_level_clicks | number}}</td>
+          <td class="metric">{{li.metrics.ctr | percent}}</td>
+          <td name="Viewability" toggle class="metric">{{li.metrics.viewable_rate | percent}}</td>
+          <td name="Revenue" toggle class="metric">{{li.metrics.dfp_total_line_item_level_all_revenue | currency:currencyOptions}}</td>
+        </tr>
+        </tbody>
+      </table>
+      <div class="right-section">
+      <div class="cards-container">
+        <div class="card-box">
+          <div class="orange-box" [ngClass]="templateType === 'consumers' ? 'consumers' : 'business'">
+            <h6>Toelichting</h6>
+          </div>
+          <text-editor id="Toelichting" class="sm"></text-editor>
+        </div>
+        <div class="card-box">
+          <div class="orange-box" [ngClass]="templateType === 'consumers' ? 'consumers' : 'business'">
+            <h6>Toelichting</h6>
+          </div>
+          <text-editor id="Toelichting2" class="sm"></text-editor>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+  </section>
+</slide>

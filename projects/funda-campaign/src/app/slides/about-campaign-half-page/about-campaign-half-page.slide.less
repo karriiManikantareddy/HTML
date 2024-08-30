@@ -1,0 +1,69 @@
+@import '../../../styles/base/_variables';
+
+.slide-cover{
+  background-color: #fff;
+  padding: 55px;
+}
+.main {
+  background-color: #e6f2f7;
+  display: flex;
+  .left {
+    width: 50%;
+    padding: 75px;
+  }
+  .right {
+    padding: 40px;
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+  }
+  .box {
+    margin: 10px; 
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 18px; 
+    padding: 16px 32px 16px 32px;
+    gap: 16px;
+    justify-content: space-between;
+    width: calc(50% - 20px);
+    height: calc(50% - 20px);
+    position: relative;
+  }
+  .box h6 {
+    width: 90%;
+    align-items: center;
+    padding: 10px 20px; 
+    margin-bottom: 20px; 
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+  }
+  .box h6.consumers {
+    background-color: orange; 
+  }
+  .box h6.business {
+    background-color: @dark-blue; 
+  }
+  .box p {
+    color: white;
+  }
+  .icon {
+    position: absolute; 
+    bottom: 10px; 
+    transform: translateX(-50%);
+    left: 50%;
+  }
+  .icon img {
+    display: block;
+    width: 50px;
+    margin: 0 auto;
+  }
+}
+.header-line {
+  width: 20%;
+  height: 15px;
+  margin-left: 0%;
+  margin-bottom: 60px;
+  background-color: #f9ab1d;
+}

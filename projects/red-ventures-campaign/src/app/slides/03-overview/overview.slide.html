@@ -1,0 +1,40 @@
+<slide [loading]="loading" name="Overview">
+  <section class="slide overview">
+    <header text="Overview"></header>
+    <div class="main">
+      <div class="statistic-icons">
+        <div class="statistic-icons-item">
+          <icon type="image"></icon>
+          <div class="wrap-title">
+            <span class="num">{{totals?.billable_impressions?.value | number}}</span>
+            <span class="title">{{totals?.billable_impressions?.displayName}}</span>
+          </div>
+        </div>
+        <div class="statistic-icons-item">
+          <icon type="hand"></icon>
+          <div class="wrap-title">
+            <span class="num">{{totals?.billable_clicks?.value | number}}</span>
+            <span class="title">{{totals?.billable_clicks?.displayName}}</span>
+          </div>
+        </div>
+        <div class="statistic-icons-item">
+          <icon type="click"></icon>
+          <div class="wrap-title">
+            <span class="num">{{totals && totals['1p_ctr']?.value | percent}}</span>
+            <span class="title">{{totals && totals['1p_ctr']?.displayName}}</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h6>
+          Delivery by day
+          <legend [items]="legendItems" class="right"></legend>
+        </h6>
+        <div class="chart-content">
+          <chart type="column" [series]="chartSeries" [options]="chartOptions"></chart>
+        </div>
+      </div>
+    </div>
+    <footer class="slide-footer"></footer>
+  </section>
+</slide>

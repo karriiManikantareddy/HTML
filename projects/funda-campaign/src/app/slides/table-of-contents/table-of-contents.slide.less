@@ -1,0 +1,113 @@
+@import '../../../styles/base/_variables';
+
+.container {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.table-of-contents {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 45px;
+}
+
+.list {
+  padding: 0;
+  height: 92%;
+  width: 100%;
+  margin-left: 40px;
+}
+
+li {
+  margin-left: 30px;
+  width: 50%;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  -ms-align-items: center;
+  align-items: center;
+  justify-content: space-between;
+  letter-spacing: 0.05em;
+  padding: 28px 0;
+  break-inside: avoid;
+  vertical-align: top;
+  color: @dark-grey;
+  font-size: 36px;
+  position: relative;
+}
+li::before {
+  content: "\2022";
+  position: absolute;
+  left: -1.5em;
+  font-size: 30px;
+}
+
+.main {
+  display: flex;
+}
+
+.image {
+  width: 50%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.image img {
+  flex-grow: 1;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.left {
+  width: 50%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.container .image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.image-text {
+  position: absolute;
+  top: 15%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+  text-align: left;
+  line-height: 1.25;
+}
+
+.image-text h3 {
+  color: white;
+}
+.header-line {
+  width: 20%;
+  height: 15px;
+  margin-left: 0%;
+  margin-top: -25px;
+  margin-bottom: 30px;
+  background-color: #f9ab1d;
+}
+h3 {
+  font-size: 56px;
+  font-family: arial, sans-serif;
+  font-weight: bolder;
+}
+.slide-header {
+  width: 100%;
+}
+h2 {
+  margin-bottom: 35px;
+}
+.txt {
+  flex: 1;
+  width: 50%;
+  padding: 60px;
+}

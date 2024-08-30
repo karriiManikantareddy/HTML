@@ -1,0 +1,690 @@
+params: [advertiser]
+rename_dimensions:
+  all_data:
+    mapped_advertiser: advertiser
+  dm_seed_facebook_ads:
+    mapped_advertiser_id: advertiser
+  dm_seed_simplifi:
+    client: advertiser
+  youtube:
+    mapped_advertiser: advertiser
+  google_search:
+    mapped_advertiser: advertiser
+  dm_csv_bidtellect:
+    mapped_advertiser_id: advertiser
+data:
+  metadata:
+    dataset: dm_seed_simplifi
+    dimensions: [client]
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+  totals:
+    dataset: all_data
+    dimensions: [mapped_advertiser]
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+  totals_by_day:
+    dataset: all_data
+    dimensions: [mapped_advertiser]
+    rollup: day
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+  facebook_totals:
+    dataset: dm_seed_facebook_ads
+    dimensions: [mapped_advertiser]
+    rollup: total
+    metrics:
+        - impressions
+        - link_clicks
+        - link_click_ctr
+        - conversions
+        - conversion_rate
+  facebook_by_day:
+    dataset: dm_seed_facebook_ads
+    dimensions: [mapped_advertiser]
+    rollup: day
+    metrics:
+        - impressions
+        - link_clicks
+        - link_click_ctr
+        - conversions
+        - conversion_rate
+  facebook_campaign_breakdown:
+    dataset: dm_seed_facebook_ads
+    dimensions: [mapped_advertiser, campaign, mapped_platform]
+    rollup: total
+    metrics:
+        - impressions
+        - link_clicks
+        - link_click_ctr
+        - conversions
+        - conversion_rate
+  facebook_breakdown:
+    dataset: dm_seed_facebook_ads
+    dimensions: [mapped_advertiser, ad_set, ad]
+    rollup: total
+    metrics:
+        - impressions
+        - link_clicks
+        - link_click_ctr
+        - conversions
+        - conversion_rate
+  facebook_gender:
+    dataset: dm_seed_facebook_ads
+    dimensions: [mapped_advertiser, gender]
+    rollup: total
+    metrics:
+        - impressions
+        - link_clicks
+        - link_click_ctr
+        - conversions
+  facebook_age:
+    dataset: dm_seed_facebook_ads
+    dimensions: [mapped_advertiser, age]
+    rollup: total
+    metrics:
+        - impressions
+        - link_clicks
+        - link_click_ctr
+        - conversions
+  youtube_totals:
+    dataset: youtube
+    dimensions: [mapped_advertiser]
+    rollup: total
+    metrics:
+        - impressions
+        - clicks
+        - ctr
+        - video_completes
+        - vcr
+        - conversions
+        - conversion_rate
+  youtube_by_day:
+    dataset: youtube
+    dimensions: [mapped_advertiser]
+    rollup: day
+    metrics:
+        - impressions
+        - clicks
+        - ctr
+        - vcr
+        - conversions
+        - conversion_rate
+  youtube_campaign_breakdown:
+    dataset: youtube
+    dimensions: [mapped_advertiser, campaign]
+    rollup: total
+    metrics:
+        - impressions
+        - clicks
+        - ctr
+        - video_completes
+        - vcr
+        - conversions
+        - conversion_rate
+  youtube_breakdown:
+    dataset: youtube
+    dimensions: [mapped_advertiser, ad_group, ad]
+    rollup: total
+    metrics:
+        - impressions
+        - clicks
+        - ctr
+        - video_completes
+        - vcr
+        - conversions
+        - conversion_rate
+  youtube_device_breakdown:
+    dataset: youtube
+    dimensions: [mapped_advertiser, device]
+    rollup: total
+    metrics:
+        - impressions
+        - clicks
+        - ctr
+        - video_completes
+        - vcr
+        - conversions
+        - conversion_rate
+  youtube_keyword_breakdown:
+    dataset: youtube
+    dimensions: [mapped_advertiser, keyword]
+    rollup: total
+    metrics:
+        - impressions
+        - clicks
+        - vcr
+        - video_completes
+        - ctr
+        - conversions
+        - conversion_rate
+  google_search_totals:
+    dataset: google_search
+    dimensions: [mapped_advertiser]
+    rollup: total
+    metrics:
+        - impressions
+        - clicks
+        - ctr
+        - conversions
+        - conversion_rate
+  google_search_by_day:
+    dataset: google_search
+    dimensions: [mapped_advertiser]
+    rollup: day
+    metrics:
+        - impressions
+        - clicks
+        - ctr
+        - conversions
+        - conversion_rate
+  google_search_campaign_breakdown:
+    dataset: google_search
+    dimensions: [mapped_advertiser, campaign]
+    rollup: total
+    metrics:
+        - impressions
+        - clicks
+        - ctr
+        - conversions
+        - conversion_rate
+  google_search_breakdown:
+    dataset: google_search
+    dimensions: [mapped_advertiser, ad_group]
+    rollup: total
+    metrics:
+        - impressions
+        - clicks
+        - ctr
+        - conversions
+        - conversion_rate
+  google_search_device_breakdown:
+    dataset: google_search
+    dimensions: [mapped_advertiser, device]
+    rollup: total
+    metrics:
+        - impressions
+        - clicks
+        - ctr
+        - conversions
+        - conversion_rate
+  google_search_keyword_breakdown:
+    dataset: google_search
+    dimensions: [mapped_advertiser, keyword]
+    rollup: total
+    metrics:
+        - impressions
+        - clicks
+        - ctr
+        - conversions
+        - conversion_rate
+  simplifi_totals:
+    dataset: dm_seed_simplifi
+    dimensions: [client]
+    rollup: total
+    metrics:
+        - impressions
+        - clicks
+        - display_native_clicks
+        - display_native_ctr
+        - ctr
+        - cpa
+        - cpc
+  simplifi_totals_last_period:
+    dataset: dm_seed_simplifi
+    dimensions: [client]
+    rollup: total
+    metrics:
+        - impressions
+        - clicks
+        - display_native_clicks
+        - display_native_ctr
+        - ctr
+        - cpa
+        - cpc
+  simplifi_totals_last_month:
+    dataset: dm_seed_simplifi
+    dimensions: [client]
+    rollup: total
+    metrics:
+        - impressions
+        - clicks
+        - display_native_clicks
+        - display_native_ctr
+        - ctr
+        - cpa
+        - cpc
+  simplifi_conversion_totals:
+    dataset: dm_seed_simplifi
+    dimensions: [client]
+    rollup: total
+    metrics:
+        - weighted_actions
+        - total_visits
+        - online_visits
+  simplifi_conversion_totals_last_period:
+    dataset: dm_seed_simplifi
+    dimensions: [client]
+    rollup: total
+    metrics:
+        - weighted_actions
+        - total_visits
+        - online_visits
+  simplifi_conversion_totals_last_month:
+    dataset: dm_seed_simplifi
+    dimensions: [client]
+    rollup: total
+    metrics:
+        - weighted_actions
+        - total_visits
+        - online_visits
+  simplifi_video_totals:
+    dataset: dm_seed_simplifi
+    dimensions: [client]
+    rollup: total
+    metrics:
+        - vcr
+  simplifi_video_totals_last_period:
+    dataset: dm_seed_simplifi
+    dimensions: [client]
+    rollup: total
+    metrics:
+        - vcr
+  simplifi_video_totals_last_month:
+    dataset: dm_seed_simplifi
+    dimensions: [client]
+    rollup: total
+    metrics:
+        - vcr
+  simplifi_by_day:
+    dataset: dm_seed_simplifi
+    dimensions: [client]
+    rollup: day
+    metrics:
+        - impressions
+        - ctr
+  simplifi_breakdown:
+    dataset: dm_seed_simplifi
+    dimensions: [client, campaign, ad_type, ad]
+    rollup: total
+    metrics:
+        - impressions
+        - clicks
+        - ctr
+        - online_visits
+        - total_visits
+  simplifi_video_breakdown:
+    dataset: dm_seed_simplifi
+    dimensions: [client, campaign, ad]
+    rollup: total
+    metrics:
+        - vcr
+  simplifi_tactic_breakdown:
+    dataset: dm_seed_simplifi
+    dimensions: [client, campaign]
+    rollup: total
+    metrics:
+        - impressions
+        - clicks
+        - ctr
+        - online_visits
+        - total_visits
+  simplifi_video_tactic_breakdown:
+    dataset: dm_seed_simplifi
+    dimensions: [client, campaign]
+    rollup: total
+    metrics:
+        - vcr
+  simplifi_geo_fence_breakdown:
+    dataset: dm_seed_simplifi
+    dimensions: [client, conversion_geo_fence]
+    rollup: total
+    metrics:
+        - total_visits
+  simplifi_taget_geo_fence_breakdown:
+    dataset: dm_seed_simplifi
+    dimensions: [client, target_geo_fence]
+    rollup: total
+    metrics:
+        - total_visits
+  simplifi_top_dma:
+    dataset: dm_seed_simplifi
+    dimensions: [client, location_dma]
+    selection:
+      location_country: ['United States']
+    sort: '-impressions'
+    limit: '10'
+    rollup: total
+    metrics:
+        - impressions
+  simplifi_zip_impressions_breakdown:
+    dataset: dm_seed_simplifi
+    dimensions: [client, location_city, location_postal_code]
+    rollup: total
+    sort: '-impressions'
+    limit: '3000'
+    metrics:
+        - impressions
+        - clicks
+        - ctr
+        - online_visits
+        - total_visits
+  simplifi_zip_clicks_breakdown:
+    dataset: dm_seed_simplifi
+    dimensions: [client, location_city, location_postal_code]
+    rollup: total
+    sort: '-clicks'
+    limit: '3000'
+    metrics:
+        - impressions
+        - clicks
+        - ctr
+        - online_visits
+        - total_visits
+  simplifi_zip_online_visits_breakdown:
+    dataset: dm_seed_simplifi
+    dimensions: [client, location_city, location_postal_code]
+    rollup: total
+    sort: '-online_visits'
+    limit: '3000'
+    metrics:
+        - impressions
+        - clicks
+        - ctr
+        - online_visits
+        - total_visits
+  simplifi_zip_total_visits_breakdown:
+    dataset: dm_seed_simplifi
+    dimensions: [client, location_city, location_postal_code]
+    rollup: total
+    sort: '-total_visits'
+    limit: '3000'
+    metrics:
+        - impressions
+        - clicks
+        - ctr
+        - online_visits
+        - total_visits
+  simplifi_ad_zip_impressions_breakdown:
+    dataset: dm_seed_simplifi
+    dimensions: [client, ad, location_city, location_postal_code]
+    sort: '-impressions'
+    limit: '3000'
+    rollup: total
+    metrics:
+        - impressions
+        - clicks
+        - ctr
+        - online_visits
+        - total_visits
+  simplifi_ad_zip_clicks_breakdown:
+    dataset: dm_seed_simplifi
+    dimensions: [client, ad, location_city, location_postal_code]
+    sort: '-clicks'
+    limit: '3000'
+    rollup: total
+    metrics:
+        - impressions
+        - clicks
+        - ctr
+        - online_visits
+        - total_visits
+  simplifi_ad_zip_online_visits_breakdown:
+    dataset: dm_seed_simplifi
+    dimensions: [client, ad, location_city, location_postal_code]
+    sort: '-online_visits'
+    limit: '3000'
+    rollup: total
+    metrics:
+        - impressions
+        - clicks
+        - ctr
+        - online_visits
+        - total_visits
+  simplifi_ad_zip_total_visits_breakdown:
+    dataset: dm_seed_simplifi
+    dimensions: [client, ad, location_city, location_postal_code]
+    sort: '-total_visits'
+    limit: '3000'
+    rollup: total
+    metrics:
+        - impressions
+        - clicks
+        - ctr
+        - online_visits
+        - total_visits
+  simplifi_city_breakdown:
+    dataset: dm_seed_simplifi
+    dimensions: [client, location_region, location_city]
+    sort: '-impressions'
+    limit: '10'
+    rollup: total
+    metrics:
+        - impressions
+        - clicks
+        - ctr
+        - online_visits
+        - total_visits
+  simplifi_region_breakdown:
+    dataset: dm_seed_simplifi
+    dimensions: [client, location_region]
+    rollup: total
+    metrics:
+        - impressions
+        - clicks
+        - ctr
+        - online_visits
+        - total_visits
+  simplifi_display_domain_breakdown:
+    dataset: dm_seed_simplifi
+    dimensions: [client, ad_type, domain_reporting_name]
+    sort: '-impressions'
+    limit: '10'
+    rollup: total
+    metrics:
+        - impressions
+        - clicks
+        - ctr
+        - online_visits
+        - total_visits
+    filters: 'ad_type:any:Image;Rich%20Media,domain_reporting_name.domain_reporting_name:not_eq:Unknown,domain_reporting_name:not_any:'
+  simplifi_video_domain_breakdown:
+    dataset: dm_seed_simplifi
+    dimensions: [client, ad_type, domain_reporting_name]
+    sort: '-impressions'
+    limit: '10'
+    rollup: total
+    metrics:
+        - impressions
+        - clicks
+        - ctr
+        - online_visits
+        - total_visits
+    filters: 'ad_type:any:Video,domain_reporting_name.domain_reporting_name:not_eq:Unknown,domain_reporting_name:not_any:'
+  reach_metrics:
+    dataset: dm_seed_simplifi
+    dimensions: [client]
+    rollup: total
+    metrics:
+        - reach
+        - frequency
+  reach_metrics_last_period:
+    dataset: dm_seed_simplifi
+    dimensions: [client]
+    rollup: total
+    metrics:
+        - reach
+        - frequency
+  reach_metrics_last_month:
+    dataset: dm_seed_simplifi
+    dimensions: [client]
+    rollup: total
+    metrics:
+        - reach
+        - frequency
+  campaign_reach_metrics:
+    dataset: dm_seed_simplifi
+    dimensions: [client, campaign]
+    rollup: total
+    metrics:
+        - reach
+        - frequency
+  ad_reach_metrics:
+    dataset: dm_seed_simplifi
+    dimensions: [client, ad]
+    rollup: total
+    metrics:
+        - reach
+        - frequency
+  simplifi_keywords_breakdown:
+    dataset: dm_seed_simplifi
+    dimensions: [client, keyword]
+    rollup: total
+    metrics:
+        - impressions
+        - clicks
+        - ctr
+        - online_visits
+        - total_visits
+  simplifi_device_breakdown:
+    dataset: dm_seed_simplifi
+    dimensions: [client, browser_device]
+    rollup: total
+    metrics:
+        - impressions
+        - clicks
+        - ctr
+        - weighted_actions
+        - total_visits
+        - online_visits
+  simplifi_segment_breakdown:
+    dataset: dm_seed_simplifi
+    dimensions: [client, segment_name]
+    rollup: total
+    metrics:
+        - impressions
+        - clicks
+        - weighted_actions
+        - total_visits
+        - online_visits
+  facebook_device:
+    dataset: dm_seed_facebook_ads
+    dimensions: [mapped_advertiser, impression_device]
+    rollup: total
+    metrics:
+        - impressions
+        - link_clicks
+        - link_click_ctr
+        - conversions
+  facebook_platform:
+    dataset: dm_seed_facebook_ads
+    dimensions: [mapped_advertiser, mapped_platform]
+    rollup: total
+    metrics:
+        - impressions
+        - link_clicks
+        - link_click_ctr
+        - conversions
+  facebook_placement_breakdown:
+    dataset: dm_seed_facebook_ads
+    dimensions: [mapped_advertiser, platform_position]
+    rollup: total
+    metrics:
+        - impressions
+        - link_clicks
+        - link_click_ctr
+        - conversions
+  simplifi_native_totals:
+    dataset: dm_csv_bidtellect
+    dimensions: [mapped_advertiser_id]
+    rollup: total
+    metrics:
+        - impressions
+        - clicks
+        - ctr
+        - total_conversions
+        - conversion_rate
+  simplifi_native_by_day:
+    dataset: dm_csv_bidtellect
+    dimensions: [mapped_advertiser_id]
+    rollup: day
+    metrics:
+        - impressions
+        - clicks
+        - ctr
+        - total_conversions
+        - conversion_rate
+  simplifi_native_campaign:
+    dataset: dm_csv_bidtellect
+    dimensions: [mapped_advertiser_id, campaign_id]
+    metrics:
+        - impressions
+        - clicks
+        - ctr
+        - total_conversions
+        - conversion_rate
+  simplifi_native_creative:
+    dataset: dm_csv_bidtellect
+    dimensions: [mapped_advertiser_id, creative_id]
+    metrics:
+        - impressions
+        - clicks
+        - ctr
+        - total_conversions
+        - conversion_rate
+  facebook_adset:
+    dataset: dm_seed_facebook_ads
+    dimensions: [mapped_advertiser, ad_set]
+    rollup: total
+    metrics:
+        - impressions
+        - link_clicks
+        - link_click_ctr
+        - conversions
+        - conversion_rate
+  simplifi_native_device:
+    dataset: dm_csv_bidtellect
+    dimensions: [mapped_advertiser_id, device_type]
+    metrics:
+        - impressions
+        - clicks
+        - ctr
+        - total_conversions
+        - conversion_rate
+  simplifi_native_domain:
+    dataset: dm_csv_bidtellect
+    dimensions: [mapped_advertiser_id, domain_name]
+    metrics:
+        - impressions
+        - clicks
+        - ctr
+        - total_conversions
+        - conversion_rate
+  facebook_dma:
+    dataset: dm_seed_facebook_ads
+    dimensions: [mapped_advertiser, dma]
+    rollup: total
+    metrics:
+        - impressions
+        - link_clicks
+        - link_click_ctr
+        - conversions
+  simplifi_audio_domain_breakdown:
+    dataset: dm_seed_simplifi
+    dimensions: [client, ad_type, domain_reporting_name]
+    sort: '-impressions'
+    limit: '10'
+    rollup: total
+    metrics:
+        - impressions
+        - clicks
+        - ctr
+        - online_visits
+        - total_visits
+    filters: 'ad_type:any:Audio,domain_reporting_name.domain_reporting_name:not_eq:Unknown,domain_reporting_name:not_any:'

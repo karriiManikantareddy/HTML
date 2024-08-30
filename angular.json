@@ -1,0 +1,2635 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "frontend": {
+      "root": "",
+      "sourceRoot": "src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/frontend",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "src/tsconfig.app.json",
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["semantic/dist/semantic.min.css", "src/styles.css"],
+            "scripts": [
+              "node_modules/pusher-js/dist/web/pusher.min.js",
+              "node_modules/jquery/dist/jquery.min.js",
+              "semantic/dist/semantic.min.js"
+            ],
+            "aot": false,
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
+          },
+          "defaultConfiguration": ""
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "buildTarget": "frontend:build"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "frontend:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "frontend:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "src/test.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "src/tsconfig.spec.json",
+            "karmaConfig": "src/karma.conf.js",
+            "scripts": [],
+            "assets": ["src/favicon.ico", "src/assets"]
+          }
+        }
+      }
+    },
+    "test-template": {
+      "root": "projects/test-template/",
+      "sourceRoot": "projects/test-template/src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/test-template",
+            "index": "projects/test-template/src/index.html",
+            "main": "projects/test-template/src/main.ts",
+            "polyfills": "projects/test-template/src/polyfills.ts",
+            "tsConfig": "projects/test-template/tsconfig.app.json",
+            "assets": [
+              "projects/test-template/src/favicon.ico",
+              "projects/test-template/src/assets"
+            ],
+            "styles": ["projects/test-template/src/styles.less"],
+            "scripts": [],
+            "aot": false,
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/test-template/src/environments/environment.ts",
+                  "with": "projects/test-template/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
+          },
+          "defaultConfiguration": ""
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "buildTarget": "test-template:build"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "test-template:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "test-template:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/test-template/src/test.ts",
+            "polyfills": "projects/test-template/src/polyfills.ts",
+            "tsConfig": "projects/test-template/tsconfig.spec.json",
+            "karmaConfig": "projects/test-template/karma.conf.js",
+            "styles": ["projects/test-template/src/styles.css"],
+            "scripts": [],
+            "assets": [
+              "projects/test-template/src/favicon.ico",
+              "projects/test-template/src/assets"
+            ]
+          }
+        }
+      }
+    },
+    "test-template-e2e": {
+      "root": "projects/test-template-e2e/",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/test-template-e2e/protractor.conf.js",
+            "devServerTarget": "test-template:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "test-template:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "preview-module": {
+      "root": "projects/preview-module",
+      "sourceRoot": "projects/preview-module/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/preview-module/tsconfig.lib.json",
+            "project": "projects/preview-module/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/preview-module/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/preview-module/src/test.ts",
+            "tsConfig": "projects/preview-module/tsconfig.spec.json",
+            "karmaConfig": "projects/preview-module/karma.conf.js"
+          }
+        }
+      }
+    },
+    "template-module": {
+      "root": "projects/template-module",
+      "sourceRoot": "projects/template-module/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/template-module/tsconfig.lib.json",
+            "project": "projects/template-module/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/template-module/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/template-module/src/test.ts",
+            "tsConfig": "projects/template-module/tsconfig.spec.json",
+            "karmaConfig": "projects/template-module/karma.conf.js",
+            "polyfills": "projects/template-module/src/polyfills.ts"
+          }
+        }
+      }
+    },
+    "settings-module": {
+      "root": "projects/settings-module",
+      "sourceRoot": "projects/settings-module/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/settings-module/tsconfig.lib.json",
+            "project": "projects/settings-module/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/settings-module/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/settings-module/src/test.ts",
+            "tsConfig": "projects/settings-module/tsconfig.spec.json",
+            "karmaConfig": "projects/settings-module/karma.conf.js",
+            "polyfills": "projects/settings-module/src/polyfills.ts"
+          }
+        }
+      }
+    },
+    "burt-standard-campaign": {
+      "root": "projects/burt-standard-campaign/",
+      "sourceRoot": "projects/burt-standard-campaign/src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/burt-standard-campaign",
+            "index": "projects/burt-standard-campaign/src/index.html",
+            "main": "projects/burt-standard-campaign/src/main.ts",
+            "polyfills": "projects/burt-standard-campaign/src/polyfills.ts",
+            "tsConfig": "projects/burt-standard-campaign/tsconfig.app.json",
+            "assets": [
+              "projects/burt-standard-campaign/src/favicon.ico",
+              "projects/burt-standard-campaign/src/assets"
+            ],
+            "stylePreprocessorOptions": {
+              "includePaths": ["projects/burt-standard-campaign/src/styles"]
+            },
+            "styles": [
+              "projects/template-module/src/styles.less",
+              "projects/burt-standard-campaign/src/styles.less"
+            ],
+            "scripts": [
+              "node_modules/highcharts/highcharts.js",
+              "node_modules/highcharts/highcharts-more.js",
+              "node_modules/highcharts/modules/map.js",
+              "node_modules/highcharts/modules/solid-gauge.js",
+              "src/assets/us-all.js"
+            ],
+            "aot": false,
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/burt-standard-campaign/src/environments/environment.ts",
+                  "with": "projects/burt-standard-campaign/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
+          },
+          "defaultConfiguration": ""
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "buildTarget": "burt-standard-campaign:build"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "burt-standard-campaign:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "burt-standard-campaign:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/burt-standard-campaign/src/test.ts",
+            "polyfills": "projects/burt-standard-campaign/src/polyfills.ts",
+            "tsConfig": "projects/burt-standard-campaign/tsconfig.spec.json",
+            "karmaConfig": "projects/burt-standard-campaign/karma.conf.js",
+            "styles": ["projects/burt-standard-campaign/src/styles.css"],
+            "scripts": [],
+            "assets": [
+              "projects/burt-standard-campaign/src/favicon.ico",
+              "projects/burt-standard-campaign/src/assets"
+            ]
+          }
+        }
+      }
+    },
+    "burt-standard-advertiser": {
+      "root": "projects/burt-standard-advertiser/",
+      "sourceRoot": "projects/burt-standard-advertiser/src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/burt-standard-advertiser",
+            "index": "projects/burt-standard-advertiser/src/index.html",
+            "main": "projects/burt-standard-advertiser/src/main.ts",
+            "polyfills": "projects/burt-standard-advertiser/src/polyfills.ts",
+            "tsConfig": "projects/burt-standard-advertiser/tsconfig.app.json",
+            "assets": [
+              "projects/burt-standard-advertiser/src/favicon.ico",
+              "projects/burt-standard-advertiser/src/assets"
+            ],
+            "stylePreprocessorOptions": {
+              "includePaths": ["projects/burt-standard-campaign/src/styles"]
+            },
+            "styles": [
+              "projects/template-module/src/styles.less",
+              "projects/burt-standard-campaign/src/styles.less"
+            ],
+            "scripts": [
+              "node_modules/highcharts/highcharts.js",
+              "node_modules/highcharts/highcharts-more.js",
+              "node_modules/highcharts/modules/map.js",
+              "node_modules/highcharts/modules/solid-gauge.js",
+              "src/assets/us-all.js"
+            ],
+            "aot": false,
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/burt-standard-advertiser/src/environments/environment.ts",
+                  "with": "projects/burt-standard-advertiser/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
+          },
+          "defaultConfiguration": ""
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "buildTarget": "burt-standard-advertiser:build"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "burt-standard-advertiser:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "burt-standard-advertiser:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/burt-standard-advertiser/src/test.ts",
+            "polyfills": "projects/burt-standard-advertiser/src/polyfills.ts",
+            "tsConfig": "projects/burt-standard-advertiser/tsconfig.spec.json",
+            "karmaConfig": "projects/burt-standard-advertiser/karma.conf.js",
+            "styles": ["projects/burt-standard-advertiser/src/styles.css"],
+            "scripts": [],
+            "assets": [
+              "projects/burt-standard-advertiser/src/favicon.ico",
+              "projects/burt-standard-advertiser/src/assets"
+            ]
+          }
+        }
+      }
+    },
+    "nyt-campaign": {
+      "root": "projects/nyt-campaign/",
+      "sourceRoot": "projects/nyt-campaign/src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/nyt-campaign",
+            "index": "projects/nyt-campaign/src/index.html",
+            "main": "projects/nyt-campaign/src/main.ts",
+            "polyfills": "projects/nyt-campaign/src/polyfills.ts",
+            "tsConfig": "projects/nyt-campaign/tsconfig.app.json",
+            "assets": [
+              "projects/nyt-campaign/src/favicon.ico",
+              "projects/nyt-campaign/src/assets"
+            ],
+            "stylePreprocessorOptions": {
+              "includePaths": ["projects/nyt-campaign/src/styles"]
+            },
+            "styles": [
+              "projects/template-module/src/styles.less",
+              "projects/nyt-campaign/src/styles.less"
+            ],
+            "scripts": [
+              "node_modules/highcharts/highcharts.js",
+              "node_modules/highcharts/highcharts-more.js",
+              "node_modules/highcharts/modules/map.js",
+              "node_modules/highcharts/modules/solid-gauge.js",
+              "src/assets/us-all.js",
+              "src/assets/asia.js",
+              "src/assets/europe.js",
+              "src/assets/world-robinson.js"
+            ],
+            "aot": false,
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/nyt-campaign/src/environments/environment.ts",
+                  "with": "projects/nyt-campaign/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
+          },
+          "defaultConfiguration": ""
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "buildTarget": "nyt-campaign:build"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "nyt-campaign:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "nyt-campaign:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/nyt-campaign/src/test.ts",
+            "polyfills": "projects/nyt-campaign/src/polyfills.ts",
+            "tsConfig": "projects/nyt-campaign/tsconfig.spec.json",
+            "karmaConfig": "projects/nyt-campaign/karma.conf.js",
+            "styles": ["projects/nyt-campaign/src/styles.css"],
+            "scripts": [],
+            "assets": [
+              "projects/nyt-campaign/src/favicon.ico",
+              "projects/nyt-campaign/src/assets"
+            ]
+          }
+        }
+      }
+    },
+    "nyt-advertiser": {
+      "root": "projects/nyt-advertiser/",
+      "sourceRoot": "projects/nyt-advertiser/src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/nyt-advertiser",
+            "index": "projects/nyt-advertiser/src/index.html",
+            "main": "projects/nyt-advertiser/src/main.ts",
+            "polyfills": "projects/nyt-advertiser/src/polyfills.ts",
+            "tsConfig": "projects/nyt-advertiser/tsconfig.app.json",
+            "assets": [
+              "projects/nyt-advertiser/src/favicon.ico",
+              "projects/nyt-advertiser/src/assets"
+            ],
+            "stylePreprocessorOptions": {
+              "includePaths": ["projects/nyt-campaign/src/styles"]
+            },
+            "styles": [
+              "projects/template-module/src/styles.less",
+              "projects/nyt-campaign/src/styles.less"
+            ],
+            "scripts": [
+              "node_modules/highcharts/highcharts.js",
+              "node_modules/highcharts/highcharts-more.js",
+              "node_modules/highcharts/modules/map.js",
+              "node_modules/highcharts/modules/solid-gauge.js",
+              "src/assets/us-all.js",
+              "src/assets/world-robinson.js",
+              "src/assets/asia.js",
+              "src/assets/europe.js"
+            ],
+            "aot": false,
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/nyt-advertiser/src/environments/environment.ts",
+                  "with": "projects/nyt-advertiser/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
+          },
+          "defaultConfiguration": ""
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "buildTarget": "nyt-advertiser:build"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "nyt-advertiser:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "nyt-advertiser:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/nyt-advertiser/src/test.ts",
+            "polyfills": "projects/nyt-advertiser/src/polyfills.ts",
+            "tsConfig": "projects/nyt-advertiser/tsconfig.spec.json",
+            "karmaConfig": "projects/nyt-advertiser/karma.conf.js",
+            "styles": ["projects/nyt-advertiser/src/styles.css"],
+            "scripts": [],
+            "assets": [
+              "projects/nyt-advertiser/src/favicon.ico",
+              "projects/nyt-advertiser/src/assets"
+            ]
+          }
+        }
+      }
+    },
+    "cbsi-campaign": {
+      "root": "projects/cbsi-campaign/",
+      "sourceRoot": "projects/cbsi-campaign/src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/cbsi-campaign",
+            "index": "projects/cbsi-campaign/src/index.html",
+            "main": "projects/cbsi-campaign/src/main.ts",
+            "polyfills": "projects/cbsi-campaign/src/polyfills.ts",
+            "tsConfig": "projects/cbsi-campaign/tsconfig.app.json",
+            "assets": [
+              "projects/cbsi-campaign/src/favicon.ico",
+              "projects/cbsi-campaign/src/assets"
+            ],
+            "stylePreprocessorOptions": {
+              "includePaths": ["projects/cbsi-campaign/src/styles"]
+            },
+            "styles": [
+              "projects/template-module/src/styles.less",
+              "projects/cbsi-campaign/src/styles.less"
+            ],
+            "scripts": [
+              "node_modules/highcharts/highcharts.js",
+              "node_modules/highcharts/highcharts-more.js",
+              "node_modules/highcharts/modules/treemap.js",
+              "node_modules/highcharts/modules/heatmap.js",
+              "node_modules/highcharts/modules/map.js",
+              "node_modules/highcharts/modules/solid-gauge.js",
+              "src/assets/us-all.js",
+              "src/assets/world-robinson.js"
+            ],
+            "aot": false,
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/cbsi-campaign/src/environments/environment.ts",
+                  "with": "projects/cbsi-campaign/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
+          },
+          "defaultConfiguration": ""
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "buildTarget": "cbsi-campaign:build"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "cbsi-campaign:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "cbsi-campaign:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/cbsi-campaign/src/test.ts",
+            "polyfills": "projects/cbsi-campaign/src/polyfills.ts",
+            "tsConfig": "projects/cbsi-campaign/tsconfig.spec.json",
+            "karmaConfig": "projects/cbsi-campaign/karma.conf.js",
+            "styles": ["projects/cbsi-campaign/src/styles.css"],
+            "scripts": [],
+            "assets": [
+              "projects/cbsi-campaign/src/favicon.ico",
+              "projects/cbsi-campaign/src/assets"
+            ]
+          }
+        }
+      }
+    },
+    "trader-campaign": {
+      "root": "projects/trader-campaign/",
+      "sourceRoot": "projects/trader-campaign/src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/trader-campaign",
+            "index": "projects/trader-campaign/src/index.html",
+            "main": "projects/trader-campaign/src/main.ts",
+            "polyfills": "projects/trader-campaign/src/polyfills.ts",
+            "tsConfig": "projects/trader-campaign/tsconfig.app.json",
+            "assets": [
+              "projects/trader-campaign/src/favicon.ico",
+              "projects/trader-campaign/src/assets"
+            ],
+            "stylePreprocessorOptions": {
+              "includePaths": ["projects/trader-campaign/src/styles"]
+            },
+            "styles": [
+              "projects/template-module/src/styles.less",
+              "projects/trader-campaign/src/styles.less"
+            ],
+            "scripts": [
+              "node_modules/highcharts/highcharts.js",
+              "node_modules/highcharts/highcharts-more.js",
+              "node_modules/highcharts/modules/map.js",
+              "node_modules/highcharts/modules/solid-gauge.js",
+              "src/assets/ca-all.js"
+            ],
+            "aot": false,
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/trader-campaign/src/environments/environment.ts",
+                  "with": "projects/trader-campaign/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
+          },
+          "defaultConfiguration": ""
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "buildTarget": "trader-campaign:build"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "trader-campaign:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "trader-campaign:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/trader-campaign/src/test.ts",
+            "polyfills": "projects/trader-campaign/src/polyfills.ts",
+            "tsConfig": "projects/trader-campaign/tsconfig.spec.json",
+            "karmaConfig": "projects/trader-campaign/karma.conf.js",
+            "styles": ["projects/trader-campaign/src/styles.css"],
+            "scripts": [],
+            "assets": [
+              "projects/trader-campaign/src/favicon.ico",
+              "projects/trader-campaign/src/assets"
+            ]
+          }
+        }
+      }
+    },
+    "trader-advertiser": {
+      "root": "projects/trader-advertiser/",
+      "sourceRoot": "projects/trader-advertiser/src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/trader-advertiser",
+            "index": "projects/trader-advertiser/src/index.html",
+            "main": "projects/trader-advertiser/src/main.ts",
+            "polyfills": "projects/trader-advertiser/src/polyfills.ts",
+            "tsConfig": "projects/trader-advertiser/tsconfig.app.json",
+            "assets": [
+              "projects/trader-advertiser/src/favicon.ico",
+              "projects/trader-advertiser/src/assets"
+            ],
+            "stylePreprocessorOptions": {
+              "includePaths": ["projects/trader-campaign/src/styles"]
+            },
+            "styles": [
+              "projects/template-module/src/styles.less",
+              "projects/trader-campaign/src/styles.less"
+            ],
+            "scripts": [
+              "node_modules/highcharts/highcharts.js",
+              "node_modules/highcharts/highcharts-more.js",
+              "node_modules/highcharts/modules/map.js",
+              "node_modules/highcharts/modules/solid-gauge.js",
+              "src/assets/ca-all.js"
+            ],
+            "aot": false,
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/trader-advertiser/src/environments/environment.ts",
+                  "with": "projects/trader-advertiser/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
+          },
+          "defaultConfiguration": ""
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "buildTarget": "trader-advertiser:build"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "trader-advertiser:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "trader-advertiser:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/trader-advertiser/src/test.ts",
+            "polyfills": "projects/trader-advertiser/src/polyfills.ts",
+            "tsConfig": "projects/trader-advertiser/tsconfig.spec.json",
+            "karmaConfig": "projects/trader-advertiser/karma.conf.js",
+            "styles": ["projects/trader-advertiser/src/styles.css"],
+            "scripts": [],
+            "assets": [
+              "projects/trader-advertiser/src/favicon.ico",
+              "projects/trader-advertiser/src/assets"
+            ]
+          }
+        }
+      }
+    },
+    "trader-branded-content": {
+      "root": "projects/trader-branded-content/",
+      "sourceRoot": "projects/trader-branded-content/src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/trader-branded-content",
+            "index": "projects/trader-branded-content/src/index.html",
+            "main": "projects/trader-branded-content/src/main.ts",
+            "polyfills": "projects/trader-branded-content/src/polyfills.ts",
+            "tsConfig": "projects/trader-branded-content/tsconfig.app.json",
+            "assets": [
+              "projects/trader-branded-content/src/favicon.ico",
+              "projects/trader-branded-content/src/assets"
+            ],
+            "stylePreprocessorOptions": {
+              "includePaths": ["projects/trader-branded-content/src/styles"]
+            },
+            "styles": [
+              "projects/template-module/src/styles.less",
+              "projects/trader-branded-content/src/styles.less"
+            ],
+            "scripts": [
+              "node_modules/highcharts/highcharts.js",
+              "node_modules/highcharts/highcharts-more.js",
+              "node_modules/highcharts/modules/map.js",
+              "node_modules/highcharts/modules/solid-gauge.js",
+              "src/assets/ca-all.js"
+            ],
+            "aot": false,
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/trader-branded-content/src/environments/environment.ts",
+                  "with": "projects/trader-branded-content/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
+          },
+          "defaultConfiguration": ""
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "buildTarget": "trader-branded-content:build"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "trader-branded-content:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "trader-branded-content:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/trader-branded-content/src/test.ts",
+            "polyfills": "projects/trader-branded-content/src/polyfills.ts",
+            "tsConfig": "projects/trader-branded-content/tsconfig.spec.json",
+            "karmaConfig": "projects/trader-branded-content/karma.conf.js",
+            "styles": ["projects/trader-branded-content/src/styles.css"],
+            "scripts": [],
+            "assets": [
+              "projects/trader-branded-content/src/favicon.ico",
+              "projects/trader-branded-content/src/assets"
+            ]
+          }
+        }
+      }
+    },
+    "funda-campaign": {
+      "root": "projects/funda-campaign/",
+      "sourceRoot": "projects/funda-campaign/src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/funda-campaign",
+            "index": "projects/funda-campaign/src/index.html",
+            "main": "projects/funda-campaign/src/main.ts",
+            "polyfills": "projects/funda-campaign/src/polyfills.ts",
+            "tsConfig": "projects/funda-campaign/tsconfig.app.json",
+            "assets": [
+              "projects/funda-campaign/src/favicon.ico",
+              "projects/funda-campaign/src/assets"
+            ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "projects/funda-campaign/src/styles"
+              ]
+            },
+            "styles": [
+              "projects/template-module/src/styles.less",
+              "projects/funda-campaign/src/styles.less"
+            ],
+            "scripts": [
+              "node_modules/highcharts/highcharts.js",
+              "node_modules/highcharts/highcharts-more.js",
+              "node_modules/highcharts/modules/treemap.js",
+              "node_modules/highcharts/modules/heatmap.js",
+              "node_modules/highcharts/modules/map.js",
+              "node_modules/highcharts/modules/solid-gauge.js",
+              "src/assets/nl-all.js"
+            ],
+            "aot": false,
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/funda-campaign/src/environments/environment.ts",
+                  "with": "projects/funda-campaign/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
+          },
+          "defaultConfiguration": ""
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "buildTarget": "funda-campaign:build"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "funda-campaign:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "funda-campaign:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/funda-campaign/src/test.ts",
+            "polyfills": "projects/funda-campaign/src/polyfills.ts",
+            "tsConfig": "projects/funda-campaign/tsconfig.spec.json",
+            "karmaConfig": "projects/funda-campaign/karma.conf.js",
+            "styles": [
+              "projects/funda-campaign/src/styles.css"
+            ],
+            "scripts": [],
+            "assets": [
+              "projects/funda-campaign/src/favicon.ico",
+              "projects/funda-campaign/src/assets"
+            ]
+          }
+        }
+      }
+    },
+    "mlb-campaign": {
+      "root": "projects/mlb-campaign/",
+      "sourceRoot": "projects/mlb-campaign/src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/mlb-campaign",
+            "index": "projects/mlb-campaign/src/index.html",
+            "main": "projects/mlb-campaign/src/main.ts",
+            "polyfills": "projects/mlb-campaign/src/polyfills.ts",
+            "tsConfig": "projects/mlb-campaign/tsconfig.app.json",
+            "assets": [
+              "projects/mlb-campaign/src/favicon.ico",
+              "projects/mlb-campaign/src/assets"
+            ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "projects/mlb-campaign/src/styles"
+              ]
+            },
+            "styles": [
+              "projects/template-module/src/styles.less",
+              "projects/mlb-campaign/src/styles.less"
+            ],
+            "scripts": [
+              "node_modules/highcharts/highcharts.js",
+              "node_modules/highcharts/highcharts-more.js",
+              "node_modules/highcharts/modules/treemap.js",
+              "node_modules/highcharts/modules/heatmap.js",
+              "node_modules/highcharts/modules/map.js",
+              "node_modules/highcharts/modules/solid-gauge.js",
+              "src/assets/us-all.js"
+            ],
+            "aot": false,
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/mlb-campaign/src/environments/environment.ts",
+                  "with": "projects/mlb-campaign/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
+          },
+          "defaultConfiguration": ""
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "buildTarget": "mlb-campaign:build"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "mlb-campaign:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "mlb-campaign:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/mlb-campaign/src/test.ts",
+            "polyfills": "projects/mlb-campaign/src/polyfills.ts",
+            "tsConfig": "projects/mlb-campaign/tsconfig.spec.json",
+            "karmaConfig": "projects/mlb-campaign/karma.conf.js",
+            "styles": [
+              "projects/mlb-campaign/src/styles.css"
+            ],
+            "scripts": [],
+            "assets": [
+              "projects/mlb-campaign/src/favicon.ico",
+              "projects/mlb-campaign/src/assets"
+            ]
+          }
+        }
+      }
+    },
+    "mlb-advertiser": {
+      "root": "projects/mlb-advertiser/",
+      "sourceRoot": "projects/mlb-advertiser/src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/mlb-advertiser",
+            "index": "projects/mlb-advertiser/src/index.html",
+            "main": "projects/mlb-advertiser/src/main.ts",
+            "polyfills": "projects/mlb-advertiser/src/polyfills.ts",
+            "tsConfig": "projects/mlb-advertiser/tsconfig.app.json",
+            "assets": [
+              "projects/mlb-advertiser/src/favicon.ico",
+              "projects/mlb-advertiser/src/assets"
+            ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "projects/mlb-advertiser/src/styles"
+              ]
+            },
+            "styles": [
+              "projects/template-module/src/styles.less",
+              "projects/mlb-advertiser/src/styles.less"
+            ],
+            "scripts": [
+              "node_modules/highcharts/highcharts.js",
+              "node_modules/highcharts/highcharts-more.js",
+              "node_modules/highcharts/modules/treemap.js",
+              "node_modules/highcharts/modules/heatmap.js",
+              "node_modules/highcharts/modules/map.js",
+              "node_modules/highcharts/modules/solid-gauge.js",
+              "src/assets/us-all.js"
+            ],
+            "aot": false,
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/mlb-advertiser/src/environments/environment.ts",
+                  "with": "projects/mlb-advertiser/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
+          },
+          "defaultConfiguration": ""
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "buildTarget": "mlb-advertiser:build"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "mlb-advertiser:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "mlb-advertiser:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/mlb-advertiser/src/test.ts",
+            "polyfills": "projects/mlb-advertiser/src/polyfills.ts",
+            "tsConfig": "projects/mlb-advertiser/tsconfig.spec.json",
+            "karmaConfig": "projects/mlb-advertiser/karma.conf.js",
+            "styles": [
+              "projects/mlb-advertiser/src/styles.css"
+            ],
+            "scripts": [],
+            "assets": [
+              "projects/mlb-advertiser/src/favicon.ico",
+              "projects/mlb-advertiser/src/assets"
+            ]
+          }
+        }
+      }
+    },
+    "hearst-newspapers-advertiser": {
+      "root": "projects/hearst-newspapers-advertiser/",
+      "sourceRoot": "projects/hearst-newspapers-advertiser/src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/hearst-newspapers-advertiser",
+            "index": "projects/hearst-newspapers-advertiser/src/index.html",
+            "main": "projects/hearst-newspapers-advertiser/src/main.ts",
+            "polyfills": "projects/hearst-newspapers-advertiser/src/polyfills.ts",
+            "tsConfig": "projects/hearst-newspapers-advertiser/tsconfig.app.json",
+            "assets": [
+              "projects/hearst-newspapers-advertiser/src/favicon.ico",
+              "projects/hearst-newspapers-advertiser/src/assets"
+            ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "projects/hearst-newspapers-advertiser/src/styles"
+              ]
+            },
+            "styles": [
+              "projects/template-module/src/styles.less",
+              "projects/hearst-newspapers-advertiser/src/styles.less"
+            ],
+            "scripts": [
+              "node_modules/highcharts/highcharts.js",
+              "node_modules/highcharts/highcharts-more.js",
+              "node_modules/highcharts/modules/treemap.js",
+              "node_modules/highcharts/modules/heatmap.js",
+              "node_modules/highcharts/modules/map.js",
+              "node_modules/highcharts/modules/solid-gauge.js",
+              "src/assets/us-all.js"
+            ],
+            "aot": false,
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/hearst-newspapers-advertiser/src/environments/environment.ts",
+                  "with": "projects/hearst-newspapers-advertiser/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
+          },
+          "defaultConfiguration": ""
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "buildTarget": "hearst-newspapers-advertiser:build"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "hearst-newspapers-advertiser:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "hearst-newspapers-advertiser:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/hearst-newspapers-advertiser/src/test.ts",
+            "polyfills": "projects/hearst-newspapers-advertiser/src/polyfills.ts",
+            "tsConfig": "projects/hearst-newspapers-advertiser/tsconfig.spec.json",
+            "karmaConfig": "projects/hearst-newspapers-advertiser/karma.conf.js",
+            "styles": [
+              "projects/hearst-newspapers-advertiser/src/styles.css"
+            ],
+            "scripts": [],
+            "assets": [
+              "projects/hearst-newspapers-advertiser/src/favicon.ico",
+              "projects/hearst-newspapers-advertiser/src/assets"
+            ]
+          }
+        }
+      }
+    },
+    "hearst-mag-campaign": {
+      "root": "projects/hearst-mag-campaign/",
+      "sourceRoot": "projects/hearst-mag-campaign/src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/hearst-mag-campaign",
+            "index": "projects/hearst-mag-campaign/src/index.html",
+            "main": "projects/hearst-mag-campaign/src/main.ts",
+            "polyfills": "projects/hearst-mag-campaign/src/polyfills.ts",
+            "tsConfig": "projects/hearst-mag-campaign/tsconfig.app.json",
+            "assets": [
+              "projects/hearst-mag-campaign/src/favicon.ico",
+              "projects/hearst-mag-campaign/src/assets"
+            ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "projects/hearst-mag-campaign/src/styles"
+              ]
+            },
+            "styles": [
+              "projects/template-module/src/styles.less",
+              "projects/hearst-mag-campaign/src/styles.less"
+            ],
+            "scripts": [
+              "node_modules/highcharts/highcharts.js",
+              "node_modules/highcharts/highcharts-more.js",
+              "node_modules/highcharts/modules/treemap.js",
+              "node_modules/highcharts/modules/heatmap.js",
+              "node_modules/highcharts/modules/map.js",
+              "node_modules/highcharts/modules/solid-gauge.js",
+              "src/assets/us-all.js"
+            ],
+            "aot": false,
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/hearst-mag-campaign/src/environments/environment.ts",
+                  "with": "projects/hearst-mag-campaign/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
+          },
+          "defaultConfiguration": ""
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "buildTarget": "hearst-mag-campaign:build"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "hearst-mag-campaign:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "hearst-mag-campaign:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/hearst-mag-campaign/src/test.ts",
+            "polyfills": "projects/hearst-mag-campaign/src/polyfills.ts",
+            "tsConfig": "projects/hearst-mag-campaign/tsconfig.spec.json",
+            "karmaConfig": "projects/hearst-mag-campaign/karma.conf.js",
+            "styles": [
+              "projects/hearst-mag-campaign/src/styles.css"
+            ],
+            "scripts": [],
+            "assets": [
+              "projects/hearst-mag-campaign/src/favicon.ico",
+              "projects/hearst-mag-campaign/src/assets"
+            ]
+          }
+        }
+      }
+    },
+    "cumulus-media-advertiser": {
+      "root": "projects/cumulus-media-advertiser/",
+      "sourceRoot": "projects/cumulus-media-advertiser/src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/cumulus-media-advertiser",
+            "index": "projects/cumulus-media-advertiser/src/index.html",
+            "main": "projects/cumulus-media-advertiser/src/main.ts",
+            "polyfills": "projects/cumulus-media-advertiser/src/polyfills.ts",
+            "tsConfig": "projects/cumulus-media-advertiser/tsconfig.app.json",
+            "assets": [
+              "projects/cumulus-media-advertiser/src/favicon.ico",
+              "projects/cumulus-media-advertiser/src/assets"
+            ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "projects/cumulus-media-advertiser/src/styles"
+              ]
+            },
+            "styles": [
+              "projects/template-module/src/styles.less",
+              "projects/cumulus-media-advertiser/src/styles.less"
+            ],
+            "scripts": [
+              "node_modules/highcharts/highcharts.js",
+              "node_modules/highcharts/highcharts-more.js",
+              "node_modules/highcharts/modules/treemap.js",
+              "node_modules/highcharts/modules/heatmap.js",
+              "node_modules/highcharts/modules/map.js",
+              "node_modules/highcharts/modules/solid-gauge.js",
+              "src/assets/us-all.js"
+            ],
+            "aot": false,
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/cumulus-media-advertiser/src/environments/environment.ts",
+                  "with": "projects/cumulus-media-advertiser/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
+          },
+          "defaultConfiguration": ""
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "buildTarget": "cumulus-media-advertiser:build"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "cumulus-media-advertiser:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "cumulus-media-advertiser:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/cumulus-media-advertiser/src/test.ts",
+            "polyfills": "projects/cumulus-media-advertiser/src/polyfills.ts",
+            "tsConfig": "projects/cumulus-media-advertiser/tsconfig.spec.json",
+            "karmaConfig": "projects/cumulus-media-advertiser/karma.conf.js",
+            "styles": [
+              "projects/cumulus-media-advertiser/src/styles.css"
+            ],
+            "scripts": [],
+            "assets": [
+              "projects/cumulus-media-advertiser/src/favicon.ico",
+              "projects/cumulus-media-advertiser/src/assets"
+            ]
+          }
+        }
+      }
+    },
+    "red-ventures-campaign": {
+      "root": "projects/red-ventures-campaign/",
+      "sourceRoot": "projects/red-ventures-campaign/src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/red-ventures-campaign",
+            "index": "projects/red-ventures-campaign/src/index.html",
+            "main": "projects/red-ventures-campaign/src/main.ts",
+            "polyfills": "projects/red-ventures-campaign/src/polyfills.ts",
+            "tsConfig": "projects/red-ventures-campaign/tsconfig.app.json",
+            "assets": [
+              "projects/red-ventures-campaign/src/favicon.ico",
+              "projects/red-ventures-campaign/src/assets"
+            ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "projects/red-ventures-campaign/src/styles"
+              ]
+            },
+            "styles": [
+              "projects/template-module/src/styles.less",
+              "projects/red-ventures-campaign/src/styles.less"
+            ],
+            "scripts": [
+              "node_modules/highcharts/highcharts.js",
+              "node_modules/highcharts/highcharts-more.js",
+              "node_modules/highcharts/modules/map.js",
+              "node_modules/highcharts/modules/solid-gauge.js",
+              "src/assets/nl-all.js"
+            ],
+            "aot": false,
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/red-ventures-campaign/src/environments/environment.ts",
+                  "with": "projects/red-ventures-campaign/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
+          },
+          "defaultConfiguration": ""
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "buildTarget": "red-ventures-campaign:build"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "red-ventures-campaign:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "red-ventures-campaign:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/red-ventures-campaign/src/test.ts",
+            "polyfills": "projects/red-ventures-campaign/src/polyfills.ts",
+            "tsConfig": "projects/red-ventures-campaign/tsconfig.spec.json",
+            "karmaConfig": "projects/red-ventures-campaign/karma.conf.js",
+            "styles": [
+              "projects/red-ventures-campaign/src/styles.css"
+            ],
+            "scripts": [],
+            "assets": [
+              "projects/red-ventures-campaign/src/favicon.ico",
+              "projects/red-ventures-campaign/src/assets"
+            ]
+          }
+        }
+      }
+    },
+    "ew-scripps-advertiser": {
+      "root": "projects/ew-scripps-advertiser/",
+      "sourceRoot": "projects/ew-scripps-advertiser/src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/ew-scripps-advertiser",
+            "index": "projects/ew-scripps-advertiser/src/index.html",
+            "main": "projects/ew-scripps-advertiser/src/main.ts",
+            "polyfills": "projects/ew-scripps-advertiser/src/polyfills.ts",
+            "tsConfig": "projects/ew-scripps-advertiser/tsconfig.app.json",
+            "assets": [
+              "projects/ew-scripps-advertiser/src/favicon.ico",
+              "projects/ew-scripps-advertiser/src/assets"
+            ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "projects/ew-scripps-advertiser/src/styles"
+              ]
+            },
+            "styles": [
+              "projects/template-module/src/styles.less",
+              "projects/ew-scripps-advertiser/src/styles.less"
+            ],
+            "scripts": [
+              "node_modules/highcharts/highcharts.js",
+              "node_modules/highcharts/highcharts-more.js",
+              "node_modules/highcharts/modules/map.js",
+              "node_modules/highcharts/modules/solid-gauge.js",
+              "src/assets/us-all.js"
+            ],
+            "aot": false,
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/ew-scripps-advertiser/src/environments/environment.ts",
+                  "with": "projects/ew-scripps-advertiser/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
+          },
+          "defaultConfiguration": ""
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "buildTarget": "ew-scripps-advertiser:build"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "ew-scripps-advertiser:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "ew-scripps-advertiser:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ew-scripps-advertiser/src/test.ts",
+            "polyfills": "projects/ew-scripps-advertiser/src/polyfills.ts",
+            "tsConfig": "projects/ew-scripps-advertiser/tsconfig.spec.json",
+            "karmaConfig": "projects/ew-scripps-advertiser/karma.conf.js",
+            "styles": [
+              "projects/ew-scripps-advertiser/src/styles.css"
+            ],
+            "scripts": [],
+            "assets": [
+              "projects/ew-scripps-advertiser/src/favicon.ico",
+              "projects/ew-scripps-advertiser/src/assets"
+            ]
+          }
+        }
+      }
+    },
+    "cmg-advertiser": {
+      "root": "projects/cmg-advertiser/",
+      "sourceRoot": "projects/cmg-advertiser/src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/cmg-advertiser",
+            "index": "projects/cmg-advertiser/src/index.html",
+            "main": "projects/cmg-advertiser/src/main.ts",
+            "polyfills": "projects/cmg-advertiser/src/polyfills.ts",
+            "tsConfig": "projects/cmg-advertiser/tsconfig.app.json",
+            "assets": [
+              "projects/cmg-advertiser/src/favicon.ico",
+              "projects/cmg-advertiser/src/assets"
+            ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "projects/cmg-advertiser/src/styles"
+              ]
+            },
+            "styles": [
+              "projects/template-module/src/styles.less",
+              "projects/cmg-advertiser/src/styles.less"
+            ],
+            "scripts": [
+              "node_modules/highcharts/highcharts.js",
+              "node_modules/highcharts/highcharts-more.js",
+              "node_modules/highcharts/modules/map.js",
+              "node_modules/highcharts/modules/solid-gauge.js"
+            ],
+            "aot": false,
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/cmg-advertiser/src/environments/environment.ts",
+                  "with": "projects/cmg-advertiser/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
+          },
+          "defaultConfiguration": ""
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "buildTarget": "cmg-advertiser:build"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "cmg-advertiser:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "cmg-advertiser:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/cmg-advertiser/src/test.ts",
+            "polyfills": "projects/cmg-advertiser/src/polyfills.ts",
+            "tsConfig": "projects/cmg-advertiser/tsconfig.spec.json",
+            "karmaConfig": "projects/cmg-advertiser/karma.conf.js",
+            "styles": [
+              "projects/cmg-advertiser/src/styles.css"
+            ],
+            "scripts": [],
+            "assets": [
+              "projects/cmg-advertiser/src/favicon.ico",
+              "projects/cmg-advertiser/src/assets"
+            ]
+          }
+        }
+      }
+    },
+    "cmi-campaign": {
+      "root": "projects/cmi-campaign/",
+      "sourceRoot": "projects/cmi-campaign/src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/cmi-campaign",
+            "index": "projects/cmi-campaign/src/index.html",
+            "main": "projects/cmi-campaign/src/main.ts",
+            "polyfills": "projects/cmi-campaign/src/polyfills.ts",
+            "tsConfig": "projects/cmi-campaign/tsconfig.app.json",
+            "assets": [
+              "projects/cmi-campaign/src/favicon.ico",
+              "projects/cmi-campaign/src/assets"
+            ],
+            "stylePreprocessorOptions": {
+              "includePaths": ["projects/cmi-campaign/src/styles"]
+            },
+            "styles": [
+              "projects/template-module/src/styles.less",
+              "projects/cmi-campaign/src/styles.less"
+            ],
+            "scripts": [
+              "node_modules/highcharts/highcharts.js",
+              "node_modules/highcharts/highcharts-more.js",
+              "node_modules/highcharts/modules/map.js",
+              "node_modules/highcharts/modules/solid-gauge.js",
+              "src/assets/us-all.js"
+            ],
+            "aot": false,
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/cmi-campaign/src/environments/environment.ts",
+                  "with": "projects/cmi-campaign/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
+          },
+          "defaultConfiguration": ""
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "buildTarget": "cmi-campaign:build"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "cmi-campaign:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "cmi-campaign:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/cmi-campaign/src/test.ts",
+            "polyfills": "projects/cmi-campaign/src/polyfills.ts",
+            "tsConfig": "projects/cmi-campaign/tsconfig.spec.json",
+            "karmaConfig": "projects/cmi-campaign/karma.conf.js",
+            "styles": ["projects/cmi-campaign/src/styles.css"],
+            "scripts": [],
+            "assets": [
+              "projects/cmi-campaign/src/favicon.ico",
+              "projects/cmi-campaign/src/assets"
+            ]
+          }
+        }
+      }
+    },
+    "adevinta-campaign": {
+      "root": "projects/adevinta-campaign/",
+      "sourceRoot": "projects/adevinta-campaign/src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/adevinta-campaign",
+            "index": "projects/adevinta-campaign/src/index.html",
+            "main": "projects/adevinta-campaign/src/main.ts",
+            "polyfills": "projects/adevinta-campaign/src/polyfills.ts",
+            "tsConfig": "projects/adevinta-campaign/tsconfig.app.json",
+            "assets": [
+              "projects/adevinta-campaign/src/favicon.ico",
+              "projects/adevinta-campaign/src/assets"
+            ],
+            "stylePreprocessorOptions": {
+              "includePaths": ["projects/adevinta-campaign/src/styles"]
+            },
+            "styles": [
+              "projects/template-module/src/styles.less",
+              "projects/adevinta-campaign/src/styles.less"
+            ],
+            "scripts": [
+              "node_modules/highcharts/highcharts.js",
+              "node_modules/highcharts/highcharts-more.js",
+              "node_modules/highcharts/modules/map.js",
+              "node_modules/highcharts/modules/solid-gauge.js",
+              "src/assets/europe.js",
+              "src/assets/nl-all.js",
+              "src/assets/be-all.js"
+            ],
+            "aot": false,
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/adevinta-campaign/src/environments/environment.ts",
+                  "with": "projects/adevinta-campaign/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
+          },
+          "defaultConfiguration": ""
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "buildTarget": "adevinta-campaign:build"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "adevinta-campaign:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "adevinta-campaign:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/adevinta-campaign/src/test.ts",
+            "polyfills": "projects/adevinta-campaign/src/polyfills.ts",
+            "tsConfig": "projects/adevinta-campaign/tsconfig.spec.json",
+            "karmaConfig": "projects/adevinta-campaign/karma.conf.js",
+            "styles": ["projects/adevinta-campaign/src/styles.css"],
+            "scripts": [],
+            "assets": [
+              "projects/adevinta-campaign/src/favicon.ico",
+              "projects/adevinta-campaign/src/assets"
+            ]
+          }
+        }
+      }
+    },
+    "npr-campaign": {
+      "root": "projects/npr-campaign/",
+      "sourceRoot": "projects/npr-campaign/src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/npr-campaign",
+            "index": "projects/npr-campaign/src/index.html",
+            "main": "projects/npr-campaign/src/main.ts",
+            "polyfills": "projects/npr-campaign/src/polyfills.ts",
+            "tsConfig": "projects/npr-campaign/tsconfig.app.json",
+            "assets": [
+              "projects/npr-campaign/src/favicon.ico",
+              "projects/npr-campaign/src/assets"
+            ],
+            "stylePreprocessorOptions": {
+              "includePaths": ["projects/npr-campaign/src/styles"]
+            },
+            "styles": [
+              "projects/template-module/src/styles.less",
+              "projects/npr-campaign/src/styles.less"
+            ],
+            "scripts": [
+              "node_modules/highcharts/highcharts.js",
+              "node_modules/highcharts/highcharts-more.js",
+              "node_modules/highcharts/modules/map.js",
+              "node_modules/highcharts/modules/solid-gauge.js",
+              "src/assets/europe.js",
+              "src/assets/us-all.js"
+            ],
+            "aot": false,
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/npr-campaign/src/environments/environment.ts",
+                  "with": "projects/npr-campaign/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
+          },
+          "defaultConfiguration": ""
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "buildTarget": "npr-campaign:build"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "npr-campaign:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "npr-campaign:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/npr-campaign/src/test.ts",
+            "polyfills": "projects/npr-campaign/src/polyfills.ts",
+            "tsConfig": "projects/npr-campaign/tsconfig.spec.json",
+            "karmaConfig": "projects/npr-campaign/karma.conf.js",
+            "styles": ["projects/npr-campaign/src/styles.css"],
+            "scripts": [],
+            "assets": [
+              "projects/npr-campaign/src/favicon.ico",
+              "projects/npr-campaign/src/assets"
+            ]
+          }
+        }
+      }
+    },
+    "the-advocate-advertiser": {
+      "root": "projects/the-advocate-advertiser/",
+      "sourceRoot": "projects/the-advocate-advertiser/src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/the-advocate-advertiser",
+            "index": "projects/the-advocate-advertiser/src/index.html",
+            "main": "projects/the-advocate-advertiser/src/main.ts",
+            "polyfills": "projects/the-advocate-advertiser/src/polyfills.ts",
+            "tsConfig": "projects/the-advocate-advertiser/tsconfig.app.json",
+            "assets": [
+              "projects/the-advocate-advertiser/src/favicon.ico",
+              "projects/the-advocate-advertiser/src/assets"
+            ],
+            "stylePreprocessorOptions": {
+              "includePaths": ["projects/the-advocate-advertiser/src/styles"]
+            },
+            "styles": [
+              "projects/template-module/src/styles.less",
+              "projects/the-advocate-advertiser/src/styles.less"
+            ],
+            "scripts": [
+              "node_modules/highcharts/highcharts.js",
+              "node_modules/highcharts/highcharts-more.js",
+              "node_modules/highcharts/modules/map.js",
+              "node_modules/highcharts/modules/solid-gauge.js",
+              "src/assets/us-all.js",
+              "src/assets/us-dma-all.js",
+              "src/assets/us-dma-city.js"
+            ],
+            "aot": false,
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/the-advocate-advertiser/src/environments/environment.ts",
+                  "with": "projects/the-advocate-advertiser/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
+          },
+          "defaultConfiguration": ""
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "buildTarget": "the-advocate-advertiser:build"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "the-advocate-advertiser:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "the-advocate-advertiser:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/the-advocate-advertiser/src/test.ts",
+            "polyfills": "projects/the-advocate-advertiser/src/polyfills.ts",
+            "tsConfig": "projects/the-advocate-advertiser/tsconfig.spec.json",
+            "karmaConfig": "projects/the-advocate-advertiser/karma.conf.js",
+            "styles": ["projects/the-advocate-advertiser/src/styles.css"],
+            "scripts": [],
+            "assets": [
+              "projects/the-advocate-advertiser/src/favicon.ico",
+              "projects/the-advocate-advertiser/src/assets"
+            ]
+          }
+        }
+      }
+    },
+    "simplifi-advertiser": {
+      "root": "projects/simplifi-advertiser/",
+      "sourceRoot": "projects/simplifi-advertiser/src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/simplifi-advertiser",
+            "index": "projects/simplifi-advertiser/src/index.html",
+            "main": "projects/simplifi-advertiser/src/main.ts",
+            "polyfills": "projects/simplifi-advertiser/src/polyfills.ts",
+            "tsConfig": "projects/simplifi-advertiser/tsconfig.app.json",
+            "assets": [
+              "projects/simplifi-advertiser/src/favicon.ico",
+              "projects/simplifi-advertiser/src/assets"
+            ],
+            "stylePreprocessorOptions": {
+              "includePaths": ["projects/simplifi-advertiser/src/styles"]
+            },
+            "styles": [
+              "projects/template-module/src/styles.less",
+              "projects/simplifi-advertiser/src/styles.less"
+            ],
+            "scripts": [
+              "node_modules/highcharts/highcharts.js",
+              "node_modules/highcharts/highcharts-more.js",
+              "node_modules/highcharts/modules/map.js",
+              "node_modules/highcharts/modules/solid-gauge.js",
+              "src/assets/us-all.js",
+              "src/assets/dmas/abilenesweetwater.js",
+              "src/assets/dmas/albanyga.js",
+              "src/assets/dmas/albanyschenectadytroy.js",
+              "src/assets/dmas/albuquerquesantafe.js",
+              "src/assets/dmas/alexandriala.js",
+              "src/assets/dmas/alpena.js",
+              "src/assets/dmas/amarillo.js",
+              "src/assets/dmas/atlanta.js",
+              "src/assets/dmas/augusta.js",
+              "src/assets/dmas/austin.js",
+              "src/assets/dmas/bakersfield.js",
+              "src/assets/dmas/baltimore.js",
+              "src/assets/dmas/bangor.js",
+              "src/assets/dmas/batonrouge.js",
+              "src/assets/dmas/beaumontportarthur.js",
+              "src/assets/dmas/bendor.js",
+              "src/assets/dmas/billings.js",
+              "src/assets/dmas/biloxigulfport.js",
+              "src/assets/dmas/binghamton.js",
+              "src/assets/dmas/birminghamanntusc.js",
+              "src/assets/dmas/bluefieldbeckleyoakhill.js",
+              "src/assets/dmas/boise.js",
+              "src/assets/dmas/bostonmanchester.js",
+              "src/assets/dmas/bowlinggreen.js",
+              "src/assets/dmas/buffalo.js",
+              "src/assets/dmas/burlingtonplattsburgh.js",
+              "src/assets/dmas/buttebozeman.js",
+              "src/assets/dmas/casperriverton.js",
+              "src/assets/dmas/cedarrapidswtrloiwcdub.js",
+              "src/assets/dmas/champaignsprngflddecatur.js",
+              "src/assets/dmas/charlestonhuntington.js",
+              "src/assets/dmas/charlestonsc.js",
+              "src/assets/dmas/charlotte.js",
+              "src/assets/dmas/charlottesville.js",
+              "src/assets/dmas/chattanooga.js",
+              "src/assets/dmas/cheyennescottsbluf.js",
+              "src/assets/dmas/chicago.js",
+              "src/assets/dmas/chicoredding.js",
+              "src/assets/dmas/cincinnati.js",
+              "src/assets/dmas/clarksburgweston.js",
+              "src/assets/dmas/clevelandakroncanton.js",
+              "src/assets/dmas/coloradospringspueblo.js",
+              "src/assets/dmas/columbiajeffersoncity.js",
+              "src/assets/dmas/columbiasc.js",
+              "src/assets/dmas/columbusga.js",
+              "src/assets/dmas/columbusoh.js",
+              "src/assets/dmas/columbustupelowestpoint.js",
+              "src/assets/dmas/corpuschristi.js",
+              "src/assets/dmas/dallasftworth.js",
+              "src/assets/dmas/davenportrislandmoline.js",
+              "src/assets/dmas/dayton.js",
+              "src/assets/dmas/denver.js",
+              "src/assets/dmas/desmoinesames.js",
+              "src/assets/dmas/detroit.js",
+              "src/assets/dmas/dothan.js",
+              "src/assets/dmas/duluthsuperior.js",
+              "src/assets/dmas/elmiracorning.js",
+              "src/assets/dmas/elpasolascruces.js",
+              "src/assets/dmas/erie.js",
+              "src/assets/dmas/eugene.js",
+              "src/assets/dmas/eureka.js",
+              "src/assets/dmas/evansville.js",
+              "src/assets/dmas/fargovalleycity.js",
+              "src/assets/dmas/flintsaginawbaycity.js",
+              "src/assets/dmas/fresnovisalia.js",
+              "src/assets/dmas/ftmyersnaples.js",
+              "src/assets/dmas/ftsmithfaysprngdlrgrs.js",
+              "src/assets/dmas/ftwayne.js",
+              "src/assets/dmas/gainesville.js",
+              "src/assets/dmas/glendive.js",
+              "src/assets/dmas/grandjunctionmontrose.js",
+              "src/assets/dmas/grandrapidskalmzoobcrk.js",
+              "src/assets/dmas/greatfalls.js",
+              "src/assets/dmas/greenbayappleton.js",
+              "src/assets/dmas/greensborohpointwsalem.js",
+              "src/assets/dmas/greenvillenbernwashngtn.js",
+              "src/assets/dmas/greenvllspartashevlland.js",
+              "src/assets/dmas/greenwoodgreenville.js",
+              "src/assets/dmas/harlingenwslcobrnsvlmca.js",
+              "src/assets/dmas/harrisburglncstrlebyork.js",
+              "src/assets/dmas/harrisonburg.js",
+              "src/assets/dmas/hartfordnewhaven.js",
+              "src/assets/dmas/hattiesburglaurel.js",
+              "src/assets/dmas/helena.js",
+              "src/assets/dmas/houston.js",
+              "src/assets/dmas/huntsvilledecaturflor.js",
+              "src/assets/dmas/idahofallspocatello.js",
+              "src/assets/dmas/indianapolis.js",
+              "src/assets/dmas/jacksonms.js",
+              "src/assets/dmas/jacksontn.js",
+              "src/assets/dmas/jacksonville.js",
+              "src/assets/dmas/johnstownaltoona.js",
+              "src/assets/dmas/jonesboro.js",
+              "src/assets/dmas/joplinpittsburg.js",
+              "src/assets/dmas/kansascity.js",
+              "src/assets/dmas/knoxville.js",
+              "src/assets/dmas/lacrosseeauclaire.js",
+              "src/assets/dmas/lafayettein.js",
+              "src/assets/dmas/lafayettela.js",
+              "src/assets/dmas/lakecharles.js",
+              "src/assets/dmas/lansing.js",
+              "src/assets/dmas/laredo.js",
+              "src/assets/dmas/lasvegas.js",
+              "src/assets/dmas/lexington.js",
+              "src/assets/dmas/lima.js",
+              "src/assets/dmas/lincolnhstngskrny.js",
+              "src/assets/dmas/littlerockpinebluff.js",
+              "src/assets/dmas/losangeles.js",
+              "src/assets/dmas/louisville.js",
+              "src/assets/dmas/lubbock.js",
+              "src/assets/dmas/macon.js",
+              "src/assets/dmas/madison.js",
+              "src/assets/dmas/mankato.js",
+              "src/assets/dmas/marquette.js",
+              "src/assets/dmas/medfordklamathfalls.js",
+              "src/assets/dmas/memphis.js",
+              "src/assets/dmas/meridian.js",
+              "src/assets/dmas/miamiftlauderdale.js",
+              "src/assets/dmas/milwaukee.js",
+              "src/assets/dmas/minneapolisstpaul.js",
+              "src/assets/dmas/minotbismarckdickinson.js",
+              "src/assets/dmas/missoula.js",
+              "src/assets/dmas/mobilepensacolaftwalt.js",
+              "src/assets/dmas/monroeeldorado.js",
+              "src/assets/dmas/montereysalinas.js",
+              "src/assets/dmas/montgomeryselma.js",
+              "src/assets/dmas/myrtlebeachflorence.js",
+              "src/assets/dmas/nashville.js",
+              "src/assets/dmas/neworleans.js",
+              "src/assets/dmas/newyork.js",
+              "src/assets/dmas/norfolkportsmthnewptnws.js",
+              "src/assets/dmas/northplatte.js",
+              "src/assets/dmas/odessamidland.js",
+              "src/assets/dmas/oklahomacity.js",
+              "src/assets/dmas/omaha.js",
+              "src/assets/dmas/orlandodaytonabchmelbrn.js",
+              "src/assets/dmas/ottumwakirksville.js",
+              "src/assets/dmas/paducahcapegirardharsbg.js",
+              "src/assets/dmas/palmsprings.js",
+              "src/assets/dmas/panamacity.js",
+              "src/assets/dmas/parkersburg.js",
+              "src/assets/dmas/peoriabloomington.js",
+              "src/assets/dmas/philadelphia.js",
+              "src/assets/dmas/phoenixprescott.js",
+              "src/assets/dmas/pittsburgh.js",
+              "src/assets/dmas/portlandauburn.js",
+              "src/assets/dmas/portlandor.js",
+              "src/assets/dmas/presqueisle.js",
+              "src/assets/dmas/providencenewbedford.js",
+              "src/assets/dmas/quincyhannibalkeokuk.js",
+              "src/assets/dmas/raleighdurhamfayetvlle.js",
+              "src/assets/dmas/rapidcity.js",
+              "src/assets/dmas/reno.js",
+              "src/assets/dmas/richmondpetersburg.js",
+              "src/assets/dmas/roanokelynchburg.js",
+              "src/assets/dmas/rochesterny.js",
+              "src/assets/dmas/rochestrmasoncityaustin.js",
+              "src/assets/dmas/rockford.js",
+              "src/assets/dmas/sacramntostktnmodesto.js",
+              "src/assets/dmas/salisbury.js",
+              "src/assets/dmas/saltlakecity.js",
+              "src/assets/dmas/sanangelo.js",
+              "src/assets/dmas/sanantonio.js",
+              "src/assets/dmas/sandiego.js",
+              "src/assets/dmas/sanfranciscooaksanjose.js",
+              "src/assets/dmas/santabarbrasanmarsanluob.js",
+              "src/assets/dmas/savannah.js",
+              "src/assets/dmas/seattletacoma.js",
+              "src/assets/dmas/shermanada.js",
+              "src/assets/dmas/shreveport.js",
+              "src/assets/dmas/siouxcity.js",
+              "src/assets/dmas/siouxfallsmitchell.js",
+              "src/assets/dmas/southbendelkhart.js",
+              "src/assets/dmas/spokane.js",
+              "src/assets/dmas/springfieldholyoke.js",
+              "src/assets/dmas/springfieldmo.js",
+              "src/assets/dmas/stjoseph.js",
+              "src/assets/dmas/stlouis.js",
+              "src/assets/dmas/syracuse.js",
+              "src/assets/dmas/tallahasseethomasville.js",
+              "src/assets/dmas/tampastpetesarasota.js",
+              "src/assets/dmas/terrehaute.js",
+              "src/assets/dmas/toledo.js",
+              "src/assets/dmas/topeka.js",
+              "src/assets/dmas/traversecitycadillac.js",
+              "src/assets/dmas/tricitiestnva.js",
+              "src/assets/dmas/tucsonsierravista.js",
+              "src/assets/dmas/tulsa.js",
+              "src/assets/dmas/twinfalls.js",
+              "src/assets/dmas/tylerlongviewlfknncgd.js",
+              "src/assets/dmas/utica.js",
+              "src/assets/dmas/victoria.js",
+              "src/assets/dmas/wacotemplebryan.js",
+              "src/assets/dmas/washingtondchagrstwn.js",
+              "src/assets/dmas/watertown.js",
+              "src/assets/dmas/wausaurhinelander.js",
+              "src/assets/dmas/westpalmbeachftpierce.js",
+              "src/assets/dmas/wheelingsteubenville.js",
+              "src/assets/dmas/wichitafallslawton.js",
+              "src/assets/dmas/wichitahutchinsonplus.js",
+              "src/assets/dmas/wilkesbarrescranton.js",
+              "src/assets/dmas/wilmington.js",
+              "src/assets/dmas/yakimapascorchlndknnwck.js",
+              "src/assets/dmas/youngstown.js",
+              "src/assets/dmas/yumaelcentro.js",
+              "src/assets/dmas/zanesville.js",
+              "src/assets/us-dma-city.js"
+            ],
+            "aot": false,
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/simplifi-advertiser/src/environments/environment.ts",
+                  "with": "projects/simplifi-advertiser/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
+          },
+          "defaultConfiguration": ""
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "buildTarget": "simplifi-advertiser:build"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "simplifi-advertiser:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "simplifi-advertiser:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/simplifi-advertiser/src/test.ts",
+            "polyfills": "projects/simplifi-advertiser/src/polyfills.ts",
+            "tsConfig": "projects/simplifi-advertiser/tsconfig.spec.json",
+            "karmaConfig": "projects/simplifi-advertiser/karma.conf.js",
+            "styles": ["projects/simplifi-advertiser/src/styles.css"],
+            "scripts": [],
+            "assets": [
+              "projects/simplifi-advertiser/src/favicon.ico",
+              "projects/simplifi-advertiser/src/assets"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "analytics": false
+  }
+}

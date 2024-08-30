@@ -1,0 +1,54 @@
+<slide [loading]="loading" name="Native Driver Delivery" *ngFor="let lineItems of lineItemGroups">
+  <section class="slide slide-line-items" [style.background-color]="backgroundColor">
+    <header class="slide-header">
+      <h2 [ngClass]="fontStyling">Native Driver Delivery</h2>
+    </header>
+    <div class="main">
+      <table>
+        <thead>
+          <tr>
+            <th>Line Item</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th class="metric">Impressions</th>
+            <th class="metric">Clicks</th>
+            <th class="metric">CTR</th>
+            <th class="metric">CTR - Benchmark</th>
+          </tr>
+        </thead>
+        <tbody *ngIf="lineItems == lineItemGroups[0]">
+        <tr class="border-bottom less-padding">
+          <td [ngClass]="fontStyling">Total</td>
+          <td [ngClass]="fontStyling"></td>
+          <td [ngClass]="fontStyling"></td>
+          <td class="metric" [ngClass]="fontStyling">{{totals?.dfp_total_line_item_level_impressions | localeNumber}}</td>
+          <td class="metric" [ngClass]="fontStyling">{{totals?.dfp_total_line_item_level_clicks | localeNumber}}</td>
+          <td class="metric" [ngClass]="fontStyling">{{totals?.dfp_ctr | percent}}</td>
+          <td class="metric" [ngClass]="fontStyling"><text-editor [plainText]="true" placeholder="Number.." id="native-content-total-ctr-benchmark" style="width: 164px; height: 1.5em;"></text-editor></td>
+        </tr>
+        <tr class="less-padding" *ngFor="let li of lineItems">
+          <td [ngClass]="fontStyling">{{li.name}}</td>
+          <td [ngClass]="fontStyling">{{li.startDate | date:dateFormat}}</td>
+          <td [ngClass]="fontStyling">{{li.endDate | date:dateFormat}}</td>
+          <td class="metric" [ngClass]="fontStyling">{{li.metrics.dfp_total_line_item_level_impressions | localeNumber}}</td>
+          <td class="metric" [ngClass]="fontStyling">{{li.metrics.dfp_total_line_item_level_clicks | localeNumber}}</td>
+          <td class="metric" [ngClass]="fontStyling">{{li.metrics.dfp_ctr | percent}}</td>
+          <td class="metric" [ngClass]="fontStyling"><text-editor [plainText]="true" placeholder="Number.." id="native-content-line-{{li.name.parameterize()}}" style="width: 164px; height: 1.5em;"></text-editor></td>
+        </tr>
+        </tbody>
+        <tbody *ngIf="lineItems != lineItemGroups[0]">
+        <tr *ngFor="let li of lineItems">
+          <td [ngClass]="fontStyling">{{li.name}}</td>
+          <td [ngClass]="fontStyling">{{li.startDate | date:dateFormat}}</td>
+          <td [ngClass]="fontStyling">{{li.endDate | date:dateFormat}}</td>
+          <td class="metric" [ngClass]="fontStyling">{{li.metrics.dfp_total_line_item_level_impressions | localeNumber}}</td>
+          <td class="metric" [ngClass]="fontStyling">{{li.metrics.dfp_total_line_item_level_clicks | localeNumber}}</td>
+          <td class="metric" [ngClass]="fontStyling">{{li.metrics.dfp_ctr | percent}}</td>
+          <td class="metric" ><text-editor  [plainText]="true" placeholder="Number.." id="native-content-line-{{li.name.parameterize()}}" style="width: 164px; height: 1.5em;"></text-editor></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <footer class="slide-footer"></footer>
+  </section>
+</slide>

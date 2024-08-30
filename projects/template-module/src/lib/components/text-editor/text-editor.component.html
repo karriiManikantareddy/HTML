@@ -1,0 +1,9 @@
+<quill-editor
+  [ngModel]="text"
+  [modules]="modules"
+  [style]="{height: '100%', display: 'block'}"
+  (onContentChanged)="contentChanged($event)"
+  [placeholder]="placeholder"
+  [readOnly]="isTemplateReadonly"
+  [maxLength]="maxLength"
+></quill-editor>

@@ -1,0 +1,86 @@
+params: [advertiser, campaign]
+rename_dimensions:
+  dm_client_facing_reporting:
+    dfp_order: campaign
+  dm_google_analytics:
+    mapped_advertiser: advertiser
+    mapped_campaign: campaign
+data:
+  dfp_campaign:
+    dataset: dm_client_facing_reporting
+    dimensions: [advertiser, dfp_order, sales_order]
+    metrics:
+      - dfp_total_line_item_level_impressions
+      - dfp_total_line_item_level_clicks
+      - ctr
+      - viewable_rate
+  dfp_campaign_per_day:
+    dataset: dm_client_facing_reporting
+    dimensions: [advertiser, dfp_order]
+    metrics:
+      - dfp_total_line_item_level_impressions
+      - ctr
+    rollup: day
+  dfp_line_items:
+    dataset: dm_client_facing_reporting
+    dimensions: [advertiser, dfp_order, dfp_line_item]
+    metrics:
+      - dfp_total_line_item_level_impressions
+      - dfp_total_line_item_level_clicks
+      - ctr
+      - viewable_rate  
+      - dfp_total_line_item_level_all_revenue  
+  dfp_creatives:
+    dataset: dm_client_facing_reporting
+    dimensions: [advertiser, dfp_order, dfp_creative, dfp_creative_size]
+    metrics:
+      - dfp_total_line_item_level_impressions
+      - dfp_total_line_item_level_clicks
+      - ctr
+      - viewable_rate
+  dfp_regions:
+    dataset: dm_client_facing_reporting
+    dimensions: [advertiser, dfp_order, dfp_region]
+    metrics:
+      - dfp_total_line_item_level_impressions
+      - ctr
+  dfp_platforms:
+    dataset: dm_client_facing_reporting
+    dimensions: [advertiser, dfp_order, dfp_ad_unit_4_mapped_platform]
+    metrics:
+      - dfp_total_line_item_level_impressions
+      - dfp_total_line_item_level_clicks
+      - ctr        
+  dfp_domains:
+    dataset: dm_client_facing_reporting
+    dimensions: [advertiser, dfp_order, dfp_ad_unit_4_mapped_subsite]
+    metrics:
+      - dfp_total_line_item_level_impressions
+      - dfp_total_line_item_level_clicks
+      - ctr
+  dfp_sales_person:
+    dataset: dm_client_facing_reporting
+    dimensions: [advertiser, dfp_order, sales_person]
+    metrics:
+      - dfp_total_line_item_level_impressions
+  ga_page_paths:
+    dataset: dm_google_analytics
+    dimensions: [mapped_advertiser, mapped_campaign, page_path]
+    metrics:
+      - pageviews
+      - unique_pageviews
+      - time_on_page
+      - scrolled_100
+      - scrolled_100_rate
+  ga_outbound_links:
+    dataset: dm_google_analytics
+    dimensions: [mapped_advertiser, mapped_campaign, page_path, outbound_link]
+    metrics:
+      - clicks
+  dfp_device:
+    dataset: dm_client_facing_reporting
+    dimensions: [advertiser, dfp_order, dfp_device_category]
+    metrics:
+      - dfp_total_line_item_level_impressions
+      - dfp_total_line_item_level_clicks
+      - ctr

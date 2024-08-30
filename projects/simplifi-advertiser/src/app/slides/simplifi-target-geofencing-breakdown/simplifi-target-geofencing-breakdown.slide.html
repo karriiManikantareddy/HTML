@@ -1,0 +1,7 @@
+<slide *ngIf="loading || (geoFences && !geoFences.isEmpty())" [loading]="loading" name="Geofence Name">
+  <section class="slide campaigns">
+    <slide-header text="Geofence Name"></slide-header>
+    <simplifi-table [items]="geoFences" [kpis]="kpis" header="Top 10 Geofence Name"></simplifi-table>
+    <slide-footer slideName="simplifi-target-geofencing"></slide-footer>
+  </section>
+</slide>

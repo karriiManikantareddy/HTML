@@ -1,0 +1,47 @@
+<slide [loading]="loading" name="Performance By Platform">
+  <section class="slide overview">
+    <header class="slide-header">
+      <h2>
+        <span id="flag"></span>
+        Performance By Platform
+      </h2>
+    </header>
+    <div class="main">
+      <div class="col-one-of-two left-block">
+        <div class="header">
+          Platforms
+        </div>
+        <div>
+          <chart [options]="options" [series]="series"></chart>
+        </div>
+        <div id="testChart"></div>
+      </div>
+
+      <div class="col-one-of-two right-block">
+      <table>
+        <thead>
+        <tr>
+          <th class="static">Platform</th>
+          <th class="metric small">Impressions</th>
+          <th class="metric small">Clicks</th>
+          <th class="metric small">% Imps</th>
+          <th class="metric small">% Clicks</th>
+          <th class="metric">Ctr</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let p of platforms">
+          <td class="metric name">{{p?.name}}</td>
+          <td class="metric"> {{p?.metrics?.total_line_item_level_impressions | number}}</td>
+          <td class="metric">{{p?.metrics?.total_line_item_level_clicks | number}}</td>
+          <td class="metric">{{p?.shareOfs?.total_line_item_level_impressions | percent}}</td>
+          <td class="metric">{{p?.shareOfs?.total_line_item_level_clicks | percent}}</td>
+          <td class="metric">{{p?.metrics?.click_rate | percent}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    </div>
+    <footer class="slide-footer"></footer>
+  </section>
+</slide>

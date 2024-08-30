@@ -1,0 +1,50 @@
+<slide *ngIf="hasTve" [loading]="loading" name="TVE Performance Delivery by Screen">
+  <section class="slide overview">
+    <header class="slide-header">
+      <h1 class="title">
+        Streaming
+      </h1>
+      <div class="dates-wrapper">
+        Flight Dates:
+        <text-editor
+          class="dates"
+          [plainText]="true"
+          id="flight_dates"
+          [maxLength]="28"
+        ></text-editor>
+      </div>
+    </header>
+    <div class="main">
+      <h2 class="subtitle">Delivery by Screen</h2>
+      <table class="table">
+        <tbody>
+          <tr class="table__row">
+            <td class="table__cell table__cell--icon"><img src="assets/img/connected-tv.png" alt="Connected TV icon"></td>
+            <td class="table__cell">Connected TV</td>
+            <td class="table__cell">{{ devices.ConnectedTv / totalImpressions | percent:'1.1' }}</td>
+            <td class="table__cell table__cell--icon"><img src="assets/img/set-top-box.png" alt="Set Top Box icon"></td>
+            <td class="table__cell">Set Top Box</td>
+            <td class="table__cell">{{ devices.SetTopBox / totalImpressions | percent:'1.1' }}</td>
+          </tr>
+          <tr class="table__row">
+            <td class="table__cell table__cell--icon"><img src="assets/img/desktop.png" alt="Desktop/Laptop icon"></td>
+            <td class="table__cell">Desktop/Laptop</td>
+            <td class="table__cell">{{ devices['DesktopsAndLaptops'] / totalImpressions | percent:'1.1' }}</td>
+            <td class="table__cell table__cell--icon"><img src="assets/img/mobile.png" alt="Mobile icon"></td>
+            <td class="table__cell">Mobile</td>
+            <td class="table__cell">{{ devices.Mobile / totalImpressions | percent:'1.1' }}</td>
+          </tr>
+          <tr class="table__row">
+            <td class="table__cell table__cell--icon"><img src="assets/img/tablet.png" alt="Tablet icon"></td>
+            <td class="table__cell">Tablet</td>
+            <td class="table__cell">{{ devices.Tablets / totalImpressions | percent:'1.1' }}</td>
+            <td class="table__cell table__cell--icon"><img src="assets/img/other.png" alt="Other icon"></td>
+            <td class="table__cell">Other</td>
+            <td class="table__cell">{{ devices.Other / totalImpressions | percent:'1.1' }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <cmi-footer class="slide-footer"></cmi-footer>
+  </section>
+</slide>

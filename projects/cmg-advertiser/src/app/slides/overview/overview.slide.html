@@ -1,0 +1,31 @@
+<slide *ngFor="let overview of overviews" [loading]="loading" name="Overview">
+  <section class="slide overview">
+    <header class="slide-header">
+      <h2>
+        Overview - {{overview.name}}
+        <header-logo></header-logo>
+      </h2>
+    </header>
+    <div class="main">
+      <div class="statistic-icons">
+        <div *ngFor="let metric of overview.metrics" class="statistic-icons-item">
+          <icon [type]="metricIconConfig[metric.name]"></icon>
+          <div class="wrap-title">
+            <span class="num">{{metric.value | format:metric.format}}</span>
+            <span class="title">{{metric.displayName}}</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h6>
+          Delivery by day
+          <legend [items]="overview.legendItems" class="right"></legend>
+        </h6>
+        <div class="chart-content">
+          <chart type="column" [series]="overview.series" [options]="overview.chartOptions"></chart>
+        </div>
+      </div>
+    </div>
+    <footer class="slide-footer"></footer>
+  </section>
+</slide>

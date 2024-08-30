@@ -1,0 +1,35 @@
+<slide name="Podcast Delivery">
+  <section class="slide podcast-delivery">
+    <div class="main">
+      <div class="rouge-box">
+        <p class="title">Podcast Delivery By Title</p>
+        <text-editor id="podcast-description" plainText="true" placeholder="Input text..." class="podcast-delivery"></text-editor>
+      </div>
+      <div class="white-box">
+        <div class="container-impressions">
+          <img src="assets/img/logo_full_color_cropped.png" alt="logo" class="img-logo">
+          <div class="total-impressions">
+            <p class="bold-txt">{{numFormatter(totals?.impressions?.value,2)}}</p>
+            <p class="small-txt">Total Impressions</p>
+          </div>
+        </div>
+        <div class="podcasts">
+          <ng-container *ngFor="let p of creativeSizeGroups">
+            <div class="podcast">
+              <img class="img-podcast" src="{{imgUrl(p?.name)}}">
+              <div>
+                <p class="bold-txt">{{numFormatter(p?.metrics?.impressions.value,2)}}</p>
+                <p class="small-txt">impressions in {{p?.name}}</p>
+                <p class="blue-txt">{{p?.shareOfs.impressions | percent}}*</p>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+        <p class="footer-txt">
+          *Share of impressions across MINI delivery
+        </p>
+      </div>
+    </div>
+    <footer [isWhite]="isWhiteFooter"></footer>
+  </section>
+</slide>

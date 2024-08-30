@@ -1,0 +1,45 @@
+@import '../../../styles/base/_variables';
+
+.slide-line-items {
+  .campaign-row {
+    line-height: 1;
+  }
+
+  thead tr {
+    background: #525455;
+    color: #FFF;
+  }
+
+  thead tr th {
+    vertical-align: middle;
+    height: 80px;
+  }
+
+  td:first-child { padding-left: 1em;}
+  th:first-child { padding-left: 1em;}
+
+  th:last-child { padding-right: 1em;}
+  td:last-child { padding-right: 1em;}
+
+  tbody tr:nth-child(odd) {background: #F4F4F5}
+  tbody tr:nth-child(even) {background: #FFF}
+
+  .subrow {
+    height:40px;
+
+    td {
+      font-size: 18px;
+      padding: 15px 25px;
+    }
+
+    .first-col {
+      padding-left: 2em;
+      word-break: break-all;
+      max-width: 15em;
+    }
+  }
+}
+
+.campaign-title {
+  word-break: break-all;
+}

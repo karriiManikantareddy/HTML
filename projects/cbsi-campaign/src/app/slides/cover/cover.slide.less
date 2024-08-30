@@ -1,0 +1,47 @@
+@import '../../../styles/base/_variables';
+
+.header {
+  margin-bottom: 50px;
+  font-family: 'Arial Black';
+  font-size: 90px;
+  font-weight: bold;
+  white-space: pre-wrap;
+  word-break: break-word;
+  color: @header-blue;
+  text-align: center;
+}
+.sub-header {
+  margin-bottom: 200px;
+    font-family: 'Arial Black';
+    font-size: 36px;
+    font-weight: bold;
+    white-space: pre-wrap;
+    word-break: break-word;
+    color: #000640;
+    text-align: center;
+}
+.slide-cover {
+  margin: 0 auto;
+  background-image: url('../../../assets/img/cover_background.png');
+  background-size: cover;
+  background-color: @background-gray;
+  .main {
+    height: 100%;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: end;
+    width: 42%;
+  }
+}
+.logo {
+  width: 20%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin: 0 60px 60px 0;
+}

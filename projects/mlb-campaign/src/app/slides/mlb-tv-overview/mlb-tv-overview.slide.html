@@ -1,0 +1,38 @@
+<slide [loading]="loading" name="MLB TV Overview">
+  <section class="slide slide-mlb-tv-overview">
+    <header class="slide-header">
+      <h3>MLB.TV</h3>
+      <div class="sub-header">Desktop, Mobile and OTT</div>
+      <img src="assets/img/mlblogo.png" alt="">
+    </header>
+    <div class="main">
+      <div class="metrics">
+        <div class="metric-box">
+          <div class="metric">{{totals?.total_line_item_level_impressions?.value | number}}</div>
+          <div class="metric-name">In-Demo Impressions</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric">XX</div>
+          <div class="metric-name">P2+ Impressions</div>
+        </div>
+      </div>
+      <div class="devices">
+        <div class="tv">
+          <image-upload id="tv-mlb-overview" class="tv-mlb-overview"></image-upload>
+        </div>
+        <div class="desktop">
+          <image-upload id="desktop-mlb-overview" class="desktop-mlb-overview"></image-upload>
+        </div>
+        <div class="mobile">
+          <image-upload id="mobile-mlb-overview" class="mobile-mlb-overview"></image-upload>
+        </div>
+      </div>
+    </div>
+    <div class="blue-dots">
+      <img src="assets/img/black_dots.png" alt="">
+    </div>
+    <div class="red-dots">
+      <img src="assets/img/red_dots.png" alt="">
+    </div>
+  </section>
+</slide>

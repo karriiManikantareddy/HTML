@@ -1,0 +1,241 @@
+params: [advertiser]
+data:
+  metadata:
+    dataset: mapped
+    dimensions: [advertiser]
+    metrics:
+      - dfp_total_line_item_level_impressions
+  advertiser:
+    dataset: mapped
+    dimensions: [advertiser]
+    selection:
+      native: [ '', 'false' ]
+    metrics:
+      - dfp_total_line_item_level_impressions
+      - dfp_total_line_item_level_clicks
+      - dfp_ctr
+      - dfp_total_active_view_viewable_impressions_rate
+      - dr_third_party_impressions
+      - dr_third_party_clicks      
+      - aw_impressions
+  campaign:
+    dataset: mapped
+    dimensions: [advertiser, campaign]
+    selection:
+      native: [ '', 'false' ]
+    metrics:
+      - dfp_total_line_item_level_impressions
+      - dfp_total_line_item_level_clicks
+      - dfp_ctr
+      - dfp_total_active_view_viewable_impressions_rate
+  advertiser_per_day:
+    dataset: mapped
+    dimensions: [advertiser]
+    selection:
+      native: [ '', 'false' ]
+    metrics:
+      - dfp_total_line_item_level_impressions
+      - dfp_total_line_item_level_clicks
+      - dfp_ctr
+      - dfp_total_active_view_viewable_impressions_rate
+    rollup: day
+  native_advertiser_per_day:
+    dataset: mapped
+    dimensions: [advertiser]
+    selection:
+      native: [ 'true' ]
+    metrics:
+    - dfp_total_line_item_level_impressions
+    - dfp_total_line_item_level_clicks
+    - dfp_ctr
+    - dfp_total_active_view_viewable_impressions_rate
+    - ga_pageviews
+    - ga_sessions
+    - ga_session_duration
+    - ga_avg_session_duration
+    - fb_impressions
+    - fb_link_clicks
+    - fb_link_click_rate
+    - fb_post_comments
+    - fb_post_engagement
+    - fb_post_shares
+    - fb_post_reactions
+    rollup: day
+  native_advertiser:
+    dataset: mapped
+    dimensions: [advertiser]
+    selection:
+      native: [ 'true' ]
+    metrics:
+    - dfp_total_line_item_level_impressions
+    - dfp_total_line_item_level_clicks
+    - dfp_ctr
+    - dfp_total_active_view_viewable_impressions_rate
+    - ga_pageviews
+    - ga_sessions
+    - ga_session_duration
+    - ga_avg_session_duration
+    - ga_unique_pageviews
+    - fb_impressions
+    - fb_link_clicks
+    - fb_link_click_rate
+    - fb_post_comments
+    - fb_post_engagement
+    - fb_post_shares
+    - fb_post_reactions
+  native_campaign:
+    dataset: mapped
+    dimensions: [advertiser, campaign]
+    selection:
+      native: [ 'true' ]
+    metrics:
+    - dfp_total_line_item_level_impressions
+    - dfp_total_line_item_level_clicks
+    - dfp_ctr
+    - dfp_total_active_view_viewable_impressions_rate
+    - ga_pageviews
+    - ga_sessions
+    - ga_session_duration
+    - ga_avg_session_duration
+    - fb_impressions
+    - fb_link_clicks
+    - fb_link_click_rate
+    - fb_post_comments
+    - fb_post_engagement
+    - fb_post_shares
+    - fb_post_reactions
+  native_line_items:
+    dataset: mapped
+    dimensions: [advertiser, line_item]
+    selection:
+      native: [ 'true' ]
+    metrics:
+    - dfp_total_line_item_level_impressions
+    - dfp_total_line_item_level_clicks
+    - dfp_ctr
+    - dfp_total_active_view_viewable_impressions_rate
+    - fb_impressions
+    - fb_link_clicks
+    - fb_link_click_rate
+    - fb_post_comments
+    - fb_post_engagement
+    - fb_post_shares
+    - fb_post_reactions
+  native_creatives:
+    dataset: mapped
+    dimensions: [advertiser, line_item, creative, fb_ad]
+    selection:
+      native: [ 'true' ]
+    metrics:
+    - dfp_total_line_item_level_impressions
+    - dfp_total_line_item_level_clicks
+    - dfp_ctr
+    - dfp_total_active_view_viewable_impressions_rate
+    - fb_impressions
+    - fb_link_clicks
+    - fb_link_click_rate
+    - fb_post_comments
+    - fb_post_engagement
+    - fb_post_shares
+    - fb_post_reactions
+  line_items:
+    dataset: mapped
+    dimensions: [advertiser, line_item]
+    selection:
+      native: [ '', 'false' ]
+    metrics:
+      - dfp_total_line_item_level_impressions
+      - dfp_total_line_item_level_clicks
+      - dfp_ctr
+      - dfp_total_active_view_viewable_impressions_rate
+      - dfp_video_viewership_start
+      - dfp_video_viewership_first_quartile
+      - dfp_video_viewership_midpoint
+      - dfp_video_viewership_third_quartile
+      - dfp_video_viewership_complete
+      - dr_dfp_impressions
+      - dr_dfp_clicks
+      - dr_third_party_impressions
+      - dr_third_party_interactions
+      - dr_third_party_clicks
+      - dr_third_party_conversions
+      - dr_interaction_rate
+      - dr_third_party_video_0
+      - dr_third_party_video_25
+      - dr_third_party_video_50
+      - dr_third_party_video_75
+      - dr_third_party_video_100
+      - aw_impressions
+  creatives:
+    dataset: mapped
+    dimensions: [advertiser, line_item, creative]
+    selection:
+      native: [ '', 'false' ]
+    metrics:
+      - dfp_total_line_item_level_impressions
+      - dfp_total_line_item_level_clicks
+      - dfp_total_line_item_level_all_revenue
+      - dfp_ctr
+      - dfp_total_active_view_viewable_impressions_rate
+      - dfp_total_active_view_viewable_impressions
+      - dfp_total_active_view_measurable_impressions
+  platforms:
+    dataset: mapped
+    dimensions: [advertiser, dfp_device_category]
+    selection:
+      native: [ '', 'false' ]
+    metrics:
+      - dfp_total_line_item_level_impressions
+      - dfp_total_line_item_level_clicks
+      - dfp_ctr
+  regions:
+    dataset: mapped
+    dimensions: [advertiser, dfp_region]
+    selection:
+      native: [ '', 'false' ]
+    metrics:
+      - dfp_total_line_item_level_impressions
+      - dfp_ctr
+  regions_by_country:
+    dataset: mapped
+    dimensions: [advertiser, dfp_country, dfp_region]
+    selection:
+      native: [ '', 'false' ]
+    metrics:
+      - dfp_total_line_item_level_impressions
+      - dfp_ctr
+  countries:
+    dataset: mapped
+    dimensions: [advertiser, dfp_country]
+    selection:
+      native: [ '', 'false' ]
+    metrics:
+      - dfp_total_line_item_level_impressions
+      - dfp_ctr
+  paid_post:
+    dataset: mapped
+    dimensions: [advertiser, ga_paid_post_parameter]
+    selection:
+      native: [ 'true' ]
+    metrics:
+      - ga_pageviews
+      - ga_sessions
+      - ga_session_duration
+      - ga_avg_session_duration
+  sections:
+    dataset: mapped
+    dimensions: [advertiser, dfp_ad_unit_2]
+    metrics:
+      - dfp_total_line_item_level_impressions
+      - dfp_ctr
+  subsections:
+    dataset: mapped
+    dimensions: [advertiser, dfp_ad_unit_3]
+    metrics:
+      - dfp_total_line_item_level_impressions
+      - dfp_ctr
+  benchmarks:
+    dataset: benchmarks
+    dimensions: [order, campaign]
+    metrics:
+      - dates

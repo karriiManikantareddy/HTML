@@ -1,0 +1,12 @@
+<slide [loading]="loading" name="Cover">
+  <section class="slide slide-cover">
+      <img class="logo" [src]="logo" />
+      <image-upload id="logo" class="client-logo"></image-upload>    
+      <div class="text">
+        <h2>{{metadata?.name}}</h2>
+        <div class="dates">
+          CAMPAIGN PERIOD: <span *ngIf="metadata?.startDate && metadata?.endDate">{{metadata?.startDate | date}} - {{metadata?.endDate | date}}</span>
+        </div>
+      </div>
+  </section>
+</slide>

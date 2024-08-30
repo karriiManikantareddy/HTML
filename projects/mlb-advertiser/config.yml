@@ -1,0 +1,26 @@
+params: [advertiser]
+rename_dimensions:
+  dm_seed_google_ad_manager:
+    order: campaign
+data:
+  metadata:
+    dataset: dm_seed_google_ad_manager
+    dimensions: [advertiser]
+    metrics:
+      - total_line_item_level_impressions
+  advertiser:
+    dataset: dm_seed_google_ad_manager
+    dimensions: [advertiser]
+    metrics:
+      - total_line_item_level_impressions
+      - total_line_item_level_clicks
+      - video_viewership_complete
+      - ctr
+  site:
+    dataset: dm_seed_google_ad_manager
+    dimensions: [advertiser, ad_unit_1]
+    metrics:
+      - total_line_item_level_impressions
+      - total_line_item_level_clicks
+      - video_viewership_complete
+      - ctr

@@ -1,0 +1,60 @@
+table {
+  width: 100%;
+  letter-spacing: 0.05em;
+	font-weight: 300;
+
+  thead {
+		tr {
+      border-bottom: 2px solid @light-gray;
+			text-transform: uppercase;
+			color: @text-gray;
+			text-align: left;
+    }
+
+    th {
+      text-transform: uppercase;
+      text-align: left;
+      white-space: nowrap;
+      padding: 0px 20px 16px 20px;
+      font-size: 30px;
+      line-height: 30px;
+      vertical-align: bottom;
+
+      &.small {
+        font-size: 26px;
+        line-height: 28px;
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      border-bottom: 1px solid @light-gray;
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+
+  td {
+    color: #12142a;
+    padding: 35px 25px;
+    font-size: 26px;
+  }
+
+  .metric {
+    width: 122px;
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  th, td {
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+}

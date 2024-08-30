@@ -1,0 +1,68 @@
+<span class="title-block">{{lineItem.name}}</span>
+<div class="row wrap-left-block">
+  <div class="wrap-graph">
+    <div class="graph-item">
+      <div class="wrap-legend">
+        <chart type="pie" [series]="shareOfImpressionsSeries" [options]="impressionsGaugeOptions"></chart>
+        <div class="text-wrap">
+          <span *ngIf="!useThirdParty" class="num">{{shareOfTotals['dfp_total_line_item_level_impressions'] | percent:'1.0-0'}}</span>
+          <span *ngIf="useThirdParty" class="num">{{shareOfTotals['dr_third_party_impressions'] | percent:'1.0-0'}}</span>
+          <span class="title">Of total<br>impressions</span>
+        </div>
+      </div>
+      <div class="statistic-graph">
+        <div class="legend-item">
+          <icon type="image"></icon>
+          <div class="text">
+            <span *ngIf="!useThirdParty" class="metric-num">
+              <number-editor placeholder="" [defaultText]="originalLineItem.metrics.dfp_total_line_item_level_impressions | localeNumber" id="{{lineItem.id}}_first_party_impressions_top_line_item" plainText=true (contentChange)="inputChange($event, 'dfp_total_line_item_level_impressions')"> </number-editor>
+            </span>
+            <span *ngIf="useThirdParty" class="metric-num">
+              <number-editor placeholder="" [defaultText]="originalLineItem.metrics.dr_third_party_impressions | localeNumber" id="{{lineItem.id}}_third_party_impressions_top_line_item" plainText=true (contentChange)="inputChange($event, 'dr_third_party_impressions')"> </number-editor>
+            </span>
+            <span class="title">impressions</span>
+          </div>
+        </div>
+        <div class="legend-item" toggle name="Viewability">
+          <icon type="eye"></icon>
+          <div class="text">
+            <span class="num">{{lineItem.metrics.dfp_total_active_view_viewable_impressions_rate | percent:'1.0-0'}}</span>
+            <span class="title">% Viewable</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="graph-item right">
+      <div class="wrap-legend">
+        <chart type="pie" [series]="shareOfClicksSeries" [options]="clicksGaugeOptions"></chart>
+        <div class="text-wrap">
+          <span *ngIf="!useThirdParty" class="num">{{shareOfTotals['dfp_total_line_item_level_clicks'] | percent:'1.0-0'}}</span>
+          <span *ngIf="useThirdParty" class="num">{{shareOfTotals['dr_third_party_clicks'] | percent:'1.0-0'}}</span>
+          <span class="title">Of total<br>clicks</span>
+        </div>
+      </div>
+      <div class="statistic-graph">
+        <div class="legend-item right-aligned">
+          <div class="text">
+            <span *ngIf="!useThirdParty" class="metric-num">
+              <number-editor class="right" placeholder="" [defaultText]="originalLineItem.metrics.dfp_total_line_item_level_clicks | localeNumber" id="{{lineItem.id}}_first_party_clicks_top_line_item" plainText=true (contentChange)="inputChange($event, 'dfp_total_line_item_level_clicks')"> </number-editor>
+            </span>
+            <span *ngIf="useThirdParty" class="metric-num">
+              <number-editor class="right" placeholder="" [defaultText]="originalLineItem.metrics.dr_third_party_clicks | localeNumber" id="{{lineItem.id}}_third_party_clicks_top_line_item" plainText=true (contentChange)="inputChange($event, 'dr_third_party_clicks')"></number-editor>
+            </span>
+            <span class="title">clicks</span>
+          </div>
+          <icon type="hand"></icon>
+        </div>
+        <div class="legend-item right-aligned">
+          <div class="text">
+            <span *ngIf="!useThirdParty" class="num">{{lineItem.metrics?.dfp_total_line_item_level_clicks / lineItem.metrics?.dfp_total_line_item_level_impressions | percent}}</span>
+            <span *ngIf="useThirdParty" class="num">{{lineItem.metrics?.dr_third_party_clicks / lineItem.metrics?.dr_third_party_impressions | percent}}</span>
+            <span class="title">CTR</span>
+          </div>
+          <icon type="click"></icon>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

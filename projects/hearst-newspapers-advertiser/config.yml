@@ -1,0 +1,214 @@
+params: [advertiser]
+rename_dimensions:
+  dm_social_combined: {}
+data:
+  social_totals:
+    dataset: dm_social_combined
+    dimensions: [advertiser]
+    metrics:
+      - impressions
+      - link_clicks
+      - link_clicks_ctr
+      - engagements
+      - facebook_conversions
+      - landing_page_views
+  social_advertiser_by_week:
+    dataset: dm_social_combined
+    dimensions: [advertiser]
+    rollup: week
+    metrics:
+      - impressions
+      - link_clicks
+      - link_clicks_ctr
+      - landing_page_views
+  social_campaign:
+    dataset: dm_social_combined
+    dimensions: [advertiser, campaign]
+    metrics:
+      - impressions
+      - link_clicks
+      - link_clicks_ctr
+      - engagements
+      - facebook_conversions
+      - landing_page_views
+  social_ad:
+    dataset: dm_social_combined
+    dimensions: [advertiser, campaign, ad]
+    metrics:
+      - impressions
+      - link_clicks
+      - link_clicks_ctr
+      - engagements
+      - facebook_conversions
+      - landing_page_views
+  social_platform:
+    dataset: dm_social_combined
+    dimensions: [advertiser, platform]
+    metrics:
+      - impressions
+      - link_clicks
+      - link_clicks_ctr
+      - engagements
+      - facebook_conversions
+      - landing_page_views
+  display_totals:
+    dataset: dm_display_combined
+    dimensions: [advertiser]
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+      - conversions
+      - cost
+      - cpc
+  display_weekly:
+    dataset: dm_display_combined
+    dimensions: [advertiser]
+    rollup: week
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+      - conversions
+      - cost
+      - cpc
+  display_creatives:
+    dataset: dm_display_combined
+    dimensions: [advertiser, creative]
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+      - conversions
+      - cost
+      - cpc
+  display_devices:
+    dataset: dm_display_combined
+    dimensions: [advertiser, device]
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+      - conversions
+      - cost
+      - cpc
+  email_totals:
+    dataset: dm_email_combined
+    dimensions: [advertiser]
+    metrics:
+      - records
+      - clicks
+      - opens
+      - click_rate
+      - open_rate
+  email_weekly:
+    dataset: dm_email_combined
+    dimensions: [advertiser]
+    rollup: week
+    metrics:
+      - records
+      - clicks
+      - opens
+      - click_rate
+      - open_rate
+  email_creatives:
+    dataset: dm_email_combined
+    dimensions: [advertiser, campaign, from, subject, screenshot]
+    metrics:
+      - records
+      - clicks
+      - opens
+      - click_rate
+      - open_rate
+  email_links:
+    dataset: dm_email_combined
+    dimensions: [advertiser, campaign, link]
+    metrics:
+      - clicks
+  newsletters_totals:
+    dataset: dm_newsletter_combined
+    dimensions: [advertiser]
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+  newsletters_totals_by_week:
+    dataset: dm_newsletter_combined
+    dimensions: [advertiser]
+    rollup: week
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+  newsletters_creative:
+    dataset: dm_newsletter_combined
+    dimensions: [advertiser, creative_preview]
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+  localedge_seo_totals:
+    dataset: dm_local_edge_seo_combined
+    dimensions: [advertiser]
+    metrics:
+      - rankingmin
+      - reported_ranking_improvement
+  localedge_seo_monthly:
+    dataset: dm_local_edge_seo_combined
+    dimensions: [advertiser]
+    rollup: month
+    metrics:
+      - rankingmin
+      - reported_ranking_improvement
+  localedge_web_totals:
+    dataset: dm_local_edge_web_combined
+    dimensions: [advertiser]
+    metrics:
+      - length_of_visits
+      - pageviews
+      - visits
+  localedge_web_totals_by_week:
+    dataset: dm_local_edge_web_combined
+    dimensions: [advertiser]
+    rollup: month
+    metrics:
+      - length_of_visits
+      - pageviews
+      - visits
+  sem_totals:
+    dataset: dm_sem_combined
+    dimensions: [advertiser]
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+      - spend
+      - cpc
+      - conversions
+      - cost_per_conversion
+      - conversion_rate
+  sem_by_week:
+    dataset: dm_sem_combined
+    dimensions: [advertiser]
+    rollup: week
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+      - spend
+      - cpc
+      - conversions
+      - cost_per_conversion
+      - conversion_rate
+  sem_campaign:
+    dataset: dm_sem_combined
+    dimensions: [advertiser, campaign]
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+      - spend
+      - cpc
+      - conversions
+      - cost_per_conversion
+      - conversion_rate

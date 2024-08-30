@@ -1,0 +1,42 @@
+<slide [loading]="loading" *ngIf="!topImpressionsMetros?.isEmpty()" name="Facebook Impressions City Breakdown">
+  <section class="slide campaigns">
+    <slide-header text="Facebook Impressions - Top Cities"></slide-header>
+    <div class="row">
+      <div class="col-one-of-two left-block">
+        <map class="dma-map" [series]="impressionMapSeries" [options]="mapOptions" [redraw]="redraw"></map>
+      </div>
+      <div class="col-one-of-two right-block">
+        <simplifi-table [items]="topImpressionsMetros" [kpis]="kpis" header="City"></simplifi-table>
+      </div>
+    </div>
+    <slide-footer></slide-footer>
+  </section>
+</slide>
+<slide [loading]="loading" *ngIf="!topClicksMetros?.isEmpty()" name="Facebook Clicks City Breakdown">
+  <section class="slide campaigns">
+    <slide-header text="Facebook Clicks - Top Cities"></slide-header>
+    <div class="row">
+      <div class="col-one-of-two left-block">
+        <map [series]="clicksMapSeries" [options]="mapOptions" [redraw]="redraw"></map>
+      </div>
+      <div class="col-one-of-two right-block">
+        <simplifi-table [items]="topClicksMetros" [kpis]="kpis" header="City"></simplifi-table>
+      </div>
+    </div>
+    <slide-footer></slide-footer>
+  </section>
+</slide>
+<slide [loading]="loading" *ngIf="!topCtrMetros?.isEmpty()" name="Facebook Ctr City Breakdown">
+  <section class="slide campaigns">
+    <slide-header text="Facebook Ctr - Top Cities"></slide-header>
+    <div class="row">
+      <div class="col-one-of-two left-block">
+        <map [series]="ctrMapSeries" [options]="mapOptions" [redraw]="redraw"></map>
+      </div>
+      <div class="col-one-of-two right-block">
+        <simplifi-table [items]="topCtrMetros" [kpis]="kpis" header="City"></simplifi-table>
+      </div>
+    </div>
+    <slide-footer></slide-footer>
+  </section>
+</slide>

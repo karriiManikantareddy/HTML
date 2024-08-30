@@ -1,0 +1,16 @@
+<slide *ngIf="hasEmail" [loading]="loading" name="Email Screenshots">
+  <sidebar text="Email"></sidebar>
+  <section class="slide slide-email-screenshots">
+    <header class="slide-header">
+      <h3>Screenshots</h3>
+    </header>
+    <div class="flex-grid">
+      <div *ngFor="let ad of ads" class="col">
+        <div class="card">
+          <img class="image" [src]="ad.screenshot">
+          <div class="name">{{ad.name}}</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</slide>

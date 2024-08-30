@@ -1,0 +1,54 @@
+<div class="row wrap-left-block">
+  <div class="wrap-graph">
+    <div class="graph-item">
+      <div class="wrap-legend">
+        <chart type="pie" [series]="shareOfImpressionsSeries" [options]="impressionsGaugeOptions"></chart>
+        <div class="text-wrap">
+          <span class="num">{{shareOfTotals['gam_impressions'] | percent}}</span>
+          <span class="title">Of total impressions</span>
+        </div>
+      </div>
+      <div class="statistic-graph">
+        <div class="legend-item">
+          <icon type="image"></icon>
+          <div class="text">
+            <span class="num">{{creative?.metrics?.gam_impressions?.value | number}}</span>
+            <span class="title">Delivered Impressions</span>
+          </div>
+        </div>
+        <div class="legend-item">
+          <icon type="eye"></icon>
+          <div class="text">
+            <span class="num">{{creative?.metrics?.gam_viewability?.value | percent}}</span>
+            <span class="title">% Viewable</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="graph-item">
+      <div class="wrap-legend">
+        <chart type="pie" [series]="shareOfClicksSeries" [options]="clicksGaugeOptions"></chart>
+        <div class="text-wrap">
+          <span class="num">{{shareOfTotals['gam_clicks'] | percent}}</span>
+          <span class="title">Of total clicks</span>
+        </div>
+      </div>
+      <div class="statistic-graph">
+        <div class="legend-item right-aligned">
+          <div class="text">
+            <span class="num">{{creative?.metrics?.gam_clicks?.value | number}}</span>
+            <span class="title">Clicks</span>
+          </div>
+          <icon type="hand"></icon>
+        </div>
+        <div class="legend-item right-aligned">
+          <div class="text">
+            <span class="num">{{creative?.metrics?.ctr?.value | percent}}</span>
+            <span class="title">CTR</span>
+          </div>
+          <icon type="click"></icon>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

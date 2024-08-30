@@ -1,0 +1,39 @@
+<section class="slide geographical" [style.background-color]="backgroundColor">
+  <header class="slide-header">
+    <h2 [ngClass]="fontStyling">{{ header }}</h2>
+  </header>
+  <div class="main">
+    <div class="row">
+      <div class="col-one-of-two left-block">
+        <map [series]="mapSeries" [options]="mapOptions" [bgcolor]="backgroundColor"></map>
+      </div>
+      <div class="col-one-of-two right-block">
+        <table>
+          <thead>
+            <tr>
+              <th [ngClass]="fontStyling+'_grey'" *ngIf="topCountries">Top Countries</th>
+              <th [ngClass]="fontStyling+'_grey'" *ngIf="topRegions">Top Regions</th>
+              <th [ngClass]="fontStyling+'_grey'" class="metric">Impressions</th>
+              <th [ngClass]="fontStyling+'_grey'" class="metric">CTR</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let r of topCountries">
+              <td [ngClass]="fontStyling">{{r.name}}</td>
+              <td class="metric" [ngClass]="fontStyling">{{r.metrics.dfp_total_line_item_level_impressions |
+                localeNumber}}</td>
+              <td class="metric" [ngClass]="fontStyling">{{r.metrics.dfp_ctr | percent}}</td>
+            </tr>
+            <tr *ngFor="let r of topRegions">
+              <td [ngClass]="fontStyling">{{r.name}}</td>
+              <td class="metric" [ngClass]="fontStyling">{{r.metrics.dfp_total_line_item_level_impressions |
+                localeNumber}}</td>
+              <td class="metric" [ngClass]="fontStyling">{{r.metrics.dfp_ctr | percent}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <footer class="slide-footer"></footer>
+</section>

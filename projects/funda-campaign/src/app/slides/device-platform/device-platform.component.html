@@ -1,0 +1,73 @@
+<slide name="Device-platform">
+  <section class="slide white-box">
+    <div class="blue-box">
+      <header class="slide-header">
+        <h1>Device - platform</h1>
+      </header>
+      <header-line></header-line>
+      <div class="box">
+        <h6>Resultaten</h6>
+      </div>
+      <div class="main">
+        <div class="container">
+          <h6 class="table-box" [ngClass]="templateType === 'consumers' ? 'consumers' : 'business'">Apparaat informatie</h6>
+          <div class="chart">
+            <chart type="pie" [series]="pieDomainSeries" [options]="pieOptions"></chart>
+          </div>
+          <div class="legend">
+            <legend [items]="domainlegendItems" [type]="chartType"></legend>
+          </div>
+          <div class="table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Apparaat</th>
+                  <th class="metric">Impressies</th>
+                  <th class="metric">Klikken</th>
+                  <th class="metric">CTR</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let d of domains">
+                  <td>{{d.name}}</td>
+                  <td class="metric">{{d.metrics.dfp_total_line_item_level_impressions | number}}</td>
+                  <td class="metric">{{d.metrics.dfp_total_line_item_level_clicks | number}}</td>
+                  <td class="metric">{{d.metrics.ctr | percent}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="container">
+          <h6 class="table-box" [ngClass]="templateType === 'consumers' ? 'consumers' : 'business'">Platform informatie</h6>
+          <div class="chart">
+            <chart type="pie" [series]="piePlatformSeries" [options]="pieOptions"></chart>
+          </div>
+          <div class="legend">
+            <legend [items]="platformlegendItems" [type]="chartType"></legend>
+          </div>
+          <div class="table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Platform</th>
+                  <th class="metric">Impressies</th>
+                  <th class="metric">Klikken</th>
+                  <th class="metric">CTR</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let p of platforms">
+                  <td>{{p.name}}</td>
+                  <td class="metric">{{p.metrics.dfp_total_line_item_level_impressions | number}}</td>
+                  <td class="metric">{{p.metrics.dfp_total_line_item_level_clicks | number}}</td>
+                  <td class="metric">{{p.metrics.ctr | percent}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</slide>

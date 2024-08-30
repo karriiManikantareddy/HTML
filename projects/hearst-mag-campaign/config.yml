@@ -1,0 +1,98 @@
+params: [advertiser, campaign]
+rename_dimensions:
+  dm_discrepancy_reporting_combiner:
+    mapped_advertiser: advertiser
+    mapped_campaign: campaign
+  dm_seed_facebook_ads:
+    mapped_advertiser: advertiser
+    mapped_campaign: campaign
+  dm_google_analytics:
+    mapped_advertiser: advertiser
+    mapped_campaign: campaign
+data:
+  campaign:
+    dataset: dm_discrepancy_reporting_combiner
+    dimensions: [mapped_advertiser, mapped_campaign]
+    metrics:
+      - first_party_impressions
+      - third_party_impressions
+      - first_party_clicks
+      - third_party_clicks
+      - first_party_ctr
+  campaign_per_day:
+    dataset: dm_discrepancy_reporting_combiner
+    dimensions: [mapped_advertiser, mapped_campaign]
+    metrics:
+      - first_party_impressions
+      - third_party_impressions
+      - first_party_ctr
+    rollup: day
+  line_items:
+    dataset: dm_discrepancy_reporting_combiner
+    dimensions: [mapped_advertiser, mapped_campaign, line_item]
+    metrics:
+      - first_party_impressions
+      - third_party_impressions
+      - first_party_clicks
+      - third_party_clicks
+      - first_party_ctr
+  creatives:
+    dataset: dm_discrepancy_reporting_combiner
+    dimensions: [mapped_advertiser, mapped_campaign, creative]
+    metrics:
+      - first_party_impressions
+      - third_party_impressions
+      - first_party_clicks
+      - third_party_clicks
+      - first_party_ctr
+  platforms:
+    dataset: dm_discrepancy_reporting_combiner
+    dimensions: [mapped_advertiser, mapped_campaign, device_type]
+    metrics:
+      - first_party_impressions
+      - third_party_impressions
+      - first_party_clicks
+      - third_party_clicks
+      - first_party_ctr
+  social_campaign:
+    dataset: dm_seed_facebook_ads
+    dimensions: [mapped_advertiser, mapped_campaign]
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+      - post_engagements
+      - likes
+  social_publisher_platform:
+    dataset: dm_seed_facebook_ads
+    dimensions: [mapped_advertiser, mapped_campaign, publisher_platform]
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+      - post_engagements
+      - likes
+  social_ad:
+    dataset: dm_seed_facebook_ads
+    dimensions: [mapped_advertiser, mapped_campaign, ad]
+    metrics:
+      - impressions
+      - clicks
+      - ctr
+      - post_engagements
+      - likes
+  branded_content_campaign:
+    dataset: dm_google_analytics
+    dimensions: [mapped_advertiser, mapped_campaign]
+    metrics:
+      - pageviews
+      - users
+      - time_on_page
+  branded_content_campaign_per_day:
+    dataset: dm_google_analytics
+    dimensions: [mapped_advertiser, mapped_campaign]
+    rollup: day
+    metrics:
+      - pageviews
+      - users
+      - time_on_page

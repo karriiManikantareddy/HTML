@@ -1,0 +1,14 @@
+<slide [loading]="loading" name="Top Creative" *ngFor="let creatives of creativeGroups">
+  <section class="slide top-creatives">
+    <header name="Top Creatives"></header>
+    <div class="main">
+      <div class="row">
+        <ng-container *ngFor="let creative of creatives">
+          <creative-top [creative]="creative" [totalMetrics]="totalMetrics" class="col-one-of-two top-creatives"></creative-top>
+        </ng-container>
+      </div>
+    </div>
+    <footer class="slide-footer">
+    </footer>
+  </section>
+</slide>

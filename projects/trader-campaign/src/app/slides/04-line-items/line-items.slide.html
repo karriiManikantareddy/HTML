@@ -1,0 +1,37 @@
+<slide [loading]="loading" name="Line Items" *ngFor="let page of pages; let i = index">
+  <section class="slide slide-line-items">
+    <header name="Line Items"></header>
+    <div class="main">
+      <table>
+        <thead>
+        <tr>
+          <th>Campaign</th>
+          <th class="metric wrapped">Booked<br>Impressions</th>
+          <th class="metric wrapped">Delivered<br>Impressions</th>
+          <th class="metric">Clicks</th>
+          <th class="metric">CTR</th>
+          <th class="metric">Spend</th>
+          <th class="metric wrapped">% Delivered</th>
+        </tr>
+        </thead>
+        <tbody>
+          <ng-container *ngFor="let campaign of campaignsByPage[i]">
+            <tr class="campaign-row">
+              <td colspan="7" class="campaign-title">{{campaign}}</td>
+            </tr>
+            <tr *ngFor="let li of page.get(campaign)" class="subrow">
+              <td class="first-col">{{li.name}} <span toggle name="Line Item ID">({{li.id}})</span></td>
+              <td class="metric">{{li.contractedUnits | number}}</td>
+              <td class="metric">{{li.metrics.total_line_item_level_impressions | number}}</td>
+              <td class="metric">{{li.metrics.total_line_item_level_clicks | number}}</td>
+              <td class="metric">{{li.metrics.click_rate | percent}}</td>
+              <td class="metric">{{li.metrics.total_line_item_level_all_revenue | currency}}</td>
+              <td class="metric">{{li.metrics.total_line_item_level_impressions / li.contractedUnits | percent}}</td>
+            </tr>
+          </ng-container>
+        </tbody>
+      </table>
+    </div>
+    <footer class="slide-footer"></footer>
+  </section>
+</slide>

@@ -1,0 +1,21 @@
+@import '../../../styles/base/_variables';
+
+.slide-header {
+  background-color: @pink;
+}
+
+.subtitle {
+  color: @pink;
+}
+
+.table__footer {
+  .table__row {
+    &:nth-child(odd) {
+      background-color: @table-background-color;
+    }
+
+    &:nth-child(even) {
+      background-color: @white;
+    }
+  }
+}

@@ -1,0 +1,74 @@
+/*******************************
+         Theme Overrides
+*******************************/
+
+.ui.basic.menu {
+    border-radius: 0;
+    background-color: #E8ECF0;
+    border: 0;
+    border-bottom: 1px solid rgba(0,0,0, .05);
+    box-shadow: none;
+    padding: 15px 30px;
+    margin-bottom: 0;
+}
+
+.ui.basic.menu .page-title {
+    display: flex;
+}
+
+.ui.basic.menu .page-title .item-name {
+    margin-left: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.ui.basic.menu .page-title .item-name .title {
+    display: block;
+    font-size: 18px;
+    color: #485867;
+    text-transform: uppercase;
+}
+
+.ui.basic.menu .ui.mini.breadcrumb {
+    text-transform: uppercase;
+    margin-top: 4px;
+}
+
+.ui.basic.menu .ui.breadcrumb a {
+    color: #6D849A;
+}
+
+.ui.basic.menu .right.menu {
+    align-items: center;
+}
+
+.ui.basic.menu .right.menu .icon {
+    margin-top: -5px;
+    color: #98AFC5;
+}
+
+.ui.basic.menu .right.menu .avatar {
+    margin-left: 5px;
+}
+
+.ui.basic.menu .ui.toggle.checkbox:first-child {
+    display: flex;
+    align-items: center;
+}
+
+.ui.basic.menu .ui.toggle.checkbox:first-child > span:first-child {
+    vertical-align: middle;
+    margin-right: 10px;
+    color: #6D849A;
+}
+
+.ui.basic.menu .right.menu > .button {
+    height: 30px;
+    line-height: 15px;
+    margin-left: 10px;
+}
+
+.ui.basic.mini.menu {
+    padding: 7px 30px;
+}

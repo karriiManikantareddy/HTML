@@ -1,0 +1,16 @@
+<slide *ngFor="let creatives of creativeGroups" [loading]="loading" name="Youtube Breakdown">
+  <divider></divider>
+  <section class="slide campaigns">
+    <slide-header text="Youtube Ads"></slide-header>
+    <the-advocate-table [items]="creatives" [kpis]="kpis" [totals]="totals" header="Creatives"></the-advocate-table>
+    <slide-footer></slide-footer>
+  </section>
+</slide>
+<slide *ngFor="let creatives of creativeGroups" [loading]="loading" name="Youtube Breakdown - Video Performance">
+  <divider></divider>
+  <section class="slide campaigns">
+    <slide-header text="Youtube Ads - Video Performance"></slide-header>
+    <the-advocate-table [items]="creatives" [kpis]="kpis" [totals]="totals" header="Creatives"></the-advocate-table>
+    <slide-footer></slide-footer>
+  </section>
+</slide>

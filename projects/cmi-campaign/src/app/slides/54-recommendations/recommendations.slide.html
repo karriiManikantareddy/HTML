@@ -1,0 +1,29 @@
+<slide [loading]="loading" name="Recommendations">
+  <section class="slide summary">
+    <div class="slide-header">
+      <h2 class="title">Recommendations</h2>
+    </div>
+
+    <div class="main content">
+      <div class="box-row full-width transparent-white stats">
+        <text-editor class="large-text-box"
+                     id="key_insights"
+                     [plainText]="false"
+                     [defaultText]="defaultContentText"></text-editor>
+      </div>
+
+      <div class="contact">
+        <div class="info">
+          <text-editor [plainText]="true" id="sc_name" [maxLength]="20" [defaultText]="defaultTextName"></text-editor>
+        </div>
+        <div class="info with-border">
+          <text-editor [plainText]="true" id="sc_phone" [maxLength]="12" [defaultText]="defaultTextPhone"></text-editor>
+        </div>
+        <div class="info with-border">
+          <text-editor [plainText]="true" id="sc_email" [maxLength]="30" [defaultText]="defaultTextEmail"></text-editor>
+        </div>
+      </div>
+      <img class="cmi-logo" src="assets/img/cox-media-logo-white.png" alt="COX Media logo"/>
+    </div>
+  </section>
+</slide>

@@ -1,0 +1,8 @@
+<slide *ngIf="loading || (keywords && !keywords.isEmpty())" [loading]="loading" name="SEM Keywords">
+  <divider></divider>
+  <section class="slide campaigns">
+    <slide-header text="SEM Keywords"></slide-header>
+    <the-advocate-table [items]="keywords" [kpis]="kpis" header="Top 10 Keywords" [list]="list"></the-advocate-table>
+    <slide-footer></slide-footer>
+  </section>
+</slide>

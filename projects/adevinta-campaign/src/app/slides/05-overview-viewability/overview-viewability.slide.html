@@ -1,0 +1,54 @@
+<slide *ngIf="chartSeries && !chartSeries.isEmpty()" [loading]="loading" name="Overview viewability">
+  <section class="slide overview-viewability">
+    <header class="slide-header">
+      <h2>
+        Overview Viewability
+      </h2>
+    </header>
+    <div class="main">
+      <div class="statistic-icons">
+        <div *ngIf="revenue" class="statistic-icons-item">
+          <icon type="money-bill"></icon>
+          <div class="wrap-title">
+            <span class="num">{{revenue | currency : currency }}</span>
+            <span class="title">Spend</span>
+          </div>
+        </div>
+        <div *ngIf="metrics?.gam_impressions" class="statistic-icons-item">
+          <icon type="image"></icon>
+          <div class="wrap-title">
+            <span class="num">{{metrics?.gam_impressions?.value | number}}</span>
+            <span class="title">Delivered impressions</span>
+          </div>
+        </div>
+        <div *ngIf="metrics?.gam_clicks" class="statistic-icons-item">
+          <icon type="eye"></icon>
+          <div class="wrap-title">
+            <span class="num">{{metrics?.gam_viewable_impressions?.value | number}}</span>
+            <span class="title">Viewable impressions</span>
+          </div>
+        </div>
+        <div class="statistic-icons-item">
+          <icon type="percent"></icon>
+          <div class="wrap-title">
+            <span class="num">{{metrics?.gam_viewability?.value | percent}}</span>
+            <span class="title">Viewability</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h6>
+          Delivery by day
+          <legend [items]="legendItems" class="right"></legend>
+        </h6>
+        <div class="chart-content">
+          <chart type="column" [series]="chartSeries" [options]="chartOptions"></chart>
+        </div>
+      </div>
+      <div class="summary">
+        <text-editor class="summary-text" id="overview-viewability-summary" [plainText]="true" placeholder="Summary text"></text-editor>
+      </div>
+    </div>
+    <footer class="slide-footer"></footer>
+  </section>
+</slide>

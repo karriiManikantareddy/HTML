@@ -1,0 +1,14 @@
+<slide [loading]="loading" name="Creative Delivery">
+  <section class="slide creative-delivery">
+    <p class="header">Creative Delivery</p>
+    <text-editor id="creative-description" [plainText]=true placeholder="Input text..." class="description"></text-editor>
+    <div class="main">
+      <p class="chart-header">Creative Delivery</p>
+      <div class="chart-content">
+        <chart [series]="chartSeries" [options]="chartOptions"></chart>
+      </div>
+    </div>
+    <footer></footer>
+    <p class="data-source">Data Source: {{metadata?.source}} (first party)</p>
+  </section>
+</slide>

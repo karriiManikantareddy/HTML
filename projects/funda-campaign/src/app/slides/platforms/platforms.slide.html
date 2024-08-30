@@ -1,0 +1,47 @@
+<slide *ngIf="platforms && !platforms.isEmpty()" [loading]="loading" name="Device verdeling">
+  <section class="slide overview">
+    <header class="slide-header">
+      <h1>
+        Device verdeling
+      </h1>
+    </header>
+    <header-line></header-line>
+    <div class="main">
+      <div class="statistic-icon-platforms">
+        <ng-container *ngFor="let p of chartPlatforms; let i = index">
+          <div class="statistic-icon-platforms-item m-width" [ngClass]="cssClass(i, p.name)"
+            [style.width]="shareOfTotal[p.name] | percent">
+            <span class="icon icon-{{p.name.toLowerCase()}}"></span>
+            <span class="num">{{shareOfTotal[p.name] | percent:'1.0-0'}}</span>
+            <span class="title">{{p.name}}</span>
+          </div>
+        </ng-container>
+      </div>
+      <div class="statistic-icon-platforms">
+        <div *ngFor="let p of chartPlatforms; let i = index" class="statistic-icon-platforms-item bar" [ngClass]="cssClass(i, p.name)"
+               [style.width]="shareOfTotal[p.name] | percent">
+        </div>
+      </div>
+      <table>
+        <thead>
+        <tr>
+          <th>Device</th>
+          <th class="metric">Uitgeleverde impressies</th>
+          <th class="metric">Klikken</th>
+          <th class="metric">CTR</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let p of platforms">
+          <td>{{p.name}}</td>
+          <td class="metric">{{p.metrics.dfp_total_line_item_level_impressions | number}}</td>
+          <td class="metric">{{p.metrics.dfp_total_line_item_level_clicks | number}}</td>
+          <td class="metric">{{p.metrics.ctr | percent}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <footer class="slide-footer"></footer>
+  </section>
+  <footer-line></footer-line>
+</slide>

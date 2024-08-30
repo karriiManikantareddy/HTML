@@ -1,0 +1,53 @@
+<slide [loading]="loading" name="Performance by Emotion Targeting">
+  <div class="slide">
+    <main>
+      <section class="left" [style.background-color]="backgroundColor">
+        <header class="slide-header">
+          <h2 [ngClass]="fontStyling">Performance by Emotion Targeting</h2>
+        </header>
+        <div class="table-container">
+          <h4 [ngClass]="fontStyling">Emotion CTR,
+            <text-editor class="motivation-emotion__company" id="emotion" [plainText]=true [defaultText]="'Company'"
+              [placeholder]="''">
+            </text-editor>
+            vs. Industry
+          </h4>
+          <table>
+            <thead>
+              <tr>
+                <th [ngClass]="fontStyling">Emotion</th>
+                <th [ngClass]="fontStyling">Emotion CTR</th>
+                <th [ngClass]="fontStyling">Industry CTR</th>
+                <th [ngClass]="fontStyling">Vs. Industry</th>
+              </tr>
+            </thead>
+            <tr *ngFor="let eb of emotionBenchmark">
+              <td>
+                <div [ngClass]="fontStyling" class="emotion-container">
+                  {{eb.name.capitalize()}}
+                  <div class="emoji-container">
+                    <img src="assets/img/emojis/{{eb.name.toLowerCase()}}.png" onerror="this.style.display='none'">
+                  </div>
+                </div>
+              </td>
+              <td [ngClass]="fontStyling">{{eb.ctr | percent}}</td>
+              <td [ngClass]="fontStyling">{{eb.industryCTR | percent}}</td>
+              <td [ngClass]="fontStyling">{{eb.diff | percent:'1.0-0'}}</td>
+            </tr>
+          </table>
+        </div>
+      </section>
+      <section class="right">
+        <div class="bullet-list">
+          <text-editor id="emotion-bullets"> </text-editor>
+        </div>
+        <div class="image-container">
+          <image-upload id="emotion-screenshot" class="image"></image-upload>
+        </div>
+      </section>
+    </main>
+    <div class="footer">
+      <footer class="slide-footer"></footer>
+    </div>
+  </div>
+</slide>

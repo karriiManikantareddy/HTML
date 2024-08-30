@@ -1,0 +1,52 @@
+.statistic-icons {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  justify-content: space-between;
+  padding: 50px 0;
+  margin-bottom: 30px;
+  .statistic-icons-item {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    -ms-align-items: center;
+    align-items: center;
+  }
+  icon {
+    color: @text-gray;
+    margin-right: 30px;
+  }
+  .icon {
+    font-size: 60px;
+    margin-right: 30px;
+    color: @text-gray;
+    &.icon-hand,
+    &.icon-click-rate{
+      font-size: 40px;
+    }
+    &.icon-eye {
+      font-size: 20px;
+    }
+  }
+  .wrap-title {
+    .num {
+      display: block;
+      font-size: 38px;
+      font-weight: 300;
+      line-height: 1;
+      margin-bottom: 6px;
+      font-weight: 400;
+    }
+    .title {
+      display: block;
+      text-transform: uppercase;
+      color: @text-gray;
+      letter-spacing: 0.05em;
+      font-size: 24px;
+    }
+  }
+}

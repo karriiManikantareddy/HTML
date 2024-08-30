@@ -1,0 +1,102 @@
+params: [advertiser, campaign]
+rename_dimensions:
+  dm_seed_google_ad_manager:
+    order: campaign
+  dm_client_facing_reporting_centro:
+    brand: advertiser
+    campaign: line_item
+    campaign_group: campaign
+data:
+  dfp_campaign:
+    dataset: dm_seed_google_ad_manager
+    dimensions: [advertiser, order]
+    metrics:
+      - total_line_item_level_impressions
+      - total_line_item_level_clicks
+      - ctr
+  dfp_campaign_per_day:
+    dataset: dm_seed_google_ad_manager
+    dimensions: [advertiser, order]
+    metrics:
+      - total_line_item_level_impressions
+      - ctr
+    rollup: day
+  dfp_line_items:
+    dataset: dm_seed_google_ad_manager
+    dimensions: [advertiser, order, line_item]
+    metrics:
+      - total_line_item_level_impressions
+      - total_line_item_level_clicks
+      - ctr
+  dfp_creatives:
+    dataset: dm_seed_google_ad_manager
+    dimensions: [advertiser, order, creative]
+    metrics:
+      - total_line_item_level_impressions
+      - total_line_item_level_clicks
+      - ctr
+      - viewable_rate
+  dfp_creative_sizes:
+    dataset: dm_seed_google_ad_manager
+    dimensions: [advertiser, order, creative_size]
+    metrics:
+      - total_line_item_level_impressions
+      - total_line_item_level_clicks
+      - ctr
+      - viewable_rate
+  dfp_platforms:
+    dataset: dm_seed_google_ad_manager
+    dimensions: [advertiser, order, device_category]
+    metrics:
+      - total_line_item_level_impressions
+      - total_line_item_level_clicks
+      - ctr
+  dfp_regions:
+    dataset: dm_seed_google_ad_manager
+    dimensions: [advertiser, order, region]
+    metrics:
+      - total_line_item_level_impressions
+      - ctr
+  centro_campaign:
+    dataset: dm_client_facing_reporting_centro
+    dimensions: [brand, campaign_group]
+    metrics:
+      - imps_won
+      - clicks
+      - ctr
+  centro_campaign_per_day:
+    dataset: dm_client_facing_reporting_centro
+    dimensions: [brand, campaign_group]
+    metrics:
+      - imps_won
+      - clicks
+      - ctr
+    rollup: day
+  centro_line_items:
+    dataset: dm_client_facing_reporting_centro
+    dimensions: [brand, campaign_group, campaign]
+    metrics:
+      - imps_won
+      - clicks
+      - ctr
+  centro_creatives:
+    dataset: dm_client_facing_reporting_centro
+    dimensions: [brand, campaign_group, creative]
+    metrics:
+      - imps_won
+      - clicks
+      - ctr
+  centro_platforms:
+    dataset: dm_client_facing_reporting_centro
+    dimensions: [brand, campaign_group, device_type]
+    metrics:
+      - imps_won
+      - clicks
+      - ctr
+  centro_regions:
+    dataset: dm_client_facing_reporting_centro
+    dimensions: [brand, campaign_group, region]
+    metrics:
+      - imps_won
+      - clicks
+      - ctr

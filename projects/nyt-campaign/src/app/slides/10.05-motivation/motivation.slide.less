@@ -1,0 +1,76 @@
+@import '../../../styles/base/_variables';
+
+main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-grow: 1;
+}
+
+section {
+  padding: 44px 75px 25px 75px;
+  &.left {
+    z-index: 100;
+  }
+  &.right {
+    display: flex;
+    background-color: #efefef;
+    div {
+      padding: 40px;
+      margin-bottom: 80px;
+      &.image-container {
+        align-self: center;
+      }
+    }
+  }
+  width: 50%;
+}
+
+.footer {
+  padding: 44px 75px 25px 75px;
+  position: absolute;
+  bottom: 0;
+  width: 92%;
+}
+
+.table-container {
+  margin-top: 60px;
+  h4 {
+    font-size: 26px;
+    margin-bottom: 20px;
+  }
+
+  table {
+    th {
+      background-color: #525151;
+      color: white;
+      padding: 30px 10px 30px 10px;
+    }
+    td, th {
+      &:first-child {
+        text-align: left;
+      }
+      text-align: center;
+      vertical-align: middle;
+      border: 2px solid @gray;
+    }
+    td {
+      padding: 35px 12px;
+      &:last-child {
+        color: @blue;
+      }
+    }
+  }
+}
+
+.slide {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+.image {
+  align-self: middle;
+  width: 350px;
+  height: 700px;
+}

@@ -1,0 +1,87 @@
+@import '../../../styles/base/_variables';
+
+.container {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+  background-color: @background-gray;
+}
+.content {
+	display: flex;
+	flex-direction: row;
+	position: relative;
+	flex: 1 0 auto;
+	width: auto;
+	height: auto;
+	padding: 0;
+  background-color: @background-gray;
+}
+.covers {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 730px;
+	height: 1080px;
+}
+.image-block {
+	position: absolute;
+	display: block;
+	width: 50%;
+	height: 50%;
+
+	&.image-1 {
+		top: 0;
+		left: 0;
+	}
+	&.image-2 {
+		top: 0;
+		left: 50%;
+	}
+	&.image-3 {
+		top: 50%;
+		left: 0%;
+	}
+	&.image-4 {
+		top: 50%;
+		left: 50%;
+	}
+}
+.list {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 50%;
+	align-items: center;
+	margin-bottom: 60px;
+	z-index: 1000;
+}
+.list-item {
+  font-family: Arial;
+  fill: #595959;
+  white-space: pre;
+  list-style-type: disc;
+	list-style-position: inside;
+
+	&::marker {
+		color: @black;
+	}
+}
+.title {
+  font-family: Arial;
+	font-size: 72px;
+	font-weight: 700;
+	font-style: italic;
+	white-space: pre;
+	color: #4285f4;
+	margin-right: 150px;
+}
+
+.background-img {
+	position: absolute;
+	right: 0;
+	bottom: 15px;
+	img {
+		height: 900px;
+	}
+}

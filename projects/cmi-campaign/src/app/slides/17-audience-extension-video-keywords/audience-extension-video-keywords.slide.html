@@ -1,0 +1,46 @@
+<slide *ngIf="hasAEV" [loading]="loading" name="Keyword Video Performance">
+  <section class="slide overview">
+    <header class="slide-header">
+      <h1 class="title">
+        AUDIENCE EXTENSION VIDEO
+      </h1>
+      <div class="dates-wrapper">
+        Flight Dates:
+        <text-editor
+          class="dates"
+          [plainText]="true"
+          id="flight_dates"
+          [maxLength]="28"
+        ></text-editor>
+      </div>
+    </header>
+    <div class="main">
+      <div class="container">
+        <div class="column">
+          <h2 class="subtitle">Keyword Performance</h2>
+          <table class="table">
+            <tbody>
+            <tr class="table__row" *ngFor="let metric of metrics">
+              <td class="table__cell table__cell--name" *ngIf="metric.name_1" [attr.colspan]="metric.name_2 ? 1 : 2">{{metric.name_1}} <span>{{metric.description}}</span></td>
+              <td class="table__cell--empty" *ngIf="!metric.name_1"></td>
+              <td class="table__cell table__cell--footer" *ngIf="metric.name_2">{{metric.name_2}}</td>
+              <td class="table__cell" *ngFor="let creative of creatives">{{ creative.metrics[metric.metric] | tableValue: metric.format : [{'separatorName': metric.separator}]}}</td>
+            </tr>
+          </table>
+          <p class="no-data" *ngIf="!creatives || creatives.length === 0">No Data Available</p>
+        </div>
+        <div class="column">
+          <h2 class="subtitle">Top Keywords</h2>
+          <p>Top keywords searched that drove views</p>
+          <table class="table table--keywords">
+            <tbody>
+              <tr class="table__row" *ngFor="let keyword of keywords">
+                <td class="table__cell table__cell--name">{{ keyword }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+</slide>

@@ -1,0 +1,10 @@
+<slide [loading]="loading" name="Cover">
+  <section class="slide slide-cover" [ngStyle]="{'background-image': 'url(assets/img/' + colorTheme?.cover_image + ')'}">
+    <div class="wrap-head" [ngClass]="colorTheme?.cover_text_location">
+      <h3>{{metadata?.name}}</h3>
+      <span>Campaign Reporting</span><br>
+      <span *ngIf="metadata?.cxuName">{{metadata?.cxuName}} | {{metadata?.cxuEmail}}</span>
+      <div *ngIf="metadata?.dates.startDate && metadata?.dates.endDate" class="dates">{{metadata?.dates.startDate | date}} - {{metadata?.dates.endDate | date}}</div>
+    </div>
+  </section>
+</slide>

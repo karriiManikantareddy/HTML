@@ -1,0 +1,40 @@
+.left-block {
+  width: 60%;
+}
+
+.right-block{
+  width: 40%;
+  table {
+    table-layout: fixed;
+    th {
+      &.static {
+        width: 230px;
+      }
+      &.impressions {
+        width: 260px;
+        white-space: normal;
+      }
+      white-space: pre-line;
+    }
+  }
+}
+
+.summary {
+  position: relative;
+  margin: 50px 0;
+}
+
+.summary-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  & ::ng-deep .ql-editor {
+    font-size: 24px;
+
+    p {
+      font-size: 24px;
+    }
+  }
+}

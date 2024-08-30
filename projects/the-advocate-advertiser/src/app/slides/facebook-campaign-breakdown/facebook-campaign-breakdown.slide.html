@@ -1,0 +1,8 @@
+<slide *ngFor="let campaigns of campaignGroups" [loading]="loading" name="Facebook Ads - Campaign Performance">
+  <divider></divider>
+  <section class="slide campaigns">
+    <slide-header text="Facebook Campaign Performance"></slide-header>
+    <the-advocate-table [items]="campaigns" [kpis]="kpis" [totals]="totals" header="Campaigns"></the-advocate-table>
+    <slide-footer></slide-footer>
+  </section>
+</slide>

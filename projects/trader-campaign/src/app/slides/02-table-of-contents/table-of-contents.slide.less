@@ -1,0 +1,45 @@
+@import '../../../styles/base/_variables';
+
+.table-of-contents {
+  font-weight: 300;
+  .list {
+    padding: 0;
+    margin: 0;
+    column-count: 2;
+    width: 100%;
+    margin-bottom: 30px;
+    li {
+      width: 90%;
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flex;
+      display: -o-flex;
+      display: flex;
+      -ms-align-items: center;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid @light-gray;
+      letter-spacing: 0.05em;
+      padding: 28px 0;
+      break-inside: avoid;
+      vertical-align: top;
+      color: @text-gray;
+      text-transform: uppercase;
+      font-size: 26px;
+      .num {
+        font-size: 72px;
+        line-height: 1em;
+      }
+    }
+  }
+  .slide-header {
+    margin-bottom: 40px;
+  }
+  .main {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+  }
+}

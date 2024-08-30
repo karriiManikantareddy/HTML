@@ -1,0 +1,11 @@
+
+<div class="footer-container">
+  <div class="text">
+    <div><h6>{{metadata?.advertiser}}</h6></div>
+    <div><h6>Page nr. {{currentSlide}}</h6></div>
+  </div>
+  <div *ngIf="logo" [ngClass]="templateType === 'consumers' ? 'consumers' : 'business'" class="logo">
+    <img *ngIf="templateType === 'consumers'" class="consumers" src="assets/img/logo-footer.png" alt="" />
+    <img *ngIf="templateType === 'business'" class="business" src="assets/img/funda-in-business-logo-offline.png" alt="" />
+  </div>
+</div>

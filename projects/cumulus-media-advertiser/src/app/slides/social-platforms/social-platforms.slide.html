@@ -1,0 +1,39 @@
+<slide *ngIf="platforms && !platforms.isEmpty()" [loading]="loading" name="Platforms">
+  <sidebar text="Paid Social"></sidebar>
+  <section class="slide overview">
+    <header class="slide-header">
+      <h2>
+        Impressions by Platform
+      </h2>
+    </header>
+    <div class="main">
+      <div class="statistic-icon-platforms">
+        <div *ngFor="let p of platforms" class="statistic-icon-platforms-item" [ngClass]="cssClass(p.name)"
+             [style.width]="shareOfTotal[p.name] | percent">
+          <span class="icon icon-{{p.name.toLowerCase()}}"></span>
+          <span class="num">{{shareOfTotal[p.name] | percent:'1.0-0'}}</span>
+          <span class="title">{{p.prettyName}}</span>
+        </div>
+      </div>
+
+      <table>
+        <thead>
+        <tr>
+          <th class="static">Platform</th>
+          <th class="metric small">{{metrics?.impressions?.displayName}}</th>
+          <th class="metric small">{{metrics?.link_clicks?.displayName}}</th>
+          <th class="metric">{{metrics?.link_click_ctr?.displayName}}</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let p of platforms">
+          <td>{{p?.prettyName}}</td>
+          <td class="metric">{{p?.metrics?.impressions?.value | number}}</td>
+          <td class="metric">{{p?.metrics?.link_clicks?.value | number}}</td>
+          <td class="metric">{{p?.metrics?.link_click_ctr?.value | percent}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</slide>

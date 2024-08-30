@@ -1,0 +1,29 @@
+<div class="ui form">
+  <div class="grouped fields">
+    <div class="field" *ngFor="let slide of slides; let slideIndex=index">
+      <div class="ui checkbox">
+        <input
+          [ngModel]="slide.enabled"
+          (ngModelChange)="toggleSlide(slide, $event)"
+          [id]="'slide' + slideIndex"
+          type="checkbox"
+        >
+        <label [for]="'slide' + slideIndex">{{slide.name}}</label>
+
+        <div *ngIf="slide.toggles.length" class="grouped fields toggles">
+          <div class="field" *ngFor="let toggle of slide.toggles; let toggleIndex=index">
+            <div class="ui checkbox">
+              <input
+                [ngModel]="toggle.enabled"
+                (ngModelChange)="toggleSlideToggle(slide, toggle, $event)"
+                [id]="'toggle' + slideIndex + toggleIndex"
+                type="checkbox"
+              >
+              <label [for]="'toggle' + slideIndex + toggleIndex">{{toggle.name}}</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

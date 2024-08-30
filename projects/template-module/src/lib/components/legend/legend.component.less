@@ -1,0 +1,34 @@
+:host {
+  display: inline-block;
+  font-weight: 300;
+
+  .legend-item {
+    margin-right: 2rem;
+
+    .bullet {
+      display: inline-block;
+      width: 16px;
+      height: 5px;
+      border-radius: 5px;
+      margin-bottom: 5px;
+      margin-right: 5px;
+    }
+    .circle {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border-radius: 100%;
+      margin-right: 5px;
+    }
+  }
+
+  &.right {
+    float: right;
+
+    .legend-item {
+      margin: 0;
+      margin-left: 2rem;
+    }
+  }
+
+}

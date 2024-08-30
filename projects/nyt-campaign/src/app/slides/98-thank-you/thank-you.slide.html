@@ -1,0 +1,22 @@
+<slide  name="Thank You">
+  <section *ngIf="backgroundColor === '#FFFFFF'" class="slide slide-thank-you">
+    <div class="main">
+      <p class="header">Thank You.</p>
+    </div>
+  </section>
+  <section *ngIf="backgroundColor !== '#FFFFFF'" class="slide slide-cover" [style.background-color]="backgroundColor">
+    <div class="logo-right">
+      <img src='assets/img/nyt-logo-cover-right-yellow.png' alt="">
+    </div>
+    <header class="slide-header">
+      <div class="logo">
+        <img src='assets/img/nyt-advertising-top-left-white.png' alt="">
+      </div>
+    </header>
+    <div class="main">
+      <div class="header yellow">THANK YOU</div>
+    </div>
+  </section>
+</slide>
+ 
+

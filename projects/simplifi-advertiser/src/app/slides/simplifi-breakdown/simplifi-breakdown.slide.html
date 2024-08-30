@@ -1,0 +1,21 @@
+<slide *ngIf="displayCreatives && !displayCreatives.isEmpty()" [loading]="loading" name="Display Ads">
+  <section class="slide campaigns">
+    <slide-header text="Display Ad Performance"></slide-header>
+    <simplifi-table [items]="displayCreatives" [kpis]="displayKpis" header="Top 5 Display Ads"></simplifi-table>
+    <slide-footer slideName="simplifi-display-breakdown"></slide-footer>
+  </section>
+</slide>
+<slide *ngIf="videoCreatives && !videoCreatives.isEmpty()" [loading]="loading" name="Video Ads">
+  <section class="slide campaigns">
+    <slide-header text="Video Ad Performance"></slide-header>
+    <simplifi-table [items]="videoCreatives" [kpis]="videoKpis" header="Top 5 Video Ads"></simplifi-table>
+    <slide-footer slideName="simplifi-video-breakdown"></slide-footer>
+  </section>
+</slide>
+<slide *ngIf="audioCreatives && !audioCreatives.isEmpty()" [loading]="loading" name="Audio Ads">
+  <section class="slide campaigns">
+    <slide-header text="Audio Ad Performance"></slide-header>
+    <simplifi-table [items]="audioCreatives" [kpis]="audioKpis" header="Top 5 Audio Ads"></simplifi-table>
+    <slide-footer slideName="simplifi-audio-breakdown"></slide-footer>
+  </section>
+</slide>

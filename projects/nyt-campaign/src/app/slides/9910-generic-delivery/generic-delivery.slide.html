@@ -1,0 +1,59 @@
+<slide [loading]="loading" name="Performance Overview">
+  <section class="slide slide-generic-delivery" [style.background-color]="backgroundColor">
+    <header class="slide-header">
+      <h2 [ngClass]="fontStyling">Performance Overview</h2>
+    </header>
+    <div class="main">
+      <div class="row">
+        <div class="col-one-of-three">
+          <div class="statistic-item">
+            <icon type="impressions" [ngClass]="fontStyling"></icon>
+            <div class="text overview">
+              <span class="num"><text-editor [plainText]="true" [ngClass]="fontStyling" placeholder="Insert.." id="generic-delivery-imps" class="big"></text-editor></span>
+              <text-editor [plainText]="true" [ngClass]="fontStyling" placeholder="Insert.." id="generic-delivery-imps-text" defaultText="Impressions" class="wide"></text-editor>
+            </div>
+          </div>
+          <div class="statistic-item">
+            <icon type="facebook-shares" [ngClass]="fontStyling"></icon>
+            <div class="text overview">
+              <span class="num"><text-editor [plainText]="true" [ngClass]="fontStyling" placeholder="Insert.." id="generic-delivery-referrals" class="big"></text-editor></span>
+              <text-editor [plainText]="true" [ngClass]="fontStyling" placeholder="Insert.." id="generic-delivery-referrals-text" defaultText="Referrals" class="wide"></text-editor>
+            </div>
+          </div>
+          <div class="statistic-item">
+            <icon type="click" [ngClass]="fontStyling"></icon>
+            <div class="text overview">
+              <span class="num"><text-editor [ngClass]="fontStyling" [plainText]="true" placeholder="Insert.." id="generic-delivery-avg-ctr" class="big"></text-editor></span>
+              <text-editor [plainText]="true" [ngClass]="fontStyling"placeholder="Insert.." id="generic-delivery-avg-ctr-text" defaultText="Avg. CTR" class="wide"></text-editor>
+            </div>
+          </div>
+        </div>
+        <div class="col-one-of-three">
+          <div class="mobile-screenshot">
+            <image-upload id="generic-delivery" align="middle" class="delivery" class="image"></image-upload>
+          </div>
+        </div>
+        <div class="right aligned col-one-of-three">
+          <div class="overview">
+            <h2 [ngClass]="fontStyling">Top Performing Item</h2>
+            <span [ngClass]="fontStyling" style="padding-right: 5em; font-size: 30px;">(Pictured Left)</span>
+            <h3 [ngClass]="fontStyling">Text</h3>
+            <text-editor [ngClass]="fontStyling" [plainText]="true" id="generic-delivery-text" class="wide align-right"></text-editor>
+          </div>
+          <div class="overview">
+            <h3 [ngClass]="fontStyling">Headline</h3>
+            <text-editor [ngClass]="fontStyling" [plainText]="true" id="genric-delivery-headline" class="wide align-right"></text-editor>
+          </div>
+          <div class="statistic-item right">
+            <div class="text overview">
+              <icon type="click" [ngClass]="fontStyling"></icon>
+              <text-editor [ngClass]="fontStyling" [plainText]="true" defaultText="CTR" placeholder="" id="generic-delivery-ctr" class="align-right"></text-editor>
+              <text-editor [ngClass]="fontStyling" [plainText]="true" placeholder="Insert.." id="generic-delivery-ctr-text" class="wide align-right" style="margin-top: -12px;"></text-editor>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="slide-footer"></footer>
+  </section>
+</slide>

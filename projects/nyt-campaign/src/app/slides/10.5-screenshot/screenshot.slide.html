@@ -1,0 +1,14 @@
+<slide enabled="false" [loading]="loading" name="Screenshot 5">
+  <section class="slide slide-screenshot" [style.background-color]="backgroundColor">
+    <header class="slide-header">
+      <h2 [ngClass]="fontStyling">Screenshots</h2>
+    </header>
+    <div class="screenshot-title">
+      <text-editor [plainText]="true" placeholder="Insert.." id="{{screenshot.title_id}}" class="metric-text"></text-editor>
+    </div>
+    <div class="main">
+      <image-upload id="{{screenshot.id}}" [ngClass]="screenshot.class"></image-upload>
+    </div>
+    <footer class="slide-footer"></footer>
+  </section>
+</slide>

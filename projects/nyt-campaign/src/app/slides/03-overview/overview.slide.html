@@ -1,0 +1,85 @@
+<slide *ngIf="totals" [loading]="loading" name="Overview">
+  <section class="slide overview" [style.background-color]="backgroundColor">
+    <header class="slide-header">
+      <h2 [ngClass]="fontStyling">Overview</h2>
+    </header>
+    <div class="main">
+      <div class="statistic-icons p-20">
+        <div class="statistic-icons-item">
+          <icon [ngClass]="fontStyling" type="eye"></icon>
+          <div class="wrap-title">
+            <span *ngIf="metricType !== 'third'" class="metric-num"><number-editor [ngClass]="fontStyling" [plainText]="true" placeholder="Insert" [defaultText]="totals?.dfp_total_line_item_level_impressions | localeNumber" id="nyt-total-line-item-level-imps"></number-editor></span>
+            <span *ngIf="metricType !== 'third'" class="title" [ngClass]="fontStyling" >impressions</span>
+            <span *ngIf="metricType === 'third'" class="metric-num"><number-editor [ngClass]="fontStyling" [plainText]="true" placeholder="Insert" [defaultText]="totals?.dr_third_party_impressions | localeNumber" id="nyt-third-party-imps"></number-editor></span>
+            <span *ngIf="metricType === 'third'" class="title" [ngClass]="fontStyling">3pt impressions</span>
+          </div>
+        </div>
+        <div class="statistic-icons-item">
+          <icon [ngClass]="fontStyling" type="hand"></icon>
+          <div class="wrap-title">
+            <span *ngIf="metricType !== 'third'" class="metric-num"><number-editor [ngClass]="fontStyling" [plainText]="true" placeholder="Insert" [defaultText]="totals?.dfp_total_line_item_level_clicks | localeNumber" id="nyt-total-line-item-level-clicks"></number-editor></span>
+            <span *ngIf="metricType !== 'third'" class="title" [ngClass]="fontStyling">clicks</span>
+            <span *ngIf="metricType === 'third'" class="metric-num"><number-editor [ngClass]="fontStyling" [plainText]="true" placeholder="Insert" [defaultText]="totals?.dr_third_party_clicks | localeNumber" id="nyt-third-party-clicks"></number-editor></span>
+            <span *ngIf="metricType === 'third'" class="title" [ngClass]="fontStyling">3pt clicks</span>
+          </div>
+        </div>
+        <div class="statistic-icons-item">
+          <icon [ngClass]="fontStyling" type="click"></icon>
+          <div class="wrap-title">
+            <span *ngIf="metricType !== 'third'" class="metric-num"><number-editor [ngClass]="fontStyling" [plainText]="true" placeholder="Insert" [defaultText]="totals?.dfp_ctr | percent" id="nyt-total-line-item-level-ctr"></number-editor></span>
+            <span *ngIf="metricType !== 'third'" class="title" [ngClass]="fontStyling">CTR</span>
+            <span *ngIf="metricType === 'third'" class="metric-num"><number-editor [ngClass]="fontStyling" [plainText]="true" placeholder="Insert" [defaultText]="totals?.dr_third_party_clicks / totals?.dr_third_party_impressions | percent" id="nyt-total-third-party-ctr"></number-editor></span>
+            <span *ngIf="metricType === 'third'" class="title" [ngClass]="fontStyling">3pt CTR</span>
+          </div>
+        </div>
+        <div name="Booked CPM Impressions" toggle class="statistic-icons-item">
+          <icon [ngClass]="fontStyling" type="eye"></icon>
+          <div class="wrap-title">
+            <span class="metric-num"><number-editor [plainText]="true" [ngClass]="fontStyling" placeholder="Insert.." [defaultText]="cpmLineItems.bookedImpressions | localeNumber" id="nyt-booked-cpm-impressions"></number-editor></span>
+            <span class="title" [ngClass]="fontStyling">Booked CPM Impressions</span>
+          </div>
+        </div>
+        <div class="statistic-icons-item">
+          <icon [ngClass]="fontStyling" type="checkmark" *ngIf="iconChecker('1st Delivered CPM Impressions','3pt Delivered CPM Impressions')"></icon>
+          <div class="wrap-title">
+            <div name="1st Delivered CPM Impressions" toggle *ngIf="metricType == 'first' || metricType == 'both'" class="metric-num"><number-editor [ngClass]="fontStyling"[plainText]="true" placeholder="Insert" [defaultText]="cpmLineItems.dfp_total_line_item_level_impressions | localeNumber" id="nyt-1st-delivered-cpm-imps"></number-editor></div>
+            <div name="1st Delivered CPM Impressions" toggle *ngIf="metricType == 'first' || metricType == 'both'" class="title" [ngClass]="fontStyling">1st Delivered CPM Impressions</div>
+            <div *ngIf="metricType == 'both'"><br/></div>
+            <div name="3pt Delivered CPM Impressions" toggle *ngIf="metricType == 'third' || metricType == 'both'" class="metric-num"><number-editor [ngClass]="fontStyling" [plainText]="true" placeholder="Insert" [defaultText]="cpmLineItems.dr_third_party_impressions | localeNumber" id="nyt-3pt-delivered-cpm-imps"></number-editor></div>
+            <div name="3pt Delivered CPM Impressions" toggle *ngIf="metricType == 'third' || metricType == 'both'" class="title" [ngClass]="fontStyling">3pt Delivered CPM Impressions</div>
+          </div>
+        </div>
+        <div class="statistic-icons-item">
+          <icon [ngClass]="fontStyling" type="percent" *ngIf="iconChecker('1st CPM Delivery %','3pt CPM Delivery %')"></icon>
+          <div class="wrap-title">
+            <div name="1st CPM Delivery %" toggle *ngIf="metricType == 'first' || metricType == 'both'" class="metric-num"><number-editor [ngClass]="fontStyling" [plainText]="true" placeholder="Insert" [defaultText]="cpmLineItems.total_ctr | percent" id="nyt-1st-cpm-delivery"></number-editor></div>
+            <div name="1st CPM Delivery %" toggle *ngIf="metricType == 'first' || metricType == 'both'" class="title" [ngClass]="fontStyling">1st CPM Delivery %</div>
+            <div *ngIf="metricType == 'both'"><br/></div>
+            <div name="3pt CPM Delivery %" toggle *ngIf="metricType == 'third' || metricType == 'both'" class="metric-num"><number-editor [ngClass]="fontStyling" [plainText]="true" placeholder="Insert" [defaultText]="cpmLineItems.total_third_party_ctr | percent" id="nyt-3pt-cpm-delivery"></number-editor></div>
+            <div name="3pt CPM Delivery %" toggle *ngIf="metricType == 'third' || metricType == 'both'" class="title" [ngClass]="fontStyling">3pt CPM Delivery %</div>
+          </div>
+        </div>
+        <div class="statistic-icons-item">
+          <icon [ngClass]="fontStyling" type="checkmark" *ngIf="iconChecker('1st Delivered CPD Impressions','3pt Delivered CPD Impressions')"></icon>
+          <div class="wrap-title">
+            <div name="1st Delivered CPD Impressions" toggle *ngIf="metricType == 'first' || metricType == 'both'" class="metric-num"><number-editor [ngClass]="fontStyling" [plainText]="true" placeholder="Insert" [defaultText]="cpdLineItems.dfp_total_line_item_level_impressions | localeNumber" id="nyt-1st-delivered-cpd-imps"></number-editor></div>
+            <div name="1st Delivered CPD Impressions" toggle *ngIf="metricType == 'first' || metricType == 'both'" class="title" [ngClass]="fontStyling">1st Delivered CPD Impressions</div>
+            <div *ngIf="metricType == 'both'"><br/></div>
+            <div name="3pt Delivered CPD Impressions" toggle *ngIf="metricType == 'third' || metricType == 'both'" class="metric-num"><number-editor [ngClass]="fontStyling" [plainText]="true" placeholder="Insert" [defaultText]="cpdLineItems.dr_third_party_impressions | localeNumber" id="nyt-3pt-delivered-cpd-imps"></number-editor></div>
+            <div name="3pt Delivered CPD Impressions" toggle *ngIf="metricType == 'third' || metricType == 'both'" class="title" [ngClass]="fontStyling">3pt Delivered CPD Impressions</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h6 [ngClass]="fontStyling">
+          Delivery by day
+          <legend [items]="legendItems" class="right"></legend>
+        </h6>
+        <div class="chart-content">
+          <chart type="column" [series]="chartSeries" [options]="chartOptions"></chart>
+        </div>
+      </div>
+    </div>
+    <footer class="slide-footer"></footer>
+  </section>
+</slide>

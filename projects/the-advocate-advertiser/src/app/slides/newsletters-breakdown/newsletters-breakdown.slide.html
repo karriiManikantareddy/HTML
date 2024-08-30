@@ -1,0 +1,8 @@
+<slide *ngFor="let creatives of creativeGroups" [loading]="loading" name="Newsletters Ads">
+  <divider></divider>
+  <section class="slide campaigns">
+    <slide-header text="Newsletters Creatives"></slide-header>
+    <the-advocate-table [items]="creatives" [kpis]="kpis" [totals]="totals" header="Top 5 Creatives" [breakdown]="breakdown"></the-advocate-table>
+    <slide-footer></slide-footer>
+  </section>
+</slide>

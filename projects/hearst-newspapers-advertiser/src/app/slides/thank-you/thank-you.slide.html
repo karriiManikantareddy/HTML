@@ -1,0 +1,11 @@
+<slide [loading]="loading" name="Cover">
+  <section class="slide slide-cover" [ngStyle]="{'background-image': 'url(assets/img/' + colorTheme?.cover_image + ')'}">
+    <div class="wrap-head" [ngClass]="colorTheme?.thank_you_location">
+      <h3>Thank You!</h3>
+      <div>
+        {{metadata?.cxuName}} <br>
+        {{metadata?.cxuEmail}}
+      </div>
+    </div>
+  </section>
+</slide>

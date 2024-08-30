@@ -1,0 +1,38 @@
+<slide *ngIf="hasDFP" [loading]="loading" name="Cox.com Performance Overview">
+  <section class="slide overview">
+    <header class="slide-header">
+      <h1 class="title">
+        COX.COM
+      </h1>
+      <div class="dates-wrapper">
+        Flight Dates:
+        <text-editor
+          class="dates"
+          [plainText]="true"
+          id="flight_dates"
+          [maxLength]="28"
+        ></text-editor>
+      </div>
+    </header>
+    <div class="main">
+      <h2 class="subtitle">Performance Overview</h2>
+      <table class="table">
+        <thead class="table__header">
+          <tr class="table__row table__row--header">
+            <th class="table__cell table__cell--header"></th>
+            <th class="table__cell table__cell--header" *ngFor="let creative of creatives">
+              <text-editor [plainText]="true" [id]="creative.id" [defaultText]="creative.name | slice:0:maxNameLength"></text-editor>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="table__row" *ngFor="let metric of metrics">
+            <td class="table__cell table__cell--name">{{metric.name_1}} <span>{{metric.description}}</span></td>
+            <td class="table__cell" *ngFor="let creative of creatives">{{ creative.metrics[metric.metric] | tableValue: metric.format}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="no-data" *ngIf="!creatives || creatives.length === 0">No Data Available</p>
+    </div>
+  </section>
+</slide>

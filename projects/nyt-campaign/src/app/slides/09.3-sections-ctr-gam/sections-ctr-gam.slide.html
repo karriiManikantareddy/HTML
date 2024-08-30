@@ -1,0 +1,22 @@
+<slide [loading]="loading" name="Top Section & Subsection CTR Performance DFP">
+  <section class="slide overview" [style.background-color]="backgroundColor">
+    <header class="slide-header">
+      <h2 [ngClass]="fontStyling">{{metadata?.advertiser || metadata?.name}} Top Section & Subsection CTR Performance
+      </h2>
+    </header>
+    <div class="main">
+      <div class="charts-container">
+        <div class="chart-content">
+          <chart type="column" [series]="sectionCtrChartSeries" [options]="sectionCtrChartOptions" [bgcolor]="backgroundColor"></chart>
+        </div>
+        <div class="chart-content">
+          <chart type="column" [series]="subsectionCtrChartSeries" [options]="subsectionCtrChartOptions" [bgcolor]="backgroundColor"></chart>
+        </div>
+      </div>
+    </div>
+    <div class="source" [ngClass]="fontStyling">
+      Source: NYT Google Ad Manager local delivery
+    </div>
+    <footer class="slide-footer"></footer>
+  </section>
+</slide>

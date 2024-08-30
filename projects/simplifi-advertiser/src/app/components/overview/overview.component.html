@@ -1,0 +1,48 @@
+<div class="overview">
+  <div class="kpis">
+    <ng-container *ngFor="let kpi of kpis">
+      <div *ngIf="totals && totals[kpi] && totals[kpi].value !== 0 && totals[kpi].value !== null" class="kpi">
+        <div class="kpi-value">
+          <div class="text-values">
+            {{totals[kpi].value | format:setFormatting(totals[kpi].format)}} <br />
+            <span *ngIf="comparisons && comparisons[kpi]" class="comparison">
+              {{comparisons[kpi].value | format:setFormatting(comparisons[kpi].format)}}
+            </span>
+          </div>
+        </div>
+        <div class="kpi-name">
+          {{totals[kpi].displayName}}
+        </div>
+      </div>
+    </ng-container>
+  </div>
+  <div class="charts">
+    <div class="chart">
+      <div class="chart-content">
+        <ng-container *ngIf="gauge">
+          <div class="gauge-charts">
+            <div *ngIf="kpis.includes('clicks') && gaugeCharts['display_native_ctr']">
+              <chart class="gauge" type="column" [series]="gaugeCharts['display_native_ctr']" [options]="configs['display_native_ctr']"></chart>
+              <div *ngIf="comparisons && comparisons['display_native_ctr']" class="comparison">{{comparisons['display_native_ctr'].value | format:setFormatting(comparisons['display_native_ctr'].format)}}</div>
+              <div class="label">Display/Native CTR</div>
+            </div>
+            <div *ngIf="kpis.includes('frequency') && gaugeCharts['frequency']">
+              <chart class="gauge" type="column" [series]="gaugeCharts['frequency']" [options]="configs['frequency']"></chart>
+              <div *ngIf="comparisons && comparisons['frequency']" class="comparison">{{comparisons['frequency'].value | format:setFormatting(comparisons['frequency'].format)}}</div>
+              <div class="label">Frequency</div>
+            </div>
+            <div *ngIf="kpis.includes('vcr') && gaugeCharts['vcr']">
+              <chart class="gauge" type="column" [series]="gaugeCharts['vcr']" [options]="configs['vcr']"></chart>
+              <div *ngIf="comparisons && comparisons['vcr']" class="comparison">{{comparisons['vcr'].value | format:setFormatting(comparisons['vcr'].format)}}</div>
+              <div class="label">VCR</div>
+            </div>
+          </div>
+        </ng-container>
+        <ng-container *ngIf="!gauge">
+          <chart *ngIf="chartSeries" type="column" [series]="chartSeries" [options]="chartOptions"></chart>
+          <legend *ngIf="legendItems" [items]="legendItems" class="chart-legend"></legend>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>

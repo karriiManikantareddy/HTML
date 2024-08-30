@@ -1,0 +1,24 @@
+<slide *ngIf="hasEmail" [loading]="loading" name="Email Links">
+  <sidebar text="Email"></sidebar>
+  <section class="slide slide-display-creatives">
+    <header class="slide-header">
+      <h3>Top Links by Clicks</h3>
+    </header>
+    <div class="table">
+      <table>
+        <thead>
+          <th>Campaign</th>
+          <th>Link</th>
+          <th>Clicks</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let link of links">
+            <td class="name">{{link.campaign}}</td>
+            <td class="name">{{link.name}}</td>
+            <td class="metric">{{link.metrics.clicks.value | localeNumber}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</slide>

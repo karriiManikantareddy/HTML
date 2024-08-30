@@ -1,0 +1,16 @@
+<slide [loading]="loading" name={{name}} [attr.name]="name" *ngFor="let creatives of creativeGroups">
+  <section class="slide top-creatives">
+    <header class="slide-header">
+      <h2>{{name}}</h2>
+    </header>
+    <div class="main">
+      <div class="row">
+        <ng-container *ngFor="let creative of creatives">
+          <creative-top [creative]="creative" [totalMetrics]="totalMetrics" class="col-one-of-two" (metricChange)="creativeChanged($event)"></creative-top>
+        </ng-container>
+      </div>
+    </div>
+    <footer class="slide-footer">
+    </footer>
+  </section>
+</slide>

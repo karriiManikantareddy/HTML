@@ -1,0 +1,34 @@
+<slide *ngIf="hasEmail" [loading]="loading" name="Email Ads">
+  <sidebar text="Email"></sidebar>
+  <section class="slide slide-display-creatives">
+    <header class="slide-header">
+      <h3>Top Emails by Records</h3>
+    </header>
+    <div class="table">
+      <table>
+        <thead>
+          <th>Ad Name</th>
+          <th>From</th>
+          <th>Subject</th>
+          <th>Records</th>
+          <th>Opens</th>
+          <th>Clicks</th>
+          <th>CTR</th>
+          <th>Open Rate</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let ad of ads">
+            <td class="name">{{ad.name}}</td>
+            <td class="name">{{ad.from}}</td>
+            <td class="name">{{ad.subject}}</td>
+            <td class="metric">{{ad.metrics.records.value | localeNumber}}</td>
+            <td class="metric">{{ad.metrics.opens.value | localeNumber}}</td>
+            <td class="metric">{{ad.metrics.clicks.value | localeNumber}}</td>
+            <td class="metric">{{ad.metrics.click_rate.value | percent}}</td>
+            <td class="metric">{{ad.metrics.open_rate.value | percent}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</slide>

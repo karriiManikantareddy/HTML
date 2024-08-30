@@ -1,0 +1,30 @@
+<slide *ngIf="hasDisplay" [loading]="loading" name="Display Ads">
+  <sidebar text="Display"></sidebar>
+  <section class="slide slide-display-creatives">
+    <header class="slide-header">
+      <h3>Top Ads by CTR</h3>
+    </header>
+    <div class="table">
+      <table>
+        <thead>
+          <th>Ad Name</th>
+          <th>Desktop Preview</th>
+          <th>Impressions</th>
+          <th>Clicks</th>
+          <th>CTR</th>
+          <th>CPC</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let ad of ads">
+            <td class="name">{{ad.name}}</td>
+            <td class="name"><img src="{{ad.adImage}}" class="creative-image"/></td>
+            <td class="metric">{{ad.metrics.impressions.value | localeNumber}}</td>
+            <td class="metric">{{ad.metrics.clicks.value | localeNumber}}</td>
+            <td class="metric">{{ad.metrics.ctr.value | percent}}</td>
+            <td class="metric">{{ad.metrics.cpc.value | currency}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</slide>

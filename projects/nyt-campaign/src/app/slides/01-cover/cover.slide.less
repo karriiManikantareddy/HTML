@@ -1,0 +1,49 @@
+@import '../../../styles/base/_variables';
+
+.slide-cover {
+  color: @black;
+  .logo-right {
+    right: 0;
+    bottom: 0;
+    position: absolute;
+  }
+  &.slide {
+    padding-left: 111px;
+    .slide-header {
+      padding: 47px 0;
+      margin-bottom: 0;
+    }
+    .slide-footer {
+      padding-top: 25px;
+      padding-bottom: 60px;
+      text-transform: uppercase;
+    }
+  }
+
+  .logo {
+    text-align: left;
+
+    img {
+      width: 410px;
+    }
+  }
+
+  .main {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    -ms-align-items: center;
+    align-items: flex-start;
+  }
+}
+
+.header {
+  margin-top: 80px;
+  font-family: 'LibreFranklin-Bold';
+  font-size: 84px;
+  max-width: 1200px;
+  word-break: break-word;
+  text-transform: uppercase;
+}

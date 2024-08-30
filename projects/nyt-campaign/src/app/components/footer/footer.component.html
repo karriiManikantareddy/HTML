@@ -1,0 +1,11 @@
+<div class="footer-title">
+  <div class="footer-img">
+    <img [src]="bgcolor === '#FFFFFF' ? 'assets/img/NYT-symbol.png' : 'assets/img/NYT-symbol-white.png'" alt="">
+  </div>
+  <div>
+    <span [ngClass]="bgcolor === '#FFFFFF' ? 'black':'white'"> {{metadata?.name}}</span>
+  </div>
+</div>
+<div class="footer-page-counter">
+  <span [ngClass]="bgcolor === '#FFFFFF' ? 'black':'white'">Page {{currentSlide}} of {{numSlides}}</span>
+</div>

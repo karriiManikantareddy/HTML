@@ -1,0 +1,65 @@
+<slide *ngIf="totals" name="Overall Campaign Performance" [loading]="loading">
+  <div class="content">
+    <h1><span class="flag"></span>Overall Campaign Performance</h1>
+    <section class="slide overview">
+      <div class="main">
+        <div class="statistic-icons">
+          <div *ngIf="totals?.metrics?.sessions" class="statistic-icons-item">
+            <icon type="eye"></icon>
+            <div class="wrap-title">
+              <span class="num">{{totals.metrics.sessions | number}}</span>
+              <span class="title">Visits to Site</span>
+            </div>
+          </div>
+          <div *ngIf="totals?.metrics?.pageviews" class="statistic-icons-item">
+            <icon type="pageviews"></icon>
+            <div class="wrap-title">
+              <span class="num">{{totals.metrics.pageviews | number}}</span>
+              <span class="title">Page Views</span>
+            </div>
+          </div>
+          <div class="statistic-icons-item editable-field">
+            <icon type="avg-time"></icon>
+            <div class="wrap-title">
+              <span class="num">
+                <text-editor
+                  id="dwell-time"
+                  class="overview-item-text-box"
+                  [plainText]="true"
+                  [placeholder]="'Insert..'"
+                >
+                </text-editor>
+              </span>
+              <span class="title">Dwell Time</span>
+            </div>
+          </div>
+          <div *ngIf="totals?.metrics?.scroll_depth" class="statistic-icons-item">
+            <icon type="percent"></icon>
+            <div class="wrap-title">
+              <span class="num">{{totals.metrics.scroll_depth | percent}}</span>
+              <span class="title">Scroll Depth</span>
+            </div>
+          </div>
+          <div *ngIf="engagementRate" class="statistic-icons-item">
+            <icon type="hand"></icon>
+            <div class="wrap-title">
+              <span class="num">{{engagementRate | percent}}</span>
+              <span class="title">Engagement Rate</span>
+            </div>
+          </div>
+          <div *ngIf="brandIntent" class="statistic-icons-item">
+            <icon type="click"></icon>
+            <div class="wrap-title">
+              <span class="num">{{brandIntent | percent}}</span>
+              <span class="title">Brand Intent</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <text-editor id="overall-campaign-performance"></text-editor>
+        </div>
+      </div>
+    </section>
+  </div>
+  <footer class="slide-footer"></footer>
+</slide>

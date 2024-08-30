@@ -1,0 +1,17 @@
+<slide *ngIf="topCreatives && !topCreatives.isEmpty()" [loading]="loading" name="Top Creatives">
+  <section class="slide">
+    <h2>
+      <span class="flag"></span>
+      Top Creatives
+    </h2>
+    <div class="main">
+      <div class="row">
+        <ng-container *ngFor="let creative of topCreatives">
+          <creative-top [creative]="creative" [totalMetrics]="totalMetrics" class="col-one-of-two top-creatives"></creative-top>
+        </ng-container>
+      </div>
+    </div>
+    <footer class="slide-footer">
+    </footer>
+  </section>
+</slide>

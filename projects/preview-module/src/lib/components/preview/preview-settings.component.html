@@ -1,0 +1,30 @@
+<div *ngIf="settings.length" class="ui form">
+  <div class="ui divider"></div>
+  <h2>Settings</h2>
+  <div class="grouped fields">
+    <ng-container class="field" *ngFor="let setting of settings">
+      <ng-container class="field" [ngSwitch]="setting?.componentType">
+        <div *ngSwitchCase="'dropdown'" class="field">
+          <label>{{ setting.name }}</label>
+          <dropdown
+            [ngModel]="setting?.state == null ? setting?.defaultState : setting?.state"
+            [options]="setting?.component?.ui"
+            (modelChange)="updateSetting(setting, $event?.id)"
+            class="fluid"
+          ></dropdown>
+        </div>
+        <div *ngSwitchCase="'toggle'" class="field">
+          <div class="ui checkbox">
+            <input
+              [ngModel]="setting?.state == null ? setting?.defaultState : setting?.state"
+              (ngModelChange)="updateSetting(setting, $event)"
+              [id]="'setting' + setting.name"
+              type="checkbox"
+            />
+            <label>{{ setting.name }}</label>
+          </div>
+        </div>
+      </ng-container>
+    </ng-container>
+  </div>
+</div>

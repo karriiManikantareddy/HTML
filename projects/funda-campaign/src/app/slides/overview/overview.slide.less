@@ -1,0 +1,99 @@
+@import '../../../styles/base/_variables';
+
+.chart {
+  h6 {
+    text-transform: uppercase;
+    color: black;
+    margin-bottom: 20px;
+    font-weight: normal;
+  }
+}
+
+.chart-content {
+  height: 350px;
+  width: 100%;
+}
+
+icon {
+  width: 55px;
+  margin-right: 1rem;
+}
+.box {
+  background-color: #0071b3;
+  border-radius: 6px;
+  width: 99%;
+  height: 30px;
+  padding: 10px;
+  margin: 20px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  h6{
+      text-align: center;
+      color: white;
+      align-items: center;
+      font-weight: bolder;
+  }
+}
+.slide-header {
+  text-align: center;
+}
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  margin: 20px 10px;
+}
+.card-box {
+  background-color: #ffffff;
+  height: 50%;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-radius: 8px;
+  flex-basis: 230px;
+  flex: 1 1 auto;
+  justify-content: center; 
+  align-items: center;
+}
+.orange-box {
+  padding: 8px 16px; 
+  border-radius: 6px; 
+  color: #ffffff;
+  width: 80%;
+  text-align: center;
+}
+.orange-box.consumers {
+  background-color: orange; 
+}
+.orange-box.business {
+  background-color: @dark-blue; 
+}
+.card-box > h6 {
+  font-size: 36px;
+  background-color: #f8a101;
+  color: #ffffff;
+  border-radius: 4px;
+  padding: 10px 0px;
+  text-align: center;
+}
+.overview {
+  background-color: #fff;  
+  padding: 55px;
+}
+.blue-container {
+  background-color: #e6f2f7; 
+  padding: 45px; 
+  height: 100%;
+}
+::ng-deep .ql-editor {
+  font-size: 36px;
+  padding: 10px !important;
+  font-weight: 300;
+  width: 100%;
+}
+.number-editor ::ng-deep {
+  font-size: 36px;
+}

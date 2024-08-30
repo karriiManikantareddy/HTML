@@ -1,0 +1,115 @@
+<slide *ngIf="loading || (zipsByImpressions && !zipsByImpressions.isEmpty() && totalImpressions > 0)" [loading]="loading" name="Branding Awareness Impressions Heatmap">
+  <section class="slide campaigns">
+    <slide-header text="Branding Awareness Impressions {{dma}}"></slide-header>
+    <div class="row">
+      <div class="col-one-of-two left-block">
+        <map class="dma-map" [series]="impressionsMapSeries" [options]="mapOptions" [redraw]="redraw"></map>
+      </div>
+      <div class="col-one-of-two right-block">
+        <simplifi-table class="zip-table" [items]="zipsByImpressions" [kpis]="kpis" header="Top 10 ZIPs"></simplifi-table>
+      </div>
+    </div>
+    <slide-footer slideName="simplifi-heatmap-impressions"></slide-footer>
+  </section>
+</slide>
+<slide *ngIf="loading || (zipsByClicks && !zipsByClicks.isEmpty() && totalClicks > 0)" [loading]="loading" name="Consideration Clicks Heatmap">
+  <section class="slide campaigns">
+    <slide-header text="Consideration Clicks {{dma}}"></slide-header>
+    <div class="row">
+      <div class="col-one-of-two left-block">
+        <map class="dma-map" [series]="clicksMapSeries" [options]="mapOptions" [redraw]="redraw"></map>
+      </div>
+      <div class="col-one-of-two right-block">
+        <simplifi-table class="zip-table" [items]="zipsByClicks" [kpis]="kpis" header="Top 10 ZIPs"></simplifi-table>
+      </div>
+    </div>
+    <slide-footer slideName="simplifi-heatmap-clicks"></slide-footer>
+  </section>
+</slide>
+<slide *ngIf="loading || (zipsByOnlineVisits && !zipsByOnlineVisits.isEmpty() && totalOnlineVisits > 0)" [loading]="loading" name="Online Visit Conversion Heatmap">
+  <section class="slide campaigns">
+    <slide-header text="Online Visit Conversion {{dma}}"></slide-header>
+    <div class="row">
+      <div class="col-one-of-two left-block">
+        <map class="dma-map" [series]="onlineVisitsMapSeries" [options]="mapOptions" [redraw]="redraw"></map>
+      </div>
+      <div class="col-one-of-two right-block">
+        <simplifi-table class="zip-table" [items]="zipsByOnlineVisits" [kpis]="kpis" header="Top 10 ZIPs"></simplifi-table>
+      </div>
+    </div>
+    <slide-footer slideName="simplifi-heatmap-online-visits"></slide-footer>
+  </section>
+</slide>
+<slide *ngIf="loading || (zipsByVisits && !zipsByVisits.isEmpty() && totalVisits > 0)" [loading]="loading" name="Visit Conversion Heatmap">
+  <section class="slide campaigns">
+    <slide-header text="Visit Conversion {{dma}}"></slide-header>
+    <div class="row">
+      <div class="col-one-of-two left-block">
+        <map class="dma-map" [series]="visitsMapSeries" [options]="mapOptions" [redraw]="redraw"></map>
+      </div>
+      <div class="col-one-of-two right-block">
+        <simplifi-table class="zip-table" [items]="zipsByVisits" [kpis]="kpis" header="Top 10 ZIPs"></simplifi-table>
+      </div>
+    </div>
+    <slide-footer slideName="simplifi-heatmap-visits"></slide-footer>
+  </section>
+</slide>
+
+<ng-container *ngFor="let adSerie of adSeries">
+  <slide [loading]="loading" name="Creative Branding Awareness Impressions Heatmap" hideFromToc enabled="false">
+    <section class="slide campaigns">
+      <slide-header [text]="generateName(adSerie.ad, 'Creative Branding Awareness Impressions')"></slide-header>
+      <div class="row">
+        <div class="col-one-of-two left-block">
+          <map class="dma-map" [series]="adSerie.impressionsData" [options]="mapOptions" [redraw]="redraw"></map>
+        </div>
+        <div class="col-one-of-two right-block">
+          <simplifi-table class="zip-table" [items]="adSerie.zipByImpressionsData" [kpis]="kpis" header="Top 10 ZIPs"></simplifi-table>
+        </div>
+      </div>
+      <slide-footer [slideName]="adSerie.ad"></slide-footer>
+    </section>
+  </slide>
+  <slide *ngIf="loading || totalClicks > 0" [loading]="loading" name="Creative Consideration Clicks by DMA Heatmap" hideFromToc enabled="false">
+    <section class="slide campaigns">
+      <slide-header [text]="generateName(adSerie.ad, 'Creative Consideration Clicks by DMA')"></slide-header>
+      <div class="row">
+        <div class="col-one-of-two left-block">
+          <map class="dma-map" [series]="adSerie.clicksData" [options]="mapOptions" [redraw]="redraw"></map>
+        </div>
+        <div class="col-one-of-two right-block">
+          <simplifi-table class="zip-table" [items]="adSerie.zipByClicksData" [kpis]="kpis" header="Top 10 ZIPs"></simplifi-table>
+        </div>
+      </div>
+      <slide-footer [slideName]="adSerie.ad"></slide-footer>
+    </section>
+  </slide>
+  <slide *ngIf="loading || totalOnlineVisits > 0" [loading]="loading"  name="Creative Online Visit Conversion by DMA" hideFromToc enabled="false">
+    <section class="slide campaigns">
+      <slide-header [text]="generateName(adSerie.ad, 'Creative Online Visit Conversion by DMA')"></slide-header>
+      <div class="row">
+        <div class="col-one-of-two left-block">
+          <map class="dma-map" [series]="adSerie.onlineVisitsData" [options]="mapOptions" [redraw]="redraw"></map>
+        </div>
+        <div class="col-one-of-two right-block">
+          <simplifi-table class="zip-table" [items]="adSerie.zipByOnlineVisits" [kpis]="kpis" header="Top 10 ZIPs"></simplifi-table>
+        </div>
+      </div>
+      <slide-footer [slideName]="adSerie.ad"></slide-footer>
+    </section>
+  </slide>
+  <slide *ngIf="loading || totalVisits > 0" [loading]="loading"  name="Creative Visit Conversion by DMA Heatmap" hideFromToc enabled="false">
+    <section class="slide campaigns">
+      <slide-header [text]="generateName(adSerie.ad, 'Creative Visit Conversion by DMA')"></slide-header>
+      <div class="row">
+        <div class="col-one-of-two left-block">
+          <map class="dma-map" [series]="adSerie.visitsData" [options]="mapOptions" [redraw]="redraw"></map>
+        </div>
+        <div class="col-one-of-two right-block">
+          <simplifi-table class="zip-table" [items]="adSerie.zipByVisitsData" [kpis]="kpis" header="Top 10 ZIPs"></simplifi-table>
+        </div>
+      </div>
+      <slide-footer [slideName]="adSerie.ad"></slide-footer>
+    </section>
+  </slide>
+</ng-container>

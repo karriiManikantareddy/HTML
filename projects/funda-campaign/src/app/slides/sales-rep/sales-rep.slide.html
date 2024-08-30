@@ -1,0 +1,27 @@
+<slide name="Contact" hideFromToc="true" class="slide">
+  <section
+    [ngClass]="templateType === 'consumers' ? 'consumers' : 'business'"
+    class="section slide-cover"
+  >
+    <div class="main">
+      <div class="right-col">
+        <img src="{{salesRep.imageUrl}}" />
+      </div>
+      <div class="left-col">
+        <div>
+          <h3 class="text1">Op naar de volgende campagne?
+          </h3>
+          <br />
+          <header-line [align]="align"></header-line>
+          <h5 class="text2">Ik help je graag verder!</h5>
+          <h5 class="name">
+            {{salesRep.fullName}}
+          </h5>
+          <h5>{{salesRep.email}}</h5>
+          <h5>(020) 561 82 10</h5>
+          <h5>{{salesRep.phone}}</h5>
+        </div>
+      </div>
+    </div>
+  </section>
+</slide>

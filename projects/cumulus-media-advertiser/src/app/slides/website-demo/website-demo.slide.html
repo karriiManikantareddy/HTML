@@ -1,0 +1,14 @@
+<slide [loading]="loading" name="Website Demographics" *ngIf="!empty">
+  <sidebar text="Website Analytics"></sidebar>
+  <section class="slide slide-website-demo">
+    <header class="slide-header">
+      <h3>Demographics</h3>
+    </header>
+    <div class="main">
+      <div class="header-text">Age Distribution</div>
+      <div class="row">
+        <chart type="column" [series]="chartSeries" [options]="chartOptions"></chart>
+      </div>
+    </div>
+  </section>
+</slide>

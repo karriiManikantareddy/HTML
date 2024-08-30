@@ -1,0 +1,14 @@
+<slide *ngIf="facebookCampaigns?.length > 0" [loading]="loading" name="Facebook Ads">
+  <section class="slide campaigns">
+    <slide-header text="Facebook Campaign Performance"></slide-header>
+    <simplifi-table [items]="facebookCampaigns" [kpis]="kpis" header="Top 10 Campaigns"></simplifi-table>
+    <slide-footer slideName="facebook-breakdown"></slide-footer>
+  </section>
+</slide>
+<slide *ngIf="instagramCampaigns?.length > 0" [loading]="loading" name="Instagram Ads">
+  <section class="slide campaigns">
+    <slide-header text="Instagram Campaign Performance"></slide-header>
+    <simplifi-table [items]="instagramCampaigns" [kpis]="kpis" header="Top 10 Campaigns"></simplifi-table>
+    <slide-footer slideName="facebook-breakdown"></slide-footer>
+  </section>
+</slide>

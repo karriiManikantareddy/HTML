@@ -1,0 +1,9 @@
+<input
+  #inputEl
+  class="input"
+  type="number"
+  min={{min}}
+  max={{max}}
+  [(ngModel)]="value"
+  (keyup)="onKeyPress()">
+<span *ngIf="isPercentage">%</span>

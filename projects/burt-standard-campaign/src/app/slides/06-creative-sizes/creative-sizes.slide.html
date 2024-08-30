@@ -1,0 +1,32 @@
+<slide [loading]="loading" name="Creative Sizes" *ngFor="let creativeSizes of creativeSizeGroups">
+  <section class="slide slide-creative-size">
+    <header class="slide-header">
+      <h2>
+        Creative sizes
+        <header-logo></header-logo>
+      </h2>
+    </header>
+    <div class="main">
+      <table>
+        <thead>
+        <tr>
+          <th>Creative Size</th>
+          <th class="metric small">Share of<br>{{creativeSizes[0]?.metrics?.total_line_item_level_impressions?.displayName}}</th>
+          <th class="metric small">Share of<br>{{creativeSizes[0]?.metrics?.total_line_item_level_clicks?.displayName}}</th>
+          <th class="metric">{{creativeSizes[0]?.metrics?.viewable_rate?.displayName}}</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let c of creativeSizes">
+          <td>{{c.name}}</td>
+          <td class="metric">{{c.shareOfs.total_line_item_level_impressions | percent}}</td>
+          <td class="metric">{{c.shareOfs.total_line_item_level_clicks | percent}}</td>
+          <td class="metric">{{c?.metrics?.viewable_rate?.value | percent}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <footer class="slide-footer">
+    </footer>
+  </section>
+</slide>

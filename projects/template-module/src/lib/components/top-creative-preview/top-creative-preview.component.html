@@ -1,0 +1,12 @@
+<div class="row wrap-left-block">
+  <div class="wrap-img" #iframeWrap>
+    <iframe
+      #iframe
+      [src]="creative.previewUrl | trustResourceUrl"
+      frameborder="0"
+      scrolling="no"
+      [style.width.px]="creative.width"
+      [style.height.px]="creative.height"
+    ></iframe>
+  </div>
+</div>

@@ -1,0 +1,75 @@
+<slide *ngIf="hasSearch" [loading]="loading" name="Paid Search Campaign Summary">
+  <section class="slide summary">
+    <div class="slide-header">
+      <h2 class="title">Paid Search Campaign Summary</h2>
+    </div>
+
+    <div class="main content">
+      <div class="box-row full-width transparent-white stats">
+        <div class="column-container">
+          <div class="box-column">
+            <div class="image">
+              <img src="assets/img/impressions_blue.png" alt="">
+            </div>
+            <div class="value">{{ impressions | number }}</div>
+          </div>
+          <div class="box-column">
+            <div class="image">
+              <img src="assets/img/Clicks.png" alt="">
+            </div>
+            <div class="value">{{ clicks | number }}</div>
+          </div>
+          <div class="box-column">
+            <div class="image">
+              <img src="assets/img/cpc_icon.png" alt="">
+            </div>
+            <div class="value">{{ cpc / 100 | percent }}</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="box-row full-width">
+        <div class="column-container">
+          <div class="box-column">
+            <div class="metric">Impressions <br>Delivered</div>
+          </div>
+          <div class="box-column">
+            <div class="metric">Clicks</div>
+          </div>
+          <div class="box-column">
+            <div class="metric">Average CPC</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="info-box">
+        <table class="info-table">
+          <tr>
+            <td class="name"> Name </td>
+            <td class="value bottom-border">
+              <text-editor style="width: 240px" [plainText]="true" id="name" [maxLength]="37" placeholder="Editable Content"></text-editor>
+            </td>
+            <td class="name"> Audience </td>
+            <td class="value bottom-border">
+              <text-editor style="width: 240px" [plainText]="true" id="audience" [maxLength]="37" placeholder="Editable Content"></text-editor>
+            </td>
+            <td class="name"> Objective </td>
+            <td class="value">
+              <text-editor style="width: 240px" [plainText]="true" id="video_objective" [maxLength]="36" placeholder="Editable Content"></text-editor>
+            </td>
+          </tr>
+          <tr>
+            <td class="name"> Flight Dates </td>
+            <td class="value">
+              <text-editor style="width: 240px" [plainText]="true" id="flight_dates" [maxLength]="28" placeholder="Editable Content"></text-editor>
+            </td>
+            <td class="name"> Goal </td>
+            <td class="value">
+              <text-editor style="width: 240px" [plainText]="true" id="goal" [maxLength]="10" placeholder="Editable Content"></text-editor>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </section>
+</slide>

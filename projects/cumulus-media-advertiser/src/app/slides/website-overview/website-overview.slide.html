@@ -1,0 +1,68 @@
+<slide [loading]="loading" name="Website Overview" *ngIf="loading || !empty">
+  <sidebar text="Website Analytics"></sidebar>
+  <section class="slide slide-website-overview">
+    <header class="slide-header">
+      <h3>KPIs</h3>
+    </header>
+    <div class="kpis">
+      <div class="kpi">
+        <div class="kpi-value">
+          {{totals?.pageviews.value | number}}
+        </div>
+        <div class="kpi-name">
+          Page Views
+        </div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-value">
+          {{totals?.time_on_page.value | duration}}
+        </div>
+        <div class="kpi-name">
+          Total Time on Page
+        </div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-value">
+          {{totals?.users.value | number}}
+        </div>
+        <div class="kpi-name">
+          Users
+        </div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-value">
+          {{totals?.avg_time_on_page.value | duration}}
+        </div>
+        <div class="kpi-name">
+          Avg. Time on Page
+        </div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-value">
+          {{totals?.unique_pageviews.value | number}}
+        </div>
+        <div class="kpi-name">
+          Unique Page Views
+        </div>
+      </div>
+    </div>
+    <div class="charts">
+      <div class="left-chart">
+        <h6>
+          Weekly: Pageviews vs Users
+        </h6>
+        <div class="chart-content">
+          <chart type="column" [series]="chartSeriesLeft" [options]="chartOptionsLeft"></chart>
+        </div>
+      </div>
+      <div class="right-chart">
+        <h6>
+          Weekly: Time on Page vs Users
+        </h6>
+        <div class="chart-content">
+          <chart type="column" [series]="chartSeriesRight" [options]="chartOptionsRight"></chart>
+        </div>
+      </div>
+    </div>
+  </section>
+</slide>

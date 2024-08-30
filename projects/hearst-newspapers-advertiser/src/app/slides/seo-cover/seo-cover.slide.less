@@ -1,0 +1,34 @@
+.graphics {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: absolute;
+  right: 100px;
+  top: 100px;
+  border: 20px solid white;
+
+  .image {
+    background: #fff;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 400px;
+    height: 150px;
+
+    image-upload {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.graphics img {
+  flex-shrink: 0;
+  min-width: 100%;
+  min-height: 100%
+}
+
+h3 {
+  font-size: 100px;
+}

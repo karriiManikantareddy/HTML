@@ -1,0 +1,28 @@
+<slide [loading]="loading" name="Social Ads" *ngIf="loading || !empty">
+  <sidebar text="Paid Social"></sidebar>
+  <section class="slide slide-social-ads">
+    <header class="slide-header">
+      <h3>Top Ads by CTR</h3>
+    </header>
+    <div class="main table">
+      <table>
+        <thead>
+          <th>Ad Set</th>
+          <th>Desktop Preview</th>
+          <th>Impressions</th>
+          <th>Link Clicks</th>
+          <th>CTR<br>(Link CLick-Through Rate)</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let ad of ads">
+            <td class="name">{{ad.name}}</td>
+            <td class="name"><img src="{{ad.thumbnailUrl}}" height="100" width="100"/></td>
+            <td class="metric">{{ad.metrics.impressions.value | number}}</td>
+            <td class="metric">{{ad.metrics.link_clicks.value | number}}</td>
+            <td class="metric">{{ad.metrics.link_click_ctr.value | percent}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</slide>

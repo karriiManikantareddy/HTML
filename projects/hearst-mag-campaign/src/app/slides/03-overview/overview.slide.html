@@ -1,0 +1,52 @@
+<slide *ngIf="totals" [loading]="loading" name="Overview">
+  <section class="slide overview">
+    <header class="slide-header">
+      <h2>
+        Overview
+        <header-logo></header-logo>
+      </h2>
+    </header>
+    <div class="main">
+      <div class="statistic-icons">
+        <div class="statistic-icons-item">
+          <icon type="image"></icon>
+          <div class="wrap-title">
+            <span class="num">{{socialTotals?.impressions?.value | number}}</span>
+            <span class="title">Social {{socialTotals?.impressions?.displayName}}</span>
+          </div>
+        </div>
+        <div class="statistic-icons-item">
+          <icon type="hand"></icon>
+          <div class="wrap-title">
+            <span class="num">{{socialTotals?.clicks?.value | number}}</span>
+            <span class="title">Social {{socialTotals?.clicks?.displayName}}</span>
+          </div>
+        </div>
+        <div class="statistic-icons-item">
+          <icon type="image"></icon>
+          <div class="wrap-title">
+            <span class="num">{{totals?.third_party_impressions?.value | number}}</span>
+            <span class="title">{{totals?.third_party_impressions?.displayName}}</span>
+          </div>
+        </div>
+        <div class="statistic-icons-item">
+          <icon type="hand"></icon>
+          <div class="wrap-title">
+            <span class="num">{{totals?.third_party_clicks?.value | number}}</span>
+            <span class="title">{{totals?.third_party_clicks?.displayName}}</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h6>
+          Delivery by day
+          <legend [items]="legendItems" class="right"></legend>
+        </h6>
+        <div class="chart-content">
+          <chart type="column" [series]="chartSeries" [options]="chartOptions"></chart>
+        </div>
+      </div>
+    </div>
+    <footer class="slide-footer"></footer>
+  </section>
+</slide>

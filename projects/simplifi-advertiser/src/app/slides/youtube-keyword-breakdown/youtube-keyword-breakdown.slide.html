@@ -1,0 +1,7 @@
+<slide *ngIf="loading || (keywords && !keywords.isEmpty())" name="Youtube">
+  <section class="slide keyword">
+    <slide-header text="Youtube Keyword Performance"></slide-header>
+    <simplifi-table [items]="keywords" [kpis]="kpis" header="Top 10 Keywords"></simplifi-table>
+    <slide-footer slideName="youtube-keyword"></slide-footer>
+  </section>
+</slide>

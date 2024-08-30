@@ -1,0 +1,105 @@
+@import '../../../styles/base/_variables';
+
+.podcast-delivery {
+  position: relative;
+  color: black;
+  &.slide {
+    background: @white;
+  }
+  .main {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    flex-direction: row;
+  }
+  .img-logo {
+    height:60px;
+  }
+  .rouge-box {
+    background: @rouge;
+    color: white;
+    height: 100%;
+    width: 750px;
+    padding: 50px 50px 50px 80px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    .title {
+      font-family: @extrabold-font;
+      font-size: 4em;
+    }
+  }
+  .white-box {
+    width: 100%;
+    height: 100%;
+    padding: 50px 80px 80px 50px;
+    display: flex;
+    flex-direction: column;
+    .container-impressions {
+      height: fit-content;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: end;
+      align-items: center;
+      gap: 50px;
+      .total-impressions {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+    .podcasts {
+      width: 100%;
+      height: 800px;
+      padding: 50px 0 0 0;
+      display: grid;
+      grid-template-rows: auto auto auto;
+      grid-template-columns: auto auto;
+      gap: 50px;
+      align-items: center;
+      .podcast {
+        width: fit-content;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+      }
+      .img-podcast {
+        width: 200px;
+        height: 200px;
+        border: 1px solid lightgrey
+      }
+    }
+    .blue-txt {
+      font-size: 1.5em; 
+      font-family: @extrabold-font;
+      color: @blue;
+    }
+    .footer-txt {
+      font-size: 1.5em; 
+      font-family: @extrabold-font;
+      color: @blue;
+      text-align: end;
+    }
+    .bold-txt {
+      font-size: 2em;
+      font-family: @extrabold-font;
+    }
+    .small-txt {
+      font-size: 1.5em;
+    }
+  }
+  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white;
+    opacity: 1; /* Firefox */
+  }
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: white;
+  }
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: white;
+  }
+}

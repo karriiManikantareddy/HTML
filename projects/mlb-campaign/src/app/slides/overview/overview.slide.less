@@ -1,0 +1,226 @@
+@import '../../../styles/base/_variables';
+
+.slide-overview {
+  color: @blue;
+  &.slide {
+    padding-left: 111px;
+    background-color: #FFF;
+  }
+
+  .slide-header {
+    max-width: 900px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+
+    img {
+      position: absolute;
+      right: 30px;
+      top: 50px;
+    }
+  }
+  .main {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    padding-top: 3em;
+    padding-bottom: 3em;
+    z-index: 2;
+
+    .flex-column {
+      flex: 1;
+      height:100%;
+      text-align: center;
+      font-size: 1.5em;
+    }
+
+    .image-upload-tv-col-1 {
+      height: 300px;
+      width: 500px;
+      position: absolute;
+      bottom: 400px;
+      left: 155px;
+      background-image: url('../../../assets/img/tv.png');
+      background-color: @white;
+      background-size: cover;
+
+      image-upload {
+        width: 80%;
+        height: 80%;
+        margin-top: 25px;
+        margin-left: 47px;
+      }
+    }
+
+    .devices-col-2 {
+      width: 50%;
+
+      .tv {
+        height: 237px;
+        width: 350px;
+        position: absolute;
+        top: 524px;
+        right: 847px;
+        background-image: url('../../../assets/img/tv.png');
+        background-size: cover;
+        z-index: 2;
+
+        image-upload {
+          width: 87%;
+          height: 74%;
+          margin-top: 24px;
+          margin-left: 34px;
+        }
+      }
+
+      .desktop {
+        height: 240px;
+        width: 348px;
+        position: absolute;
+        top: 330px;
+        right: 838px;
+        background-image: url('../../../assets/img/desktop.png');
+        background-size: cover;
+        z-index: 1;
+
+        image-upload {
+          width: 91%;
+          height: 62%;
+          margin-top: 15px;
+          margin-left: 15px;
+        }
+      }
+
+      .mobile {
+        height: 308px;
+        width: 154px;
+        position: absolute;
+        top: 372px;
+        right: 669px;
+        background-image: url('../../../assets/img/mobile.png');
+        background-size: cover;
+        z-index: 1;
+
+        image-upload {
+          width: 85%;
+          height: 94%;
+          margin-top: 9px;
+          margin-left: 9px;
+        }
+      }
+    }
+
+    .devices-col-3 {
+      width: 50%;
+
+      .tv {
+        height: 300px;
+        width: 400px;
+        position: absolute;
+        top: 327px;
+        right: 237px;
+        background-image: url('../../../assets/img/tv.png');
+        background-color: @white;
+        background-size: cover;
+        z-index: 1;
+
+        image-upload {
+          width: 87%;
+          height: 74%;
+          margin-top: 29px;
+          margin-left: 43px;
+        }
+      }
+
+      .desktop {
+        height: 240px;
+        width: 348px;
+        position: absolute;
+        top: 520px;
+        right: 200px;
+        background-image: url('../../../assets/img/desktop.png');
+        background-size: cover;
+        z-index: 2;
+
+        image-upload {
+          width: 91%;
+          height: 62%;
+          margin-top: 15px;
+          margin-left: 15px;
+        }
+      }
+
+      .mobile {
+        height: 308px;
+        width: 154px;
+        position: absolute;
+        top: 340px;
+        right: 69px;
+        background-image: url('../../../assets/img/mobile.png');
+        background-size: cover;
+        z-index: 1;
+
+        image-upload {
+          width: 85%;
+          height: 94%;
+          margin-top: 9px;
+          margin-left: 9px;
+        }
+      }
+    }
+
+    .flex-column:nth-child(2) {
+      border-right: 3px solid red;
+      border-left: 3px solid red;
+    }
+  }
+
+  .blue-border {
+    background-color: @blue;
+    position: absolute;
+    width: 100%;
+    height: 300px;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  .metric-name {
+    color: red;
+  }
+
+  .metric-description {}
+
+  .metric {
+    font-size: 2em;
+  }
+
+  .text-col-1 {
+    color: @white;
+    position: absolute;
+    bottom: -35px;
+    width: 550px;
+    height: 300px;
+  }
+
+  .text-col-2 {
+    color: @white;
+    position: absolute;
+    bottom: -35px;
+    left: 696px;
+    width: 550px;
+    height: 300px;
+  }
+
+  .text-col-3 {
+    color: @white;
+    position: absolute;
+    bottom: -35px;
+    right: 60px;
+    width: 550px;
+    height: 300px;
+  }
+}

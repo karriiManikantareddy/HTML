@@ -1,0 +1,567 @@
+params: [advertiser, campaign]
+data:
+  dfp_campaign:
+    dataset: mapped_dfp
+    dimensions: [advertiser, campaign]
+    metrics:
+      - impressions
+      - clicks
+      - click_rate
+  dfp_creative:
+    dataset: mapped_dfp
+    dimensions: [advertiser, campaign, creative]
+    metrics:
+      - impressions
+      - clicks
+      - click_rate
+  audience_extension_video_campaign:
+    dataset: audience_extension_video
+    dimensions: [advertiser, campaign]
+    metrics:
+      - impressions
+      - clicks
+      - click_rate
+      - vcr
+      - completions100
+      - video_starts
+  audience_extension_video_creative:
+    dataset: audience_extension_video
+    dimensions: [advertiser, campaign, datasource, creative]
+    metrics:
+      - impressions
+      - clicks
+      - click_rate
+      - vcr
+      - completions25
+      - completions50
+      - completions75
+      - completions100
+  audience_extension_display_campaign:
+    dataset: audience_extension_display
+    dimensions: [advertiser, campaign]
+    metrics:
+      - impressions
+      - clicks
+      - click_rate
+  audience_extension_display_creative:
+    dataset: audience_extension_display
+    dimensions: [advertiser, campaign, datasource, creative]
+    metrics:
+      - impressions
+      - clicks
+      - click_rate
+  tve_campaign:
+    dataset: tve
+    dimensions: [advertiser, campaign]
+    metrics:
+      - impressions
+      - clicks
+      - click_rate
+      - vcr
+      - completions25
+      - completions50
+      - completions75
+      - completions100
+      - video_starts
+  tve_creative:
+    dataset: tve
+    dimensions: [advertiser, campaign, datasource, creative]
+    metrics:
+      - impressions
+      - clicks
+      - click_rate
+      - vcr
+      - completions25
+      - completions50
+      - completions75
+      - completions100
+  tve_datasource:
+    dataset: tve
+    dimensions: [advertiser, campaign, datasource]
+    metrics:
+      - impressions
+      - clicks
+      - click_rate
+      - vcr
+      - completions25
+      - completions50
+      - completions75
+      - completions100
+  tve_daypart:
+    dataset: tve
+    dimensions: [advertiser, campaign, daypart]
+    metrics:
+      - impressions
+  tve_device_name:
+    dataset: tve
+    dimensions: [advertiser, campaign, device_name]
+    metrics:
+      - impressions
+  tve_site_section:
+    dataset: tve
+    dimensions: [advertiser, campaign, site_section]
+    metrics:
+      - net_delivered_impressions
+  mapped_video_simplifi_creative:
+    dataset: mapped_video_simplifi
+    dimensions: [advertiser, campaign, creative]
+    metrics:
+      - impressions
+      - clicks
+      - click_rate
+      - cpa
+      - completions25
+      - completions50
+      - completions75
+      - completions100
+  mapped_video_simplifi_creative_conversions:
+    dataset: mapped_video_simplifi
+    dimensions: [advertiser, campaign, creative]
+    metrics:
+      - impressions
+      - clicks
+      - clickthrough_visits
+      - viewthrough_visits
+      - weighted_actions
+      - viewthrough_signups
+      - viewthrough_sales
+      - viewthrough_leads
+      - viewthrough_totals
+      - clickthrough_leads
+      - clickthrough_sales
+      - clickthrough_signups
+      - clickthrough_total
+  mapped_video_simplifi_keyword_name:
+    dataset: mapped_video_simplifi
+    dimensions: [advertiser, campaign, keyword_name]
+    metrics:
+      - impressions
+      - clicks
+      - click_rate
+  mapped_video_simplifi_target_geo:
+    dataset: mapped_video_simplifi
+    dimensions: [advertiser, campaign, target_geo]
+    metrics:
+      - impressions
+      - clicks
+      - clickthrough_sales
+      - clickthrough_leads
+      - clickthrough_signups
+      - viewthrough_sales
+      - viewthrough_leads
+      - viewthrough_signups
+      - viewthrough_other
+      - weighted_actions
+      - viewthrough_total
+      - viewthrough_visits
+      - clickthrough_total
+      - clickthrough_visits
+  mapped_tve_simplifi_domain:
+    dataset: mapped_tve_simplifi
+    dimensions: [advertiser, campaign, domain]
+    metrics:
+      - impressions
+      - clicks
+      - clickthrough_sales
+      - clickthrough_leads
+      - clickthrough_signups
+      - viewthrough_sales
+      - viewthrough_leads
+      - viewthrough_signups
+      - viewthrough_other
+      - weighted_actions
+      - viewthrough_total
+      - viewthrough_visits
+      - clickthrough_total
+      - clickthrough_visits
+  mapped_display_simplifi_creative:
+    dataset: mapped_display_simplifi
+    dimensions: [advertiser, campaign, creative]
+    metrics:
+      - impressions
+      - clicks
+      - clickthrough_visits
+      - viewthrough_visits
+      - weighted_actions
+      - viewthrough_signups
+      - viewthrough_sales
+      - viewthrough_leads
+      - viewthrough_totals
+      - clickthrough_leads
+      - clickthrough_sales
+      - clickthrough_signups
+      - clickthrough_total
+  mapped_display_simplifi_keyword_name:
+    dataset: mapped_display_simplifi
+    dimensions: [advertiser, campaign, keyword_name]
+    metrics:
+      - impressions
+      - clicks
+      - click_rate
+  mapped_display_simplifi_domain:
+    dataset: mapped_display_simplifi
+    dimensions: [advertiser, campaign, domain]
+    metrics:
+      - impressions
+      - clicks
+      - clickthrough_sales
+      - clickthrough_leads
+      - clickthrough_signups
+      - viewthrough_sales
+      - viewthrough_leads
+      - viewthrough_signups
+      - viewthrough_other
+      - weighted_actions
+      - viewthrough_total
+      - viewthrough_visits
+      - clickthrough_total
+      - clickthrough_visits
+  mapped_display_simplifi_target_geo:
+    dataset: mapped_display_simplifi
+    dimensions: [advertiser, campaign, target_geo]
+    metrics:
+      - impressions
+      - clicks
+      - clickthrough_sales
+      - clickthrough_leads
+      - clickthrough_signups
+      - viewthrough_sales
+      - viewthrough_leads
+      - viewthrough_signups
+      - viewthrough_other
+      - weighted_actions
+      - viewthrough_total
+      - viewthrough_visits
+      - clickthrough_total
+      - clickthrough_visits
+  mapped_display_tubemogul_creative:
+    dataset: mapped_display_tubemogul
+    dimensions: [advertiser, campaign, ad_type, creative]
+    metrics:
+      - impressions
+      - video_and_overlay_clicks
+      - total_click_throughs
+      - companion_click_throughs
+      - companion_impressions
+      - views
+      - conversions_view
+      - viewed_minutes
+      - completions25
+      - completions50
+      - completions75
+      - completions100
+      - engagements
+      - facebook_fan_page_clicks
+      - facebook_page_likes
+      - facebook_post_comments
+      - facebook_post_likes
+      - facebook_post_shares
+      - shares_facebook
+      - mobile_installs
+  mapped_display_tubemogul_site:
+    dataset: mapped_display_tubemogul
+    dimensions: [advertiser, campaign, site]
+    sort: '-impressions'
+    limit: '15'
+    metrics:
+      - impressions
+      - video_and_overlay_clicks
+      - total_click_throughs
+      - companion_click_throughs
+      - companion_impressions
+      - views
+      - conversions_view
+      - viewed_minutes
+      - completions25
+      - completions50
+      - completions75
+      - completions100
+      - engagements
+      - facebook_fan_page_clicks
+      - facebook_page_likes
+      - facebook_post_comments
+      - facebook_post_likes
+      - facebook_post_shares
+      - shares_facebook
+      - mobile_installs
+  mapped_video_tubemogul_creative:
+    dataset: mapped_video_tubemogul
+    dimensions: [advertiser, campaign, ad_type, creative]
+    metrics:
+      - impressions
+      - video_and_overlay_clicks
+      - total_click_throughs
+      - companion_click_throughs
+      - companion_impressions
+      - views
+      - conversions_view
+      - viewed_minutes
+      - completions25
+      - completions50
+      - completions75
+      - completions100
+      - engagements
+      - facebook_fan_page_clicks
+      - facebook_page_likes
+      - facebook_post_comments
+      - facebook_post_likes
+      - facebook_post_shares
+      - shares_facebook
+      - mobile_installs
+  mapped_video_tubemogul_site:
+    dataset: mapped_video_tubemogul
+    dimensions: [advertiser, campaign, site]
+    sort: '-impressions'
+    limit: '15'
+    metrics:
+      - impressions
+      - video_and_overlay_clicks
+      - total_click_throughs
+      - companion_click_throughs
+      - companion_impressions
+      - views
+      - conversions_view
+      - viewed_minutes
+      - completions25
+      - completions50
+      - completions75
+      - completions100
+      - engagements
+      - facebook_fan_page_clicks
+      - facebook_page_likes
+      - facebook_post_comments
+      - facebook_post_likes
+      - facebook_post_shares
+      - shares_facebook
+      - mobile_installs
+  mapped_tve_tubemogul_creative:
+    dataset: mapped_tve_tubemogul
+    dimensions: [advertiser, campaign, ad_type, creative]
+    metrics:
+      - impressions
+      - video_and_overlay_clicks
+      - total_click_throughs
+      - companion_click_throughs
+      - companion_impressions
+      - views
+      - conversions_view
+      - viewed_minutes
+      - completions25
+      - completions50
+      - completions75
+      - completions100
+      - engagements
+      - facebook_fan_page_clicks
+      - facebook_page_likes
+      - facebook_post_comments
+      - facebook_post_likes
+      - facebook_post_shares
+      - shares_facebook
+      - mobile_installs
+  mapped_tve_tubemogul_site:
+    dataset: mapped_tve_tubemogul
+    dimensions: [advertiser, campaign, site]
+    sort: '-impressions'
+    limit: '15'
+    metrics:
+      - impressions
+      - video_and_overlay_clicks
+      - total_click_throughs
+      - companion_click_throughs
+      - companion_impressions
+      - views
+      - conversions_view
+      - viewed_minutes
+      - completions25
+      - completions50
+      - completions75
+      - completions100
+      - engagements
+      - facebook_fan_page_clicks
+      - facebook_page_likes
+      - facebook_post_comments
+      - facebook_post_likes
+      - facebook_post_shares
+      - shares_facebook
+      - mobile_installs
+  mapped_audio_advertisers_campaign:
+    dataset: mapped_audio_advertisers
+    dimensions: [advertiser, campaign]
+    metrics:
+      - impressions
+      - video_and_overlay_clicks
+      - views
+      - viewed_minutes
+      - completions25
+      - completions50
+      - completions75
+      - completions100
+      - pct_completions100
+      - click_rate
+  mapped_audio_advertisers_creative:
+    dataset: mapped_audio_advertisers
+    dimensions: [advertiser, campaign, creative]
+    metrics:
+      - impressions
+      - video_and_overlay_clicks
+      - views
+      - viewed_minutes
+      - completions25
+      - completions50
+      - completions75
+      - completions100
+      - pct_completions100
+      - click_rate
+  mapped_freewheel_campaign:
+    dataset: mapped_freewheel
+    dimensions: [advertiser, campaign]
+    metrics:
+      - net_delivered_impressions
+      - clicks
+      - video_ads_100_complete
+      - video_ads_75_complete
+      - video_ads_50_complete
+      - video_ads_25_complete
+  google_ads_campaign:
+    dataset: google_ads
+    dimensions: [advertiser, campaign]
+    metrics:
+      - impressions
+      - clicks
+      - click_rate
+      - conversions
+      - cpc
+      - search_impressions_share
+      - phone_calls
+      - top_impression_share
+      - search_impression_lost_to_rank
+  google_ads_ad:
+    dataset: google_ads
+    dimensions: [advertiser, campaign, ad]
+    metrics:
+      - impressions
+      - clicks
+      - click_rate
+      - conversions
+      - cpc
+  google_ads_keyword:
+    dataset: google_ads
+    dimensions: [advertiser, campaign, keyword]
+    sort: '-impressions'
+    limit: '15'
+    metrics:
+      - impressions
+      - clicks
+      - click_rate
+      - cpc
+      - top_impression_share
+      - search_impressions_share
+      - search_impression_lost_to_rank
+  google_ads_device:
+    dataset: google_ads
+    dimensions: [advertiser, campaign, device]
+    metrics:
+      - impressions
+  social_campaign:
+    dataset: social
+    dimensions: [advertiser, campaign]
+    metrics:
+      - _impressions
+      - _clicks
+      - ctr
+      - _post_reaction
+      - _comment
+      - _post
+      - _like
+      - _page_engagement
+      - _post_engagement
+      - _rsvp
+      - _onsite_conversion_lead_grouped
+      - _onsite_conversion_post_save
+      - _reach
+  social_ad:
+    dataset: social
+    dimensions: [advertiser, campaign, _ad]
+    metrics:
+      - _impressions
+      - _clicks
+      - ctr
+      - _post_reaction
+      - _comment
+      - _post
+      - _like
+      - _page_engagement
+      - _post_engagement
+      - _rsvp
+      - _onsite_conversion_lead_grouped
+      - _onsite_conversion_post_save
+      - cpl
+      - vcr
+      - _video_p25_watched_actions
+      - _video_p50_watched_actions
+      - _video_p75_watched_actions
+      - _video_p100_watched_actions
+  social_publisher_platform:
+    dataset: social
+    dimensions: [advertiser, campaign, _publisher_platform]
+    metrics:
+      - _impressions
+      - _clicks
+      - ctr
+      - _post_reaction
+      - _comment
+      - _post
+      - _like
+      - _page_engagement
+      - _post_engagement
+      - _rsvp
+      - _onsite_conversion_lead_grouped
+      - _onsite_conversion_post_save
+      - cpl
+      - vcr
+      - _video_p25_watched_actions
+      - _video_p50_watched_actions
+      - _video_p75_watched_actions
+      - _video_p100_watched_actions
+  auto_dynamic_campaign_attribution:
+    dataset: auto_dynamic
+    dimensions: [advertiser, campaign]
+    metrics:
+      - _attributed_pageviews
+      - _actions
+  auto_dynamic_campaign:
+    dataset: auto_dynamic
+    dimensions: [advertiser, campaign, _client]
+    metrics:
+      - _delivered_impressions
+      - _delivered_clicks
+      - delivered_click_rate
+  auto_dynamic_new_or_used:
+    dataset: auto_dynamic
+    dimensions: [advertiser, campaign, _is_new_or_used]
+    metrics:
+      - _impressions
+      - _clicks
+      - click_rate
+
+  mapped_google_campaign_manager_domain:
+    dataset: mapped_google_campaign_manager
+    dimensions: [advertiser, campaign, _domain]
+    sort: '-_active_view_eligible_impressions'
+    limit: '15'
+    metrics:
+      - _active_view_eligible_impressions
+  mapped_google_campaign_manager_creative:
+    dataset: mapped_google_campaign_manager
+    dimensions: [advertiser, campaign, _placement_strategy, _creative]
+    metrics:
+      - _impressions
+      - _clicks
+      - _video_first_quartile_completions
+      - _video_midpoints
+      - _video_third_quartile_completions
+      - _video_completions
+      - click_rate
+      - _click_through_conversions
+      - _view_through_conversions
+      - _total_conversions

@@ -1,0 +1,48 @@
+<div *ngIf="items && !items.isEmpty()" class="table">
+  <table>
+    <thead>
+      <th>{{header}}</th>
+      <th></th>
+      <th *ngFor="let kpi of kpis">{{items[0].metrics[kpi].displayName}}</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of items">
+        <td *ngIf="item.product === 'gam'">
+          <gam-creative
+            *ngIf="item.displayAd.image"
+            [displayAd]="item.displayAd"
+          ></gam-creative>
+          <span *ngIf="!item.displayAd.image">{{item.name}}</span>
+        </td>
+        <td *ngIf="item.product === 'google_display'  || item.product === 'simplifi' || item.product === 'groundtruth'">
+          <img *ngIf="item.displayAd.image" [src]="item.displayAd.image" [height]="50"/>
+          <span *ngIf="!item.displayAd.image">{{item.name}}</span>
+        </td>
+        <td *ngIf="item.product === 'facebook'">
+          <img [src]="item.displayAd.image" [height]="50"/>
+          <span>{{item.name}}</span>
+        </td>
+        <td *ngIf="item.product  === 'google_search'">
+          <span *ngIf="!item.searchAd.headline1 && !item.searchAd.headline2 && !item.searchAd.description">Reponsive ad</span>
+          <div *ngIf="item.searchAd.headline1" class="blue">{{item.searchAd.headline1}}</div>
+          <div *ngIf="item.searchAd.headline2" class="blue">{{item.searchAd.headline2}}</div>
+          <div *ngIf="item.searchAd.url" class="green">{{item.searchAd.url}}</div>
+          <span *ngIf="item.searchAd.description">{{item.searchAd.description}}</span>
+        </td>
+        <td *ngIf="item.product === 'calls'">
+          {{item.data.customer_phone_number}}<br/>
+          Date: {{item.data.call_date | date}}<br />
+          Location: {{item.data.customer_city}} - {{item.data.customer_state}}
+        </td>
+        <td *ngIf="!(item.product === 'gam' || item.product === 'google_display' || item.product === 'facebook'  || item.product === 'simplifi' || item.product === 'google_search' || item.product === 'groundtruth' || item.product === 'calls')">{{item.name}}</td>
+        <td>{{item.parent}}</td>
+        <td class="metric" *ngFor="let kpi of kpis">{{item.metrics[kpi].value | format: setFormatting(items[0].metrics[kpi].format)}}</td>
+      </tr>
+      <tr *ngIf="totals" class="total-row">
+        <td style="font-weight: bold;">Totals</td>
+        <td></td>
+        <td class="metric" *ngFor="let kpi of kpis">{{totals[kpi].value | format: setFormatting(totals[kpi].format)}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

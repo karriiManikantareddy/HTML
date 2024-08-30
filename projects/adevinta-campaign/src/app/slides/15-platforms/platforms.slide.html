@@ -1,0 +1,46 @@
+<slide *ngIf="platforms && !platforms.isEmpty()" [loading]="loading" name="Platforms">
+  <section class="slide platforms">
+    <header class="slide-header">
+      <h2>
+        Platforms
+      </h2>
+    </header>
+    <div class="main">
+      <div class="statistic-icon-platforms">
+        <div *ngFor="let p of platforms" class="statistic-icon-platforms-item" [ngClass]="cssClass(p.name)"
+          [style.width]="shareOfTotalChartValue[p.name] | percent">
+          <span class="icon icon-{{p.name.toLowerCase()}}"></span>
+          <span class="num">{{shareOfTotal[p.name] | percent:'1.0-0'}}</span>
+          <span class="title">{{p.name}}</span>
+        </div>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th class="static">Platform</th>
+            <th class="metric small impressions">Impressions</th>
+            <th class="metric small">Clicks</th>
+            <th class="metric small">% Imps</th>
+            <th class="metric small">% Clicks</th>
+            <th class="metric">CTR</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let p of platforms">
+            <td>{{p?.name}}</td>
+            <td class="metric impressions">{{p?.metrics?.gam_impressions?.value | number}}</td>
+            <td class="metric">{{p?.metrics?.gam_clicks?.value | number}}</td>
+            <td class="metric">{{p?.shareOfs?.gam_impressions | percent}}</td>
+            <td class="metric">{{p?.shareOfs?.gam_clicks | percent}}</td>
+            <td class="metric">{{p?.metrics?.ctr?.value | percent}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="summary">
+        <text-editor class="summary-text" id="platforms-summary" [plainText]="true" placeholder="Summary text"></text-editor>
+      </div>
+    </div>
+    <footer class="slide-footer"></footer>
+  </section>
+</slide>

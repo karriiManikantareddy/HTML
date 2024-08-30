@@ -1,0 +1,9 @@
+<slide [loading]="loading" name="{{name}}">
+  <section class="slide slide-divider" [ngStyle]="{'background-image': 'url(assets/img/' + colorTheme?.divider_image + ')'}">
+    <header class="slide-header">
+    </header>
+    <div class="main">
+      <ng-content></ng-content>
+    </div>
+  </section>
+</slide>

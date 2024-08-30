@@ -1,0 +1,134 @@
+@import '../../../styles/base/_variables';
+
+.summary {
+  background: url("../../../assets/img/listing_management_summary_background.png") @white bottom center;
+  background-size: cover;
+  height: 100%;
+
+  .content {
+    color: @white;
+
+    .column-container {
+      text-align: center;
+
+      .box-column {
+        width: 300px;
+        margin: 0 10px 0 10px;
+        display: inline-block;
+        padding: 10px 30px 10px 30px;
+        text-align: center;
+
+        .image {
+          line-height: 150px;
+
+          img {
+            height: 150px;
+            vertical-align: middle;
+
+            &.small {
+              height: 100px;
+            }
+          }
+        }
+
+        .value {
+          padding-top: 10px;
+          font-size: 36px;
+          font-weight: bold;
+          text-align: center;
+          color: #000000;
+        }
+
+        .metric {
+          font-size: 26px;
+          display: inline-block;
+          vertical-align: top;
+        }
+      }
+    }
+  }
+
+  .info-table {
+    margin: 3em 0;
+    width: 100%;
+
+    tr {
+      border: none;
+    }
+
+    .name {
+      color: @white;
+      border-right: 1px solid @blue;
+      text-align: right;
+      padding-right: 1em;
+      vertical-align: middle;
+    }
+
+    .bottom-border {
+      border-bottom: 1px solid @blue;
+    }
+
+    .value {
+      ::ng-deep .ql-editor {
+        &.ql-blank::before,
+        p {
+          font-size: 1.5em;
+          color: @white;
+        }
+      }
+    }
+  }
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+}
+
+.stats {
+  margin-top: auto;
+  padding: 2em 0;
+
+  .column-container {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.box-row {
+  height: 290px;
+  display: flex;
+  padding: 25px 75px;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-image {
+  margin-right: 2em;
+}
+
+.large-text {
+  min-width: 200px;
+  margin-right: 1em;
+
+  ::ng-deep .ql-editor {
+    &.ql-blank::before,
+    p {
+      font-size: 82px;
+      color: @black;
+      vertical-align: middle;
+    }
+  }
+}
+
+.smaller-text {
+  min-width: 400px;
+
+  ::ng-deep .ql-editor {
+    &.ql-blank::before,
+    p {
+      font-size: 28px;
+      color: @black;
+    }
+  }
+}

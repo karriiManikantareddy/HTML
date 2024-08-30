@@ -1,0 +1,44 @@
+@import '../../../styles/base/_variables';
+
+.slide-divider {
+  color: @white;
+  &.slide {
+    padding-left: 111px;
+    background-color: #30497F;
+    background-size: cover;
+
+    .slide-footer {
+      padding-bottom: 60px;
+
+      img {
+        width: 150px;
+        position: absolute;
+        top: 6em;
+        right: 6em;
+      }
+    }
+  }
+
+  .wrap-head {
+    max-width: 900px;
+    text-transform: uppercase;
+    position: absolute;
+    top: 550px;
+    left: 250px;
+  }
+
+  .dates {
+    text-align: right;
+    font-size: 2em;
+  }
+
+  .main {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    -ms-align-items: center;
+    align-items: center;
+  }
+}

@@ -1,0 +1,10 @@
+<slide *ngIf="hasAttribution" [loading]="loading" name="Attribution Overview">
+  <section class="slide overview">
+    <slide-header text="Attribution Overview"></slide-header>
+    <overview-cmp
+      [totals]="totals"
+      [series]="series"
+      [chartConfig]="chartConfig"
+    ></overview-cmp>
+  </section>
+</slide>

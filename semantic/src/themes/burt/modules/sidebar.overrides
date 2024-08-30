@@ -1,0 +1,45 @@
+/*******************************
+         Theme Overrides
+*******************************/
+
+body.pushable > .pusher {
+    background: #f5f7f9;
+}
+
+.ui.sidebar {
+    padding: 10px;
+}
+
+.ui.sidebar.menu .item {
+    border-radius: 6px !important;
+}
+
+.ui.vertical.inverted.menu .item:before {
+    background: none;
+}
+
+.ui.vertical.menu .with-icon {
+    display: flex;
+    margin-bottom: 5px;
+}
+
+.ui.vertical.menu .with-icon .item-name {
+    margin-left: 15px;
+}
+
+.ui.vertical.menu .with-icon .item-name .title {
+    display: block;
+    font-size: 20px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    color: #CAD0DB;
+}
+
+.ui.vertical.menu .with-icon .item-name .subtitle {
+    font-size: 11px;
+    color: #98AFC5;
+}
+
+.ui.vertical.menu.active .with-icon .item-name .title {
+    color: #ffffff;
+}

@@ -1,0 +1,38 @@
+@import '../../../styles/base/_variables';
+
+.slide-cover {
+  &.consumers {
+    background: @orange;
+  }
+  &.business {
+    background: @dark-blue;
+  }
+  .main {
+    .cover-logo {
+      background-size: cover;
+      background-position: center;
+      position: absolute;
+      &.consumers {
+        height: 600px;
+        width: 750px;
+        background-image: url('../../../assets/img/cover.png');
+        left: 30%;
+      }
+      &.business {
+        height: 310px;
+        width: 60%;
+        background-color: @dark-blue;
+        background-image: url('../../../assets/img/funda-in-business-logo-online.png');
+        left: 20%;
+        bottom: 35%;
+      }
+    }
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    -ms-align-items: center;
+    align-items: center;
+  }
+}

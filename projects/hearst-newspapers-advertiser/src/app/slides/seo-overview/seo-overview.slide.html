@@ -1,0 +1,35 @@
+<slide *ngIf="hasSeo" [loading]="loading" name="SEO Overview">
+  <sidebar text="SEO"></sidebar>
+  <section class="slide slide-seo-overview" [ngStyle]="{'color': colorTheme?.primary_color}">
+    <header class="slide-header">
+      <h3>KPIs</h3>
+    </header>
+    <div class="kpis">
+      <div class="kpi">
+        <div class="kpi-value" [ngStyle]="{'background-color': colorTheme?.primary_color}">
+          {{totals?.rankingmin.value | localeNumber}}
+        </div>
+        <div class="kpi-name">
+          Ranking
+        </div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-value" [ngStyle]="{'background-color': colorTheme?.primary_color}">
+          {{totals?.reported_ranking_improvement.value | localeNumber}}
+        </div>
+        <div class="kpi-name">
+          Ranking Improvement
+        </div>
+      </div>
+    </div>
+    <div class="charts">
+      <h6>
+        Monthly Performance
+        <legend [items]="legendItems" class="right"></legend>
+      </h6>
+      <div class="chart-content">
+        <chart type="column" [series]="chartSeries" [options]="chartOptions"></chart>
+      </div>
+    </div>
+  </section>
+</slide>

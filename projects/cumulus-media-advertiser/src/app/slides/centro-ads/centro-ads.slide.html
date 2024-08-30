@@ -1,0 +1,28 @@
+<slide [loading]="loading" name="Centro" *ngIf="loading || !empty">
+  <sidebar text="Centro"></sidebar>
+  <section class="slide slide-centro-ads">
+    <header class="slide-header">
+      <h3>Top Ads by CTR</h3>
+    </header>
+    <div class="main table">
+      <table>
+        <thead>
+          <th>Ad Set</th>
+          <th>Impressions</th>
+          <th>Clicks</th>
+          <th>CTR</th>
+          <th>Total Conversions</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let ad of ads">
+            <td class="name">{{ad.name}}</td>
+            <td class="metric">{{ad.metrics.impressions.value | number}}</td>
+            <td class="metric">{{ad.metrics.clicks.value | number}}</td>
+            <td class="metric">{{ad.metrics.ctr.value | percent}}</td>
+            <td class="metric">{{ad.metrics.total_conversions.value | number}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</slide>

@@ -1,0 +1,81 @@
+@import '../../../styles/base/_variables';
+
+.summary {
+  background: url("../../../assets/img/layer-recommendations.png") @white bottom center;
+  background-size: cover;
+  height: 100%;
+
+  .content {
+    color: @white;
+
+    .column-container {
+      text-align: center;
+
+      .box-column {
+        width: 275px;
+        margin: 0 100px;
+        display: inline-block;
+        padding: 10px 30px 10px 30px;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+}
+
+.stats {
+  margin-top: auto;
+  margin-bottom: auto;
+  padding: 0 75px;
+  min-height: 400px;
+
+  .column-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  ::ng-deep .ql-editor {
+    &.ql-blank::before,
+    p {
+      font-size: 3em;
+      color: @black;
+    }
+  }
+}
+
+.slide-header {
+  background-color: @blue;
+}
+
+.contact {
+  display: flex;
+}
+
+.info {
+  width: 305px;
+  margin-right: 20px;
+  padding: 20px 0;
+
+  ::ng-deep .ql-editor {
+    &.ql-blank::before,
+    p {
+      font-size: 2em;
+      color: @white;
+    }
+  }
+}
+
+.with-border {
+  border-left: 1px solid @white;
+  padding-left: 20px;
+}
+
+.cmi-logo {
+  position: absolute;
+  bottom: 2em;
+  right: 3.7em;
+}

@@ -1,0 +1,47 @@
+<slide name="Campagne opzet">
+  <section class="slide slide-cover">
+    <div class="main">
+      <div class="left">
+        <header class="slide-header">
+          <h1>
+            Campagne opzet
+          </h1>
+        </header>
+        <header-line [align]="align"></header-line>
+        <div>
+          <text-editor id="about-the-campaign-2" class="text-editor"></text-editor>
+        </div>
+      </div>
+      <div class="right">
+        <div class="box">
+          <h6 [ngClass]="templateType === 'consumers' ? 'consumers' : 'business'">Doelstelling</h6>
+          <text-editor id="doelstelling" class="sm"></text-editor>
+          <div class="icon">
+            <img src="assets/img/stelling.png" alt="Icon description">
+          </div>
+        </div>
+        <div class="box">
+          <h6 [ngClass]="templateType === 'consumers' ? 'consumers' : 'business'">Campagne</h6>
+          <text-editor id="campagne" class="sm"></text-editor>
+          <div class="icon">
+            <img src="assets/img/campagne.png" alt="Icon description">
+          </div>
+        </div>
+        <div class="box">
+          <h6 [ngClass]="templateType === 'consumers' ? 'consumers' : 'business'">Doelgroep</h6>
+          <text-editor id="doelgroep" class="sm"></text-editor>
+          <div class="icon">
+            <img src="assets/img/groep.png" alt="Icon description">
+          </div>
+        </div>
+        <div class="box">
+          <h6 [ngClass]="templateType === 'consumers' ? 'consumers' : 'business'">Budget</h6>
+          <text-editor id="budget" class="sm"></text-editor>
+          <div class="icon">
+            <img src="assets/img/budget.png" alt="Icon description">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</slide>

@@ -1,0 +1,52 @@
+<slide [loading]="loading" name="GAM Overview" *ngIf="loading || !empty">
+  <sidebar text="GAM"></sidebar>
+  <section class="slide slide-gam-overview">
+    <header class="slide-header">
+      <h3>KPIs</h3>
+    </header>
+    <div class="kpis">
+      <div class="kpi">
+        <div class="kpi-value">
+          {{totals?.total_line_item_level_impressions.value | number}}
+        </div>
+        <div class="kpi-name">
+          Impressions
+        </div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-value">
+          {{totals?.total_line_item_level_clicks.value | number}}
+        </div>
+        <div class="kpi-name">
+          Clicks
+        </div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-value">
+          {{totals?.ctr.value | percent}}
+        </div>
+        <div class="kpi-name">
+          CTR
+        </div>
+      </div>
+    </div>
+    <div class="charts">
+      <div class="left-chart">
+        <h6>
+          Weekly: Impressions vs CTR
+        </h6>
+        <div class="chart-content">
+          <chart type="column" [series]="chartSeriesLeft" [options]="chartOptionsLeft"></chart>
+        </div>
+      </div>
+      <div class="right-chart">
+        <h6>
+          Weekly: Clicks vs CTR
+        </h6>
+        <div class="chart-content">
+          <chart type="column" [series]="chartSeriesRight" [options]="chartOptionsRight"></chart>
+        </div>
+      </div>
+    </div>
+  </section>
+</slide>

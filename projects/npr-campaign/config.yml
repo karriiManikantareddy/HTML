@@ -1,0 +1,42 @@
+params: [advertiser, campaign]
+rename_dimensions:
+  client_facing_reporting: 
+    account: advertiser
+    io: campaign 
+data:
+  cfr_campaign:
+    dataset: client_facing_reporting
+    dimensions: [account, io, source, deal]
+    metrics:
+      - impressions
+  cfr_creative_per_day:
+    dataset: client_facing_reporting
+    dimensions: [account, io, creative]
+    metrics:
+      - impressions
+    rollup: day
+  cfr_creatives:
+    dataset: client_facing_reporting
+    dimensions: [account, io, creative]
+    metrics:
+      - impressions
+  cfr_products:
+    dataset: client_facing_reporting
+    dimensions: [account, io, product]
+    metrics:
+      - impressions
+  cfr_regions:
+    dataset: client_facing_reporting
+    dimensions: [account, io, dma]
+    metrics:
+      - impressions
+  cfr_products_by_age:
+    dataset: client_facing_reporting
+    dimensions: [account, io, product, age]
+    metrics:
+      - impressions
+  cfr_platforms:
+    dataset: client_facing_reporting
+    dimensions: [account, io, device]
+    metrics:
+      - impressions

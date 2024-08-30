@@ -1,0 +1,23 @@
+<div class="wrapper">
+  <div class="image">
+    <img #img *ngIf="src && imageUploaded" [src]="src" (load)="imageLoaded()" [class.loaded]="loaded" [style.objectPosition]="align" class="preview">
+  </div>
+
+  <div
+    imageUpload
+    (filesChangeEmiter)="onFilesChange($event)"
+    (filesInvalidEmiter)="onFileInvalids($event)"
+    class="dropzone"
+    [class.exporting]="exporting"
+  >
+    <div class="text-wrapper">
+      <div class="centered">Click or drop here...</div>
+    </div>
+
+    <input type="file" accept="image/x-png,image/jpeg" (change)="onFileSelected($event)">
+
+    <div class="delete-image">
+      <button (click)="deleteImage()" style="background-color: rgba(255, 255, 255, 0.8)">Delete</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,57 @@
+<slide [loading]="loading" name="Line Items" *ngFor="let lineItems of lineItemGroups">
+  <section class="slide slide-line-items" [style.background-color]="backgroundColor">
+    <header class="slide-header">
+      <h2 [ngClass]="fontStyling">Line items</h2>
+    </header>
+    <div class="main">
+      <table class="table">
+        <thead>
+          <tr>
+            <th class="left" [ngClass]="fontStyling+'_grey'">Line Item</th>
+            <th [ngClass]="fontStyling+'_grey'">Start Date</th>
+            <th [ngClass]="fontStyling+'_grey'">End Date</th>
+            <th [ngClass]="fontStyling+'_grey'">CPM/CPD</th>
+            <th class="wrapped" [ngClass]="fontStyling+'_grey'">Ordered<br />Cost</th>
+            <th class="wrapped" [ngClass]="fontStyling+'_grey'">Ordered<br />Impressions</th>
+            <th name="Impressions" [ngClass]="fontStyling+'_grey'" toggle *ngIf="metricType == 'first' || metricType == 'both'" class="metric">
+              Impressions</th>
+            <th [ngClass]="fontStyling+'_grey'" name="3PT Impressions" toggle *ngIf="metricType == 'third' || metricType == 'both'" class="metric">3PT
+              Impressions</th>
+            <th [ngClass]="fontStyling+'_grey'" name="Clicks" toggle *ngIf="metricType == 'first' || metricType == 'both'" class="metric">Clicks</th>
+            <th [ngClass]="fontStyling+'_grey'" name="3PT Clicks" toggle *ngIf="metricType == 'third' || metricType == 'both'" class="metric">3PT Clicks
+            </th>
+            <th [ngClass]="fontStyling+'_grey'" name="CTR" toggle *ngIf="metricType == 'first' || metricType == 'both'" class="metric">CTR</th>
+            <th [ngClass]="fontStyling+'_grey'" name="3PT CTR" toggle *ngIf="metricType == 'third' || metricType == 'both'" class="metric right">3PT CTR
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let li of lineItems">
+            <td [ngClass]="fontStyling" class="left">{{li.name}}</td>
+            <td [ngClass]="fontStyling">{{li.startDate | date:dateFormat}}</td>
+            <td [ngClass]="fontStyling">{{li.endDate | date:dateFormat}}</td>
+            <td [ngClass]="fontStyling">{{li.costType}}</td>
+            <td [ngClass]="fontStyling">{{li.budget | currency}}</td>
+            <td [ngClass]="fontStyling">{{li.bookedImpressions | localeNumber}}</td>
+            <td [ngClass]="fontStyling" name="Impressions" toggle
+              *ngIf="metricType == 'first' || metricType == 'both'" class="metric">
+              {{li.metrics.dfp_total_line_item_level_impressions | localeNumber}}</td>
+            <td [ngClass]="fontStyling" name="3PT Impressions" toggle
+              *ngIf="metricType == 'third' || metricType == 'both'" class="metric">
+              {{li.metrics.dr_third_party_impressions | localeNumber}}</td>
+            <td [ngClass]="fontStyling" name="Clicks" toggle *ngIf="metricType == 'first' || metricType == 'both'"
+              class="metric">{{li.metrics.dfp_total_line_item_level_clicks | localeNumber}}</td>
+            <td [ngClass]="fontStyling" name="3PT Clicks" toggle *ngIf="metricType == 'third' || metricType == 'both'"
+              class="metric">{{li.metrics.dr_third_party_clicks | localeNumber}}</td>
+            <td [ngClass]="fontStyling" name="CTR" toggle *ngIf="metricType == 'first' || metricType == 'both'"
+              class="metric">{{li.metrics.dfp_ctr | percent}}</td>
+            <td [ngClass]="fontStyling" name="3PT CTR" toggle *ngIf="metricType == 'third' || metricType == 'both'"
+              class="metric right">{{((li.metrics.dr_third_party_clicks || 0) / (li.metrics.dr_third_party_impressions
+              || 1)) | percent}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <footer class="slide-footer"></footer>
+  </section>
+</slide>

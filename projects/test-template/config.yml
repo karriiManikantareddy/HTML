@@ -1,0 +1,28 @@
+params: [advertiser, campaign]
+data:
+  dfp_campaign:
+    dataset: seed_dfp
+    dimensions: [advertiser, campaign]
+    metrics:
+      - total_line_item_level_impressions
+  dfp_campaign_per_day:
+    dataset: seed_dfp
+    dimensions: [advertiser, campaign]
+    metrics:
+      - total_line_item_level_impressions
+    rollup: day
+  dfp_line_items:
+    dataset: seed_dfp
+    dimensions: [advertiser, campaign, line_item]
+    metrics:
+      - total_line_item_level_impressions
+  dfp_creatives:
+    dataset: seed_dfp
+    dimensions: [advertiser, campaign, creative]
+    metrics:
+      - total_line_item_level_impressions
+  # dfp_platforms:
+  #   dataset: seed_dfp
+  #   dimensions: [advertiser, campaign, device_type]
+  #   metrics:
+  #     - total_line_item_level_impressions

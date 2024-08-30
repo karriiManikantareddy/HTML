@@ -1,0 +1,24 @@
+<slide name="Glossary">
+  <section class="slide glossary">
+    <header class="slide-header">
+      <h2>Glossary</h2>
+    </header>
+    <div class="main">
+      <table>
+        <thead>
+        <tr>
+          <th>Metric</th>
+          <th>Definition</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let g of glossary">
+          <td class="col">{{g.metric}}</td>
+          <td>{{g.definition}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <footer class="slide-footer"></footer>
+  </section>
+</slide>

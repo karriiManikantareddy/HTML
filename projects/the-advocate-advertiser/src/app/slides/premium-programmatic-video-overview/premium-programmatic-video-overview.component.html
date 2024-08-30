@@ -1,0 +1,12 @@
+<slide *ngIf="loading || totals" [loading]="loading" name="Premium programmatic video Overview">
+  <divider></divider>
+  <section class="slide overview">
+    <slide-header text="Premium programmatic video"></slide-header>
+    <overview-cmp
+      [totals]="totals"
+      [series]="series"
+      [chartConfig]="chartConfig"
+    ></overview-cmp>
+    <slide-footer></slide-footer>
+  </section>
+</slide>

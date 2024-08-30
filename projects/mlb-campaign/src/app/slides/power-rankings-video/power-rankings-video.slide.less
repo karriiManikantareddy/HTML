@@ -1,0 +1,121 @@
+@import '../../../styles/base/_variables';
+
+.ql-editor {
+  color: @white;
+  text-align: left;
+  font-size: 2em;
+}
+.ql-editor.ql-blank::before {
+  color: @white;
+  text-align: left;
+  font-size: 2em;
+}
+
+
+.slide-pover-rankings-video {
+  color: @white;
+  background-color: @blue;
+
+  &.slide {
+    padding-left: 111px;
+  }
+
+  .slide-header {
+    padding-left: 2em;
+    max-width: 900px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+
+    img {
+      position: absolute;
+      left: 20px;
+      top: 50px;
+    }
+  }
+  .main {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+  }
+
+
+  .metric-box {
+    margin-bottom: 2em;
+
+    .metric {
+      display:inline-block;
+      font-size: 2em;
+
+      .metric-name {
+        font-size: 0.7em;
+      }
+    }
+
+    .logo {
+      display:inline-block;
+      width: 150px;
+      height:100px;
+    }
+  }
+
+  .white-dots {
+    position: absolute;
+    left: -51px;
+    bottom: -125px;
+  }
+
+  .red-dots {
+    position: absolute;
+    right: 40px;
+    top: -125px;
+  }
+
+  .metrics {
+    width: 50%;
+    align-self: center;
+  }
+
+  .devices {
+    width: 50%;
+
+    .desktop {
+      height: 400px;
+      width: 600px;
+      position: absolute;
+      top: 180px;
+      right: 400px;
+      background-image: url('../../../assets/img/desktop.png');
+      background-size: cover;
+      z-index: 1;
+
+      image-upload {
+        width: 91%;
+        height: 68%;
+        margin-top: 25px;
+        margin-left: 25px;
+      }
+    }
+
+    .desktop-2 {
+      height: 400px;
+      width: 600px;
+      position: absolute;
+      top: 400px;
+      right: 200px;
+      background-image: url('../../../assets/img/desktop.png');
+      background-size: cover;
+      z-index: 2;
+
+      image-upload {
+        width: 91%;
+        height: 68%;
+        margin-top: 25px;
+        margin-left: 25px;
+      }
+    }
+  }
+}

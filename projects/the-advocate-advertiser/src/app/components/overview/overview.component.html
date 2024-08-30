@@ -1,0 +1,22 @@
+<div class="overview">
+  <div class="kpis">
+    <ng-container *ngFor="let kpi of kpis">
+      <div class="kpi">
+        <div class="kpi-value">
+          {{kpi.value | format:setFormatting(kpi.format)}}
+        </div>
+        <div class="kpi-name">
+          {{kpi.displayName}}
+        </div>
+      </div>
+    </ng-container>
+  </div>
+  <div class="charts">
+    <div class="chart">
+      <div class="chart-content">
+        <chart *ngIf="chartSeries" type="column" [series]="chartSeries" [options]="chartOptions"></chart>
+        <legend *ngIf="legendItems" [items]="legendItems" class="chart-legend"></legend>
+      </div>
+    </div>
+  </div>
+</div>

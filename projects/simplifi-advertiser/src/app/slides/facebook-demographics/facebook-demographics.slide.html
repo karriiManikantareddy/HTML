@@ -1,0 +1,18 @@
+<slide [loading]="loading" name="Facebook Ads">
+  <section class="slide demographics">
+    <slide-header text="Facebook Demographics Performance"></slide-header>
+    <div class="row">
+      <div class="col-one-of-two">
+        <h3>Gender Distribution</h3>
+        <chart class="pie-chart" type="column" [series]="genderSeries" [options]="options"></chart>
+        <simplifi-table class="zip-table" [items]="filteredGenders" [kpis]="kpis" header="Gender"></simplifi-table>
+      </div>
+      <div class="col-one-of-two">
+        <h3>Age Distribution</h3>
+        <chart class="pie-chart" type="column" [series]="ageSeries" [options]="options"></chart>
+        <simplifi-table class="zip-table" [items]="filteredAges" [kpis]="kpis" header="Age"></simplifi-table>
+      </div>
+    </div>
+    <slide-footer slideName="facebook-demographics"></slide-footer>
+  </section>
+</slide>

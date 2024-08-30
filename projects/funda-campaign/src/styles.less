@@ -1,0 +1,44 @@
+@import "styles/base/_forms";
+@import "styles/base/_grid";
+@import "styles/base/_reset";
+@import "styles/base/_table";
+@import "styles/base/_typography";
+@import "styles/base/_colors";
+@import "styles/base/_variables";
+
+@import "styles/common/slide.less";
+@import "styles/common/statistic.less";
+@import "styles/common/logos.less";
+@import "styles/vendors/_icomoon";
+@import "styles/vendors/_font";
+
+.metric-num {
+    text-editor, number-editor {
+      &.sm {
+        .ql-editor {
+          padding: 0;
+          min-width: 35px;
+        }
+      }
+      &.right {
+        .ql-editor {
+          text-align: right;
+        }
+      }
+      .ql-container.ql-snow {
+        font-size: 28px;
+        font-family: arial, sans-serif;
+      }
+      .ql-editor {
+        min-width: 138px;
+      }
+    }
+  }
+
+  text-editor, number-editor {
+    .ql-container.ql-snow {
+      font-family: arial, sans-serif;
+    }
+
+  }
+ 

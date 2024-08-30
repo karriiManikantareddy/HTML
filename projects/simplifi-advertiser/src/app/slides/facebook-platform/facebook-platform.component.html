@@ -1,0 +1,14 @@
+<slide [loading]="loading" name="Facebook Platform">
+  <section class="slide device">
+    <slide-header text="Facebook Platform Performance"></slide-header>
+    <div class="row">
+      <div class="col-one-of-two left-block">
+        <chart class="pie-chart" type="column" [series]="series" [options]="options"></chart>
+      </div>
+      <div class="col-one-of-two right-block">
+        <simplifi-table class="zip-table" [items]="filteredDevices" [kpis]="kpis" header="Device"></simplifi-table>
+      </div>
+    </div>
+    <slide-footer slideName="facebook-device"></slide-footer>
+  </section>
+</slide>

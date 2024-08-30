@@ -1,0 +1,44 @@
+<slide *ngIf="platforms && !platforms.isEmpty()" [loading]="loading" name="Platforms">
+  <section class="slide overview">
+    <header class="slide-header">
+      <h2>
+        Platforms
+        <header-logo></header-logo>
+      </h2>
+    </header>
+    <div class="main">
+      <div class="statistic-icon-platforms">
+        <div *ngFor="let p of platforms" class="statistic-icon-platforms-item" [ngClass]="cssClass(p.name)"
+             [style.width]="shareOfTotal[p.name] | percent">
+          <span class="icon icon-{{p.name.toLowerCase()}}"></span>
+          <span class="num">{{shareOfTotal[p.name] | percent:'1.0-0'}}</span>
+          <span class="title">{{p.name}}</span>
+        </div>
+      </div>
+
+      <table>
+        <thead>
+        <tr>
+          <th class="static">Platform</th>
+          <th class="metric small">{{metrics?.first_party_impressions?.displayName}}</th>
+          <th class="metric small">{{metrics?.first_party_clicks?.displayName}}</th>
+          <th class="metric small">% {{metrics?.first_party_impressions?.displayName}}</th>
+          <th class="metric small">% {{metrics?.first_party_clicks?.displayName}}</th>
+          <th class="metric">{{metrics?.first_party_ctr?.displayName}}</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let p of platforms">
+          <td>{{p?.name}}</td>
+          <td class="metric">{{p?.metrics?.first_party_impressions?.value | number}}</td>
+          <td class="metric">{{p?.metrics?.first_party_clicks?.value | number}}</td>
+          <td class="metric">{{p?.shareOfs?.first_party_impressions | percent}}</td>
+          <td class="metric">{{p?.shareOfs?.first_party_clicks | percent}}</td>
+          <td class="metric">{{p?.metrics?.first_party_ctr?.value | percent}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <footer class="slide-footer"></footer>
+  </section>
+</slide>

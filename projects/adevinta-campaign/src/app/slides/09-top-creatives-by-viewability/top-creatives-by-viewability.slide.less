@@ -1,0 +1,69 @@
+@import '../../../styles/base/_variables';
+
+.title-block {
+  text-transform: uppercase;
+  color: @text-gray;
+  display: block;
+  letter-spacing: 0.05em;
+  font-size: 22px;
+}
+.col-one-of-two {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  flex-direction: column;
+
+  .col-bottom {
+    display: flex;
+    align-items: flex-end;
+    align-self: center;
+    height: 100%;
+  }
+}
+
+.divided-content {
+  align-items: inherit;
+}
+
+.section-top-creatives {
+  display: flex;
+  justify-content: center;
+
+  .section-foreground {
+    width: 100%;
+  }
+}
+
+.summary {
+  position: relative;
+  margin: 25px 0;
+}
+
+.summary-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  & ::ng-deep .ql-editor {
+    font-size: 24px;
+
+    p {
+      font-size: 24px;
+    }
+  }
+}
+
+.wrap-img {
+  height: 210px;
+  margin: 20px auto;
+  width: 100%;
+  text-align: center;
+}
+
+.creative-link {
+  font-size: 12px;
+  word-break: break-all;
+}

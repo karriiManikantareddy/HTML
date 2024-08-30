@@ -1,0 +1,47 @@
+@import '../../../styles/base/_variables';
+
+.slide-thank-you {
+  flex-direction: column;
+
+  h2 {
+    font-size: 8em;
+  }
+
+  color: @white;
+  &.slide {
+    padding-left: 111px;
+    background: url('../../../assets/img/thank_you.png');
+    background-position: center;  
+    background-repeat: no-repeat; 
+    background-size: cover;
+  }
+  .wrap-head {
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-align: left;
+    img {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+    }
+  }
+  .wrap-body {
+    text-transform: none;
+    letter-spacing: 0.15em;
+    font-size: 25px;
+    a {
+      color: @white;
+      font-weight: bold; 
+    }
+  }
+  .main {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    -ms-align-items: center;
+    align-items: center;
+  }
+}

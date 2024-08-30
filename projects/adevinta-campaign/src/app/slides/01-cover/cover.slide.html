@@ -1,0 +1,14 @@
+<slide [loading]="loading" name="Cover">
+  <section class="slide slide-cover">
+    <div class="main">
+      <h3 class="title">{{metadata?.name}}</h3>
+      <div class="dates">{{dates}}</div>
+      <div class="image client">
+        <image-upload id="client-logo" isLogo="true" align="left" class="client-logo"></image-upload>    
+      </div>
+      <div class="image logo">
+        <image-upload id="logo" isLogo="true" align="right" class="logo"></image-upload>    
+      </div>
+    </div>
+  </section>
+</slide>

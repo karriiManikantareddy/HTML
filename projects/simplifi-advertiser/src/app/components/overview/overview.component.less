@@ -1,0 +1,87 @@
+@import '../../../styles/base/_variables';
+
+legend {
+ color: @primary-color;
+}
+
+.overview {
+  color: @primary-color;
+  background-color: #FFF;
+
+  .gauge {
+    height: 300px;
+    width: 500px;
+    display: inline-block;
+  }
+
+  .label {
+    width: 100%;
+    text-align: center;
+  }
+
+  .kpis {
+    margin-top: 1em;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: space-evenly;
+    -ms-align-items: center;
+    align-items: center;
+
+    .kpi-value {
+      height: 200px;
+      width: 200px;
+      border-radius: 50%;
+      background-color: white;
+      border: 1px solid @black;
+      color: @black;
+      text-align: center;
+      font-size: 24px;
+      display: flex;
+
+      .text-values {
+        align-self: center;
+        text-align: center;
+        width: 200px;
+      }
+
+      .comparison {
+        display: inline;
+        font-size: 18px;
+      }
+    }
+
+    .kpi-name {
+      padding-top: 1em;
+      text-align: center;
+      color: @black;
+      font-size: 14px;
+    }
+  }
+
+  .charts {
+    padding-top: 30px;
+
+    .gauge-charts {
+      display: flex;
+      justify-content: space-evenly;
+
+      .comparison {
+        font-size: 18px;
+        text-align: center;
+        margin-top: -35px;
+      }
+    }
+
+    .chart {
+      width: 1800px;
+      display: inline-block;
+
+      .chart-legend {
+        text-align: center;
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+<slide *ngIf="loading || (cities && !cities.isEmpty())" [loading]="loading" name="Cities">
+  <section class="slide campaigns">
+    <slide-header text="Cities"></slide-header>
+    <simplifi-table [items]="cities" [kpis]="kpis" header="Top 10 cities"></simplifi-table>
+    <slide-footer slideName="simplifi-cities"></slide-footer>
+  </section>
+</slide>

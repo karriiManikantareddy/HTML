@@ -1,0 +1,53 @@
+<slide *ngIf="hasDFP" [loading]="loading" name="Cox.com Creative">
+  <section class="slide overview">
+    <header class="slide-header">
+      <h2 class="title">
+        COX.COM CREATIVE
+      </h2>
+      <div class="dates-wrapper">
+        Flight Dates:
+        <text-editor
+          class="dates"
+          [plainText]="true"
+          id="flight_dates"
+          [maxLength]="28"
+        ></text-editor>
+      </div>
+    </header>
+    <div class="main">
+      <div class="images">
+        <div class="image-attachment"
+             [class.image-attachment--empty]="!commercial1.loaded">
+          <image-upload
+            #commercial1
+            id="dfp_ad_size_1"
+            isLogo="false"
+            class="commercial-image"
+          ></image-upload>
+          <h4 class="image-description">Commercial 1</h4>
+        </div>
+        <div class="image-attachment"
+             [class.image-attachment--empty]="!commercial2.loaded">
+          <image-upload
+            #commercial2
+            id="dfp_ad_size_2"
+            isLogo="false"
+            class="commercial-image"
+          ></image-upload>
+          <h4 class="image-description">Commercial 2</h4>
+        </div>
+        <div class="image-attachment"
+             [class.image-attachment--empty]="!commercial3.loaded">
+          <image-upload
+            #commercial3
+            id="dfp_ad_size_3"
+            isLogo="false"
+            class="commercial-image"
+          ></image-upload>
+          <h4 class="image-description">Commercial 3</h4>
+        </div>
+      </div>
+    </div>
+    <div class="corner-image"></div>
+  </section>
+</slide>

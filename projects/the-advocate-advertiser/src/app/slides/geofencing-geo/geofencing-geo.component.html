@@ -1,0 +1,15 @@
+<slide [loading]="loading" name="Geofencing - Top Cities">
+  <divider></divider>
+  <section class="slide campaigns">
+    <slide-header text="Geofencing - Top Cities"></slide-header>
+    <div class="row">
+      <div class="col-one-of-two left-block">
+        <map [series]="mapSeries" [options]="mapOptions"></map>
+      </div>
+      <div class="col-one-of-two right-block">
+        <the-advocate-table [items]="topMetros" [kpis]="kpis" header="City"></the-advocate-table>
+      </div>
+    </div>
+    <slide-footer></slide-footer>
+  </section>
+</slide>

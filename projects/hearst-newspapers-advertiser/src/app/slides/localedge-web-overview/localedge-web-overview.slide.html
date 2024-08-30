@@ -1,0 +1,43 @@
+<slide *ngIf="hasLocalEdgeWeb" [loading]="loading" name="LocalEdgeWeb Overview">
+  <sidebar text="LocalEdgeWeb"></sidebar>
+  <section class="slide slide-localedge-web-overview" [ngStyle]="{'color': colorTheme?.primary_color}">
+    <header class="slide-header">
+      <h3>KPIs</h3>
+    </header>
+    <div class="kpis">
+      <div class="kpi">
+        <div class="kpi-value" [ngStyle]="{'background-color': colorTheme?.primary_color}">
+          {{totals?.length_of_visits.value | localeNumber}}
+        </div>
+        <div class="kpi-name">
+          Length of Visits
+        </div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-value" [ngStyle]="{'background-color': colorTheme?.primary_color}">
+          {{totals?.pageviews.value | localeNumber}}
+        </div>
+        <div class="kpi-name">
+          Pageviews
+        </div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-value" [ngStyle]="{'background-color': colorTheme?.primary_color}">
+          {{totals?.visits.value | localeNumber}}
+        </div>
+        <div class="kpi-name">
+          Visits
+        </div>
+      </div>
+    </div>
+    <div class="charts">
+      <h6>
+        Weekly Performance
+        <legend [items]="legendItems" class="right"></legend>
+      </h6>
+      <div class="chart-content">
+        <chart type="column" [series]="chartSeries" [options]="chartOptions"></chart>
+      </div>
+    </div>
+  </section>
+</slide>

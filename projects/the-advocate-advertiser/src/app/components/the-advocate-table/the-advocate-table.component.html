@@ -1,0 +1,56 @@
+<div *ngIf="items && !items.isEmpty()" class="table">
+  <table>
+    <thead>
+      <th>{{header}}</th>
+      <th></th>
+      <th *ngFor="let listItem of list">{{listItem}}</th>
+      <th *ngFor="let kpi of kpis">{{items[0].metrics[kpi].displayName}}</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of items">
+        <td *ngIf="item.product === 'gam' && breakdown">
+          <div class="gam-container">
+            <div class="image-section">
+              <gam-creative
+                *ngIf="item.displayAd.image"
+                [displayAd]="item.displayAd"
+              ></gam-creative>
+            </div>
+            <div class="name-section">
+              <span>{{ item.name }}</span>
+            </div>
+          </div>
+        </td>
+        <td *ngIf="item.product === 'gam' && !breakdown">
+          <gam-creative
+            *ngIf="item.displayAd.image"
+            [displayAd]="item.displayAd"
+          ></gam-creative>
+            <span>{{item.name}}</span>
+        </td>
+        <td *ngIf="item.product === 'facebook'">
+          <img [src]="item.displayAd.image" [height]="100"/>
+          <span>{{item.name}}</span>
+        </td>
+        <td *ngIf="item.product === 'site_impact'">
+          <img *ngIf="top" [src]="item.data.screenshot_url" [height]="450" [width]="350"/>
+          <span *ngIf="!top || top === undefined">{{item.data.subject_line}}</span>
+        </td>
+        <td *ngIf="!(item.product === 'gam' || item.product === 'site_impact' || item.product === 'facebook')">{{item.name}}</td>
+        <td>{{item.parent}}</td>
+        <td *ngIf="item.product === 'keyword'">
+          {{item.data.ad_group}}
+        </td>
+        <td *ngIf="item.product === 'keyword'">
+          {{item.data.campaign}}
+        </td>
+        <td class="metric" *ngFor="let kpi of kpis">{{item.metrics[kpi].value | format: setFormatting(items[0].metrics[kpi].format)}}</td>
+      </tr>
+      <tr *ngIf="totals" class="total-row">
+        <td style="font-weight: bold;">Totals</td>
+        <td></td>
+        <td class="metric" *ngFor="let kpi of kpis">{{totals[kpi].value | format: setFormatting(totals[kpi].format)}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,17 @@
+<slide [loading]="loading" name="Table of Contents">
+  <section class="slide table-of-contents">
+    <header class="slide-header">
+      <h2>Table of Contents</h2>
+    </header>
+    <div class="main">
+      <div class="list">
+        <ul>
+          <li *ngFor="let entry of entries">
+            <span>{{entry.name}}</span>
+            <span [ngStyle]="{'color': '#4e759f'}" class="num primary-text">{{entry.page}}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</slide>

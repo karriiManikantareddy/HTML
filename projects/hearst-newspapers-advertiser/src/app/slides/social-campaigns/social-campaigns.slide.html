@@ -1,0 +1,32 @@
+<slide *ngIf="hasSocial" [loading]="loading" name="Social Campaigns">
+  <sidebar text="Paid Social"></sidebar>
+  <section class="slide slide-social-campaigns">
+    <header class="slide-header">
+      <h3>Campaign Performance</h3>
+    </header>
+    <div class="table">
+      <table>
+        <thead>
+          <th>Campaign</th>
+          <th>Impressions</th>
+          <th>Landing<br>Page Views</th>
+          <th>Link Clicks</th>
+          <th>CTR<br>(Link CLick-Through Rate)</th>
+          <th>Engagements</th>
+          <th>Facebook Conversions</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let campaign of campaigns">
+            <td class="name">{{campaign.name}}</td>
+            <td class="metric">{{campaign.metrics.impressions.value | localeNumber}}</td>
+            <td class="metric">{{campaign.metrics.landing_page_views.value | localeNumber}}</td>
+            <td class="metric">{{campaign.metrics.link_clicks.value | localeNumber}}</td>
+            <td class="metric">{{campaign.metrics.link_clicks_ctr.value | percent}}</td>
+            <td class="metric">{{campaign.metrics.engagements.value | localeNumber}}</td>
+            <td class="metric">{{campaign.metrics.facebook_conversions.value | localeNumber}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</slide>

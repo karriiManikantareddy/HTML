@@ -1,0 +1,7 @@
+<slide *ngIf="segments && !segments.isEmpty()" [loading]="loading" name="Audience Segments">
+  <section class="slide campaigns">
+    <slide-header text="Audience Segments"></slide-header>
+    <simplifi-table [items]="segments" [kpis]="kpis" header="Top 10 Segments"></simplifi-table>
+    <slide-footer slideName="simplifi-audience"></slide-footer>
+  </section>
+</slide>

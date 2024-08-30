@@ -1,0 +1,47 @@
+<slide *ngIf="hasTve" [loading]="loading" name="TVE Performance Delivery by Screen">
+  <section class="slide overview">
+    <header class="slide-header">
+      <h1 class="title">
+        Streaming
+      </h1>
+      <div class="dates-wrapper">
+        Flight Dates:
+        <text-editor
+          class="dates"
+          [plainText]="true"
+          id="flight_dates"
+          [maxLength]="28"
+        ></text-editor>
+      </div>
+    </header>
+    <div class="main">
+      <div class="container">
+        <div class="column">
+          <h2 class="subtitle">Delivery by Daypart</h2>
+          <p>&nbsp;</p>
+          <table class="table">
+            <tbody>
+              <tr class="table__row" *ngFor="let order of objectKeys(daypartOrder)">
+                
+                <td class="table__cell">{{ order }}</td>
+                <td class="table__cell">{{ daypartOrder[order] / totalImpressions || 0 | percent:'1.0-0'}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="column">
+          <h2 class="subtitle">Top Performing Networks</h2>
+          <p>Top networks searched that drove views</p>
+          <table class="table">
+            <tbody>
+              <tr class="table__row" *ngFor="let network of networks ">
+                <td class="table__cell">{{ network }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <cmi-footer class="slide-footer"></cmi-footer>
+  </section>
+</slide>

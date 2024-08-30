@@ -1,0 +1,46 @@
+<slide [loading]="loading" name="Performance by Motivation Targeting">
+  <div class="slide">
+    <main>
+      <section class="left" [style.background-color]="backgroundColor">
+        <header class="slide-header">
+          <h2 [ngClass]="fontStyling">Performance by Motivation Targeting</h2>
+        </header>
+        <div class="table-container">
+          <h4 [ngClass]="fontStyling">Motivations CTR,
+            <text-editor class="motivation-emotion__company" id="motivation" [plainText]=true [defaultText]="'Company'"
+              [placeholder]="''">
+            </text-editor>
+            vs. Industry
+          </h4>
+          <table>
+            <thead>
+              <tr>
+                <th [ngClass]="fontStyling">Motivation</th>
+                <th [ngClass]="fontStyling">Motivation CTR</th>
+                <th [ngClass]="fontStyling">Industry CTR</th>
+                <th [ngClass]="fontStyling">Vs. Industry</th>
+              </tr>
+            </thead>
+            <tr *ngFor="let mb of motivationBenchmark">
+              <td [ngClass]="fontStyling">{{mb.name.capitalize()}}</td>
+              <td [ngClass]="fontStyling">{{mb.ctr | percent}}</td>
+              <td [ngClass]="fontStyling">{{mb.industryCTR | percent}}</td>
+              <td [ngClass]="fontStyling">{{mb.diff | percent:'1.0-0'}}</td>
+            </tr>
+          </table>
+        </div>
+      </section>
+      <section class="right">
+        <div class="bullet-list">
+          <text-editor id="motivation-bullets"> </text-editor>
+        </div>
+        <div class="image-container">
+          <image-upload id="motivation-screenshot" class="image"></image-upload>
+        </div>
+      </section>
+    </main>
+    <div class="footer">
+      <footer class="slide-footer"></footer>
+    </div>
+  </div>
+</slide>

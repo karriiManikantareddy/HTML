@@ -1,0 +1,52 @@
+@import '../../../styles/base/_variables';
+
+.outer-element {
+  display: flex;
+  height: 100%;
+
+  .inner-left-column {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 20px;
+  }
+
+  .inner-right-column {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 20px;
+
+  }
+
+  .main {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    flex-direction: column;
+    margin: 24px 0px;
+
+    ::ng-deep .ql-editor {
+      font-size: 20px;
+      padding: 10px;
+    }
+
+    .outer-container {
+      height: 100%;
+    }
+
+    .campaign-objectives {
+      width: 100%;
+      height: 95%;
+    }
+
+    .header {
+      font-size: 26px;
+      font-family: LibreFranklin-Regular, sans-serif;
+      display: inline-block;
+
+    }
+  }
+}

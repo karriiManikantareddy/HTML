@@ -1,0 +1,41 @@
+.slide {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 30px;
+  padding: 55px;
+  box-sizing: border-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: @white;
+  &:last-child {
+    margin-bottom: 0;
+  }
+  .main {
+    height: 100%;
+  }
+  .slide-header {
+    margin-bottom: 35px;
+  }
+}
+
+text-editor {
+  .ql-editor {
+    font-size: 30px;
+    padding: 0;
+  }
+  &.bg {
+    .ql-editor {
+      font-size: 40px;
+    }
+  }
+  &.sm {
+    .ql-editor {
+      font-size: 21.33px;
+    }
+  }
+}

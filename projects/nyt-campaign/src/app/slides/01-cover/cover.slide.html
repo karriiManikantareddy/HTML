@@ -1,0 +1,21 @@
+<slide [loading]="loading" name="Cover">
+  <section class="slide slide-cover" [style.background-color]="backgroundColor">
+    <div class="logo-right">
+      <img [src]="backgroundColor === '#000000' ? 'assets/img/nyt-logo-cover-right-yellow.png' : 'assets/img/nyt-logo-cover-right.png'" alt="">
+    </div>
+    <header class="slide-header">
+      <div class="logo">
+        <img [src]="backgroundColor === '#000000' ? 'assets/img/nyt-advertising-top-left-white.png' : 'assets/img/nyt-advertising-top-left.png'" alt="">
+      </div>
+    </header>
+    <div class="main">
+      <div class="header" [ngStyle]="{'color': backgroundColor == '#FFFFFF' ? 'black' : '#ffe100'}">{{metadata?.name}}</div>
+    </div>
+    <div class="slide-footer">
+      <div class="footer-title">
+        <span *ngIf="metadata?.startDate && metadata?.endDate"
+        [ngStyle]="{'color': backgroundColor == '#FFFFFF' ? 'black' : 'white'}">{{metadata?.startDate | date}} - {{metadata?.endDate | date}}</span>
+      </div>
+    </div>
+  </section>
+</slide>

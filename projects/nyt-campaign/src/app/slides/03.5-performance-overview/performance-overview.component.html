@@ -1,0 +1,69 @@
+<slide *ngIf="totals" [loading]="loading" name="Performance Overview">
+  <section class="slide overview" [style.background-color]="backgroundColor">
+    <header class="slide-header">
+      <h2 [ngClass]="fontStyling">Performance Overview</h2>
+    </header>
+    <div class="main">
+      <table class="table">
+        <tbody>
+          <tr class="table-row">
+            <td class="table-cell key" height="75">
+              <div [ngClass]="fontStyling" class="table-cell-content no-wrap">Impressions</div>
+            </td>
+            <td class="table-cell value" height="75">
+              <div [ngClass]="fontStyling" *ngIf="metricType !== 'third'" class="table-cell-content wrap">
+                {{totals?.dfp_total_line_item_level_impressions | localeNumber}}</div>
+            </td>
+          </tr>
+          <tr class="table-row">
+            <td class="table-cell key" height="75">
+              <div [ngClass]="fontStyling" class="table-cell-content no-wrap">Clicks</div>
+            </td>
+            <td class="table-cell value" height="75">
+              <div [ngClass]="fontStyling" *ngIf="metricType !== 'third'" class="table-cell-content wrap">
+                {{totals?.dfp_total_line_item_level_clicks | localeNumber}}</div>
+            </td>
+          </tr>
+          <tr class="table-row">
+            <td class="table-cell key" height="75">
+              <div [ngClass]="fontStyling" class="table-cell-content no-wrap">CTR</div>
+            </td>
+            <td class="table-cell value" height="75">
+              <div [ngClass]="fontStyling" class="table-cell-content wrap">{{totals?.dfp_ctr | percent}}</div>
+            </td>
+          </tr>
+          <tr class="table-row">
+            <td class="table-cell key" height="75">
+              <div [ngClass]="fontStyling" class="table-cell-content no-wrap">Viewability</div>
+            </td>
+            <td class="table-cell value" height="75">
+              <div [ngClass]="fontStyling" class="table-cell-content wrap">
+                {{totals?.dfp_total_active_view_viewable_impressions_rate | percent}}
+              </div>
+            </td>
+          </tr>
+          <tr class="table-row">
+            <td class="table-cell key" height="75">
+              <div [ngClass]="fontStyling" class="table-cell-content no-wrap">Top Performing Line Item</div>
+            </td>
+            <td class="table-cell value" height="75">
+              <div [ngClass]="fontStyling" *ngIf="topLineItems?.length>0" class="table-cell-content wrap">
+                {{topLineItems[0]?.name}}</div>
+            </td>
+          </tr>
+          <tr class="table-row">
+            <td class="table-cell key" height="75">
+              <div [ngClass]="fontStyling" class="table-cell-content no-wrap">Top Performing Creative</div>
+            </td>
+            <td class="table-cell value" height="75">
+              <div [ngClass]="fontStyling" *ngIf="topCreatives?.length>0" class="table-cell-content wrap">
+                {{topCreatives[0]?.name}}</div>
+            </td>
+          </tr>
+        </tbody>
+
+      </table>
+    </div>
+    <footer class="slide-footer"></footer>
+  </section>
+</slide>

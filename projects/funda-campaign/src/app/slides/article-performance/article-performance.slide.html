@@ -1,0 +1,38 @@
+<slide [loading]="loading" name="Performance artikelen" *ngFor="let articles of articleGroups">
+  <section class="slide slide-line-items">
+    <header class="slide-header">
+      <h1>
+        Performance artikelen      
+      </h1>
+    </header>
+    <header-line></header-line>
+    <div class="main">
+      <table>
+        <thead>
+        <tr>
+          <th>Artikelen</th>
+          <th class="metric">Pageviews</th>
+          <th class="metric">Unieke pageviews</th>
+          <th class="metric">Time on page</th>
+          <th class="metric">Article reads</th>
+          <th class="metric">% Article reads</th>
+          <th class="metric">Clickouts</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let art of articles; let i = index">
+          <td><a href="http://funda.nl{{ art.pagePath.page_path }}">Art. {{i+1}}</a></td>
+          <td class="metric">{{art.metrics.pageviews | number}}</td>
+          <td class="metric">{{art.metrics.unique_pageviews | number}}</td>
+          <td class="metric">{{art.metrics.time_on_page | duration}}</td>
+          <td class="metric">{{art.metrics.scrolled_100 | percent}}</td>
+          <td class="metric">{{art.metrics.scrolled_100_rate | percent}}</td>
+          <td class="metric">{{art.outboundLinkClicks}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <footer class="slide-footer"></footer>
+  </section>
+  <footer-line></footer-line>
+</slide>

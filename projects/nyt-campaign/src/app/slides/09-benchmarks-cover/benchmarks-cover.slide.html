@@ -1,0 +1,16 @@
+<slide [loading]="loading" *ngIf="benchmarks" name="NY Times Site Level Campaign Performance Metrics">
+  <section class="slide slide-cover" [style.background-color]="backgroundColor">
+    <header class="slide-header">
+      <div class="logo">
+        <img
+          [src]="backgroundColor === '#FFFFFF' ? 'assets/img/nyt-advertising-top-left.png' : 'assets/img/nyt-advertising-top-left-white.png'"
+          alt="">
+      </div>
+    </header>
+    <div class="main">
+      <p class="header" [ngClass]="fontStyling">NY Times Site Level Campaign Performance Metrics</p>
+    </div>
+    <div class="slide-footer">
+    </div>
+  </section>
+</slide>

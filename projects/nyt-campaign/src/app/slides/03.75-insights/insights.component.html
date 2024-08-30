@@ -1,0 +1,28 @@
+<slide [loading]="loading" name="Insights">
+  <section class="slide overview" [style.background-color]="backgroundColor">
+    <header class="slide-header">
+      <h2 [ngClass]="fontStyling"> Insights</h2>
+    </header>
+    <div class="insights-body">
+      <div class="main">
+        <div class="header" [ngClass]="fontStyling">Overview</div>
+        <div class="outer-container border">
+          <text-editor [ngClass]="fontStyling" id="overview" class="campaign-objectives"></text-editor>
+        </div>
+      </div>
+      <div class="main">
+        <div class="header" [ngClass]="fontStyling">Targeting & Creative</div>
+        <div class="outer-container border">
+          <text-editor [ngClass]="fontStyling" id="targeting_creative" class="campaign-objectives"></text-editor>
+        </div>
+      </div>
+      <div class="main">
+        <div class="header" [ngClass]="fontStyling">Platforms & Sections</div>
+        <div class="outer-container">
+          <text-editor [ngClass]="fontStyling" id="platform_sections" class="campaign-objectives"></text-editor>
+        </div>
+      </div>
+    </div>
+    <footer class="slide-footer"></footer>
+  </section>
+</slide>

@@ -1,0 +1,77 @@
+params: [advertiser, campaign]
+data:
+  dfp_advertiser:
+    dataset: mapped_dfp
+    dimensions: [advertiser]
+    metrics:
+      - total_line_item_level_impressions
+      - total_line_item_level_clicks
+      - click_rate
+      - video_viewership_start
+      - video_viewership_first_quartile
+      - video_viewership_midpoint
+      - video_viewership_third_quartile
+      - video_viewership_complete
+      - vcr
+  dfp_advertiser_per_day:
+    dataset: mapped_dfp
+    dimensions: [advertiser]
+    metrics:
+      - total_line_item_level_impressions
+      - click_rate
+    rollup: day
+  dfp_content_action:
+    dataset: mapped_dfp
+    dimensions: [advertiser, line_item_content_action]
+    metrics:
+      - total_line_item_level_impressions
+  dfp_creatives:
+    dataset: mapped_dfp
+    dimensions: [advertiser, creative]
+    metrics:
+      - total_line_item_level_impressions
+      - total_line_item_level_clicks
+      - click_rate
+      - viewability_rate
+  dfp_platforms:
+    dataset: mapped_dfp
+    dimensions: [advertiser, device_category]
+    metrics:
+      - total_line_item_level_impressions
+      - total_line_item_level_clicks
+      - click_rate
+  ga_advertiser:
+    dataset: mapped_google_analytics
+    dimensions: [advertiser]
+    metrics:
+      - pageviews
+      - clicks
+      - scrolled_33
+      - scrolled_50
+      - scrolled_75
+      - scrolled_100
+      - sessions
+      - time_on_page
+      - unique_clicks
+      - scroll_depth
+  fb_advertiser:
+    dataset: mapped_facebook_ads
+    dimensions: [advertiser]
+    metrics:
+      - clicks
+      - impressions
+      - ctr
+      - cpc
+      - vcr
+      - video_p100_views
+      - video_p75_views
+      - video_p50_views
+      - video_p25_views
+      - video_views
+  fb_advertiser_per_day:
+    dataset: mapped_facebook_ads
+    dimensions: [advertiser]
+    rollup: day
+    metrics:
+      - impressions
+      - vcr

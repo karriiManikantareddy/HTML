@@ -1,0 +1,18 @@
+<div class="wrapper">
+  <div id="preview-frame">
+    <preview-frame></preview-frame>
+  </div>
+  <div id="preview-toggles">
+    <h3>Slides</h3>
+    <preview-toggles></preview-toggles>
+    <preview-settings></preview-settings>
+    <br>
+    <p style="text-align:center; font-size:14px; color:#e06c75">Publish the template before generating PDF/PPTX to see latest changes.</p>
+    <div style="text-align:center">
+      <button (click)="generate('pdf')" [class.loading]="generating" class="ui small primary button half-width">Generate PDF</button>
+      <button (click)="generate('pptx')" [class.loading]="generating" class="ui small primary button half-width">Generate PPTX</button>
+    </div>
+    <br>
+    <p *ngIf="generating" class="progress-message">{{progressMessage}}</p>
+  </div>
+</div>

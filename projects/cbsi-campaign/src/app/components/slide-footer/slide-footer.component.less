@@ -1,0 +1,34 @@
+@import '../../../styles/base/_variables';
+
+.container {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  height: 120px;
+  width: 100%;
+  background-color: @header-blue;
+  align-items: center;
+
+  .logo {
+    display: flex;
+    align-items: center;
+    background-color: @header-blue;
+    height: 55px;
+    width: 10%;
+    margin: 0 60px 6px 20px;
+    img {
+      height: 60px;
+    }
+  }
+
+  .bar {
+    display: flex;
+    align-items: center;
+    height: 55px;
+    width: 90%;
+    background-color: @header-blue;
+    img {
+      height: 46px;
+    }
+  }
+}

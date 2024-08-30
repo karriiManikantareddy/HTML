@@ -1,0 +1,8 @@
+<slide *ngFor="let creatives of creativeGroups" [loading]="loading" name="Google Search Ad Groups">
+  <divider></divider>
+  <section class="slide campaigns">
+    <slide-header text="Google Search Ad Group Performance"></slide-header>
+    <the-advocate-table [items]="creatives" [kpis]="kpis" [totals]="totals" header="Ad Groups"></the-advocate-table>
+    <slide-footer></slide-footer>
+  </section>
+</slide>

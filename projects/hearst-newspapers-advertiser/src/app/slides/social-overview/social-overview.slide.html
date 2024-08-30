@@ -1,0 +1,54 @@
+<slide *ngIf="hasSocial" [loading]="loading" name="Social Overview">
+  <sidebar text="Paid Social"></sidebar>
+  <section class="slide slide-social-overview" [ngStyle]="{'color': colorTheme?.primary_color}">
+    <header class="slide-header">
+      <h3>KPIs</h3>
+    </header>
+    <div class="kpis">
+      <div class="kpi">
+        <div class="kpi-value" [ngStyle]="{'background-color': colorTheme?.primary_color}">
+          {{totals?.impressions.value | localeNumber}}
+        </div>
+        <div class="kpi-name">
+          Impressions
+        </div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-value" [ngStyle]="{'background-color': colorTheme?.primary_color}">
+          {{totals?.landing_page_views.value | localeNumber}}
+        </div>
+        <div class="kpi-name">
+          Landing Page Views
+        </div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-value" [ngStyle]="{'background-color': colorTheme?.primary_color}">
+          {{totals?.link_clicks_ctr.value | percent}}
+        </div>
+        <div class="kpi-name">
+          CTR (Link Click-Through Rate)
+        </div>
+      </div>
+    </div>
+    <div class="charts">
+      <div class="left-chart">
+        <h6>
+          Weekly: Clicks vs CTR
+        <legend [items]="legendItemsLeft" class="right"></legend>
+        </h6>
+        <div class="chart-content">
+          <chart type="column" [series]="chartSeriesLeft" [options]="chartOptionsLeft"></chart>
+        </div>
+      </div>
+      <div class="right-chart">
+        <h6>
+          Weekly: Impressions vs <br> Landing Page Views
+        <legend [items]="legendItemsRight" class="right"></legend>
+        </h6>
+        <div class="chart-content">
+          <chart type="column" [series]="chartSeriesRight" [options]="chartOptionsRight"></chart>
+        </div>
+      </div>
+    </div>
+  </section>
+</slide>

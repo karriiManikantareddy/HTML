@@ -1,0 +1,79 @@
+<slide [loading]="loading" *ngIf="nativeTotals" name="Summary">
+  <section class="slide summary" [style.background-color]="backgroundColor">
+    <header class="slide-header">
+      <h2 [ngClass]="fontStyling">Summary</h2>
+    </header>
+    <div class="main">
+      <div class="row-summary">
+        <div class="head-graph-title">
+          <span [ngClass]="fontStyling">paid post content</span>
+        </div>
+        <div class="head-graph-legend">
+          <span [ngClass]="fontStyling+'_grey'">pageviews over time</span>
+          <div class="wrap-legend">
+            <div class="legend-item">
+              <icon [ngClass]="fontStyling" type="pageviews"></icon>
+              <span class="metric-num num">
+                <number-editor [ngClass]="fontStyling" class="sm" placeholder="" [plainText]="true"
+                  [defaultText]="nativeTotals?.ga_pageviews | localeNumber"
+                  id="nyt-native-totals-pageviews"></number-editor>
+              </span>
+              <span class="title" [ngClass]="fontStyling+'_grey'">
+                pageviews
+              </span>
+            </div>
+            <div class="legend-item">
+              <icon [ngClass]="fontStyling" type="user"></icon>
+              <span class="metric-num num">
+                <number-editor [ngClass]="fontStyling" class="sm" placeholder="" [plainText]="true"
+                  [defaultText]="nativeTotals?.ga_unique_pageviews | localeNumber"
+                  id="nyt-native-totals-unique-pageviews"></number-editor>
+              </span>
+              <span class="title" [ngClass]="fontStyling+'_grey'">
+                Unique Pageviews
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="chart">
+          <chart type="area" [series]="nativeChartSeries" [options]="chartOptions"></chart>
+        </div>
+      </div>
+      <div *ngIf="nativeTotals?.dfp_total_line_item_level_impressions" class="row-summary">
+        <div class="head-graph-title">
+          <span>native drivers</span>
+        </div>
+        <div class="head-graph-legend">
+          <span>impressions over time</span>
+          <div class="wrap-legend">
+            <div class="legend-item">
+              <icon type="image"></icon>
+              <span class="metric-num num">
+                <number-editor class="sm" placeholder="" [ngClass]="fontStyling" [plainText]="true"
+                  [defaultText]="nativeTotals?.dfp_total_line_item_level_impressions | localeNumber"
+                  id="nyt-total-line-item-level-imps"></number-editor>
+              </span>
+              <span class="title">
+                impressions
+              </span>
+            </div>
+            <div class="legend-item">
+              <icon type="click"></icon>
+              <span class="metric-num num">
+                <number-editor [ngClass]="fontStyling" class="sm" placeholder="" [plainText]="true"
+                  [defaultText]="nativeTotals?.dfp_ctr | percent" id="nyt-totals-ctr"></number-editor>
+              </span>
+              <span class="title">
+                ctr
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="chart">
+          <chart type="area" [series]="displayChartSeries" [options]="chartOptions"></chart>
+        </div>
+      </div>
+    </div>
+    <footer class="slide-footer"></footer>
+  </section>
+</slide>

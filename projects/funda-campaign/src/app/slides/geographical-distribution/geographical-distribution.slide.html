@@ -1,0 +1,37 @@
+<slide *ngIf="topRegions && !topRegions.isEmpty()" [loading]="loading" name="Geografie">
+  <section class="slide geographical">    
+    <header class="slide-header">
+      <h1>
+        Geografie
+      </h1>
+    </header>
+    <header-line></header-line>
+    <div class="main">
+      <div class="row">
+        <div class="col-one-of-two left-block">
+          <map [series]="mapSeries" [options]="mapOptions"></map>
+        </div>
+        <div class="col-one-of-two right-block">
+          <table>
+            <thead>
+            <tr>
+              <th>Top regio's</th>
+              <th class="metric">Uitgeleverde impressies</th>
+              <th class="metric">CTR</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let r of topRegions">
+              <td>{{r.name | translate}}</td>
+              <td class="metric">{{r.metrics.dfp_total_line_item_level_impressions | number}}</td>
+              <td class="metric">{{r.metrics.ctr | percent}}</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <footer class="slide-footer"></footer>
+  </section>
+  <footer-line></footer-line>
+</slide>

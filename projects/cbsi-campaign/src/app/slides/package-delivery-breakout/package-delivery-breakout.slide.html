@@ -1,0 +1,68 @@
+<slide class="container" [loading]="loading" name="Package Delivery Breakout" *ngFor="let packages of packagesGroups">
+  <slide-header class="slide-header" name="Package Delivery Breakout"></slide-header>
+  <section class="slide content package-delivery-breakout">
+    <table class="table">
+      <colgroup>
+        <col span="1" class="table-cell-name">
+        <col span="1" class="table-cell-imps-goal">
+        <col span="1" class="table-cell-spend-goal">
+        <col span="1" class="table-cell-cpm">
+        <col span="1" class="table-cell-imps-delivered">
+        <col name="CTR" toggle span="1" class="table-cell-ctr">
+        <col name="VCR" toggle span="1" class="table-cell-vcr">
+        <col span="1" class="table-cell-delivered-spend">
+        <col name="Viewability" toggle span="1" class="table-cell-delivered-spend">
+      </colgroup>
+      <thead>
+        <tr class="table-row">
+          <th class="table-column-title table-cell-name">Package<br>Name</th>
+          <th class="table-column-title table-cell-imps-goal">Package<br>Imp Goal</th>
+          <th class="table-column-title table-cell-spend-goal">Package<br>Spend Goal</th>
+          <th class="table-column-title table-cell-cpm">CPM</th>
+          <th class="table-column-title table-cell-imps-delivered">Imps<br>Delivered</th>
+          <th name="CTR" toggle class="table-column-title table-cell-ctr">CTR</th>
+          <th name="VCR" toggle class="table-column-title table-cell-vcr">VCR</th>
+          <th class="table-column-title table-cell-delivered-spend">Delivered<br>Spend</th>
+          <th name="Viewability" toggle class="table-column-title table-cell-delivered-spend">Viewability</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let package of packages" class="table-row">
+          <td class="table-cell" height="75">
+            <div class="table-cell-content">{{package.name}}</div>
+          </td>
+          <td class="table-cell" height="75">
+            <div class="table-cell-content">{{package.data.imp_goal | localeNumber}}</div>
+          </td>
+          <td class="table-cell" height="75">
+            <div class="table-cell-content">{{package.data.spend_goal | currency}}</div>
+          </td>
+          <td class="table-cell" height="75">
+            <div class="table-cell-content">{{package.data.operative_net_unit_cost | currency}}</div>
+          </td>
+          <td class="table-cell" height="75">
+            <div class="table-cell-content">{{package.metrics[impressionType] | localeNumber}}</div>
+          </td>
+          <td name="CTR" toggle class="table-cell" height="75">
+            <div class="table-cell-content">{{package.metrics.ctr | percent}}</div>
+          </td>
+          <td name="VCR" toggle class="table-cell" height="75">
+            <div class="table-cell-content">{{package.metrics.vcr | percent}}</div>
+          </td>
+          <td class="table-cell" height="75">
+            <div class="table-cell-content">{{package.data['delivered_spend_' + impressionType] | currency}}</div>
+          </td>
+          <td name="Viewability" toggle class="table-cell" height="75">
+            <div class="table-cell-content">{{package.metrics.moat_viewability_rate | percent}}</div>
+          </td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="8" class="note">*Please note to compare details to IO in Operative</td>
+        </tr>
+      </tfoot>
+    </table>
+  </section>
+  <slide-footer class="slide-footer"></slide-footer>
+</slide>

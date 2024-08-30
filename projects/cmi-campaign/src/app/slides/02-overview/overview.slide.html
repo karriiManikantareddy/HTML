@@ -1,0 +1,42 @@
+<slide [loading]="loading" name="Overview">
+  <section class="slide overview">
+    <header class="slide-header">
+      <h2 class="title">
+        Campaign At-A-Glance
+      </h2>
+    </header>
+    <div class="main">
+      <p>At Cox Media, we’re committed to delivering advertising campaigns that achieve your <br>specific business goals by bringing you the audiences that matter to you most.</p>
+      <p>Here is what we set out to accomplish with your campaign:</p>
+      <div class="table-wrapper">
+        <table class="info-table">
+          <tr>
+            <td class="name"> Name </td>
+            <td class="value bottom-border">
+              <text-editor style="width: 340px" [plainText]="true" id="name" [maxLength]="37" placeholder="Editable Content"></text-editor>
+            </td>
+            <td class="name"> Audience </td>
+            <td class="value bottom-border">
+              <text-editor style="width: 340px" [plainText]="true" id="audience" [maxLength]="37" placeholder="Editable Content"></text-editor>
+            </td>
+            <td class="name"> Objective </td>
+            <td class="value">
+              <text-editor style="width: 340px" [plainText]="true" id="objective" [maxLength]="36" placeholder="Editable Content"></text-editor>
+            </td>
+          </tr>
+          <tr>
+            <td class="name"> Flight Dates </td>
+            <td class="value">
+              <text-editor style="width: 340px" [plainText]="true" id="flight_dates" [maxLength]="28" placeholder="Editable Content"></text-editor>
+            </td>
+            <td class="name"> Goal </td>
+            <td class="value">
+              <text-editor style="width: 340px" [plainText]="true" id="goal" [maxLength]="10" placeholder="Editable Content"></text-editor>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <cmi-footer class="slide-footer"></cmi-footer>
+  </section>
+</slide>

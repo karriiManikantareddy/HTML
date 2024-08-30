@@ -1,0 +1,43 @@
+<slide *ngIf="totals" name="Media Performance" [loading]="loading">
+  <section class="slide overview">
+    <h2>
+      <span class="flag"></span>
+      Media Performance
+    </h2>
+    <div class="main">
+      <div class="statistic-icons">
+        <div *ngIf="totals?.total_line_item_level_impressions" class="statistic-icons-item">
+          <icon type="image"></icon>
+          <div class="wrap-title">
+            <span class="num">{{totals.total_line_item_level_impressions | number}}</span>
+            <span class="title">Total Page Impressions</span>
+          </div>
+        </div>
+        <div *ngIf="totals?.total_line_item_level_clicks" class="statistic-icons-item">
+          <icon type="hand"></icon>
+          <div class="wrap-title">
+            <span class="num">{{totals.total_line_item_level_clicks | number}}</span>
+            <span class="title">Clicks</span>
+          </div>
+        </div>
+        <div *ngIf="totals?.click_rate" class="statistic-icons-item">
+          <icon type="click"></icon>
+          <div class="wrap-title">
+            <span class="num">{{totals.click_rate | percent}}</span>
+            <span class="title">CTR</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h6>
+          Delivery by day
+          <legend [items]="legendItems" class="right"></legend>
+        </h6>
+        <div class="chart-content">
+          <chart type="column" [series]="chartSeries" [options]="chartOptions"></chart>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="slide-footer"></footer>
+</slide>

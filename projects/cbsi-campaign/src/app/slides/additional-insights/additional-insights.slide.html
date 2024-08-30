@@ -1,0 +1,146 @@
+<slide class="container" [loading]="loading" name="Additional Insights">
+  <slide-header class="slide-header" name="Additional Insights"></slide-header>
+  <section class="slide content additional-insights">
+    <div class="charts-container">
+      <div toggle name="VCR" class="group">
+        <div class="group-title">VCR</div>
+        <div class="group-charts">
+          <div class="group-chart">
+            <div class="group-chart-bar">
+              <div class="benchmark" [ngStyle]="{'height.%': chart1Value}">
+                <numeric-input
+                  class="group-chart-value"
+                  id="benchmark-vcr"
+                  [isPercentage]="true"
+                  [(value)]="chart1Value">
+                </numeric-input>
+              </div>
+            </div>
+            <div class="group-chart-title">Benchmark</div>
+          </div>
+          <div class="group-chart">
+            <div class="group-chart-bar">
+              <div class="actual" [ngStyle]="{'height.%': chart2Value}">
+                <numeric-input
+                  class="group-chart-value"
+                  id="actual-vcr"
+                  [isPercentage]="true"
+                  [(value)]="chart2Value">
+                </numeric-input>
+              </div>
+            </div>
+            <div class="group-chart-title">Actual</div>
+          </div>
+        </div>
+      </div>
+      <div toggle name="CTR" class="group">
+        <div class="group-title">CTR</div>
+        <div class="group-charts">
+          <div class="group-chart">
+            <div class="group-chart-bar">
+              <div class="benchmark" [ngStyle]="{'height.%': chart3Value}">
+                <numeric-input
+                  class="group-chart-value"
+                  id="benchmark-ctr"
+                  [isPercentage]="true"
+                  [(value)]="chart3Value"></numeric-input>
+              </div>
+            </div>
+            <div class="group-chart-title">Benchmark</div>
+          </div>
+          <div class="group-chart">
+            <div class="group-chart-bar">
+              <div class="actual" [ngStyle]="{'height.%': chart4Value * 100}">
+                <span class="group-chart-value" [ngClass]="{'small': chart4Value < 0.2}">{{chart4Value | percent}}</span>
+              </div>
+            </div>
+            <div class="group-chart-title">Actual</div>
+          </div>
+        </div>
+      </div>
+      <div toggle name="Frequency" class="group">
+        <div class="group-title">Frequency</div>
+        <div class="group-charts">
+          <div class="group-chart">
+            <div class="group-chart-bar">
+              <div class="benchmark" [ngStyle]="{'height.%': chart5Value}">
+                <numeric-input
+                  class="group-chart-value"
+                  id="benchmark-frequency"
+                  [(value)]="chart5Value">
+                </numeric-input>
+              </div>
+            </div>
+            <div class="group-chart-title">Benchmark</div>
+          </div>
+          <div class="group-chart">
+            <div class="group-chart-bar">
+              <div class="actual" [ngStyle]="{'height.%': chart6Value}">
+                <numeric-input
+                  class="group-chart-value"
+                  id="actual-frequency"
+                  [(value)]="chart6Value"></numeric-input>
+              </div>
+            </div>
+            <div class="group-chart-title">Actual</div>
+          </div>
+        </div>
+      </div>
+      <div toggle name="Reach" enabled="false" class="group">
+        <div class="group-title">Reach</div>
+        <div class="group-charts">
+          <div class="group-chart">
+            <div class="group-chart-bar">
+              <div class="benchmark" [ngStyle]="{'height.%': chart7Value}">
+                <numeric-input
+                  class="group-chart-value"
+                  id="benchmark-reach"
+                  [(value)]="chart7Value">
+                </numeric-input>
+              </div>
+            </div>
+            <div class="group-chart-title">Benchmark</div>
+          </div>
+          <div class="group-chart">
+            <div class="group-chart-bar">
+              <div class="actual" [ngStyle]="{'height.%': chart8Value}">
+                <numeric-input
+                  class="group-chart-value"
+                  id="actual-reach"
+                  [(value)]="chart8Value"></numeric-input>
+              </div>
+            </div>
+            <div class="group-chart-title">Actual</div>
+          </div>
+        </div>
+      </div>
+      <div toggle name="Viewability" enabled="false" class="group">
+        <div class="group-title">Viewability</div>
+        <div class="group-charts">
+          <div class="group-chart">
+            <div class="group-chart-bar">
+              <div class="benchmark" [ngStyle]="{'height.%': chart9Value}">
+                <numeric-input
+                  class="group-chart-value"
+                  id="benchmark-viewability"
+                  [isPercentage]="true"
+                  [(value)]="chart9Value">
+                </numeric-input>
+              </div>
+            </div>
+            <div class="group-chart-title">Benchmark</div>
+          </div>
+          <div class="group-chart">
+            <div class="group-chart-bar">
+              <div class="actual" [ngStyle]="{'height.%': chart10Value * 100}">
+                <span class="group-chart-value" [ngClass]="{'small': chart10Value < 0.2}">{{chart10Value | percent}}</span>
+              </div>
+            </div>
+            <div class="group-chart-title">Actual</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <slide-footer class="slide-footer"></slide-footer>
+</slide>

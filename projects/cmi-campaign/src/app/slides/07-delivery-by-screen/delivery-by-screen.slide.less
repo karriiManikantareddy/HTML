@@ -1,0 +1,33 @@
+@import '../../../styles/base/_variables';
+
+.slide-header {
+  background-color: @pink;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+}
+
+.table {
+  margin: auto -40px;
+  width: -webkit-fill-available;
+
+  &__cell {
+    &--icon {
+      background-color: @white;
+      text-align: center;
+      border: none;
+    }
+  }
+
+  &__row {
+    &:nth-child(odd) {
+      background-color: @table-background-color;
+    }
+
+    &:nth-child(even) {
+      background-color: @white;
+    }
+  }
+}

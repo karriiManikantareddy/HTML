@@ -1,0 +1,40 @@
+table {
+  table-layout: fixed;
+  th {
+    &.static {
+      width: 600px;
+    }
+    white-space: pre-line;
+  }
+
+  td {
+    padding: 20px;
+    word-break: break-word;
+
+    &:first-child {
+      padding-left: 0;
+    }
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+}
+
+.summary {
+  position: relative;
+}
+
+.summary-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  & ::ng-deep .ql-editor {
+    font-size: 24px;
+
+    p {
+      font-size: 24px;
+    }
+  }
+}

@@ -1,0 +1,66 @@
+<slide *ngIf="hasAutoDynamic" [loading]="loading" name="Auto Dynamic Summary">
+  <section class="slide summary">
+    <div class="slide-header">
+      <h2 class="title">Auto Dynamic Campaign Summary</h2>
+    </div>
+
+    <div class="main content">
+      <div class="box-row full-width transparent-white stats">
+        <div class="column-container">
+          <div class="box-column">
+            <div class="image">
+              <img src="assets/img/Clicks.png" alt="">
+            </div>
+            <div class="value">{{ _delivered_clicks | number }}</div>
+          </div>
+          <div class="box-column">
+            <div class="image">
+              <img src="assets/img/Click-Thru.png" alt="">
+            </div>
+            <div class="value">{{ _attributed_pageviews | number }}</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="box-row full-width">
+        <div class="column-container">
+          <div class="box-column">
+            <div class="metric">Clicks</div>
+          </div>
+          <div class="box-column">
+            <div class="metric">Vehicle Detail <br>Page Views</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="info-box">
+        <table class="info-table">
+          <tr>
+            <td class="name"> Name </td>
+            <td class="value bottom-border">
+              <text-editor style="width: 240px" [plainText]="true" id="name" [maxLength]="37" placeholder="Editable Content"></text-editor>
+            </td>
+            <td class="name"> Audience </td>
+            <td class="value bottom-border">
+              <text-editor style="width: 240px" [plainText]="true" id="audience" [maxLength]="37" placeholder="Editable Content"></text-editor>
+            </td>
+            <td class="name"> Objective </td>
+            <td class="value">
+              <text-editor style="width: 240px" [plainText]="true" id="video_objective" [maxLength]="36" placeholder="Editable Content"></text-editor>
+            </td>
+          </tr>
+          <tr>
+            <td class="name"> Flight Dates </td>
+            <td class="value">
+              <text-editor style="width: 240px" [plainText]="true" id="flight_dates" [maxLength]="28"></text-editor>
+            </td>
+            <td class="name"> Goal </td>
+            <td class="value">
+              <text-editor style="width: 240px" [plainText]="true" id="goal" [maxLength]="10"></text-editor>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </section>
+</slide>

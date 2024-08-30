@@ -1,0 +1,72 @@
+.slide-generic-delivery {
+  .row {
+    height:800px;
+  }
+  .col-one-of-three {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+    justify-content: space-evenly;
+  }
+
+  .right.aligned {
+    text-align: right;
+  }
+
+  .statistic-item {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    margin-bottom: 20px;
+    min-height: 60px;
+    padding-left: 2em;
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    icon {
+      margin-right: 10px;
+      font-size: 60px;
+    }
+
+    .num {
+      font-size: 70px;
+      display: block;
+      line-height: 1em;
+      margin-bottom: 2px;
+    }
+
+    .title {
+      font-size: 24px;
+      text-transform: uppercase;
+      display: block;
+    }
+
+    &.right {
+      justify-content: flex-end;
+    }
+  }
+
+  .mobile-screenshot {
+    background-image: url(https://burt-customer-upload.s3.amazonaws.com/de_persgroep/logos/mobile.png);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    width: 383px;
+    height: 769px;
+    margin: 0 auto;
+
+    .image {
+      height: 589px;
+      width: 329px;
+      padding: 89px 0px 0px 27px;
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "downlevelIteration": true,
+    "importHelpers": true,
+    "module": "es2020",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "ES2022",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2020",
+      "dom"
+    ],
+    "paths": {
+      "shared-lib": [
+        "dist/shared-lib"
+      ],
+      "shared-lib/*": [
+        "dist/shared-lib/*"
+      ],
+      "preview-module": [
+        "dist/preview-module"
+      ],
+      "preview-module/*": [
+        "dist/preview-module/*"
+      ],
+      "template-module": [
+        "dist/template-module"
+      ],
+      "template-module/*": [
+        "dist/template-module/*"
+      ]
+    },
+    "useDefineForClassFields": false
+  }
+}

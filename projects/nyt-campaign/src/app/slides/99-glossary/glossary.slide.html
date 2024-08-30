@@ -1,0 +1,24 @@
+<slide [loading]="loading" name={{name}} [attr.name]="name" *ngFor="let slide of slides; let i = index">
+  <section class="slide glossary" [style.background-color]="backgroundColor">
+    <header class="slide-header" *ngIf="i === 0">
+      <h2 [ngClass]="fontStyling">{{name}}</h2>
+    </header>
+    <div class="main">
+      <table>
+        <thead>
+        <tr>
+          <th [ngClass]="fontStyling+'_grey'">{{glossaryType}}</th>
+          <th [ngClass]="fontStyling+'_grey'">Definition</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let glossary of slide">
+          <td class="col" [ngClass]="fontStyling">{{glossary.name}}</td>
+          <td [ngClass]="fontStyling">{{glossary.definition}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <footer class="slide-footer"></footer>
+  </section>
+</slide>

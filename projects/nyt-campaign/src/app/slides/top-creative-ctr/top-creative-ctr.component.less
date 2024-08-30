@@ -1,0 +1,89 @@
+@import '../../../styles/base/_variables.less';
+
+.main {
+  display: flex;
+  justify-content: space-between;
+  height: 60%;
+
+}
+
+.editor {
+  height: 40%;
+  padding: 30px;
+  width: 60%;
+}
+
+.editor-height {
+  height: 70%;
+}
+
+::ng-deep .ql-editor {
+  font-size: 26px;
+  padding: 10px !important;
+  font-weight: 300;
+}
+
+.slide-header {
+  margin-bottom: 40px;
+  font-weight: 600;
+}
+
+.table {
+  border-collapse: collapse;
+  width: 60%;
+  margin: 30px;
+  height: 70%;
+}
+
+th td {
+  border: 0.5px ridge lightgrey;
+}
+
+.table-cell {
+  border: 0.5px ridge lightgrey;
+  padding: 17px;
+
+  .key {
+    width: 40%;
+  }
+
+  .value {
+    width: 60%;
+  }
+}
+
+.no-wrap {
+  white-space: nowrap;
+  font-family: LibreFranklin-Bold, sans-serif;
+  text-align: left;
+
+}
+
+.wrap {
+  font-family: LibreFranklin-Regular, sans-serif;
+  text-align: left;
+
+}
+
+.table-cell-content {
+  font-size: 26px;
+  position: relative;
+  width: auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+  display: block;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+}
+
+.table-row {
+  border: 0.5px ridge lightgrey;
+}
+
+.mobile-screenshot {
+  width: 40%;
+  margin: 30px;
+  height: 70%;
+}

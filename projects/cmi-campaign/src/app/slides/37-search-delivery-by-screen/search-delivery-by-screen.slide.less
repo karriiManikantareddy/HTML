@@ -1,0 +1,39 @@
+@import '../../../styles/base/_variables';
+
+.slide-header {
+  background-color: @bright-blue;
+}
+
+.subtitle {
+  color: @bright-blue;
+  font-size: 32px;
+  margin: 0.5em 0;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+}
+
+.table {
+  margin: 2em -40px auto;
+  width: -webkit-fill-available;
+
+  &__cell {
+    &--icon {
+      background-color: @white;
+      text-align: center;
+      border: none;
+    }
+  }
+
+  &__row {
+    &:nth-child(odd) {
+      background-color: @table-background-color;
+    }
+
+    &:nth-child(even) {
+      background-color: @white;
+    }
+  }
+}

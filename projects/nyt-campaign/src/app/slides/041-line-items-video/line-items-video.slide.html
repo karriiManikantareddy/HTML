@@ -1,0 +1,36 @@
+<slide [loading]="loading" name="Engagements" *ngFor="let lineItems of lineItemGroups">
+  <section class="slide slide-line-items">
+    <header class="slide-header">
+      <h2>Engagements</h2>
+    </header>
+    <div class="main">
+      <table>
+        <thead>
+        <tr>
+          <th>Line Item</th>
+          <th class="metric">Interactions</th>
+          <th class="metric wrapped">Interaction<br>Rate</th>
+          <th class="metric wrapped">Videos<br>Started Rate</th>
+          <th class="metric wrapped">Video %25<br>Played Rate</th>
+          <th class="metric wrapped">Video %50<br>Played Rate</th>
+          <th class="metric wrapped">Video %75<br>Played Rate</th>
+          <th class="metric wrapped">Video Fully<br>Played Rate</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let li of lineItems">
+          <td>{{li.name}}</td>
+          <td class="metric">{{ li.metrics.dr_third_party_interactions | localeNumber }}</td>
+          <td class="metric">{{ li.metrics.dr_interaction_rate | percent }}</td>
+          <td class="metric">{{ li.metrics.video_started_rate | percent}}</td>
+          <td class="metric">{{ li.metrics.video_played_25p_rate | percent}}</td>
+          <td class="metric">{{ li.metrics.video_played_50p_rate | percent}}</td>
+          <td class="metric">{{ li.metrics.video_played_75p_rate | percent}}</td>
+          <td class="metric">{{ li.metrics.video_played_fully_rate | percent}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <footer class="slide-footer"></footer>
+  </section>
+</slide>

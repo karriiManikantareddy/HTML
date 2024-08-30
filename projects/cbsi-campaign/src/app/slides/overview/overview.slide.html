@@ -1,0 +1,107 @@
+<slide class="container" [loading]="loading" name="Overview">
+  <slide-header class="slide-header" name="Overview"></slide-header>
+  <section class="slide content overview">
+    <div class="outerContainer">
+      <div class="innerbox block campaign-block">
+        <div class="title white">Campaign Details</div>
+        <ul class="platform-list">
+          <li class="list-item">
+            <span class="list-item-label textaling">Flight Dates -</span>
+            <span class="list-item-label italic">{{metadata?.startDate | date: 'mediumDate'}}&nbsp;-&nbsp;{{metadata?.endDate | date: 'mediumDate'}}</span>
+          </li>
+          <li class="list-item">
+            <span class="list-item-label textaling">Contracted Spend -</span>
+            <span class="list-item-label">{{metadata?.netOrderCost | currency}}</span>
+          </li>
+          <li class="list-item">
+            <span class="list-item-label textaling">Contracted Imp Goal -</span>
+            <span class="list-item-label">{{sumOperativeQuantity | localeNumber}}</span>
+          </li>
+        </ul>
+        <img class="pc-icon1" src="assets/img/campaign-icon.png">
+      </div>
+      <div class="innerbox block delivery-block">
+        <div class="title black">Delivery</div>
+        <ul class="platform-list">
+          <li class="list-item">
+            <span class="list-item-label textaling">Total Spend Delivered -</span>
+            <span class="list-item-label italic">{{deliveredSpend | currency}}</span>
+          </li>
+          <li class="list-item">
+            <span class="list-item-label textaling">Total Impressions Delivered -</span>
+            <span class="list-item-value italic">{{(totals ? totals[impressionType] : undefined) | localeNumber}}</span>
+          </li>
+          <li class="list-item">
+            <span class="list-item-label textaling">RBP Rate -</span>
+            <span class="list-item-label">{{totals?.fw_rbp_calculator_rate | percent}}</span>
+          </li>
+        </ul>
+        <img class="pc-icon2" src="assets/img/delivery-icon.png">
+
+      </div>
+      <div class="innerbox block performance-block">
+        <div class="title black">Performance</div>
+        <ul>
+          <li class="list-item">
+            <span class="list-item-label textaling">Video Views -</span>
+            <span class="list-item-value italic">{{totals?.freewheel_video_start | localeNumber}}</span>
+          </li>
+          <li class="list-item">
+            <span class="list-item-label textaling">Video Completion Rate -</span>
+            <span class="list-item-value italic">{{totals?.video_completion_rate | percent}}</span>
+          </li>
+          <li toggle name="Viewability" class="list-item">
+            <span class="list-item-label textaling">Viewability -</span>
+            <span class="list-item-value"><number-editor class="editor" [plainText]="true" id="viewability" 
+              placeholder="Editable Content" [defaultText]="totals?.moat_viewability_rate | percent"></number-editor></span>
+          </li>
+          <li class="list-item" >
+            <span class="list-item-label textaling" >Frequency -</span>
+            <span class="list-item-value"><text-editor class="editor" [plainText]="true" id="frequency" placeholder="Editable Content"></text-editor></span>
+          </li>
+          <li class="list-item">
+            <span class="list-item-label textaling">Reach -</span>
+            <span class="list-item-value"><text-editor class="editor" [plainText]="true" id="reach" placeholder="Editable Content"></text-editor></span>
+          </li>
+          
+        </ul>
+        <img class="pc-icon3" src="assets/img/performance-icon.png">
+      </div>
+      <div class="innerbox block viewership-block">
+        <div class="title white">Viewership</div>
+        <ul>
+          <li class="list-item">
+            <span class="list-item-label textaling">Platform Breakout:</span>
+          </li>
+          <li class="list-item">
+            <span class="list-item-label textaling">Desktop -</span>
+            <span class="list-item-value"><text-editor class="plaform-editor" [plainText]="true" id="desktop"
+              [defaultText]="totals?.desktop_impression_rate | percent"></text-editor></span>
+
+          </li>
+          <li class="list-item">
+            <span class="list-item-label textaling">Mobile -</span>
+            <span class="list-item-value"><text-editor class="plaform-editor" [plainText]="true" id="mobile"
+              [defaultText]="totals?.mobile_impression_rate | percent"></text-editor></span>
+          </li>
+          <li class="list-item">
+            <span class="list-item-label textaling">TV Glass -</span>
+            <span class="list-item-value"><text-editor class="plaform-editor" [plainText]="true" id="tv_glass"
+              [defaultText]="totals?.tv_glass_impression_rate | percent"></text-editor></span>
+          </li>
+          <li class="list-item-viewership">
+            <span class="list-item-label textaling heading">Content Breakout:</span>
+            <text-editor class="editor-width content-editor" [plainText]="true" id="content_breakout"
+            [defaultText]="description" ></text-editor>
+          </li>
+        </ul>
+        <img class="pc-icon4" src="assets/img/view-icon.png">
+      </div>
+    </div>
+    <div class="images-block">
+      <pc-container class="image-block pc-background" slideName="overview"></pc-container>
+      <mobile-phone-container class="image-block mobile-phone-background" slideName="overview"></mobile-phone-container>
+    </div>
+   </section>
+  <slide-footer class="slide-footer"></slide-footer>
+</slide>

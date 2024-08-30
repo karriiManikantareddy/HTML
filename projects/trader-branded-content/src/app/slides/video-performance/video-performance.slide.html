@@ -1,0 +1,290 @@
+<slide *ngIf="fbTotals || dfpTotals" [loading]="loading" name="Video Performance">
+  <section class="slide">
+    <h2>
+      <span class="flag"></span>
+      Video Performance
+    </h2>
+    <div class="content"> 
+      <div class="data-sections">
+        <div class="outstream section">
+          <p>Outstream (GAM)</p>
+          <div class="metric-box">
+            <div class="statistic-icons">
+              <div *ngIf="dfpTotals?.video_viewership_start" class="statistic-icons-item">
+                <icon type="eye"></icon>
+                <div class="wrap-title">
+                  <span class="num">{{dfpTotals.video_viewership_start | number}}</span>
+                  <span class="title">Total views</span>
+                </div>
+              </div>
+              <div *ngIf="dfpTotals?.vcr" class="statistic-icons-item">
+                <icon type="percent-sign"></icon>
+                <div class="wrap-title">
+                  <span class="num">{{dfpTotals.vcr | percent}}</span>
+                  <span class="title">Completion Rate</span>
+                </div>
+              </div>
+            </div>
+            <div class="statistic-icons">
+              <div *ngIf="dfpTotals?.video_viewership_first_quartile" class="statistic-icons-item">
+                <icon type="percent-sign"></icon>
+                <div class="wrap-title">
+                  <span class="num">{{dfpTotals.video_viewership_first_quartile | number}}</span>
+                  <span class="title">25% Completion</span>
+                </div>
+              </div>
+              <div *ngIf="dfpTotals?.video_viewership_midpoint" class="statistic-icons-item">
+                <icon type="percent-sign"></icon>
+                <div class="wrap-title">
+                  <span class="num">{{dfpTotals.video_viewership_midpoint | number}}</span>
+                  <span class="title">50% Completion</span>
+                </div>
+              </div>
+              <div *ngIf="dfpTotals?.video_viewership_third_quartile" class="statistic-icons-item">
+                <icon type="percent-sign"></icon>
+                <div class="wrap-title">
+                  <span class="num">{{dfpTotals.video_viewership_third_quartile | number}}</span>
+                  <span class="title">75% Completion</span>
+                </div>
+              </div>
+              <div *ngIf="dfpTotals?.video_viewership_complete" class="statistic-icons-item">
+                <icon type="percent-sign"></icon>
+                <div class="wrap-title">
+                  <span class="num">{{dfpTotals.video_viewership_complete | number}}</span>
+                  <span class="title">100% Completion</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="masthead section">
+          <p>Masthead (DCM/Vast Tags)</p>
+          <div class="metric-box input-fields">
+            <div class="statistic-icons">
+              <div class="statistic-icons-item">
+                <icon type="eye"></icon>
+                <div class="wrap-title">
+                  <text-editor
+                    id="dcm-total-views"
+                    class="video-item-text-box"
+                    [plainText]="true"
+                    [placeholder]="'Insert..'"
+                  >
+                  </text-editor>
+                  <span class="title">Total views</span>
+                </div>
+              </div>
+              <div class="statistic-icons-item">
+                <icon type="percent-sign"></icon>
+                <div class="wrap-title">
+                  <text-editor
+                    id="dcm-completion-rate"
+                    class="video-item-text-box"
+                    [plainText]="true"
+                    [placeholder]="'Insert..'"
+                  >
+                  </text-editor>
+                  <span class="title">Completion Rate</span>
+                </div>
+              </div>
+            </div>
+            <div class="statistic-icons">
+              <div class="statistic-icons-item">
+                <icon type="percent-sign"></icon>
+                <div class="wrap-title">
+                  <text-editor
+                    id="dcm-25-completion"
+                    class="video-item-text-box"
+                    [plainText]="true"
+                    [placeholder]="'Insert..'"
+                  >
+                  </text-editor>
+                  <span class="title">25% Completion</span>
+                </div>
+              </div>
+              <div class="statistic-icons-item">
+                <icon type="percent-sign"></icon>
+                <div class="wrap-title">
+                  <text-editor
+                    id="dcm-50-completion"
+                    class="video-item-text-box"
+                    [plainText]="true"
+                    [placeholder]="'Insert..'"
+                  >
+                  </text-editor>
+                  <span class="title">50% Completion</span>
+                </div>
+              </div>
+              <div class="statistic-icons-item">
+                <icon type="percent-sign"></icon>
+                <div class="wrap-title">
+                  <text-editor
+                    id="dcm-75-completion"
+                    class="video-item-text-box"
+                    [plainText]="true"
+                    [placeholder]="'Insert..'"
+                  >
+                  </text-editor>
+                  <span class="title">75% Completion</span>
+                </div>
+              </div>
+              <div class="statistic-icons-item">
+                <icon type="percent-sign"></icon>
+                <div class="wrap-title">
+                  <text-editor
+                    id="dcm-100-completion"
+                    class="video-item-text-box"
+                    [plainText]="true"
+                    [placeholder]="'Insert..'"
+                  >
+                  </text-editor>
+                  <span class="title">100% Completion</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="social section">
+          <p>Social (Facebook)</p>
+          <div class="metric-box">
+            <div class="statistic-icons">
+              <div *ngIf="fbTotals?.video_views" class="statistic-icons-item">
+                <icon type="eye"></icon>
+                <div class="wrap-title">
+                  <span class="num">{{fbTotals.video_views | number}}</span>
+                  <span class="title">Total views</span>
+                </div>
+              </div>
+              <div *ngIf="fbTotals?.vcr" class="statistic-icons-item">
+                <icon type="percent-sign"></icon>
+                <div class="wrap-title">
+                  <span class="num">{{fbTotals.vcr | percent}}</span>
+                  <span class="title">Completion Rate</span>
+                </div>
+              </div>
+            </div>
+            <div class="statistic-icons">
+              <div *ngIf="fbTotals?.video_p25_views" class="statistic-icons-item">
+                <icon type="percent-sign"></icon>
+                <div class="wrap-title">
+                  <span class="num">{{fbTotals.video_p25_views | number}}</span>
+                  <span class="title">25% Completion</span>
+                </div>
+              </div>
+              <div *ngIf="fbTotals?.video_p50_views" class="statistic-icons-item">
+                <icon type="percent-sign"></icon>
+                <div class="wrap-title">
+                  <span class="num">{{fbTotals.video_p50_views | number}}</span>
+                  <span class="title">50% Completion</span>
+                </div>
+              </div>
+              <div *ngIf="fbTotals?.video_p75_views" class="statistic-icons-item">
+                <icon type="percent-sign"></icon>
+                <div class="wrap-title">
+                  <span class="num">{{fbTotals.video_p75_views | number}}</span>
+                  <span class="title">75% Completion</span>
+                </div>
+              </div>
+              <div *ngIf="fbTotals?.video_p100_views" class="statistic-icons-item">
+                <icon type="percent-sign"></icon>
+                <div class="wrap-title">
+                  <span class="num">{{fbTotals.video_p100_views | number}}</span>
+                  <span class="title">100% Completion</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="sophia-pulse section">
+          <p>Sophia Pulse (Custom Reporting)</p>
+          <div class="metric-box input-fields">
+            <div class="statistic-icons">
+              <div class="statistic-icons-item">
+                <icon type="eye"></icon>
+                <div class="wrap-title">
+                  <text-editor
+                    id="sophia-total-views"
+                    class="video-item-text-box"
+                    [plainText]="true"
+                    [placeholder]="'Insert..'"
+                  >
+                  </text-editor>
+                  <span class="title">Total views</span>
+                </div>
+              </div>
+              <div class="statistic-icons-item">
+                <icon type="percent-sign"></icon>
+                <div class="wrap-title">
+                  <text-editor
+                    id="sophia-completion-rate"
+                    class="video-item-text-box"
+                    [plainText]="true"
+                    [placeholder]="'Insert..'"
+                  >
+                  </text-editor>
+                  <span class="title">Completion Rate</span>
+                </div>
+              </div>
+            </div>
+            <div class="statistic-icons">
+              <div class="statistic-icons-item">
+                <icon type="percent-sign"></icon>
+                <div class="wrap-title">
+                  <text-editor
+                    id="sophia-25-completion"
+                    class="video-item-text-box"
+                    [plainText]="true"
+                    [placeholder]="'Insert..'"
+                  >
+                  </text-editor>
+                  <span class="title">25% Completion</span>
+                </div>
+              </div>
+              <div class="statistic-icons-item">
+                <icon type="percent-sign"></icon>
+                <div class="wrap-title">
+                  <text-editor
+                    id="sophia-50-completion"
+                    class="video-item-text-box"
+                    [plainText]="true"
+                    [placeholder]="'Insert..'"
+                  >
+                  </text-editor>
+                  <span class="title">50% Completion</span>
+                </div>
+              </div>
+              <div class="statistic-icons-item">
+                <icon type="percent-sign"></icon>
+                <div class="wrap-title">
+                  <text-editor
+                    id="sophia-75-completion"
+                    class="video-item-text-box"
+                    [plainText]="true"
+                    [placeholder]="'Insert..'"
+                  >
+                  </text-editor>
+                  <span class="title">75% Completion</span>
+                </div>
+              </div>
+              <div class="statistic-icons-item">
+                <icon type="percent-sign"></icon>
+                <div class="wrap-title">
+                  <text-editor
+                    id="sophia-100-completion"
+                    class="video-item-text-box"
+                    [plainText]="true"
+                    [placeholder]="'Insert..'"
+                  >
+                  </text-editor>
+                  <span class="title">100% Completion</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="slide-footer"></footer>
+</slide>

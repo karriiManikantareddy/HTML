@@ -1,0 +1,12 @@
+<slide [loading]="loading" name="{{name}}">
+  <section class="slide slide-divider">
+    <header class="slide-header">
+    </header>
+    <div class="main">
+      <ng-content></ng-content>
+    </div>
+    <div class="slide-footer">
+      <img *ngIf="!hideLogo" src="assets/img/mlblogo.png" alt="">
+    </div>
+  </section>
+</slide>

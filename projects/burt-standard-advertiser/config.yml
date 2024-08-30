@@ -1,0 +1,115 @@
+params: [advertiser]
+rename_dimensions:
+  dm_seed_google_ad_manager:
+    order: campaign
+  dm_client_facing_reporting_moat:
+    level1: advertiser
+    level2: campaign
+  dm_client_facing_reporting_centro:
+    brand: advertiser
+    campaign: line_item
+    campaign_group: campaign
+data:
+  dfp_advertiser:
+    dataset: dm_seed_google_ad_manager
+    dimensions: [advertiser]
+    metrics:
+      - total_line_item_level_impressions
+      - total_line_item_level_clicks
+      - ctr
+  dfp_advertiser_per_day:
+    dataset: dm_seed_google_ad_manager
+    dimensions: [advertiser]
+    metrics:
+      - total_line_item_level_impressions
+      - ctr
+    rollup: day
+  dfp_line_items:
+    dataset: dm_seed_google_ad_manager
+    dimensions: [advertiser, line_item]
+    metrics:
+      - total_line_item_level_impressions
+      - total_line_item_level_clicks
+      - ctr
+  dfp_creatives:
+    dataset: dm_seed_google_ad_manager
+    dimensions: [advertiser, creative]
+    metrics:
+      - total_line_item_level_impressions
+      - total_line_item_level_clicks
+      - ctr
+  dfp_creative_sizes:
+    dataset: dm_seed_google_ad_manager
+    dimensions: [advertiser, creative_size]
+    metrics:
+      - total_line_item_level_impressions
+      - total_line_item_level_clicks
+      - ctr
+  dfp_platforms:
+    dataset: dm_seed_google_ad_manager
+    dimensions: [advertiser, device_category]
+    metrics:
+      - total_line_item_level_impressions
+      - total_line_item_level_clicks
+      - ctr
+  dfp_regions:
+    dataset: dm_seed_google_ad_manager
+    dimensions: [advertiser, region]
+    metrics:
+      - total_line_item_level_impressions
+      - ctr
+  centro_advertiser:
+    dataset: dm_client_facing_reporting_centro
+    dimensions: [brand]
+    metrics:
+      - imps_won
+      - clicks
+      - ctr
+  centro_advertiser_per_day:
+    dataset: dm_client_facing_reporting_centro
+    dimensions: [brand]
+    metrics:
+      - imps_won
+      - clicks
+      - ctr
+    rollup: day
+  centro_line_items:
+    dataset: dm_client_facing_reporting_centro
+    dimensions: [brand, campaign]
+    metrics:
+      - imps_won
+      - clicks
+      - ctr
+  centro_creatives:
+    dataset: dm_client_facing_reporting_centro
+    dimensions: [brand, creative]
+    metrics:
+      - imps_won
+      - clicks
+      - ctr
+  centro_platforms:
+    dataset: dm_client_facing_reporting_centro
+    dimensions: [brand, device_type]
+    metrics:
+      - imps_won
+      - clicks
+      - ctr
+  centro_regions:
+    dataset: dm_client_facing_reporting_centro
+    dimensions: [brand, region]
+    metrics:
+      - imps_won
+      - clicks
+      - ctr
+  moat_advertiser:
+    dataset: dm_client_facing_reporting_moat
+    dimensions: [level1]
+    metrics:
+      - active_exposure_time
+      - active_in_view_time
+  moat_line_item:
+    dataset: dm_client_facing_reporting_moat
+    dimensions: [level1, level3]
+    metrics:
+      - active_exposure_time
+      - active_in_view_time

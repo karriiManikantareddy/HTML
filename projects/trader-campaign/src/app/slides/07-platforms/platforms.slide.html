@@ -1,0 +1,40 @@
+<slide *ngIf="platforms && !platforms.isEmpty()" [loading]="loading" name="Platforms">
+  <section class="slide overview">
+    <header name="Platforms"></header>
+    <div class="main">
+      <div class="row col-one-of-two-container">
+        <div class="col-one-of-two left-block">
+          <h5 class="chart-title">Percentage of impressions per platform</h5>
+          <div class="circle-wrapper">
+            <chart [options]="options" [series]="series"></chart>
+          </div>
+        </div>
+        <div class="col-one-of-two right-block">
+          <table>
+            <thead>
+            <tr>
+              <th>Platform</th>
+              <th class="metric">Impressions</th>
+              <th class="metric">clicks</th>
+              <th class="metric">CTR</th>
+              <th class="metric">% imps</th>
+              <th class="metric">% Clicks</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let p of platforms">
+              <td>{{p.name}}</td>
+              <td class="metric">{{p.metrics.total_line_item_level_impressions | number}}</td>
+              <td class="metric">{{p.metrics.total_line_item_level_clicks | number}}</td>
+              <td class="metric">{{p.metrics.click_rate | percent}}</td>
+              <td class="metric">{{p.shareOfs.total_line_item_level_impressions | percent}}</td>
+              <td class="metric">{{p.shareOfs.total_line_item_level_clicks | percent}}</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <footer class="slide-footer"></footer>
+  </section>
+</slide>

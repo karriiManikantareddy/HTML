@@ -1,0 +1,46 @@
+params: [advertiser, campaign]
+data:
+  dfp_campaign:
+    dataset: mapped_dfp
+    dimensions: [advertiser, campaign]
+    metrics:
+      - total_line_item_level_impressions
+      - total_line_item_level_clicks
+      - total_line_item_level_all_revenue
+      - click_rate
+  dfp_campaign_per_day:
+    dataset: mapped_dfp
+    dimensions: [advertiser, campaign]
+    metrics:
+      - total_line_item_level_impressions
+      - click_rate
+    rollup: day
+  dfp_line_items:
+    dataset: mapped_dfp
+    dimensions: [advertiser, campaign, line_item]
+    metrics:
+      - total_line_item_level_impressions
+      - total_line_item_level_clicks
+      - total_line_item_level_all_revenue
+      - click_rate
+  dfp_creatives:
+    dataset: mapped_dfp
+    dimensions: [advertiser, campaign, creative]
+    metrics:
+      - total_line_item_level_impressions
+      - total_line_item_level_clicks
+      - click_rate
+  dfp_platforms:
+    dataset: mapped_dfp
+    dimensions: [advertiser, campaign, device_category]
+    metrics:
+      - total_line_item_level_impressions
+      - total_line_item_level_clicks
+      - click_rate
+  dfp_regions:
+    dataset: mapped_dfp
+    dimensions: [advertiser, campaign, region]
+    metrics:
+      - total_line_item_level_impressions
+      - total_line_item_level_clicks
+      - click_rate

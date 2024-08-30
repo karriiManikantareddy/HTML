@@ -1,0 +1,35 @@
+@import '../../../styles/base/_variables';
+
+.slide-header {
+  background-color: @pink;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+
+  p {
+    font-size: 1.2em;
+    margin-bottom: 1em;
+  }
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  grid-gap: 20px;
+}
+
+.table {
+  &__cell {
+    padding: 0.3em;
+    text-align: left;
+    font-size: 22px;
+
+    &--icon {
+      background-color: @white;
+      text-align: center;
+      border: none;
+    }
+  }
+}

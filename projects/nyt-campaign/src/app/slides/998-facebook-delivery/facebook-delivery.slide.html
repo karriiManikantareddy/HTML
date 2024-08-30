@@ -1,0 +1,59 @@
+<slide [loading]="loading" name="Social Performance Overview - Facebook">
+  <section class="slide slide-facebook-delivery" [style.background-color]="backgroundColor">
+    <header class="slide-header">
+      <h2 [ngClass]="fontStyling">Social Performance Overview - Facebook</h2>
+    </header>
+    <div class="main">
+      <div class="row">
+        <div class="col-one-of-three">
+          <div class="statistic-item">
+            <icon type="impressions" [ngClass]="fontStyling"></icon>
+            <div class="text overview">
+              <span [ngClass]="fontStyling" class="num"><number-editor [plainText]="true" defaultText="{{totals?.fb_impressions | localeNumber}}" placeholder="Insert.." id="nyt-facebook-delivery-imps" class="big"></number-editor></span>
+              <text-editor [ngClass]="fontStyling" [plainText]="true" placeholder="Insert.." id="facebook-delivery-imps-text" defaultText="Impressions" class="wide"></text-editor>
+            </div>
+          </div>
+          <div class="statistic-item">
+            <icon type="facebook-shares" [ngClass]="fontStyling"></icon>
+            <div class="text overview">
+              <span class="num"><text-editor [ngClass]="fontStyling" [plainText]="true" placeholder="Insert.." id="facebook-delivery-referrals" class="big"></text-editor></span>
+              <text-editor [plainText]="true" [ngClass]="fontStyling" placeholder="Insert.." id="facebook-delivery-referrals-text" defaultText="Paid Referrals" class="wide"></text-editor>
+            </div>
+          </div>
+          <div class="statistic-item">
+            <icon type="click" [ngClass]="fontStyling"></icon>
+            <div class="text overview">
+              <span class="num"><number-editor [ngClass]="fontStyling" [plainText]="true" defaultText="{{totals?.fb_link_click_rate | percent}}" placeholder="Insert.." id="nyt-facebook-delivery-avg-ctr" class="big"></number-editor></span>
+              <text-editor [plainText]="true" [ngClass]="fontStyling" placeholder="Insert.." id="facebook-delivery-avg-ctr-text" defaultText="Avg. CTR" class="wide"></text-editor>
+            </div>
+          </div>
+        </div>
+        <div class="col-one-of-three">
+          <div class="mobile-screenshot">
+            <image-upload id="facebook-delivery" align="middle" class="delivery" class="image"></image-upload>
+          </div>
+        </div>
+        <div class="right aligned col-one-of-three">
+          <div class="overview">
+            <h2 [ngClass]="fontStyling">Top Performing Post</h2>
+            <span [ngClass]="fontStyling" style="padding-right: 5em; font-size: 30px;">(Pictured Left)</span>
+            <h3 [ngClass]="fontStyling">Text</h3>
+            <text-editor [ngClass]="fontStyling" [plainText]="true" id="facebook-delivery-text" class="wide align-right"></text-editor>
+          </div>
+          <div class="overview">
+            <h3 [ngClass]="fontStyling">Headline</h3>
+            <text-editor [ngClass]="fontStyling" [plainText]="true" id="facebook-delivery-headline" class="wide align-right"></text-editor>
+          </div>
+          <div class="statistic-item right">
+            <div class="text overview">
+              <icon type="click" [ngClass]="fontStyling"></icon>
+              <text-editor [ngClass]="fontStyling" [plainText]="true" defaultText="CTR" placeholder="" id="facebook-delivery-ctr" class="align-right"></text-editor>
+              <number-editor [ngClass]="fontStyling" [plainText]="true" defaultText="{{topCreative?.metrics?.fb_link_click_rate | percent}}" placeholder="Insert.." id="nyt-facebook-delivery-ctr-text" class="wide align-right" style="margin-top: -12px;"></number-editor>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="slide-footer"></footer>
+  </section>
+</slide>

@@ -1,0 +1,4 @@
+<slide *ngIf="topRegions && !topRegions.isEmpty()" [loading]="loading" name="Geographical Distribution">
+  <nyt-map [mapOptions]="mapOptions" [mapSeries]="mapSeries" [header]="'Geographical Distribution'" 
+  [topRegions]="topRegions" [backgroundColor]="backgroundColor" [fontStyling]="fontStyling"></nyt-map>
+</slide>

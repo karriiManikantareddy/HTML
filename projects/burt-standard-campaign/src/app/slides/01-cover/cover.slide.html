@@ -1,0 +1,19 @@
+<slide [loading]="loading" name="Cover">
+  <section class="slide slide-cover" [ngStyle]="{'background-image': 'url(' + templateConfigs?.cover + ')'}">
+    <header class="slide-header">
+      <image-upload id="cover-logo" isLogo="true" align="left" class="cover-logo"></image-upload>
+    </header>
+    <div class="main">
+      <div class="wrap-head">
+        <img *ngIf="!templateConfigs?.cover" src="assets/img/chart-cover.png">
+        <h3>{{metadata?.name}}</h3>
+      </div>
+
+    </div>
+    <div class="slide-footer">
+      <div class="footer-title">
+        <span *ngIf="metadata?.startDate && metadata?.endDate">{{metadata?.startDate | date}} - {{metadata?.endDate | date}}</span>
+      </div>
+    </div>
+  </section>
+</slide>

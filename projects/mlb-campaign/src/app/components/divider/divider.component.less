@@ -1,0 +1,42 @@
+@import '../../../styles/base/_variables';
+
+.slide-divider {
+  color: @blue;
+  &.slide {
+    padding-left: 111px;
+    background-image: url('../../../assets/img/mlb_background.png');
+    background-color: @primary-color;
+    background-size: cover;
+
+    .slide-footer {
+      padding-bottom: 60px;
+
+      img {
+        height: 100px;
+        width: 150px;
+      }
+    }
+  }
+
+  .wrap-head {
+    max-width: 900px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    border-bottom: 2px solid @text-gray;
+
+    img {
+      position:absolute;
+      right:-30px;
+      bottom:-50px;
+    }
+  }
+  .main {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    -ms-align-items: center;
+    align-items: center;
+  }
+}

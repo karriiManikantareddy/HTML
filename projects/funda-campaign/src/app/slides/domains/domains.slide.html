@@ -1,0 +1,47 @@
+<slide *ngIf="domains && !domains.isEmpty()" [loading]="loading" name="Domein verdeling">
+  <section class="slide overview">
+    <header class="slide-header">
+      <h1>
+        Domein verdeling
+      </h1>
+    </header>
+    <header-line></header-line>
+    <div class="main">
+      <div class="statistic-icon-domains">
+        <ng-container *ngFor="let d of domains; let i = index">
+          <div class="statistic-icon-domains-item m-width" [ngClass]="cssClass(i, d.name)" *ngIf="shareOfTotal[d.name] >= '0.01'"
+            [style.width]="shareOfTotal[d.name] | percent">
+            <span class="icon icon-{{d.name.toLowerCase()}}"></span>
+            <span class="num">{{shareOfTotal[d.name] | percent:'1.0-0'}}</span>
+            <span class="title">{{d.name}}</span>
+          </div>
+        </ng-container>
+      </div>
+      <div class="statistic-icon-domains">
+        <div *ngFor="let d of domains; let i = index" class="statistic-icon-domains-item bar" [ngClass]="cssClass(i, d.name)" 
+               [style.width]="shareOfTotal[d.name] | percent">
+        </div>
+      </div>
+      <table>
+        <thead>
+        <tr>
+          <th>Domein</th>
+          <th class="metric">Uitgeleverde impressies</th>
+          <th class="metric">Klikken</th>
+          <th class="metric">CTR</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let d of domains">
+          <td>{{d.name}}</td>
+          <td class="metric">{{d.metrics.dfp_total_line_item_level_impressions | number}}</td>
+          <td class="metric">{{d.metrics.dfp_total_line_item_level_clicks | number}}</td>
+          <td class="metric">{{d.metrics.ctr | percent}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <footer class="slide-footer"></footer>
+  </section>
+  <footer-line></footer-line>
+</slide>

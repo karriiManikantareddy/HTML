@@ -1,0 +1,33 @@
+<slide [loading]="loading" name="Video Engagements" *ngFor="let lineItems of lineItemGroups">
+  <section class="slide" [style.background-color]="backgroundColor">
+    <header class="slide-header">
+      <h2 [ngClass]="fontStyling">Video Engagements</h2>
+    </header>
+    <div class="main">
+      <table>
+        <thead>
+          <tr>
+            <th class="left" [ngClass]="fontStyling+'_grey'">Line Item</th>
+            <th name="Start Rate" toggle [ngClass]="fontStyling+'_grey'">Start Rate</th>
+            <th [ngClass]="fontStyling+'_grey'">25% Completion</th>
+            <th [ngClass]="fontStyling+'_grey'">50% Completion</th>
+            <th [ngClass]="fontStyling+'_grey'">75% Completion</th>
+            <th [ngClass]="fontStyling+'_grey'">Completes</th>
+            <th class="right" [ngClass]="fontStyling+'_grey'">VCR</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let li of lineItems">
+            <td [ngClass]="fontStyling" class="left">{{li.name}}</td>
+            <td [ngClass]="fontStyling" name="Start Rate" toggle>{{li.metrics.video_started_rate | percent}}</td>
+            <td [ngClass]="fontStyling">{{li.metrics.video_played_25p_rate | percent}}</td>
+            <td [ngClass]="fontStyling">{{li.metrics.video_played_50p_rate | percent}}</td>
+            <td [ngClass]="fontStyling">{{li.metrics.video_played_75p_rate | percent}}</td>
+            <td [ngClass]="fontStyling">{{li.metrics.video_played_fully_rate | percent}}</td>
+            <td [ngClass]="fontStyling" class="right">{{li.metrics.video_vcr | percent}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</slide>

@@ -1,0 +1,31 @@
+@import '../../../styles/base/_variables';
+
+.slide-thank-you {
+  color: @white;
+  &.slide {
+    padding-left: 111px;
+    background: @blue;
+  }
+  .wrap-head {
+    max-width: 550px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+
+    img {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+    }
+  }
+  .main {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    -ms-align-items: center;
+    align-items: center;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,166 @@
+params: [advertiser, campaign]
+rename_dimensions:
+  dm_billing_combiner:
+    operative_advertiser: advertiser
+    operative_sales_order: campaign
+data:
+  billing_combiner_campaign_metadata:
+    dataset: dm_billing_combiner
+    dimensions: [operative_advertiser, campaign, operative_sales_order]
+    metrics:
+      - dfp_impressions
+      - dfp_clicks
+      - billable_clicks
+      - billable_impressions
+      - doubleverify_display_viewable_rate
+      - doubleverify_unique_incident_rate
+      - doubleverify_brand_safe_rate
+      - doubleverify_measured_impressions
+      - doubleverify_fraudsivt_incidents
+      - doubleverify_display_viewable_impressions
+      - doubleverify_failed_impressions
+      - freewheel_video_first_quartile
+      - freewheel_video_start
+      - fw_rbp_calculator_rate
+      - moat_impressions_analyzed_filtered_for_givt
+      - moat_total_exposure_time_sec
+      - moat_universal_interactions
+      - moat_impressions_analyzed
+      - moat_clicks
+      - dcm_clicks
+      - dcm_impressions
+      - video_completion_rate
+      - desktop_impression_rate
+      - mobile_impression_rate
+      - tv_glass_impression_rate
+      - moat_viewability_rate
+  billing_combiner_campaign:
+    dataset: dm_billing_combiner
+    dimensions: [operative_advertiser, operative_sales_order]
+    metrics:
+      - dfp_impressions
+      - dfp_clicks
+      - billable_clicks
+      - billable_impressions
+      - first_party_impressions
+      - doubleverify_display_viewable_rate
+      - doubleverify_unique_incident_rate
+      - doubleverify_brand_safe_rate
+      - doubleverify_measured_impressions
+      - doubleverify_fraudsivt_incidents
+      - doubleverify_display_viewable_impressions
+      - doubleverify_failed_impressions
+      - freewheel_video_first_quartile
+      - freewheel_video_start
+      - fw_rbp_calculator_rate
+      - moat_impressions_analyzed_filtered_for_givt
+      - moat_total_exposure_time_sec
+      - moat_universal_interactions
+      - moat_impressions_analyzed
+      - moat_clicks
+      - dcm_clicks
+      - dcm_impressions
+      - video_completion_rate
+      - desktop_impression_rate
+      - mobile_impression_rate
+      - tv_glass_impression_rate
+      - moat_viewability_rate
+  billing_combiner_campaign_per_day:
+    dataset: dm_billing_combiner
+    dimensions: [operative_advertiser, operative_sales_order]
+    rollup: day
+    metrics:
+      - dfp_impressions
+      - dfp_clicks
+      - billable_clicks
+      - billable_impressions
+      - doubleverify_display_viewable_rate
+      - doubleverify_unique_incident_rate
+      - doubleverify_brand_safe_rate
+      - doubleverify_fraudsivt_incidents
+      - doubleverify_display_viewable_impressions
+      - doubleverify_failed_impressions
+      - doubleverify_monitored_impressions
+      - moat_impressions_analyzed_filtered_for_givt
+      - moat_total_exposure_time_sec
+      - moat_universal_interactions
+      - moat_impressions_analyzed
+      - moat_clicks
+      - dcm_clicks
+      - dcm_impressions
+  billing_combiner_line_item:
+    dataset: dm_billing_combiner
+    dimensions: [operative_advertiser, operative_sales_order, line_item, operative_line_item]
+    metrics:
+      - dfp_impressions
+      - dfp_clicks
+      - dfp_video_start
+      - dfp_video_complete
+      - billable_clicks
+      - billable_impressions
+      - first_party_impressions
+      - doubleverify_display_viewable_rate
+      - doubleverify_unique_incident_rate
+      - doubleverify_brand_safe_rate
+      - doubleverify_fraudsivt_incidents
+      - moat_total_exposure_time_sec
+      - moat_universal_interactions
+      - moat_impressions_analyzed
+      - moat_impressions_analyzed_filtered_for_givt
+      - moat_clicks
+      - dcm_clicks
+      - dcm_impressions
+      - doubleverify_display_viewable_impressions
+      - freewheel_video_complete
+      - moat_viewability_rate
+  billing_combiner_line_item_per_day:
+    dataset: dm_billing_combiner
+    dimensions: [operative_advertiser, operative_sales_order, line_item]
+    rollup: day
+    metrics:
+      - dfp_impressions
+      - dfp_clicks
+      - billable_clicks
+      - billable_impressions
+      - doubleverify_display_viewable_rate
+      - doubleverify_unique_incident_rate
+      - doubleverify_brand_safe_rate
+      - doubleverify_fraudsivt_incidents
+      - moat_total_exposure_time_sec
+      - moat_universal_interactions
+      - moat_impressions_analyzed
+      - moat_impressions_analyzed_filtered_for_givt
+      - moat_clicks
+      - dcm_clicks
+      - dcm_impressions
+      - doubleverify_display_viewable_impressions
+      - dfp_ott_impressions
+      - dfp_vod_impressions
+  billing_combiner_creative:
+    dataset: dm_billing_combiner
+    dimensions: [operative_advertiser, operative_sales_order, line_item, creative]
+    metrics:
+      - dfp_impressions
+      - dfp_clicks
+      - dfp_video_start
+      - dfp_video_complete
+      - billable_clicks
+      - billable_impressions
+      - first_party_impressions
+      - doubleverify_display_viewable_rate
+      - doubleverify_unique_incident_rate
+      - doubleverify_brand_safe_rate
+      - doubleverify_fraudsivt_incidents
+      - moat_total_exposure_time_sec
+      - moat_universal_interactions
+      - moat_impressions_analyzed
+      - moat_impressions_analyzed_filtered_for_givt
+      - moat_clicks
+      - moat_viewability_rate
+      - dcm_clicks
+      - dcm_impressions
+      - doubleverify_display_viewable_impressions
+      - freewheel_video_complete
+      - freewheel_video_first_quartile
+      - freewheel_video_midpoint
+      - freewheel_video_third_quartile

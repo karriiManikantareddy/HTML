@@ -1,0 +1,27 @@
+<slide name="Begrippenlijst">
+  <section class="slide">
+    <div class="glossary">
+      <header class="slide-header">
+        <h1>Begrippenlijst</h1>
+      </header>
+      <header-line></header-line>
+      <div class="box"></div>
+      <div class="main">
+      <table>
+        <thead>
+        <tr>
+          <th>Metric</th>
+          <th>Definitie</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let g of glossary">
+          <td class="col">{{g.metric}}</td>
+          <td>{{g.definition}}</td>
+        </tr>
+        </tbody>
+      </table>
+      </div>
+    </div>  
+  </section>
+</slide>

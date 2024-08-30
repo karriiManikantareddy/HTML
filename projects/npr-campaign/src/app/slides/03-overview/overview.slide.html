@@ -1,0 +1,55 @@
+<slide [loading]="loading" name="Overview">
+  <section class="slide overview">
+    <div class="main">
+      <div class="first-section">
+        <div class="header">
+          <div class="header-title">
+            <text-editor id="overview-q-year" [plainText]=true placeholder="QX 202X" class="overview-q-year"></text-editor>
+            <p>Campaign: At a Glance</p>
+          </div>
+          <div class="date-div">
+            <p class="date-text">Data pulled </p>
+            <p>{{currentDateWithYear}}</p>
+          </div>
+        </div>
+        <div class="first-data">
+          <div class="imp-txt">
+            <p class="num1">{{totals?.impressions?.value.toLocaleString('en-US')}}</p>
+            <p class="title1">Impressions Delivered</p>
+          </div>
+          <div class="data1">
+            <text-editor id="reach" [plainText]=true placeholder="0" class="overview-data1"></text-editor>
+            <p class="title1">Reach</p>
+          </div>
+          <div class="data1">
+            <text-editor id="frequency" [plainText]=true placeholder="0.0" class="overview-data1"></text-editor>
+            <p class="title1">Frequency</p>
+          </div>
+        </div>
+      </div>
+      <div class="second-section">
+        <div class="second-data">
+          <div class="data2">
+            <text-editor id="overall-conversation-rate" [plainText]=true placeholder="0.0%" class="overview-data2"></text-editor>
+            <p class="title2">Overall Conversion Rate</p>
+            <p>*Based on purchases/visitors with data pulled {{currentDate}}.</p>
+          </div>
+          <div class="data2">
+            <text-editor id="start-create-leads" [plainText]=true placeholder="0" class="overview-data2"></text-editor>
+            <p class="title2">"Start Create" Leads</p>
+          </div>
+          <div class="data2">
+            <text-editor id="cost-per-visitor" [plainText]=true placeholder="$0.0" class="overview-data2"></text-editor>
+            <p class="title2">Cost Per Visitor</p>
+          </div>
+          <div class="data2">
+            <text-editor id="overall-roas" [plainText]=true placeholder="0.0x" class="overview-data2"></text-editor>
+            <p class="title2">Overall ROAS</p>
+          </div>
+        </div>
+      </div>
+      <div class="bottom"></div>
+    </div>
+    <footer></footer>
+  </section>
+</slide>

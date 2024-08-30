@@ -1,0 +1,16 @@
+<slide [loading]="loading" name="Top Line Items">
+  <section class="slide top-line-items">
+    <header class="slide-header">
+      <h2>Top Line Items</h2>
+    </header>
+    <div class="main">
+      <div class="row">
+        <ng-container *ngFor="let lineItem of lineItems">
+          <line-item-top [lineItem]="lineItem" [totalMetrics]="totalMetrics" [useThirdParty]=useThirdParty class="col-one-of-two" (metricChange)="lineItemChanged($event)"></line-item-top>
+        </ng-container>
+      </div>
+    </div>
+    <footer class="slide-footer">
+    </footer>
+  </section>
+</slide>

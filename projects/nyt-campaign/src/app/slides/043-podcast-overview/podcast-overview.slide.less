@@ -1,0 +1,65 @@
+@import '../../../styles/base/_variables';
+
+
+.slide-podcast-overview {
+  .title {
+    margin: auto;
+    color: @text-gray;
+    padding-bottom: 1em;
+  }
+
+  .main {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .column {
+    width:800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  .row {
+    height:200px;
+    display: block;
+
+    .value {
+      display: block;
+      text-align: left;
+      font-size: 68px;
+      font-weight: 300;
+    }
+    .name {
+      display: block;
+      text-align: left;
+      font-size: 28px;
+      padding-top: 0.5em;
+    }
+  }
+
+  .mobile-screenshot {
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    width: 430px;
+    height: 854px;
+
+    .image {
+      width: 370px;
+      height: 658px;
+      padding: 96px 31px;
+    }
+  }
+  .white_phone {
+    border: 2px solid #fff;
+    background-color: #fff;
+    border-radius: 60px;
+  }
+  
+  .black_phone {
+    border: 2px solid #000;
+    border-radius: 60px;
+  }
+}

@@ -1,0 +1,57 @@
+@import '../../../styles/base/_variables';
+
+.container {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  grid-gap: 20px;
+}
+
+.slide-header {
+  background-color: @bright-blue;
+}
+
+.subtitle {
+  color: @bright-blue;
+}
+
+.main {
+  p {
+    font-size: 1.2em;
+    margin-top: -0.5em;
+    margin-bottom: 0.5em;
+  }
+}
+
+.table {
+  &__cell {
+    padding: 0.4em;
+  }
+
+  &__row {
+    &:nth-child(odd) {
+      background-color: @table-background-color;
+    }
+
+    &:nth-child(even) {
+      background-color: @white;
+    }
+  }
+
+  &--keywords {
+    .table {
+      &__cell {
+        font-size: 1.2em;
+      }
+
+      &__row {
+        &:nth-child(even) {
+          background-color: @table-background-color;
+        }
+
+        &:nth-child(odd) {
+          background-color: @white;
+        }
+      }
+    }
+  }
+}

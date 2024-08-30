@@ -1,0 +1,25 @@
+<slide [loading]="loading" name="Google Analytics">
+  <section class="slide overview">
+    <header class="slide-header">
+      <h2 class="title">
+        Google Analytics
+      </h2>
+      <div class="dates-wrapper">
+        Flight Dates:
+        <text-editor
+          class="dates"
+          [plainText]="true"
+          id="flight_dates"
+          [maxLength]="28"
+        ></text-editor>
+      </div>
+    </header>
+    <div class="main">
+      <text-editor class="large-text-box"
+                   id="key_insights"
+                   [plainText]="false"
+                   [defaultText]="defaultContentText"></text-editor>
+    </div>
+    <cmi-footer class="slide-footer"></cmi-footer>
+  </section>
+</slide>

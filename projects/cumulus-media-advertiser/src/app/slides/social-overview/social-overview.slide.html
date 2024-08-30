@@ -1,0 +1,68 @@
+<slide [loading]="loading" name="Social Overview" *ngIf="loading || !empty">
+  <sidebar text="Paid Social"></sidebar>
+  <section class="slide slide-social-overview">
+    <header class="slide-header">
+      <h3>KPIs</h3>
+    </header>
+    <div class="kpis">
+      <div class="kpi">
+        <div class="kpi-value">
+          {{totals?.impressions.value | number}}
+        </div>
+        <div class="kpi-name">
+          Impressions
+        </div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-value">
+          {{totals?.video_p100_views.value | number}}
+        </div>
+        <div class="kpi-name">
+          Video Thruplay
+        </div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-value">
+          {{totals?.post_engagements.value | number}}
+        </div>
+        <div class="kpi-name">
+          Post Engagements
+        </div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-value">
+          {{totals?.link_click_ctr.value | percent}}
+        </div>
+        <div class="kpi-name">
+          CTR (Link Click-Through Rate)
+        </div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-value">
+          {{totals?.cpc.value | currency}}
+        </div>
+        <div class="kpi-name">
+          CPC (Cost per Link Click)
+        </div>
+      </div>
+    </div>
+    <div class="charts">
+      <div class="left-chart">
+        <h6>
+          Weekly: CPC vs CTR
+        </h6>
+        <div class="chart-content">
+          <chart type="column" [series]="chartSeriesLeft" [options]="chartOptionsLeft"></chart>
+        </div>
+      </div>
+      <div class="right-chart">
+        <h6>
+          Weekly: Impressions vs Link Clicks
+        </h6>
+        <div class="chart-content">
+          <chart type="column" [series]="chartSeriesRight" [options]="chartOptionsRight"></chart>
+        </div>
+      </div>
+    </div>
+  </section>
+</slide>

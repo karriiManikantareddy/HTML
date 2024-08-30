@@ -1,0 +1,47 @@
+@import "styles/base/_forms";
+@import "styles/base/_grid";
+@import "styles/base/_reset";
+@import "styles/base/_table";
+@import "styles/base/_typography";
+@import "styles/base/_colors";
+@import "styles/base/_variables";
+
+@import "styles/vendors/_icomoon";
+
+@import "styles/common/slide.less";
+@import "styles/common/statistic.less";
+@import "styles/common/logos.less";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+h1,h2,h3,h4,body{
+  font-family: 'Roboto', sans-serif;
+}
+
+text-editor {
+  &.overview-item-text-box {
+    .ql-container.ql-snow {
+      font-size: 38px;
+      .ql-editor {
+        overflow: hidden;
+      }
+    }
+  }
+  &.video-item-text-box {
+    .ql-container.ql-snow {
+      font-size: 26px;
+      padding: 0;
+      .ql-editor {
+        overflow: hidden;
+      }
+    }
+  }
+}
+
+.ql-snow {
+  font-size: 21px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-family: 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  padding: 8px;
+}
+

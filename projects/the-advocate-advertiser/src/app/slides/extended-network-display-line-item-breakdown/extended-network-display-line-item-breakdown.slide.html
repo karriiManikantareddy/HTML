@@ -1,0 +1,8 @@
+<slide *ngFor="let lineItems of lineItemGroups" [loading]="loading" name="Extended Network Display Line Items">
+  <divider></divider>
+  <section class="slide campaigns">
+    <slide-header text="Extended Network Display Line Items"></slide-header>
+    <the-advocate-table [items]="lineItems" [kpis]="kpis" [totals]="totals" header="Line Items"></the-advocate-table>
+    <slide-footer></slide-footer>
+  </section>
+</slide>

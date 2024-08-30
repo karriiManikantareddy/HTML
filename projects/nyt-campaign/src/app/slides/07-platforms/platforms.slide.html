@@ -1,0 +1,53 @@
+<slide *ngIf="platforms && !platforms.isEmpty()" [loading]="loading" name="Platforms">
+  <section class="slide overview" [style.background-color]="backgroundColor">
+    <header class="slide-header">
+      <h2 [ngClass]="fontStyling">Platforms</h2>
+    </header>
+    <div class="main">
+      <div class="statistic-icon-platforms">
+        <ng-container *ngFor="let platform of platforms">
+          <div *ngIf="shareOfTotal[platform.name] >= 0.01" class="statistic-icon-platforms-item m-width"
+            [style.color]="colors[platform.name?.toLowerCase()]" [style.width]="shareOfTotal[platform.name] | percent">
+            <icon [type]="platform.name.replace(' ', '-').toLowerCase()"></icon>
+            <p class="num">{{ shareOfTotal[platform.name] | percent:'1.0-0' }}</p>
+            <p class="title">{{platform.name}}</p>
+          </div>
+        </ng-container>
+      </div>
+      <div class="statistic-icon-platforms">
+        <ng-container *ngFor="let platform of platforms">
+          <div *ngIf="shareOfTotal[platform.name] >= 0.01" class="statistic-icon-platforms-item percent-bar"
+            [style.width]="shareOfTotal[platform.name] | percent"
+            [style.background-color]="colors[platform.name?.toLowerCase()]">
+          </div>
+        </ng-container>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th [ngClass]="fontStyling+'_grey'">Platform</th>
+            <th [ngClass]="fontStyling+'_grey'" class="metric">Impressions</th>
+            <th [ngClass]="fontStyling+'_grey'" class="metric">% imps</th>
+            <th [ngClass]="fontStyling+'_grey'" class="metric">clicks</th>
+            <th [ngClass]="fontStyling+'_grey'" class="metric">% Clicks</th>
+            <th [ngClass]="fontStyling+'_grey'" class="metric">CTR</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let p of platforms">
+            <td [ngClass]="fontStyling">{{p.name}}</td>
+            <td class="metric" [ngClass]="fontStyling">{{p.metrics.dfp_total_line_item_level_impressions |
+              localeNumber}}</td>
+            <td class="metric" [ngClass]="fontStyling">{{p.shareOfs.dfp_total_line_item_level_impressions | percent}}
+            </td>
+            <td class="metric" [ngClass]="fontStyling">{{p.metrics.dfp_total_line_item_level_clicks | localeNumber}}
+            </td>
+            <td class="metric" [ngClass]="fontStyling">{{p.shareOfs.dfp_total_line_item_level_clicks | percent}}</td>
+            <td class="metric" [ngClass]="fontStyling">{{p.metrics.dfp_ctr | percent}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <footer class="slide-footer"></footer>
+  </section>
+</slide>

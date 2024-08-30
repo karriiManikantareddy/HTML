@@ -1,0 +1,20 @@
+<slide [loading]="loading" name="Table of Contents"  *ngFor="let page of splitPages(entries, 24); let i = index">
+  <section class="slide table-of-contents" [style.background-color]="background">
+    <div class="slide-header">
+      <h2>Table of Contents - {{metadata?.name}}</h2>
+      <h3>Partnership Review &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; {{currentDate | date:dateOptions}}</h3>
+      <div class="divider"></div>
+    </div>
+    <div class="main" [style.color]="textColor">
+      <div class="list">
+        <ul>
+          <li *ngFor="let entry of page">
+            <span>{{entry.name}}</span>
+            <span class="num">{{entry.page}}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <img class="toc-image" src="assets/img/toc.png" />
+  </section>
+</slide>

@@ -1,0 +1,42 @@
+<slide *ngIf="hasSearch" [loading]="loading" name="Paid Search Keyword Performance">
+  <section class="slide overview">
+    <header class="slide-header">
+      <h1 class="title">
+        Paid Search
+      </h1>
+      <div class="dates-wrapper">
+        Flight Dates:
+        <text-editor
+          class="dates"
+          [plainText]="true"
+          id="flight_dates"
+          [maxLength]="28"
+        ></text-editor>
+      </div>
+    </header>
+    <div class="main">
+      <h2 class="subtitle">Top Keywords</h2>
+      <table class="table">
+        <thead class="table__header">
+          <tr class="table__row table__row--header">
+            <th class="table__cell table__cell--header table__cell--keyword">
+              Keyword
+            </th>
+            <th class="table__cell table__cell--header table__cell--{{ metric.metric }}" *ngFor="let metric of metrics">
+              {{ metric.name_1 }}
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="table__row" *ngFor="let keyword of keywords">
+            <td class="table__cell table__cell--keyword">{{ keyword.name }}</td>
+            <td class="table__cell" *ngFor="let metric of metrics">
+              {{ keyword.metrics[metric.metric] | tableValue: metric.format}}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="no-data" *ngIf="!keywords || keywords.length === 0">No Data Available</p>
+    </div>
+  </section>
+</slide>

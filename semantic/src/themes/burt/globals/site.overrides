@@ -1,0 +1,142 @@
+/*******************************
+        Global Overrides
+*******************************/
+
+body {
+  background: #f5f7f9;
+}
+
+/*-------------------
+       Fonts
+--------------------*/
+
+/* Light */
+ @font-face {
+   font-family: DIN2014;
+   src: url(https://res.cloudinary.com/kazitihum/raw/upload/v1530357792/Burt%20Semantic%20UI/DIN2014-light.woff) format('woff');
+   font-style: normal;
+   font-weight: 300
+ }
+
+ @font-face {
+   font-family: DIN2014;
+   src: url(https://res.cloudinary.com/kazitihum/raw/upload/v1530357795/Burt%20Semantic%20UI/DIN2014-light-Italic.woff) format('woff');
+   font-style: italic;
+   font-weight: 300
+ }
+
+/* Extra Light */
+ @font-face {
+   font-family: DIN2014;
+   src: url(https://res.cloudinary.com/kazitihum/raw/upload/v1530357793/Burt%20Semantic%20UI/DIN2014-extra-light.woff) format('woff');
+   font-style: normal;
+   font-weight: 300
+ }
+
+ @font-face {
+   font-family: DIN2014;
+   src: url(https://res.cloudinary.com/kazitihum/raw/upload/v1530357792/Burt%20Semantic%20UI/DIN2014-extra-light-Italic.woff) format('woff');
+   font-style: italic;
+   font-weight: 300
+ }
+
+/* Regular */
+ @font-face {
+   font-family: DIN2014;
+   src: url(https://res.cloudinary.com/kazitihum/raw/upload/v1530357793/Burt%20Semantic%20UI/DIN2014-regular.woff) format('woff');
+   font-style: normal;
+   font-weight: 400
+ }
+
+ @font-face {
+   font-family: DIN2014;
+   src: url(https://res.cloudinary.com/kazitihum/raw/upload/v1530357793/Burt%20Semantic%20UI/DIN2014-regular-Italic.woff) format('woff');
+   font-style: italic;
+   font-weight: 400
+ }
+
+/* Semi Bold */
+ @font-face {
+   font-family: DIN2014;
+   src: url(https://res.cloudinary.com/kazitihum/raw/upload/v1530357793/Burt%20Semantic%20UI/DIN2014-demi.woff) format('woff');
+   font-style: normal;
+   font-weight: 700
+ }
+
+/* Bold */
+ /*@font-face {
+   font-family: DIN2014;
+   src: url(https://res.cloudinary.com/kazitihum/raw/upload/v1530357793/Burt%20Semantic%20UI/DIN2014-bold.woff) format('woff');
+   font-style: normal;
+   font-weight: 700
+ }*/
+
+/* Extra Bold */
+ /*@font-face {
+   font-family: DIN2014;
+   src: url(https://res.cloudinary.com/kazitihum/raw/upload/v1530357793/Burt%20Semantic%20UI/DIN2014-extra-bold.woff) format('woff');
+   font-style: normal;
+   font-weight: 900
+ }*/
+
+/*-------------------
+      Background
+--------------------*/
+
+.ui.light-bg {
+  background-color: #f5f7f9 !important;
+}
+.ui.segment.light-bg {
+  margin-top: 0;
+}
+
+/*-------------------
+       Divider
+--------------------*/
+
+.divider-column {
+    position: relative;
+    padding: 0 !important;
+}
+
+/*-------------------
+       Login
+--------------------*/
+.forgot-pass {
+  margin-top: 15px;
+}
+.login .ui.form .icon {
+  color: #98AFC5;
+  opacity: 1 !important;
+}
+
+/*-------------------
+       Button
+--------------------*/
+.ui.basic.link {
+  color: #6D849A;
+}
+
+.ui.basic.link .icon {
+  color: #98AFC5;
+}
+
+.ui.basic.link:hover {
+  color: #0078FF;
+}
+
+.ui.basic.link:hover .icon {
+  color: #0078FF;
+}
+
+/*-------------------
+       Hub
+--------------------*/
+.hub .ui.image {
+  margin: auto;
+}
+.hub .title {
+  font-size: 16px;
+  color: #6D849A;
+  font-weight: normal;
+}

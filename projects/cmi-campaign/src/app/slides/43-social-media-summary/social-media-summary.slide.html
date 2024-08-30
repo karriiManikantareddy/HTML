@@ -1,0 +1,67 @@
+<slide *ngIf="hasSocial" [loading]="loading" name="Social Media Campaign Summary">
+  <section class="slide summary">
+    <div class="slide-header">
+      <h2 class="title">Social Media Campaign Summary</h2>
+    </div>
+
+    <div class="main content">
+      <div class="social-split-box">
+        <div class="text">Distribution by Platform</div>
+        <img src="assets/img/fb_logo.png" height="50" width="50" class="fb-logo">
+        <span class="platform-text">{{ facebook_share | percent:'1.0' }}</span>
+        <img src="assets/img/instagram_logo.png" height="50" width="50">
+        <span class="platform-text">{{ instagram_share | percent:'1.0' }}</span>
+      </div>
+
+      <div class="box-row full-width transparent-white stats">
+        <table class="table">
+          <tr class="row">
+            <td class="text-column">Total Engagements</td>
+            <td class="number-column middle-column">{{ engagements | number }}</td>
+            <td class="text-column">Post Comments</td>
+            <td class="number-column right-column">{{ _comment | number }}</td>
+          </tr>
+          <tr class="row">
+            <td class="text-column middle-row">Engagement Rate</td>
+            <td class="number-column middle-column middle-row">{{ engagement_rate | percent:'1.0' }}</td>
+            <td class="text-column middle-row">Post Shares</td>
+            <td class="number-column right-column middle-row">{{ _post | number }}</td>
+          </tr>
+          <tr class="row">
+            <td colspan="3" class="text-column bottom-row">Post Reactions</td>
+            <td class="number-column right-column bottom-row">{{ _post_reaction | number }}</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="info-box">
+        <table class="info-table">
+          <tr>
+            <td class="name"> Name </td>
+            <td class="value bottom-border">
+              <text-editor style="width: 240px" [plainText]="true" id="name" [maxLength]="37" placeholder="Editable Content"></text-editor>
+            </td>
+            <td class="name"> Audience </td>
+            <td class="value bottom-border">
+              <text-editor style="width: 240px" [plainText]="true" id="audience" [maxLength]="37" placeholder="Editable Content"></text-editor>
+            </td>
+            <td class="name"> Objective </td>
+            <td class="value">
+              <text-editor style="width: 240px" [plainText]="true" id="video_objective" [maxLength]="36" placeholder="Editable Content"></text-editor>
+            </td>
+          </tr>
+          <tr>
+            <td class="name"> Flight Dates </td>
+            <td class="value">
+              <text-editor style="width: 240px" [plainText]="true" id="flight_dates" [maxLength]="28" placeholder="Editable Content"></text-editor>
+            </td>
+            <td class="name"> Goal </td>
+            <td class="value">
+              <text-editor style="width: 240px" [plainText]="true" id="goal" [maxLength]="10" placeholder="Editable Content"></text-editor>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </section>
+</slide>

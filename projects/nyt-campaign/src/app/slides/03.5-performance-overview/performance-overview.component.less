@@ -1,0 +1,56 @@
+@import '../../../styles/base/_variables.less';
+
+.slide-header {
+   margin-bottom: 40px;
+   font-weight: 600;
+}
+
+.table {
+   border-collapse: collapse;
+}
+
+th td {
+   border: 0.5px ridge lightgrey;
+}
+
+.table-cell {
+   border: 0.5px ridge lightgrey;
+   padding: 17px;
+
+   .key {
+      width: 30%;
+   }
+
+   .value {
+      width: 70%;
+   }
+}
+.no-wrap{
+   white-space: nowrap;
+   font-family: LibreFranklin-Bold,sans-serif;
+   text-align: left;
+ }
+.wrap{
+   white-space: wrap;
+   font-family: LibreFranklin-Regular,sans-serif;
+   text-align: left;
+
+}
+.table-cell-content {
+   font-size: 26px;
+   position: relative;
+   width: auto;
+   max-height: 92px;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   word-break: break-word;
+   display: block;
+   display: -webkit-box;
+   -webkit-line-clamp: 5;
+   -webkit-box-orient: vertical;
+}
+
+.table-row {
+   border: 0.5px ridge lightgrey;
+}
+

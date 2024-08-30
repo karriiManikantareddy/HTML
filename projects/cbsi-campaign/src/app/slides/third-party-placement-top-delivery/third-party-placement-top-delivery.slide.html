@@ -1,0 +1,58 @@
+<slide class="container" [loading]="loading" name="3P Placement Top Delivery" *ngFor="let creatives of creativesGroups">
+  <slide-header class="slide-header" name="3P Placement Top Delivery"></slide-header>
+  <section class="slide content creative-delivery-breakout">
+    <table class="table">
+      <colgroup>
+        <col span="1" class="table-cell-name">
+        <col span="1" class="table-cell-imps-delivered">
+        <col name="CTR" toggle span="1" class="table-cell-ctr">
+        <col span="1" class="table-cell-25">
+        <col span="1" class="table-cell-50">
+        <col span="1" class="table-cell-75">
+        <col span="1" class="table-cell-100">
+        <col name="Viewability" toggle span="1" class="table-cell-viewability">
+      </colgroup>
+      <thead>
+        <tr class="table-row">
+          <th class="table-column-title">Placement</th>
+          <th class="table-column-title">Imps<br>Delivered</th>
+          <th name="CTR" toggle class="table-column-title">CTR</th>
+          <th class="table-column-title">25%<br>Complete</th>
+          <th class="table-column-title">50%<br>Complete</th>
+          <th class="table-column-title">75%<br>Complete</th>
+          <th class="table-column-title">100%<br>Complete</th>
+          <th name="Viewability" toggle class="table-column-title">Viewability</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let creative of creatives" class="table-row">
+          <td class="table-cell" height="75">
+            <div class="table-cell-content creative-name">{{creative.creative.primary_third_party_placement_name}}</div>
+          </td>
+          <td class="table-cell" height="75">
+            <div class="table-cell-content">{{creative.metrics[impressionType] | localeNumber}}</div>
+          </td>
+          <td name="CTR" toggle class="table-cell" height="75">
+            <div class="table-cell-content">{{creative.metrics.ctr | percent}}</div>
+          </td>
+          <td class="table-cell" height="75">
+            <div class="table-cell-content">{{creative.metrics.freewheel_video_first_quartile | localeNumber}}</div>
+          </td>
+          <td class="table-cell" height="75">
+            <div class="table-cell-content">{{creative.metrics.freewheel_video_midpoint | localeNumber}}</div>
+          </td>
+          <td class="table-cell" height="75">
+            <div class="table-cell-content">{{creative.metrics.freewheel_video_third_quartile | localeNumber}}</div>
+          </td>
+          <td class="table-cell" height="75">
+            <div class="table-cell-content">{{creative.metrics.freewheel_video_complete | localeNumber}}</div>
+          </td>
+          <td name="Viewability" toggle class="table-cell" height="75">
+            <div class="table-cell-content">{{creative.metrics.moat_viewability_rate | percent}}</div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <slide-footer class="slide-footer"></slide-footer>
+</slide>

@@ -1,0 +1,65 @@
+<span class="title-block">{{creative.name}}</span>
+<div class="row wrap-left-block">
+  <div class="wrap-img" #iframeWrap>
+    <iframe
+      #iframe
+      [src]="creative.previewUrl | trustResourceUrl"
+      frameborder="0"
+      scrolling="no"
+      [style.width.px]="creative.width"
+      [style.height.px]="creative.height"
+    ></iframe>
+  </div>
+  <div class="wrap-graph">
+    <div class="graph-item">
+      <div class="wrap-legend">
+        <chart type="pie" [series]="shareOfImpressionsSeries" [options]="impressionsGaugeOptions"></chart>
+        <div class="text-wrap">
+          <span class="num">{{shareOfTotals['imps_won'] | percent}}</span>
+          <span class="title">Of total<br>{{creative?.metrics?.imps_won?.displayName}}</span>
+        </div>
+      </div>
+      <div class="statistic-graph">
+        <div class="legend-item">
+          <icon type="image"></icon>
+          <div class="text">
+            <span class="num">{{creative?.metrics?.imps_won?.value | number}}</span>
+            <span class="title">{{creative?.metrics?.imps_won?.displayName}}</span>
+          </div>
+        </div>
+<!--         <div class="legend-item">
+          <icon type="eye"></icon>
+          <div class="text">
+            <span class="num">{{creative.metrics.viewability | percent}}</span>
+            <span class="title">% Viewable</span>
+          </div>
+        </div> -->
+      </div>
+    </div>
+    <div class="graph-item">
+      <div class="wrap-legend">
+        <chart type="pie" [series]="shareOfClicksSeries" [options]="clicksGaugeOptions"></chart>
+        <div class="text-wrap">
+          <span class="num">{{shareOfTotals['clicks'] | percent}}</span>
+          <span class="title">Of total<br>{{creative?.metrics?.clicks?.displayName}}</span>
+        </div>
+      </div>
+      <div class="statistic-graph">
+        <div class="legend-item right-aligned">
+          <div class="text">
+            <span class="num">{{creative?.metrics?.clicks?.value | number}}</span>
+            <span class="title">{{creative?.metrics?.clicks?.displayName}}</span>
+          </div>
+          <icon type="hand"></icon>
+        </div>
+        <div class="legend-item right-aligned">
+          <div class="text">
+            <span class="num">{{creative?.metrics?.ctr?.value | percent}}</span>
+            <span class="title">{{creative?.metrics?.ctr?.displayName}}</span>
+          </div>
+          <icon type="click"></icon>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

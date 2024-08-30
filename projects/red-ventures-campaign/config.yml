@@ -1,0 +1,17 @@
+params: [advertiser, campaign]
+data:
+  campaign:
+    dataset: dm_discrepancy_reporting
+    dimensions: [advertiser, campaign]
+    metrics:
+      - billable_impressions
+      - billable_clicks
+      - 1p_ctr
+  campaign_by_day:
+    dataset: dm_discrepancy_reporting
+    dimensions: [advertiser, campaign]
+    rollup: day
+    metrics:
+      - billable_impressions
+      - billable_clicks
+      - 1p_ctr

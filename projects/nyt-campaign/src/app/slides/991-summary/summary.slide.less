@@ -1,0 +1,88 @@
+@import '../../../styles/base/_variables';
+
+icon {
+  height: 1em;
+}
+
+:host {
+  .summary {
+    .row-summary {
+      margin-bottom: 30px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    .head-graph-title {
+      color: @text-gray;
+      text-transform: uppercase;
+      margin-bottom: 40px;
+      font-size: 18px;
+    }
+    .head-graph-legend {
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flex;
+      display: -o-flex;
+      display: flex;
+      justify-content: space-between;
+      -ms-align-items: center;
+      align-items: center;
+      color: @text-gray;
+      text-transform: uppercase;
+
+      .num {
+        text-transform: none;
+      }
+    }
+    .wrap-legend {
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flex;
+      display: -o-flex;
+      display: flex;
+      .legend-item {
+        margin-right: 25px;
+        margin-bottom: 10px;
+        span {
+          display: inline-block;
+          vertical-align: middle;
+        }
+        &:last-child {
+          margin-right: 0;
+        }
+        .icon {
+          font-size: 20px;
+          margin-right: 8px;
+
+          &.icon-click-rate {
+            font-size: 24px;
+          }
+
+          &.icon-impressions {
+            font-size: 16px;
+          }
+        }
+        .metric-num {
+          number-editor {
+            .ql-container.ql-snow {
+              font-size: 24px;
+            }
+          }
+        }
+        .num {
+          font-size: 24px;
+          color: @black;
+          margin-right: 4px;
+        }
+        .title {
+          font-size: 14px;
+        }
+      }
+    }
+
+    .chart {
+      margin-top: 1em;
+      height: 300px;
+    }
+  }
+}

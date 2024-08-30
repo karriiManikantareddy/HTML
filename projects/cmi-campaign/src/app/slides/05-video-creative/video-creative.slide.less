@@ -1,0 +1,29 @@
+@import '../../../styles/base/_variables';
+
+.slide-header {
+  background-color: @pink;
+}
+
+.images {
+  height: 100%;
+  padding: 20px 0;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 30px 20px;
+}
+
+.image-attachment {
+  position: relative;
+}
+
+.image-description {
+  position: absolute;
+  top: 1em;
+  left: 1em;
+}
+
+.commercial-image {
+  height: 100%;
+}

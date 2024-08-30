@@ -1,0 +1,40 @@
+<slide [loading]="loading" name="Position Performance" *ngFor="let positions of positionGroups; index as groupIdx">
+  <section class="slide slide-position-performance">
+    <header class="slide-header">
+      <h2>
+        Position Performance
+      </h2>
+    </header>
+    <div class="main">
+      <table>
+        <thead>
+        <tr>
+          <th class="static">Position</th>
+          <th class="metric small impressions">Delivered impressions</th>
+          <th class="metric small clicks">Clicks</th>
+          <th class="metric small">CTR</th>
+          <th class="metric small viewability">Viewability</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let position of positions">
+          <td>{{position.name}}</td>
+          <td class="metric impressions">{{position.metrics?.impressions?.value | number}}</td>
+          <td class="metric clicks">{{position.metrics?.clicks?.value | number}}</td>
+          <td class="metric">{{position.metrics?.ctr_kv_?.value | percent}}</td>
+          <td class="metric viewability">{{position.metrics?.viewability?.value | percent}}</td>
+        </tr>
+        </tbody>
+      </table>
+      <div class="summary">
+        <text-editor
+          class="summary-text"
+          placeholder="Summary text"
+          [id]="'position-performance-summary-' + groupIdx"
+          [plainText]="true">
+        </text-editor>
+      </div>
+    </div>
+    <footer class="slide-footer"></footer>
+  </section>
+</slide>

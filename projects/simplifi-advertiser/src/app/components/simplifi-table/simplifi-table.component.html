@@ -1,0 +1,39 @@
+<div *ngIf="items && !items.isEmpty()" class="table">
+  <table>
+    <thead>
+      <th>{{header}}</th>
+      <th *ngIf="items && items[0].breakdown">{{items[0].breakdownName}}</th>
+      <th *ngFor="let kpi of kpis" class="metric-header">{{items[0].metrics[kpi]?.displayName}}</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of items">
+        <td *ngIf="item.product === 'simplifi'">
+          <img *ngIf="item.displayAd && item.displayAd.image" [src]="item.displayAd.image" [height]="50"/>
+          <span *ngIf="item.displayAd && item.displayAd.image">&nbsp;&nbsp;&nbsp;</span>
+          <span>{{item.name}}</span>
+        </td>
+        <td *ngIf="item.product === 'facebook'">
+          <img [src]="item.displayAd.image" [height]="100"/>
+          <span>  {{item.name}}</span>
+        </td>
+        <td *ngIf="item.product  === 'google_search' && item.searchAd">
+          <span *ngIf="!item.searchAd.headline1 && !item.searchAd.headline2 && !item.searchAd.description">Reponsive ad</span>
+          <div *ngIf="item.searchAd.headline1" class="blue">{{item.searchAd.headline1}}</div>
+          <div *ngIf="item.searchAd.headline2" class="blue">{{item.searchAd.headline2}}</div>
+          <div *ngIf="item.searchAd.url" class="green">{{item.searchAd.url}}</div>
+          <span *ngIf="item.searchAd.description">{{item.searchAd.description}}</span>
+        </td>
+        <td *ngIf="!(item.product === 'facebook' || item.product === 'simplifi' || (item.product === 'google_search' && item.searchAd))">{{item.name}}</td>
+        <td *ngIf="item.breakdown">
+          {{item.breakdown}}
+        </td>
+        <td class="metric" *ngFor="let kpi of kpis">{{item.metrics[kpi]?.value | format: setFormatting(items[0].metrics[kpi]?.format)}}</td>
+      </tr>
+      <tr *ngIf="totals" class="total-row">
+        <td style="font-weight: bold;">Totals</td>
+        <td *ngIf="items && items[0].breakdown"></td>
+        <td class="metric" *ngFor="let kpi of kpis">{{totals[kpi].value | format: setFormatting(totals[kpi].format)}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

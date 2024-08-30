@@ -1,0 +1,24 @@
+<slide *ngFor="let ads of adsGroups" [loading]="loading" name="Facebook Ads - A Performance">
+  <divider></divider>
+  <section class="slide campaigns">
+    <slide-header text="Facebook Ad Performance"></slide-header>
+    <the-advocate-table [items]="ads" [kpis]="kpis" [totals]="totals" header="Ad"></the-advocate-table>
+    <slide-footer></slide-footer>
+  </section>
+</slide>
+<slide *ngFor="let ads of adsGroups" [loading]="loading" name="Facebook Ads - Ad Engagements">
+  <divider></divider>
+  <section class="slide campaigns">
+    <slide-header text="Facebook Ad Engagements"></slide-header>
+    <the-advocate-table [items]="ads" [kpis]="engagementKpis" header="Ad"></the-advocate-table>
+    <slide-footer></slide-footer>
+  </section>
+</slide>
+<slide *ngFor="let ads of adsGroups" [loading]="loading" name="Facebook Ads - Video Performance">
+  <divider></divider>
+  <section class="slide campaigns">
+    <slide-header text="Facebook Video Performance"></slide-header>
+    <the-advocate-table [items]="ads" [kpis]="videoKpis" header="Ad"></the-advocate-table>
+    <slide-footer></slide-footer>
+  </section>
+</slide>

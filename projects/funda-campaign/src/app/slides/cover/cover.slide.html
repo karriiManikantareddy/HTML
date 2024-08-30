@@ -1,0 +1,37 @@
+<slide name="Cover">
+  <section
+    [ngClass]="templateType === 'consumers' ? 'consumers' : 'business'"
+    class="slide slide-cover background-img"
+  >
+    <div class="container">
+      <div class="date-box">
+        <h6>{{ today | date: dateFormat }}</h6>
+      </div>
+      <div
+        class="white-block"
+        [ngStyle]="whiteBlockStyles(metadata?.advertiser,'title')"
+      >
+        <h1>{{metadata?.advertiser}} X</h1>
+        <h1>Funda</h1>
+        <div
+          class="bar"
+          [ngClass]="templateType === 'consumers' ? 'consumers' : 'business'"
+        ></div>
+        <h3>Adverteren op funda</h3>
+        <h5>{{metadata?.name}}</h5>
+        <div
+          class="absolute"
+          [ngStyle]="whiteBlockStyles(metadata?.advertiser,'subtitle')"
+        >
+          <h6>
+            {{metadata?.startDate | date: dateFormat}} - {{metadata?.endDate |
+            date: dateFormat}}
+          </h6>
+        </div>
+      </div>
+      <div class="logo">
+        <img src="assets/img/footer.png" alt="Image Description" />
+      </div>
+    </div>
+  </section>
+</slide>

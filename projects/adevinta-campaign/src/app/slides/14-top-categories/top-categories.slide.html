@@ -1,0 +1,40 @@
+<slide [loading]="loading" name="Top Categories" *ngFor="let categories of caregoriesGroups; index as groupIdx">
+  <section class="slide slide-top-categories">
+    <header class="slide-header">
+      <h2>
+        Top Categories
+      </h2>
+    </header>
+    <div class="main">
+      <table>
+        <thead>
+        <tr>
+          <th class="static">Category</th>
+          <th class="metric small impressions">Delivered impressions</th>
+          <th class="metric small clicks">Clicks</th>
+          <th class="metric small">CTR</th>
+          <th class="metric small viewability">Viewability</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let category of categories">
+          <td>{{category.name}}</td>
+          <td class="metric impressions">{{category.metrics?.impressions?.value | number}}</td>
+          <td class="metric clicks">{{category.metrics?.clicks?.value | number}}</td>
+          <td class="metric">{{category.metrics?.ctr_kv_?.value | percent}}</td>
+          <td class="metric viewability">{{category.metrics?.viewability?.value | percent}}</td>
+        </tr>
+        </tbody>
+      </table>
+      <div class="summary">
+        <text-editor
+          class="summary-text"
+          placeholder="Summary text"
+          [id]="'top-categories-summary-' + groupIdx"
+          [plainText]="true">
+        </text-editor>
+      </div>
+    </div>
+    <footer class="slide-footer"></footer>
+  </section>
+</slide>

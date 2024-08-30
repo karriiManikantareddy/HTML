@@ -1,0 +1,60 @@
+<slide [loading]="loading" name="Overview">
+  <section class="slide slide-overview">
+    <header class="slide-header">
+      <h3>{{metadata?.name}} x MLB Overview</h3>
+      <img src="assets/img/mlblogo.png" alt="">
+    </header>
+    <div class="main">
+      <div class="flex-column">
+        <span>MLB Network</span>
+        <div class="image-upload-tv-col-1">
+          <image-upload id="tv-overview" class="tv-overview"></image-upload>
+        </div>
+        <div class="text-col-1">
+          <div class="metric">{{totals?.total_line_item_level_impressions?.value | number}}</div>
+          <div class="metric-name">Total Impressions</div>
+          <div class="metric-description">Presence in MLB live games, pre and post game coverage, and Network Studio Shows</div>
+        </div>
+      </div>
+      <div class="flex-column">
+        <span>Power Rankings <br/> Presented by {{metadata?.advertiser}}</span>
+        <div class="devices-col-2">
+          <div class="tv">
+            <image-upload id="tv-mlb-overview" class="tv-mlb-overview"></image-upload>
+          </div>
+          <div class="desktop">
+            <image-upload id="desktop-mlb-overview" class="desktop-mlb-overview"></image-upload>
+          </div>
+          <div class="mobile">
+            <image-upload id="mobile-mlb-overview" class="mobile-mlb-overview"></image-upload>
+          </div>
+        </div>
+        <div class="text-col-2">
+          <div class="metric">{{totals?.total_line_item_level_impressions?.value | number}}</div>
+          <div class="metric-name">Total Program Impressions</div>
+          <div class="metric-description">Power Rankings is the top performing  weekly Regular Season program highlighting the top 10 teams.</div>
+        </div>
+      </div>
+      <div class="flex-column">
+        <span>MLB.TV</span>
+        <div class="devices-col-3">
+          <div class="tv">
+            <image-upload id="tv-mlb-overview" class="tv-mlb-overview"></image-upload>
+          </div>
+          <div class="desktop">
+            <image-upload id="desktop-mlb-overview" class="desktop-mlb-overview"></image-upload>
+          </div>
+          <div class="mobile">
+            <image-upload id="mobile-mlb-overview" class="mobile-mlb-overview"></image-upload>
+          </div>
+        </div>
+        <div class="text-col-3">
+          <div class="metric">{{mlbTvTotals?.total_line_item_level_impressions?.value | number}}</div>
+          <div class="metric-name">Total In-Demo Delivered Impressions</div>
+          <div class="metric-description">{{metadata?.advertiser}} was present in MLB.TV throughout the highly anticipated 2020 Regular Season and Postseason</div>
+        </div>
+      </div>
+    </div>
+    <div class="blue-border"></div>
+  </section>
+</slide>

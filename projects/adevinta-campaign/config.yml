@@ -1,0 +1,72 @@
+params: [advertiser, campaign]
+data:
+  mapping_campaign:
+    dataset: dm_mapping
+    dimensions: [advertiser, campaign]
+    metrics:
+      - net_revenue_capped
+      - gam_impressions
+      - gam_clicks
+      - gam_revenue
+      - ctr
+      - gam_viewability
+      - gam_viewable_impressions
+  mapping_campaign_per_day:
+    dataset: dm_mapping
+    dimensions: [advertiser, campaign]
+    metrics:
+      - gam_impressions
+      - ctr
+      - gam_viewability
+    rollup: day
+  mapping_line_items:
+    dataset: dm_mapping
+    dimensions: [advertiser, campaign, line_item]
+    metrics:
+      - gam_impressions
+      - gam_clicks
+      - ctr
+      - gam_viewability
+  mapping_creatives:
+    dataset: dm_mapping
+    dimensions: [advertiser, campaign, creative]
+    metrics:
+      - gam_impressions
+      - gam_clicks
+      - ctr
+      - gam_viewability
+  mapping_platforms:
+    dataset: dm_mapping
+    dimensions: [advertiser, campaign, device]
+    metrics:
+      - gam_impressions
+      - gam_clicks
+      - ctr
+  mapping_countries:
+    dataset: dm_mapping
+    dimensions: [advertiser, campaign, country]
+    metrics:
+      - gam_impressions
+      - ctr
+  mapping_regions:
+    dataset: dm_mapping
+    dimensions: [advertiser, campaign, region]
+    metrics:
+      - gam_impressions
+      - ctr
+  mapping_creative_sizes:
+    dataset: dm_mapping
+    dimensions: [advertiser, campaign, creative_size]
+    metrics:
+      - gam_impressions
+      - gam_clicks
+      - ctr
+      - gam_viewability
+  mapping_kv:
+    dataset: dm_mapping
+    dimensions: [advertiser, campaign, key, value]
+    metrics:
+      - impressions
+      - clicks
+      - ctr_kv_
+      - viewability

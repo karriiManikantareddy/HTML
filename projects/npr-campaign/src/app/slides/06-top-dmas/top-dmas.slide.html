@@ -1,0 +1,20 @@
+<slide [loading]="loading" name="Top DMAs">
+  <section class="slide top-dmas">
+    <div class="main">
+      <p class="header">
+        Top DMAs: Dynamic Podcast & NPR One Delivery
+      </p>
+      <div class="dmas">
+        <ng-container *ngFor="let r of topRegions; let i = index">
+          <div class="dma">
+            <p class="dma-imp">{{numFormatter(r?.metrics?.impressions?.value,0)}}</p>
+            <p class="dma-name">{{r?.name}}</p>
+          </div>
+          <div class="divider" *ngIf="i<4"></div>
+        </ng-container>
+      </div>
+    </div>
+    <footer></footer>
+    <p class="data-source">Data Source: {{metadata?.source}} (first party data) pulled {{currentDate}}</p>
+  </section>
+</slide>

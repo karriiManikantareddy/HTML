@@ -1,0 +1,8 @@
+<slide *ngIf="loading || (keywords && !keywords.isEmpty())" [loading]="loading" name="Keywords">
+  <section class="slide keyword">
+    <slide-header text="Keywords"></slide-header>
+    <simplifi-table [items]="keywords" [kpis]="kpis" header="Top 10 Keywords"></simplifi-table>
+    <span class="footnote">Keywords containing % are contextual keywords</span>
+    <slide-footer slideName="simplifi-keyword"></slide-footer>
+  </section>
+</slide>

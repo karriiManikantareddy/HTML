@@ -1,0 +1,58 @@
+<slide [loading]="loading" name="Listing Management Campaign Summary">
+  <section class="slide summary">
+    <div class="slide-header">
+      <h2 class="title">Listing Management Campaign Summary</h2>
+    </div>
+
+    <div class="main content">
+      <div class="box-row full-width transparent-white stats">
+        <div class="logo-image">
+          <img src="assets/img/listing_logos.png">
+        </div>
+          <div class="large-text">
+            <text-editor id="summary_large_text"
+                         placeholder="85%"
+                         [maxLength]="10"
+                         [plainText]="true">
+            </text-editor>
+          </div>
+          <div class="smaller-text">
+            <text-editor id="summary_small_text"
+                         placeholder="of listings updated in April"
+                         [maxLength]="10"
+                         [plainText]="true">
+            </text-editor>
+          </div>
+      </div>
+
+      <div class="info-box">
+        <table class="info-table">
+          <tr>
+            <td class="name"> Name </td>
+            <td class="value bottom-border">
+              <text-editor style="width: 240px" [plainText]="true" id="name" [maxLength]="37" placeholder="Editable Content"></text-editor>
+            </td>
+            <td class="name"> Audience </td>
+            <td class="value bottom-border">
+              <text-editor style="width: 240px" [plainText]="true" id="audience" [maxLength]="37" placeholder="Editable Content"></text-editor>
+            </td>
+            <td class="name"> Objective </td>
+            <td class="value">
+              <text-editor style="width: 240px" [plainText]="true" id="video_objective" [maxLength]="36" placeholder="Editable Content"></text-editor>
+            </td>
+          </tr>
+          <tr>
+            <td class="name"> Flight Dates </td>
+            <td class="value">
+              <text-editor style="width: 240px" [plainText]="true" id="flight_dates" [maxLength]="28" placeholder="Editable Content"></text-editor>
+            </td>
+            <td class="name"> Goal </td>
+            <td class="value">
+              <text-editor style="width: 240px" [plainText]="true" id="goal" [maxLength]="10" placeholder="Editable Content"></text-editor>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </section>
+</slide>

@@ -1,0 +1,26 @@
+@import '../../../styles/base/_variables';
+
+.slide-header {
+  background-color: @bright-blue;
+}
+
+.subtitle {
+  color: @bright-blue;
+}
+
+.table {
+  &__cell {
+    min-width: 100px;
+  }
+
+  &__footer {
+    .table {
+      &__row {
+      }
+
+      &__cell {
+        font-size: 1.5em;
+      }
+    }
+  }
+}

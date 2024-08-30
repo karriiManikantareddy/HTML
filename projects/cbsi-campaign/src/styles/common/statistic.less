@@ -1,0 +1,61 @@
+.statistic-icons {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  padding: 43px 0;
+  margin-bottom: 17px;
+  align-items: flex-start;
+  .statistic-icons-item {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: space-between;
+    -ms-align-items: center;
+    align-items: center;
+    margin-right: 110px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  icon {
+    color: @text-gray;
+  }
+  .icon {
+    font-size: 55px;
+    margin-right: 40px;
+    color: @text-gray;
+    &.icon-hand,
+    &.icon-click-rate{
+      font-size: 40px;
+    }
+    &.icon-eye {
+      font-size: 20px;
+    }
+  }
+  .wrap-title {
+    .num {
+      display: block;
+      font-size: 34px;
+      font-weight: 300;
+      line-height: 1;
+      margin-bottom: 4px;
+      font-weight: 400;
+    }
+    .title {
+      display: block;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-size: 20px;
+    }
+  }
+  &.centered {
+    justify-content: space-around;
+    .statistic-icons-item {
+      margin-right: 0;
+    }
+  }
+}

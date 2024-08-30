@@ -1,0 +1,16 @@
+<slide [loading]="loading" name="Native Drivers - Top Creative" *ngFor="let creatives of topCreatives">
+  <section class="slide top-creatives" [style.background-color]="backgroundColor">
+    <header class="slide-header">
+      <h2 [ngClass]="fontStyling">Native Drivers - Top Creatives</h2>
+    </header>
+    <div class="main">
+      <div class="row">
+        <ng-container *ngFor="let creative of creatives">
+          <creative-top [creative]="creative" [totalMetrics]="totalMetrics" class="col-one-of-two"></creative-top>
+        </ng-container>
+      </div>
+    </div>
+    <footer class="slide-footer">
+    </footer>
+  </section>
+</slide>

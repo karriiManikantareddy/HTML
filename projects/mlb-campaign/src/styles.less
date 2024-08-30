@@ -1,0 +1,177 @@
+@import "styles/base/_forms";
+@import "styles/base/_grid";
+@import "styles/base/_reset";
+@import "styles/base/_table";
+@import "styles/base/_typography";
+@import "styles/base/_colors";
+@import "styles/base/_variables";
+@import "styles/vendors/_icomoon";
+@import "styles/common/slide.less";
+@import "styles/common/statistic.less";
+
+
+text-editor, number-editor {
+  .ql-container.ql-snow {
+    font-family: sans-serif;
+  }
+
+  .ql-editor {
+    padding: 0;
+    min-width: 130px;
+  }
+}
+
+.num {
+	text-editor, number-editor {
+    .ql-container.ql-snow {
+      font-size: 70px;
+      display: block;
+      margin-bottom: 2px;
+    }
+  }
+}
+
+text-editor, number-editor {
+  &.td {
+    .ql-container.ql-snow {
+      font-size: 18px;
+    }
+    .ql-editor {
+      min-width: 100px;
+    }
+  }
+}
+
+.native-content-row {
+  .num {
+    text-editor, number-editor {
+      .ql-container.ql-snow {
+        font-size: 24px;
+      }
+
+      .ql-editor {
+        width: 130px;
+      }
+    }
+  }
+}
+
+.title {
+  text-editor, number-editor {
+    .ql-container .ql-snow {
+      font-size: 24px;
+      text-transform: uppercase;
+      display: block;
+    }
+  }
+}
+
+.header-generic {
+  text-editor {
+    .ql-container .ql-snow {
+      font-size: 48px;
+      text-align: right;
+    }
+  }
+}
+
+.sub-header-generic {
+  text-editor {
+    .ql-container .ql-snow {
+      font-size: 48px;
+      text-align: right;
+    }
+  }
+}
+
+.metric {
+  text-editor, number-editor {
+    .ql-container.ql-snow {
+      font-size: 18px;
+      text-align: right;
+    }
+
+    .ql-editor {
+      text-align: right;
+    }
+  }
+}
+
+.metric-num {
+  text-editor, number-editor {
+    &.sm {
+      .ql-editor {
+        padding: 0;
+        min-width: 35px;
+      }
+    }
+    &.right {
+      .ql-editor {
+        text-align: right;
+      }
+    }
+    .ql-container.ql-snow {
+      font-size: 28px;
+    }
+    .ql-editor {
+      min-width: 138px;
+    }
+  }
+}
+
+.screenshot-title {
+  text-editor {
+    .ql-container.ql-snow {
+      font-size: 44px;
+    }
+
+    .ql-editor {
+      text-align: center;
+      overflow: hidden;
+    }
+  }
+}
+
+.overview {
+  text-editor, number-editor {
+    &.big {
+      .ql-container.ql-snow {
+        font-size: 70px;
+      }
+    }
+
+    &.bold {
+      font-weight: 900;
+    }
+
+    &.align-right {
+      float: right;
+      .ql-editor {
+        text-align: right;
+      }
+    }
+
+    &.wide {
+      width:28em;
+    }
+
+    .ql-container.ql-snow {
+      font-size: 44px;
+    }
+
+    .ql-editor {
+      line-height: 1.2em;
+    }
+  }
+}
+
+.campaign-objectives {
+  text-editor {
+    .ql-container.ql-snow {
+      font-size: 28px;
+    }
+    .ql-editor{
+      height: 830px;
+    }
+  }
+}

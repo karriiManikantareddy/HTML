@@ -1,0 +1,21 @@
+<slide *ngIf="loading || (displayDomains && !displayDomains.isEmpty())" [loading]="loading" name="Display Publishers">
+  <section class="slide campaigns">
+    <slide-header text="Display Publishers"></slide-header>
+    <simplifi-table [items]="displayDomains" [kpis]="displayKpis" header="Top 10 Display Publishers"></simplifi-table>
+    <slide-footer slideName="simplifi-display-domains"></slide-footer>
+  </section>
+</slide>
+<slide *ngIf="loading || (videoDomains && !videoDomains.isEmpty())" [loading]="loading" name="Video Publishers">
+  <section class="slide campaigns">
+    <slide-header text="Video Publishers"></slide-header>
+    <simplifi-table [items]="videoDomains" [kpis]="videoKpis" header="Top 10 Video Publishers"></simplifi-table>
+    <slide-footer slideName="simplifi-video-domains"></slide-footer>
+  </section>
+</slide>
+<slide *ngIf="loading || (audioDomains && !audioDomains.isEmpty())" [loading]="loading" name="Audio Publishers">
+  <section class="slide campaigns">
+    <slide-header text="Audio Publishers"></slide-header>
+    <simplifi-table [items]="audioDomains" [kpis]="audioKpis" header="Top 10 Audio Publishers"></simplifi-table>
+    <slide-footer slideName="simplifi-audio-domains"></slide-footer>
+  </section>
+</slide>

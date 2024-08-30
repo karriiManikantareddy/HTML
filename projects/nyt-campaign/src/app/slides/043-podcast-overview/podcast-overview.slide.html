@@ -1,0 +1,41 @@
+<slide [loading]="loading" name="Podcast Overview">
+  <section class="slide slide-podcast-overview" [style.background-color]="backgroundColor">
+    <header class="slide-header">
+      <h2 [ngClass]="fontStyling">Podcast</h2>
+    </header>
+    <div class="main">
+      <div class="column">
+        <div class="row">
+          <div class="value" [ngClass]="fontStyling">
+            {{totals?.aw_impressions | localeNumber}}
+          </div>
+          <div class="name" [ngClass]="fontStyling">
+            Total impressions
+          </div>
+        </div>
+        <div class="row">
+          <div class="value" [ngClass]="fontStyling">
+            {{guaranteed | localeNumber}}
+          </div>
+          <div class="name" [ngClass]="fontStyling">
+            Guaranteed Impressions
+          </div>
+        </div>
+        <div class="row">
+          <div class="value" [ngClass]="fontStyling">
+            {{deliveryRate | percent:'1.0-0'}}
+          </div>
+          <div class="name" [ngClass]="fontStyling">
+            Delivery %
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="mobile-screenshot" [ngClass]="fontStyling+'_phone'">
+          <image-upload id="podcast" class="image"></image-upload>
+        </div>
+      </div>
+    </div>
+    <footer class="slide-footer"></footer>
+  </section>
+</slide>

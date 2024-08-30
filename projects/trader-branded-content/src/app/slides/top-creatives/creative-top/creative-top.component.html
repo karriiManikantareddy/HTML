@@ -1,0 +1,65 @@
+<span class="title-block">{{creative.name}}</span>
+<div class="row wrap-left-block">
+  <div class="wrap-img" #iframeWrap>
+    <iframe
+      #iframe
+      [src]="creative.previewUrl | trustResourceUrl"
+      frameborder="0"
+      scrolling="no"
+      [style.width.px]="creative.width"
+      [style.height.px]="creative.height"
+    ></iframe>
+  </div>
+  <div class="wrap-graph">
+    <div class="graph-item">
+      <div class="wrap-legend">
+        <chart type="pie" [series]="shareOfImpressionsSeries" [options]="impressionsGaugeOptions"></chart>
+        <div class="text-wrap">
+          <span class="num">{{shareOfTotals['total_line_item_level_impressions'] | percent}}</span>
+          <span class="title">Of total<br>impressions</span>
+        </div>
+      </div>
+      <div class="statistic-graph">
+        <div class="legend-item">
+          <img src="assets/img/impressions_red.png" class="icon"/>
+          <div class="text">
+            <span class="num">{{creative.metrics.total_line_item_level_impressions | number}}</span>
+            <span class="title">delivered impressions</span>
+          </div>
+        </div>
+        <div class="legend-item">
+          <img src="assets/img/viewability_red.png" class="icon" style="width: 70px; margin-left: -20px; height: 40px; margin-top: 10px;"/>
+          <div class="text">
+            <span class="num">{{creative.metrics.viewability_rate | percent}}</span>
+            <span class="title">% Viewable</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="graph-item">
+      <div class="wrap-legend">
+        <chart type="pie" [series]="shareOfClicksSeries" [options]="clicksGaugeOptions"></chart>
+        <div class="text-wrap">
+          <span class="num">{{shareOfTotals['total_line_item_level_clicks'] | percent}}</span>
+          <span class="title">Of total<br>clicks</span>
+        </div>
+      </div>
+      <div class="statistic-graph">
+        <div class="legend-item right-aligned">
+          <div class="text">
+            <span class="num">{{creative.metrics.total_line_item_level_clicks | number}}</span>
+            <span class="title">clicks</span>
+          </div>
+          <img src="assets/img/clicks_red.png" class="icon"/>
+        </div>
+        <div class="legend-item right-aligned">
+          <div class="text">
+            <span class="num">{{creative.metrics.click_rate | percent}}</span>
+            <span class="title">CTR</span>
+          </div>
+          <img src="assets/img/ctr_red.png" class="icon"/>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

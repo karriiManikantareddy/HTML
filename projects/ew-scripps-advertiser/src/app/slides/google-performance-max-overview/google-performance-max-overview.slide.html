@@ -1,0 +1,10 @@
+<slide *ngIf="loading || totals" [loading]="loading" name="Google Performance Max Overview">
+  <section class="slide overview">
+    <slide-header text="Google Performance Max Overview"></slide-header>
+    <overview-cmp
+      [totals]="totals"
+      [series]="series"
+      [chartConfig]="chartConfig"
+    ></overview-cmp>
+  </section>
+</slide>

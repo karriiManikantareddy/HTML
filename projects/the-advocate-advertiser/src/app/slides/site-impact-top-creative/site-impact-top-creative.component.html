@@ -1,0 +1,36 @@
+<slide [loading]="loading" name="Targeted Emails - Top Creative">
+  <divider></divider>
+  <section class="slide campaigns">
+    <slide-header text="Email Performance - Top Creative"></slide-header>
+    <table class="table">
+      <thead>
+        <th>CAMPAIGNS</th>
+        <th></th>
+        <th>OPENS</th>
+        <th>OPEN RATE</th>
+        <th>CLICKS</th>
+        <th>CTR</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: left;">
+            <img [src]="creativeGroups.data.screenshot_url" [height]="450" [width]="350"/>
+          </td>
+          <td style="text-align: left;">{{creativeGroups.parent}}</td>
+          <td>{{creativeGroups.metrics.opens.value}}</td>
+          <td>{{creativeGroups.metrics.open_rate.value | format: setFormatting(creativeGroups.metrics.open_rate.format)}}</td>
+          <td>{{creativeGroups.metrics.clicks.value}}</td>
+          <td>{{creativeGroups.metrics.ctr.value | format: setFormatting(creativeGroups.metrics.ctr.format)}}</td>
+        </tr>
+        <tr *ngIf="totals" class="total-row">
+          <td style="font-weight: bold; text-align: left;">Totals</td>
+          <td></td>
+          <td class="metric" *ngFor="let kpi of kpis">{{totals[kpi].value | format: setFormatting(totals[kpi].format)}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <the-advocate-table [items]="creativeGroups" [kpis]="kpis" [totals]="totals" header="Campaigns" [top]="top"></the-advocate-table>
+    <slide-footer></slide-footer>
+  </section>
+</slide>
+

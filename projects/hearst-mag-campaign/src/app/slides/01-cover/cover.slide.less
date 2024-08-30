@@ -1,0 +1,38 @@
+@import '../../../styles/base/_variables';
+
+.slide-cover {
+  color: @white;
+  &.slide {
+    padding-left: 111px;
+    background: url('../../../assets/img/advertisers-cover-hearst-mags.png');
+    background-size: cover;
+    .slide-header {
+      padding: 47px 0;
+      margin-bottom: 0;
+    }
+    .slide-footer {
+      padding: 50px 0;
+      color: @white;
+    }
+  }
+  .wrap-head {
+    max-width: 1450px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+
+    img {
+      position:absolute;
+      right:-30px;
+      bottom:-50px;
+    }
+  }
+  .main {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    -ms-align-items: center;
+    align-items: center;
+  }
+}

@@ -1,0 +1,100 @@
+<slide *ngIf="totals" name="Social Performance" [loading]="loading">
+  <section class="slide overview">
+    <h2>
+      <span class="flag"></span>
+      Social Performance
+    </h2>
+    <div class="main">
+      <div class="statistic-icons">
+        <div *ngIf="totals?.impressions" class="statistic-icons-item">
+          <icon type="image"></icon>
+          <div class="wrap-title">
+            <span class="num">{{totals.impressions | number}}</span>
+            <span class="title">Total Impressions</span>
+          </div>
+        </div>
+        <div *ngIf="totals?.clicks" class="statistic-icons-item">
+          <icon type="hand"></icon>
+          <div class="wrap-title">
+            <span class="num">{{totals.clicks | number}}</span>
+            <span class="title">Total Clicks</span>
+          </div>
+        </div>
+        <div *ngIf="totals?.ctr" class="statistic-icons-item">
+          <icon type="click"></icon>
+          <div class="wrap-title">
+            <span class="num">{{totals.ctr | percent}}</span>
+            <span class="title">CTR</span>
+          </div>
+        </div>
+        <div *ngIf="totals?.cpc" class="statistic-icons-item">
+          <icon type="money-bill"></icon>
+          <div class="wrap-title">
+            <span class="num">{{totals.cpc | currency}}</span>
+            <span class="title">CPC</span>
+          </div>
+        </div>
+        <div *ngIf="totals?.video_views" class="statistic-icons-item">
+          <icon type="video-player"></icon>
+          <div class="wrap-title">
+            <span class="num">{{totals.video_views | number}}</span>
+            <span class="title">Total Video Views</span>
+          </div>
+        </div>
+        <div *ngIf="totals?.video_p25_views" class="statistic-icons-item">
+          <icon type="percent-sign"></icon>
+          <div class="wrap-title">
+            <span class="num">
+              {{totals.video_p25_views | number}}
+            </span>
+            <span class="title">25% Completion</span>
+          </div>
+        </div>
+        <div *ngIf="totals?.video_p50_views" class="statistic-icons-item">
+          <icon type="percent-sign"></icon>
+          <div class="wrap-title">
+            <span class="num">
+              {{totals.video_p50_views | number}}
+            </span>
+            <span class="title">50% Completion</span>
+          </div>
+        </div>
+        <div *ngIf="totals?.video_p75_views" class="statistic-icons-item">
+          <icon type="percent-sign"></icon>
+          <div class="wrap-title">
+            <span class="num">
+              {{totals.video_p75_views | number}}
+            </span>
+            <span class="title">75% Completion</span>
+          </div>
+        </div>
+        <div *ngIf="totals?.video_p100_views" class="statistic-icons-item">
+          <icon type="percent-sign"></icon>
+          <div class="wrap-title">
+            <span class="num">
+              {{totals.video_p100_views | number}}
+            </span>
+            <span class="title">100% Completion</span>
+          </div>
+        </div>
+        <div *ngIf="totals?.vcr" class="statistic-icons-item">
+          <icon type="percent"></icon>
+          <div class="wrap-title">
+            <span class="num">{{totals.vcr | percent}}</span>
+            <span class="title">Completion Rate</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h6>
+          Delivery by day
+          <legend [items]="legendItems" class="right"></legend>
+        </h6>
+        <div class="chart-content">
+          <chart type="column" [series]="chartSeries" [options]="chartOptions"></chart>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="slide-footer"></footer>
+</slide>

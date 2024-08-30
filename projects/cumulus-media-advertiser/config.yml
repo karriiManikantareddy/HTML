@@ -1,0 +1,194 @@
+params: [advertiser]
+rename_dimensions:
+  dm_seed_facebook_ads:
+    mapped_advertiser: advertiser
+  dm_seed_google_ad_manager:
+    mapped_advertiser: advertiser
+    order: campaign
+  dm_cfr_google_analytics:
+    mapped_advertiser: advertiser
+  dm_centro:
+    mapped_advertiser: advertiser
+data:
+  metadata:
+    dataset: dm_seed_facebook_ads
+    dimensions: [mapped_advertiser]
+    metrics:
+      - impressions
+  social_totals:
+    dataset: dm_seed_facebook_ads
+    dimensions: [mapped_advertiser]
+    metrics:
+      - impressions
+      - link_clicks
+      - link_click_ctr
+      - video_p100_views
+      - cpc
+      - post_engagements
+      - spend
+      - landing_page_views
+  social_advertiser_by_week:
+    dataset: dm_seed_facebook_ads
+    dimensions: [mapped_advertiser]
+    rollup: week
+    metrics:
+      - impressions
+      - link_clicks
+      - link_click_ctr
+      - cpc
+  social_campaign:
+    dataset: dm_seed_facebook_ads
+    dimensions: [mapped_advertiser, campaign]
+    metrics:
+      - impressions
+      - link_clicks
+      - link_click_ctr
+      - video_p100_views
+      - cpc
+      - post_engagements
+      - spend
+      - landing_page_views
+  social_ad:
+    dataset: dm_seed_facebook_ads
+    dimensions: [mapped_advertiser, campaign, ad]
+    metrics:
+      - impressions
+      - link_clicks
+      - link_click_ctr
+      - video_p100_views
+      - cpc
+      - post_engagements
+      - spend
+      - landing_page_views
+  social_platform:
+    dataset: dm_seed_facebook_ads
+    dimensions: [mapped_advertiser, publisher_platform]
+    metrics:
+      - impressions
+      - link_clicks
+      - link_click_ctr
+      - video_p100_views
+      - cpc
+      - post_engagements
+      - spend
+      - landing_page_views
+  website_metadata:
+    dataset: dm_cfr_google_analytics
+    dimensions: [mapped_advertiser]
+    metrics:
+      - pageviews
+  website_totals:
+    dataset: dm_cfr_google_analytics
+    disallowed_selections: [campaign]
+    dimensions: [mapped_advertiser]
+    metrics:
+      - pageviews
+      - time_on_page
+      - unique_pageviews
+      - users
+      - avg_time_on_page
+  website_by_week:
+    dataset: dm_cfr_google_analytics
+    disallowed_selections: [campaign]
+    dimensions: [mapped_advertiser]
+    rollup: week
+    metrics:
+      - pageviews
+      - time_on_page
+      - unique_pageviews
+      - users
+      - avg_time_on_page
+  website_age:
+    dataset: dm_cfr_google_analytics
+    disallowed_selections: [campaign]
+    dimensions: [mapped_advertiser, age]
+    metrics:
+      - pageviews
+      - time_on_page
+      - unique_pageviews
+      - users
+      - avg_time_on_page
+  website_gender:
+    dataset: dm_cfr_google_analytics
+    disallowed_selections: [campaign]
+    dimensions: [mapped_advertiser, gender]
+    metrics:
+      - pageviews
+      - time_on_page
+      - unique_pageviews
+      - users
+      - avg_time_on_page
+  website_device:
+    dataset: dm_cfr_google_analytics
+    disallowed_selections: [campaign]
+    dimensions: [mapped_advertiser, device_category]
+    metrics:
+      - pageviews
+      - time_on_page
+      - unique_pageviews
+      - users
+      - avg_time_on_page
+  gam_totals:
+    dataset: dm_seed_google_ad_manager
+    dimensions: [mapped_advertiser]
+    metrics:
+      - total_line_item_level_impressions
+      - total_line_item_level_clicks
+      - ctr
+  gam_advertiser_by_week:
+    dataset: dm_seed_google_ad_manager
+    dimensions: [mapped_advertiser]
+    rollup: week
+    metrics:
+      - total_line_item_level_impressions
+      - total_line_item_level_clicks
+      - ctr
+  gam_campaign:
+    dataset: dm_seed_google_ad_manager
+    dimensions: [mapped_advertiser, order]
+    metrics:
+      - total_line_item_level_impressions
+      - total_line_item_level_clicks
+      - ctr
+  gam_ad:
+    dataset: dm_seed_google_ad_manager
+    dimensions: [mapped_advertiser, order, creative]
+    metrics:
+      - total_line_item_level_impressions
+      - total_line_item_level_clicks
+      - ctr
+  gam_platform:
+    dataset: dm_seed_google_ad_manager
+    dimensions: [mapped_advertiser, device_category]
+    metrics:
+      - total_line_item_level_impressions
+      - total_line_item_level_clicks
+      - ctr
+  centro_totals:
+    dataset: dm_centro
+    dimensions: [mapped_advertiser]
+    metrics:
+      - impressions
+      - clicks
+      - total_conversions
+      - video_completions
+      - ctr
+  centro_advertiser_by_week:
+    dataset: dm_centro
+    dimensions: [mapped_advertiser]
+    rollup: week
+    metrics:
+      - impressions
+      - clicks
+      - total_conversions
+      - video_completions
+      - ctr
+  centro_ad:
+    dataset: dm_centro
+    dimensions: [mapped_advertiser, creative]
+    metrics:
+      - impressions
+      - clicks
+      - total_conversions
+      - video_completions
+      - ctr

@@ -1,0 +1,30 @@
+<slide [loading]="loading" name="Native Driver Delivery - Other Sources" *ngFor="let lineItems of lineItemGroups">
+  <section class="slide slide-line-items" [style.background-color]="backgroundColor">
+    <header class="slide-header">
+      <h2>Native Driver Delivery - Other Sources</h2>
+    </header>
+    <div class="main">
+      <table>
+        <thead>
+          <tr>
+            <th>Line Item</th>
+            <th class="metric">CPM/CPD</th>
+            <th class="metric wrapped">Ordered<br>Cost</th>
+            <th class="metric wrapped">Ordered<br>Impressions</th>
+            <th class="metric">Delivered</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let li of lineItems">
+            <td [ngClass]="fontStyling">{{li.name}}</td>
+            <td class="metric" [ngClass]="fontStyling">{{ li.costType }}</td>
+            <td class="metric" [ngClass]="fontStyling">{{ li.budget | currency }}</td>
+            <td class="metric" [ngClass]="fontStyling">{{ li.bookedImpressions | localeNumber }}</td>
+            <td class="metric" [ngClass]="fontStyling"><text-editor [plainText]="true" placeholder="Number.." id="dsm-line-{{li.name.parameterize()}}" style="width: 130px; height: 1.5em;"></text-editor></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <footer class="slide-footer"></footer>
+  </section>
+</slide>

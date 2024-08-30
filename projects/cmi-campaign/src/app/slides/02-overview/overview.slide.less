@@ -1,0 +1,66 @@
+@import '../../../styles/base/_variables';
+
+.slide-header {
+  background-color: @white;
+}
+
+.title {
+  color: @dark-blue;
+  font-size: 72px;
+  margin-top: 0.5em;
+  font-family: Calibri;
+  font-weight: lighter;
+}
+
+.info-table {
+  font-size: 32px;
+  padding-top: 4px;
+  border-spacing: 0px;
+  border-color: transparent;
+  margin-left: 2em;
+
+  tr {
+    border-bottom: none;
+  }
+
+  .name {
+    padding-right: 15px;
+    padding-left: 1em;
+    border-right: 1px solid @white;
+    border-bottom: none;
+    text-align: right;
+    color: @white;
+    white-space: nowrap;
+    vertical-align: middle;
+  }
+
+  .value {
+    padding-left: 15px;
+    height: 30px;
+    position: relative;
+    z-index: 1;
+
+    text-editor {
+      ::ng-deep .ql-editor {
+        &.ql-blank::before,
+        p {
+          font-size: 3em;
+          color: @white;
+        }
+      }
+    }
+  }
+
+  .bottom-border {
+    border-bottom: 1px solid @white;
+  }
+}
+
+.table-wrapper {
+  margin: 2em -75px 1em;
+  padding: 2em 0;
+  width: 1920px;
+  background-image: url("../../../assets/img/campaign-at-a-glance.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}

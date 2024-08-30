@@ -1,0 +1,30 @@
+<slide [loading]="loading" name="Line Items - Other Sources" *ngFor="let lineItems of lineItemGroups">
+  <section class="slide slide-line-items">
+    <header class="slide-header">
+      <h2>Line Items - Other Sources</h2>
+    </header>
+    <div class="main">
+      <table>
+        <thead>
+        <tr>
+          <th>Line Item</th>
+          <th class="metric">CPM/CPD</th>
+          <th class="metric wrapped">Ordered<br>Cost</th>
+          <th class="metric wrapped">Ordered <br>Impressions</th>
+          <th class="metric">Delivered</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let li of lineItems">
+          <td>{{li.name}}</td>
+          <td class="metric">{{ li.costType }}</td>
+          <td class="metric">{{ li.budget | currency }}</td>
+          <td class="metric">{{ li.bookedImpressions | localeNumber }}</td>
+          <td class="metric"><number-editor [plainText]="true" placeholder="Number.." [defaultText]="li.metrics?.aw_impressions | localeNumber" id="dsm-line-{{li.name.parameterize()}}"></number-editor></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <footer class="slide-footer"></footer>
+  </section>
+</slide>

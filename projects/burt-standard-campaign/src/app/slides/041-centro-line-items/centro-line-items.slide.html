@@ -1,0 +1,31 @@
+<slide [loading]="loading" name="Line Items" *ngFor="let lineItems of lineItemGroups">
+  <section class="slide slide-line-items">
+    <header class="slide-header">
+      <h2>
+        Line items
+        <header-logo></header-logo>
+      </h2>
+    </header>
+    <div class="main">
+      <table>
+        <thead>
+        <tr>
+          <th class="static">Line Item</th>
+          <th class="metric small">{{metrics?.imps_won?.displayName}}</th>
+          <th class="metric small">{{metrics?.clicks?.displayName}}</th>
+          <th class="metric small">{{metrics?.ctr?.displayName}}</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let li of lineItems">
+          <td>{{li.name}}</td>
+          <td class="metric">{{li.metrics?.imps_won?.value | number}}</td>
+          <td class="metric">{{li.metrics?.clicks?.value | number}}</td>
+          <td class="metric">{{li.metrics?.ctr?.value | percent}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <footer class="slide-footer"></footer>
+  </section>
+</slide>

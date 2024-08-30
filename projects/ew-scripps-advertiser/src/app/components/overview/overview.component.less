@@ -1,0 +1,51 @@
+@import '../../../styles/base/_variables';
+
+legend {
+ color: @primary-color;
+}
+
+.overview {
+  color: @primary-color;
+  padding-left: 111px;
+  background-color: #FFF;
+
+  .kpis {
+    margin-top: 2em;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: space-evenly;
+    -ms-align-items: center;
+    align-items: center;
+
+    .kpi-value {
+      height: 200px;
+      width: 200px;
+      border-radius: 50%;
+      background-color: @primary-color;
+      color: white;
+      text-align: center;
+      line-height: 200px;
+    }
+
+    .kpi-name {
+      padding-top: 1em;
+      text-align: center;
+    }
+  }
+
+  .charts {
+    padding-top: 50px;
+
+    .chart {
+      width: 1400px;
+      display: inline-block;
+
+      .chart-legend {
+        text-align: center;
+      }
+    }
+  }
+}

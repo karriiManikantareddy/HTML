@@ -1,0 +1,30 @@
+@import '../../../styles/base/_variables';
+
+:host {
+	display: block;
+	position: relative;
+	width: 720px;
+	height: 400px;
+	background-color: transparent;
+}
+
+.custom-upload {
+	position: absolute;
+  width: auto;
+  height: auto;
+	left: 50px;
+	top: 58px;
+	right: 56px;
+	bottom: 43px;
+
+  & ::ng-deep .dropzone {
+    border: none !important;
+    background: transparent !important;
+  }
+  & ::ng-deep .delete-image {
+    margin-right: 40px;
+  }
+	& ::ng-deep .image {
+		display: none;
+	}
+}

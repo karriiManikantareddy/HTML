@@ -1,0 +1,63 @@
+@import '../../../styles/base/_variables';
+
+.slide-cover {
+  &.slide {
+    padding-left: 111px;
+    background-color: @white;
+    background-size: cover;
+
+    .slide-footer {
+      padding-bottom: 60px;
+
+      img {
+        height: 100px;
+        width: 150px;
+      }
+    }
+  }
+
+  ::ng-deep .ql-snow .ql-editor {
+    font-size: 4em;
+    margin-top: .5em;
+  }
+
+  .divider {
+    height: 2px;
+    width: 100%;
+    background: #BFBFBF;
+  }
+
+  .wrap-head {
+    text-transform: uppercase;
+    margin-top: 10em;
+
+    h1 {
+      font-size: 78px;
+      display: block;
+      padding-top: 24px;
+      margin-left: -4px;
+    }
+
+    h2 {
+      padding-bottom: 24px;
+      font-size: 1em;
+      color: #7F7F7F;
+    }
+  }
+
+  .cover-logo {
+    position: absolute;
+    top: 2em;
+    left: 2em;
+    height: 200px;
+    width: 400px;
+  }
+
+  .client-logo {
+    position: absolute;
+    top: 2em;
+    right: 2em;
+    height: 200px;
+    width: 400px;
+  }
+}

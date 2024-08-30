@@ -1,0 +1,4 @@
+<slide *ngIf="topCountries && !topCountries.isEmpty()" [loading]="loading" name="Asia Geographical Distribution">
+  <nyt-map [mapOptions]="mapOptions" [mapSeries]="mapSeries" [header]="'Asia Geographical Distribution'" 
+  [topCountries]="topCountries" [backgroundColor]="backgroundColor" [fontStyling]="fontStyling"></nyt-map>
+</slide>

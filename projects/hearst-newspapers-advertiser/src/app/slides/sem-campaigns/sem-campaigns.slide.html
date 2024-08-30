@@ -1,0 +1,36 @@
+<slide *ngIf="hasSem" [loading]="loading" name="Social Campaigns">
+  <sidebar text="Search Engine Marketing"></sidebar>
+  <section class="slide slide-social-campaigns">
+    <header class="slide-header">
+      <h3>Campaign Performance</h3>
+    </header>
+    <div class="table">
+      <table>
+        <thead>
+          <th>Campaign</th>
+          <th>Impressions</th>
+          <th>Clicks</th>
+          <th>CTR</th>
+          <th>CPC</th>
+          <th>Spend</th>
+          <th>Conversions</th>
+          <th>Cost per Conversion</th>
+          <th>Conversion Rate</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let campaign of campaigns">
+            <td class="name">{{campaign.name}}</td>
+            <td class="metric">{{campaign.metrics.impressions.value | localeNumber}}</td>
+            <td class="metric">{{campaign.metrics.clicks.value | localeNumber}}</td>
+            <td class="metric">{{campaign.metrics.ctr.value | percent}}</td>
+            <td class="metric">{{campaign.metrics.cpc.value | currency}}</td>
+            <td class="metric">{{campaign.metrics.spend.value | currency}}</td>
+            <td class="metric">{{campaign.metrics.conversions.value | localeNumber}}</td>
+            <td class="metric">{{campaign.metrics.cost_per_conversion.value | currency}}</td>
+            <td class="metric">{{campaign.metrics.conversion_rate.value | percent}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</slide>

@@ -1,0 +1,37 @@
+<slide *ngIf="hasSearch" [loading]="loading" name="Paid Search Performance Delivery by Screen">
+  <section class="slide overview">
+    <header class="slide-header">
+      <h1 class="title">
+        Paid Search
+      </h1>
+      <div class="dates-wrapper">
+        Flight Dates:
+        <text-editor
+          class="dates"
+          [plainText]="true"
+          id="flight_dates"
+          [maxLength]="28"
+        ></text-editor>
+      </div>
+    </header>
+    <div class="main">
+      <h2 class="subtitle">Delivery by Screen</h2>
+      <table class="table">
+        <tbody>
+          <tr class="table__row">
+            <td class="table__cell table__cell--icon"><img src="assets/img/mobile_blue.png" alt="Mobile icon"></td>
+            <td class="table__cell">Mobile</td>
+            <td class="table__cell">{{ devices.mobile / totalImpressions | percent:'1.0' }}</td>
+            <td class="table__cell table__cell--icon"><img src="assets/img/desktop_blue.png" alt="Desktop/Laptop icon"></td>
+            <td class="table__cell">Desktop/Laptop</td>
+            <td class="table__cell">{{ devices.desktop / totalImpressions | percent:'1.0' }}</td>
+            <td class="table__cell table__cell--icon"><img src="assets/img/tablet_blue.png" alt="Tablet icon"></td>
+            <td class="table__cell">Tablet</td>
+            <td class="table__cell">{{ devices.tablet / totalImpressions | percent:'1.0' }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <cmi-footer class="slide-footer"></cmi-footer>
+  </section>
+</slide>

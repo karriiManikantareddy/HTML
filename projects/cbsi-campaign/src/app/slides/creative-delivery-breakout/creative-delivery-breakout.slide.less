@@ -1,0 +1,76 @@
+@import '../../../styles/base/_variables';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: @background-gray;
+}
+.content {
+  position: relative;
+  flex: 1 0 auto;
+  width: auto;
+  height: auto;
+  padding: 70px 24px 0;
+  max-height: 918px;
+  background-color: @background-gray;
+}
+.note {
+  padding-left: 10px;
+}
+.table-cell {
+  border: 1px solid @black;
+  padding: 17px;
+  word-break: break-all;
+
+
+  &-name {
+    width: 394px;
+  }
+  &-imps-delivered, &-100, &-viewability {
+    width: 224px;
+  }
+  &-ctr {
+    width: 147px;
+  }
+  &-25, &-50, &-75 {
+    width: 219px;
+  }
+}
+.table-cell-content {
+  position: relative;
+  width: auto;
+  max-height: 137px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  display: block;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  &.creative-name {
+    font-size: 14px;
+  }
+}
+.table-column-title {
+  border: 1px solid @black;
+  padding: 17px;
+  font-size: 37px;
+  font-family: Arial;
+  color: @black;
+  background-color: transparent;
+  font-weight: 700;
+  font-style: normal;
+  font-variant: normal;
+  text-decoration: none;
+  vertical-align: baseline;
+  white-space: pre;
+  white-space: pre-wrap;
+  text-transform: initial;
+  text-align: center;
+  vertical-align: middle;
+  letter-spacing: 0;
+}
+.table-row {
+  border: 1px solid @black;
+}

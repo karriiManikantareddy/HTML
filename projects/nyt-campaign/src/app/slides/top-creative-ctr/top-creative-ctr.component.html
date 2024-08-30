@@ -1,0 +1,61 @@
+<slide *ngIf="topCreatives" [loading]="loading" name="Overview">
+  <section class="slide overview" [style.background-color]="backgroundColor">
+    <header class="slide-header">
+      <h2 [ngClass]="fontStyling">Top Creative by CTR</h2>
+    </header>
+    <div class="main">
+      <table class="table">
+        <tbody>
+          <tr class="table-row">
+            <td class="table-cell key" height="75">
+              <div [ngClass]="fontStyling" class="table-cell-content no-wrap">Creative Name</div>
+            </td>
+            <td class="table-cell value" height="75">
+              <div [ngClass]="fontStyling" class="table-cell-content wrap">{{topCreatives.name}}</div>
+            </td>
+          </tr>
+          <tr class="table-row">
+            <td class="table-cell key" height="75">
+              <div [ngClass]="fontStyling" class="table-cell-content no-wrap">Impressions</div>
+            </td>
+            <td class="table-cell value" height="75">
+              <div [ngClass]="fontStyling" class="table-cell-content wrap">{{topCreatives?.metrics.dfp_total_line_item_level_impressions | localeNumber}}</div>
+            </td>
+          </tr>
+          <tr class="table-row">
+            <td class="table-cell key" height="75">
+              <div [ngClass]="fontStyling" class="table-cell-content no-wrap">Clicks</div>
+            </td>
+            <td class="table-cell value" height="75">
+              <div [ngClass]="fontStyling" class="table-cell-content wrap">{{topCreatives?.metrics?.dfp_total_line_item_level_clicks | localeNumber}}</div>
+            </td>
+          </tr>
+          <tr class="table-row">
+            <td class="table-cell key" height="75">
+              <div [ngClass]="fontStyling" class="table-cell-content no-wrap">CTR</div>
+            </td>
+            <td class="table-cell value" height="75">
+              <div [ngClass]="fontStyling" class="table-cell-content wrap">{{topCreatives?.metrics.dfp_ctr | percent}}</div>
+            </td>
+          </tr>
+          <tr class="table-row">
+            <td class="table-cell key" height="75">
+              <div [ngClass]="fontStyling" class="table-cell-content no-wrap">Viewability</div>
+            </td>
+            <td class="table-cell value" height="75">
+              <div [ngClass]="fontStyling" class="table-cell-content wrap">{{topCreatives?.metrics.dfp_total_active_view_viewable_impressions_rate | percent}}</div>
+            </td>
+          </tr>
+        </tbody>
+       
+      </table>
+      <div class="mobile-screenshot">
+        <image-upload id="screenshot_lineitem" class="image"></image-upload>
+      </div>
+    </div>
+    <div class="editor">
+      <text-editor [ngClass]="fontStyling" class="editor-height" id="additional-creative" ></text-editor>
+    </div>
+    <footer class="slide-footer"></footer>
+  </section>
+</slide>

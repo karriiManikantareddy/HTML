@@ -1,0 +1,51 @@
+@import '../../../styles/base/_variables';
+
+.slide-cover {
+  color: @black;
+
+  &.slide {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 50px 120px 80px 120px;
+    background: @white;
+  }
+
+  .main {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  .title {
+    font-family: Arial;
+    font-size: 64px;
+    color: @black;
+    word-break: break-word;
+    text-transform: uppercase;
+  }
+
+  .dates {
+    position: absolute;
+    bottom: 0;
+    font-family: Arial;
+    font-size: 24px;
+    color: @black;
+    white-space: pre;
+  }
+
+
+  .image{
+    &.logo{
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+    min-width: 20em;
+    height: 250px;
+    margin: 5px;
+  }
+}

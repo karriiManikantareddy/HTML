@@ -1,0 +1,8 @@
+<slide *ngFor="let adSets of adSetGroups" [loading]="loading" name="Facebook Ads - Ad Set Breakdown">
+  <divider></divider>
+  <section class="slide campaigns">
+    <slide-header text="Facebook Ad Set Performance"></slide-header>
+    <the-advocate-table [items]="adSets" [kpis]="kpis" [totals]="totals" header="Top 5 Ad Sets"></the-advocate-table>
+    <slide-footer></slide-footer>
+  </section>
+</slide>

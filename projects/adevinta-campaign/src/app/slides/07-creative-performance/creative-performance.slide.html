@@ -1,0 +1,40 @@
+<slide [loading]="loading" name="Creative Performance" *ngFor="let creatives of creativesGroups; index as groupIdx">
+  <section class="slide slide-creative-performance">
+    <header class="slide-header">
+      <h2>
+        Creative Performance
+      </h2>
+    </header>
+    <div class="main">
+      <table>
+        <thead>
+        <tr>
+          <th class="static">Creative</th>
+          <th class="metric small impressions">Delivered impressions</th>
+          <th class="metric small clicks">Clicks</th>
+          <th class="metric small">CTR</th>
+          <th class="metric small viewability">Viewability</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let creative of creatives">
+          <td>{{creative.name}}</td>
+          <td class="metric impressions">{{creative.metrics?.gam_impressions?.value | number}}</td>
+          <td class="metric clicks">{{creative.metrics?.gam_clicks?.value | number}}</td>
+          <td class="metric">{{creative.metrics?.ctr?.value | percent}}</td>
+          <td class="metric viewability">{{creative.metrics?.gam_viewability?.value | percent}}</td>
+        </tr>
+        </tbody>
+      </table>
+      <div class="summary">
+        <text-editor
+          class="summary-text"
+          placeholder="Summary text"
+          [id]="'creative-performance-summary-' + groupIdx"
+          [plainText]="true">
+        </text-editor>
+      </div>
+    </div>
+    <footer class="slide-footer"></footer>
+  </section>
+</slide>

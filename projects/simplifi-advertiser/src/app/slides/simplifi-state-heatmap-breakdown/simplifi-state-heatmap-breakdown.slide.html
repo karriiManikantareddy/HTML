@@ -1,0 +1,56 @@
+<slide *ngIf="loading || (regionsByImpressions && !regionsByImpressions.isEmpty() && totalImpressions > 0)" [loading]="loading" name="Branding Awareness Impressions by State Heatmap" enabled="false">
+  <section class="slide campaigns">
+    <slide-header text="Branding Awareness Impressions by State"></slide-header>
+    <div class="row">
+      <div class="col-one-of-two left-block">
+        <map class="dma-map" [series]="impressionsMapSeries" [options]="mapOptions" [redraw]="redraw"></map>
+      </div>
+      <div class="col-one-of-two right-block">
+        <simplifi-table class="zip-table" [items]="regionsByImpressions" [kpis]="kpis" header="Top 10 regions"></simplifi-table>
+      </div>
+    </div>
+    <slide-footer slideName="simplifi-heatmap-impressions"></slide-footer>
+  </section>
+</slide>
+<slide *ngIf="loading || (regionsByClicks && !regionsByClicks.isEmpty() && totalClicks > 0)" [loading]="loading" name="Consideration Clicks by State Heatmap" enabled="false">
+  <section class="slide campaigns">
+    <slide-header text="Consideration Clicks by State"></slide-header>
+    <div class="row">
+      <div class="col-one-of-two left-block">
+        <map class="dma-map" [series]="clicksMapSeries" [options]="mapOptions" [redraw]="redraw"></map>
+      </div>
+      <div class="col-one-of-two right-block">
+        <simplifi-table class="zip-table" [items]="regionsByClicks" [kpis]="kpis" header="Top 10 regions"></simplifi-table>
+      </div>
+    </div>
+    <slide-footer slideName="simplifi-heatmap-clicks"></slide-footer>
+  </section>
+</slide>
+<slide *ngIf="loading || (regionsByOnlineVisits && !regionsByOnlineVisits.isEmpty() && totalOnlineVisits > 0)" [loading]="loading" name="Online Visit Conversion by State Heatmap" enabled="false">
+  <section class="slide campaigns">
+    <slide-header text="Online Visit Conversion by State"></slide-header>
+    <div class="row">
+      <div class="col-one-of-two left-block">
+        <map class="dma-map" [series]="onlineVisitsMapSeries" [options]="mapOptions" [redraw]="redraw"></map>
+      </div>
+      <div class="col-one-of-two right-block">
+        <simplifi-table class="zip-table" [items]="regionsByOnlineVisits" [kpis]="kpis" header="Top 10 regions"></simplifi-table>
+      </div>
+    </div>
+    <slide-footer slideName="simplifi-heatmap-online-visits"></slide-footer>
+  </section>
+</slide>
+<slide *ngIf="loading || (regionsByVisits && !regionsByVisits.isEmpty() && totalVisits > 0)" [loading]="loading" name="Visit Conversion by State Heatmap" enabled="false">
+  <section class="slide campaigns">
+    <slide-header text="Visit Conversion by State"></slide-header>
+    <div class="row">
+      <div class="col-one-of-two left-block">
+        <map class="dma-map" [series]="visitsMapSeries" [options]="mapOptions" [redraw]="redraw"></map>
+      </div>
+      <div class="col-one-of-two right-block">
+        <simplifi-table class="zip-table" [items]="regionsByVisits" [kpis]="kpis" header="Top 10 regions"></simplifi-table>
+      </div>
+    </div>
+    <slide-footer slideName="simplifi-heatmap-visits"></slide-footer>
+  </section>
+</slide>

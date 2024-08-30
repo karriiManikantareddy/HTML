@@ -1,0 +1,23 @@
+<slide [loading]="loading" name="Creative Appendix" *ngFor="let creativeGroup of creativeGroups; index as groupIdx">
+  <section class="slide creative-appendix">
+    <header class="slide-header">
+      <h2>
+        Creative Appendix
+      </h2>
+    </header>
+    <div class="main">
+      <div class="creative-container">
+        <ng-container *ngFor="let creative of creativeGroup">
+          <div *ngIf="creative">
+            <h5>{{creative.name}} ({{creative.id}})</h5>
+            <div class="wrap-img" #iframeWrap>
+              <iframe #iframe [src]="creative.previewUrl | trustResourceUrl" frameborder="0" scrolling="no"
+                [style.width.px]="creative.width" [style.height.px]="creative.height"></iframe>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+    <footer class="slide-footer"></footer>
+  </section>
+</slide>

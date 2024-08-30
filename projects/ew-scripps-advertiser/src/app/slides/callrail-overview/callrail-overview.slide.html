@@ -1,0 +1,10 @@
+<slide *ngIf="loading || totals" [loading]="loading" name="Call Tracking Overview">
+  <section class="slide overview">
+    <slide-header text="Call Tracking Overview"></slide-header>
+    <overview-cmp
+      [totals]="totals"
+      [series]="series"
+      [chartConfig]="chartConfig"
+    ></overview-cmp>
+  </section>
+</slide>

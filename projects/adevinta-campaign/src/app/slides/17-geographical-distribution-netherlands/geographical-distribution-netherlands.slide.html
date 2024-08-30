@@ -1,0 +1,43 @@
+<slide *ngIf="topRegions && !topRegions.isEmpty()" [loading]="loading" name="Geographical Distribution Netherlands">
+  <section class="slide geographical-distribution-netherlands">
+    <header class="slide-header">
+      <h2>
+        Geographical distribution
+      </h2>
+    </header>
+    <div class="main">
+      <div class="row">
+        <div class="col-one-of-two left-block">
+          <map [series]="mapSeries" [options]="mapOptions"></map>
+        </div>
+        <div class="col-one-of-two right-block">
+          <table>
+            <thead>
+            <tr>
+              <th class="static">Top Regions</th>
+              <th class="metric impressions">Delivered impressions</th>
+              <th class="metric">CTR</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let r of topRegions">
+              <td>{{r?.name}}</td>
+              <td class="metric">{{r?.metrics?.gam_impressions?.value | number}}</td>
+              <td class="metric">{{r?.metrics?.ctr?.value | percent}}</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="summary">
+        <text-editor
+          class="summary-text"
+          id="geographical-distribution-netherlands-summary"
+          [plainText]="true"
+          placeholder="Summary text">
+        </text-editor>
+      </div>
+    </div>
+    <footer class="slide-footer"></footer>
+  </section>
+</slide>

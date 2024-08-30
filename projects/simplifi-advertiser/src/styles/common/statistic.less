@@ -1,0 +1,51 @@
+.statistic-icons {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  justify-content: space-between;
+  padding: 43px 0;
+  margin-bottom: 17px;
+  .statistic-icons-item {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: space-between;
+    -ms-align-items: center;
+    align-items: center;
+  }
+  icon {
+    color: @text-gray;
+  }
+  .icon {
+    font-size: 30px;
+    margin-right: 25px;
+    color: @text-gray;
+    &.icon-hand,
+    &.icon-click-rate{
+      font-size: 40px;
+    }
+    &.icon-eye {
+      font-size: 20px;
+    }
+  }
+  .wrap-title {
+    .num {
+      display: block;
+      font-size: 28px;
+      font-weight: 300;
+      line-height: 1;
+      margin-bottom: 2px;
+      font-weight: 400;
+    }
+    .title {
+      display: block;
+      text-transform: uppercase;
+      color: @text-gray;
+      letter-spacing: 0.03em;
+    }
+  }
+}

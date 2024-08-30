@@ -1,0 +1,36 @@
+<slide [loading]="loading" name="Social Campaigns" *ngIf="loading || !empty">
+  <sidebar text="Paid Social"></sidebar>
+  <section class="slide slide-social-campaigns">
+    <header class="slide-header">
+      <h3>Campaign Performance</h3>
+    </header>
+    <div class="main table">
+      <table>
+        <thead>
+          <th>Campaign</th>
+          <th>Impressions</th>
+          <th>Landing<br>Page Views</th>
+          <th>Video<br>Thruplay</th>
+          <th>Link Clicks</th>
+          <th>CTR<br>(Link CLick-Through Rate)</th>
+          <th>CPC<br>(Cost per Link Click)</th>
+          <th>Post Engagement</th>
+          <th>Spend</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let campaign of campaigns">
+            <td class="name">{{campaign.name}}</td>
+            <td class="metric">{{campaign.metrics.impressions.value | number}}</td>
+            <td class="metric">{{campaign.metrics.landing_page_views.value | number}}</td>
+            <td class="metric">{{campaign.metrics.video_p100_views.value | number}}</td>
+            <td class="metric">{{campaign.metrics.link_clicks.value | percent}}</td>
+            <td class="metric">{{campaign.metrics.link_click_ctr.value | percent}}</td>
+            <td class="metric">{{campaign.metrics.cpc.value | currency}}</td>
+            <td class="metric">{{campaign.metrics.post_engagements.value | number}}</td>
+            <td class="metric">{{campaign.metrics.spend.value | currency}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</slide>

@@ -1,0 +1,34 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.wrapper {
+  display: flex;
+  flex: 1;
+  background-color: #f2f2f2;
+  padding-top: 10px;
+  padding-left: 10px;
+
+  #preview-frame {
+    flex: 1;
+    height: 100%;
+  }
+
+  #preview-toggles {
+    width: 300px;
+    padding: 1rem;
+
+    .half-width {
+      width: 40%;
+      &:first-child {
+        margin-right: 10%;
+      }
+    }
+
+    .progress-message {
+      text-align: center;
+    }
+  }
+}

@@ -1,0 +1,12 @@
+<slide [loading]="loading" name="Cover">
+  <section class="slide slide-cover" [style.background-color]="background">
+    <image-upload id="cover-logo" class="cover-logo"></image-upload>
+    <image-upload id="client-logo" class="client-logo"></image-upload>
+    <div class="wrap-head" [style.color]="textColor">
+      <div class="divider"></div>
+      <h1>{{metadata?.name}}</h1>
+      <h2>Partnership Review &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; {{currentDate | date:dateOptions}}</h2>
+      <div class="divider"></div>
+    </div>
+  </section>
+</slide>

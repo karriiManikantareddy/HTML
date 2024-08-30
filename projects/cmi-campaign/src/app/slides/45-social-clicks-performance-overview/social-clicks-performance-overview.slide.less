@@ -1,0 +1,40 @@
+@import '../../../styles/base/_variables';
+
+.slide-header {
+  background-color: @pink;
+}
+
+.subtitle {
+  color: @pink;
+}
+
+.table {
+  &__cell {
+    font-size: 32px;
+    min-width: 100px;
+
+    &--footer {
+      font-size: 24px;
+
+      &.table__cell--name {
+        span {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+
+
+
+  &__footer {
+    .table__row {
+      &:nth-child(odd) {
+        background-color: @table-background-color;
+      }
+
+      &:nth-child(even) {
+        background-color: @white;
+      }
+    }
+  }
+}

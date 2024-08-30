@@ -1,0 +1,236 @@
+@import '../../../styles/base/_variables';
+
+@highlighted-item-text: #4285f4;
+@highlighted-text: #595959;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: @background-gray;
+}
+
+.content {
+  position: relative;
+  flex: 1 0 auto;
+  width: auto;
+  height: auto;
+  margin: 66px 110px 25px 110px;
+  padding: 0;
+  background-color: @background-gray;
+}
+
+.images-block {
+  position: absolute;
+  left: 880px;
+  top: 5px;
+
+  .image-block {
+    transform: scale(0.55);
+  }
+
+  .mobile-phone-background {
+    position: absolute;
+    left: 280px;
+    top: 240px;
+  }
+}
+
+.list-item {
+  font-family: Arial;
+  font-size: 24px;
+  list-style-type: none;
+  list-style-position: left;
+  display: flex;
+  align-items: center;
+
+  .white {
+    color: #FFFFFF;
+  }
+
+  .black {
+    color: #000000;
+  }
+
+  ::ng-deep .editor .ql-editor {
+    font-size: 24px;
+  }
+}
+
+.list-item-viewership {
+  font-family: Arial;
+  list-style-type: none;
+  list-style-position: left;
+  overflow: visible;
+  overflow-wrap: anywhere;
+
+  .white {
+    color: #FFFFFF;
+  }
+
+  .black {
+    color: #000000;
+  }
+
+  .heading {
+    padding-top: 10px;
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  .description {
+    font-size: 12px;
+  }
+
+  .editor-width {
+    padding-left: 26px;
+    height: auto;
+
+  }
+
+  ::ng-deep .content-editor .ql-editor {
+    font-size: 16px;
+    padding: 0px;
+    line-height: normal;
+    font-weight: 600;
+  }
+
+}
+
+.list-item-label {
+  display: inline-block;
+  white-space: pre;
+  padding-left: 12px;
+
+  .white {
+    color: #FFFFFF;
+  }
+
+  .black {
+    color: #000000;
+  }
+
+  &.italic {
+    font-style: italic;
+  }
+}
+
+.list-item-value {
+  display: inline-block;
+  white-space: pre;
+  padding-left: 12px;
+
+  &.italic {
+    font-style: italic;
+  }
+  ::ng-deep .plaform-editor .ql-editor {
+    font-size: 24px;
+    padding: 0px;
+  }
+}
+
+.outerContainer {
+  width: 60%;
+  height: 700px;
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid #000000;
+  .title {
+    font-size: 37px;
+    font-weight: 700;
+    font-style: normal;
+    white-space: pre;
+    padding: 24px;
+    text-align: center;
+  }
+
+  .black {
+    color: #000000;
+  }
+
+  .white {
+    color: #FFFFFF;
+  }
+
+  .innerbox {
+    width: 50%;
+    height: 50%;
+    display: inline-block;
+    align-items: stretch;
+    box-sizing: border-box;
+  }
+
+  .block {
+    margin: auto;
+    text-align: left;
+    position: relative;
+
+    .pc-icon1 {
+      width: 140px;
+      height: 90px;
+      position: absolute;
+      left: 365px;
+      bottom: 10px;
+    }
+
+    .pc-icon2 {
+      width: 100px;
+      height: 110px;
+      position: absolute;
+      left: 410px;
+      bottom: 3px;
+    }
+
+    .pc-icon3 {
+      width: 120px;
+      height: 100px;
+      position: absolute;
+      left: 390px;
+      bottom: 10px;
+    }
+
+    .pc-icon4 {
+      width: 115px;
+      height: 80px;
+      position: absolute;
+      left: 390px;
+      bottom: 0px;
+    }
+  }
+
+  .campaign-block {
+    background-color: #000540;
+    color: #FFFFFF;
+  }
+
+  .delivery-block {
+    background-color: #FFFFFF;
+    color: #000000;
+  }
+
+  .viewership-block {
+    background-color: #000540;
+    color: #FFFFFF;
+  }
+
+  .performance-block {
+    background-color: #FFFFFF;
+    color: #000000;
+  }
+
+  .textaling {
+    padding-left: 24px;
+  }
+
+  .editor {
+    width: 260px;
+  }
+
+  .content-editor {
+    width: 350px;
+  }
+}
+.plaform-editor {
+  height: 32px;
+  width: 160px;
+}

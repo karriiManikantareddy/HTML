@@ -1,0 +1,35 @@
+@import '../../../styles/base/_variables';
+
+.top-creatives {
+  .title-block {
+    text-transform: uppercase;
+    color: @text-gray;
+    display: block;
+    letter-spacing: 0.05em;
+  }
+  .col-one-of-two {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.divided-content {
+  align-items: inherit;
+}
+
+creative-top, creative-left {
+  width: 50%;
+}
+
+.section-top-creatives {
+  display: flex;
+  justify-content: center;
+
+  .section-foreground {
+    width: 100%;
+  }
+}
