@@ -44,6 +44,7 @@ import { FooterBoxComponent } from './slides/footer-box/footer-box.component'
 import { CampaignHighlightsComponent } from './slides/campaign-highlights/campaign-highlights.component'
 import { StreamingVideoComponent } from './slides/streaming-video/streaming-video.component'
 import { StearmingPerformanceComponent } from './slides/stearming-performance/stearming-performance.component'
+import { VideoSiteAppComponent } from './slides/video-site-app/video-site-app.component'
 
 
 
@@ -86,6 +87,7 @@ import { StearmingPerformanceComponent } from './slides/stearming-performance/st
     CampaignHighlightsComponent,
     StreamingVideoComponent,
     StearmingPerformanceComponent,
+    VideoSiteAppComponent,
   ],
   imports: [
     TemplateModule,

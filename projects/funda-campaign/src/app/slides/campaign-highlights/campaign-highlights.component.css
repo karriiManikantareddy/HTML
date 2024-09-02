@@ -4,6 +4,7 @@
   justify-content: space-between;
   min-height: 100vh;
   background-image: url("../../../assets/img/backgroundImage.png");
+ background-size: cover;
 }
 .header-container {
   margin-bottom: 140px;

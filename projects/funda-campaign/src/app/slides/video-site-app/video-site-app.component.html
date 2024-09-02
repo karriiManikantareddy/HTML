@@ -1,0 +1,95 @@
+<div class="main-container">
+  <div class="header-container">
+    <app-header [headerTitle]="headerContent" [greyBox]="greyBox" [greyBoxTitle]="greyBoxContent" [violetBoxTitle]="violetBoxContent"></app-header>
+  </div>
+  <div class="body-container">
+    <div class="left-container">
+      <div class="table-container">
+        <table class="custom-table">
+          <thead>
+            <tr>
+              <th>Top 10 Sites/Apps</th>
+              <th>Impressions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              *ngFor="let row of tableData; let i = index"
+              [ngClass]="{ 'even-row': i % 2 === 0, 'odd-row': i % 2 !== 0 }"
+            >
+              <td>{{ row.site }}</td>
+              <td>{{ row.impressions }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="right-container">
+      <img src="../../../assets/img/mtv.png" alt="MTV" />
+      <img src="../../../assets/img/tnt.png" alt="TNT" />
+      <img src="../../../assets/img/a&e.png" alt="A&E" />
+      <img src="../../../assets/img/msnbc.png" alt="MSNBC" />
+      <img src="../../../assets/img/amazontwitch.png" alt="Amazon Twitch" />
+      <img src="../../../assets/img/hgtv.png" alt="HGTV" />
+      <img src="../../../assets/img/foxnews.png" alt="Fox News" />
+      <img src="../../../assets/img/espn.png" alt="ESPN" />
+      <img src="../../../assets/img/amc.png" alt="AMC" />
+      <img src="../../../assets/img/usa.png" alt="USA" />
+      <img src="../../../assets/img/paramount.png" alt="Paramount" />
+      <img src="../../../assets/img/fx.png" alt="FX" />
+      <div>
+        <img src="../../../assets/img/tbs.png" alt="TBS" />
+        <img src="../../../assets/img/bravo.png" alt="Bravo" />
+      </div>
+      <img src="../../../assets/img/tlc.png" alt="TLC" />
+      <div>
+        <img src="../../../assets/img/fox-sports.png" alt="" />
+        <img src="../../../assets/img/comedy-central.png" alt="" />
+      </div>
+
+      <!-- <table>
+        <thead>
+          <tr style="display: none">
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+            <th>5</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><img src="../../../assets/img/mtv.png" alt="" /></td>
+            <td><img src="../../../assets/img/tnt.png" alt="" /></td>
+            <td><img src="../../../assets/img/a&e.png" alt="" /></td>
+            <td><img src="../../../assets/img/msnbc.png" alt="" /></td>
+            <td><img src="../../../assets/img/amazontwitch.png" alt="" /></td>
+          </tr>
+          <tr>
+            <td><img src="../../../assets/img/hgtv.png" alt="" /></td>
+            <td><img src="../../../assets/img/foxnews.png" alt="" /></td>
+            <td><img src="../../../assets/img/espn.png" alt="" /></td>
+            <td><img src="../../../assets/img/amc.png" alt="" /></td>
+            <td><img src="../../../assets/img/usa.png" alt="" /></td>
+          </tr>
+          <tr>
+            <td><img src="../../../assets/img/paramount.png" alt="" /></td>
+            <td><img src="../../../assets/img/fx.png" alt="" /></td>
+            <td>
+              <img src="../../../assets/img/tbs.png" alt="" />
+              <img src="../../../assets/img/bravo.png" alt="" />
+            </td>
+            <td><img src="../../../assets/img/tlc.png" alt="" /></td>
+            <td>
+              <img src="../../../assets/img/fox-sports.png" alt="" />
+              <img src="../../../assets/img/comedy-central.png" alt="" />
+            </td>
+          </tr>
+        </tbody>
+      </table> -->
+    </div>
+  </div>
+  <div class="footer-container">
+    <app-footer-box></app-footer-box>
+  </div>
+</div>

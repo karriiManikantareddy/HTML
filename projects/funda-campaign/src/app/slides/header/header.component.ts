@@ -7,5 +7,7 @@ import { Component ,Input} from '@angular/core';
 })
 export class HeaderComponent {
   @Input() headerTitle: string = '';
-  @Input() greyBox: boolean 
+  @Input() greyBox: boolean ;
+  @Input() greyBoxTitle:string='';
+  @Input() violetBoxTitle:string="";
 }

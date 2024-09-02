@@ -41,8 +41,6 @@
   opacity: 0.8;
 }
 
-
-
 .style-div {
   height: 72px;
   position: absolute;
@@ -69,38 +67,38 @@
   font-size: 20px;
   font-family: "calibri";
   color: #455051;
-  border-bottom: 2px solid #0F155B; 
-  padding-bottom: 3px; 
-  display: inline; 
+  border-bottom: 2px solid #0f155b;
+  padding-bottom: 3px;
+  display: inline;
   width: 55%;
 }
 .title-two {
-    font-size: 20px;
-    font-family: "calibri";
-    color: #455051;
-    border-bottom: 2px solid #455051; 
-    padding-bottom: 3px; 
-    display: inline; 
-    width: 58%;
-  }
-  .title-three {
-    font-size: 20px;
-    font-family: "calibri";
-    color: #455051;
-    border-bottom: 2px solid #455051; 
-    padding-bottom: 3px; 
-    display: inline; 
-    width: 47%;
-  }
-  .title-four {
-    font-size: 20px;
-    font-family: "calibri";
-    color: #455051;
-    border-bottom: 2px solid #455051; 
-    padding-bottom: 3px; 
-    display: inline; 
-    width: 35%;
-  }
+  font-size: 20px;
+  font-family: "calibri";
+  color: #455051;
+  border-bottom: 2px solid #455051;
+  padding-bottom: 3px;
+  display: inline;
+  width: 58%;
+}
+.title-three {
+  font-size: 20px;
+  font-family: "calibri";
+  color: #455051;
+  border-bottom: 2px solid #455051;
+  padding-bottom: 3px;
+  display: inline;
+  width: 47%;
+}
+.title-four {
+  font-size: 20px;
+  font-family: "calibri";
+  color: #455051;
+  border-bottom: 2px solid #455051;
+  padding-bottom: 3px;
+  display: inline;
+  width: 35%;
+}
 .sub-title {
   font-size: 11px;
   font-family: "calibri";
