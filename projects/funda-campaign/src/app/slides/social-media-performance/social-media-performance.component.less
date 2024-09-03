@@ -1,0 +1,55 @@
+@import "../../../styles/base/_variables";
+.main {
+  height: 100%;
+  width: 100%;
+  //   background-color: red;
+  background-image: url("../../../assets/img/backgroundImage.png");
+  background-size: cover;
+ 
+}
+
+.header-container {
+  height: 180px;
+  width: 100%;
+  background-color: @header-dark-blue;
+}
+
+.box {
+  height: 70px;
+  max-height: max-content;
+  padding-left: 15px;
+  padding-top: 12px;
+  width: 16%;
+  overflow: hidden;
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 10px;
+  opacity: 0.8;
+}
+
+.box-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  font-family: "Calibri";
+}
+
+.sub-title {
+  font-size: 11px;
+  font-family: "Calibri";
+}
+.vertical-box {
+  width: 10px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 30px;
+  background-color: #fff;
+}

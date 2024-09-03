@@ -45,6 +45,12 @@ import { CampaignHighlightsComponent } from './slides/campaign-highlights/campai
 import { StreamingVideoComponent } from './slides/streaming-video/streaming-video.component'
 import { StearmingPerformanceComponent } from './slides/stearming-performance/stearming-performance.component'
 import { VideoSiteAppComponent } from './slides/video-site-app/video-site-app.component'
+import { SocialMediaPerformanceComponent } from './slides/social-media-performance/social-media-performance.component'
+import { SocialMediaCreativeSummaryComponent } from './slides/social-media-creative-summary/social-media-creative-summary.component'
+import { TableComponent } from './slides/table/table.component'
+import { ImageUploadComponent } from './slides/image-upload/image-upload.component'
+import { LogoSlideComponent } from './slides/logo-slide/logo-slide.component'
+import { PaidSearchSummaryComponent } from './slides/paid-search-summary/paid-search-summary.component'
 
 
 
@@ -58,6 +64,7 @@ import { VideoSiteAppComponent } from './slides/video-site-app/video-site-app.co
     CreativePreviewComponent,
     HeaderComponent,
     FooterBoxComponent,
+    ImageUploadComponent,
 
     CoverSlide,
     TableOfContentsSlide,
@@ -88,6 +95,11 @@ import { VideoSiteAppComponent } from './slides/video-site-app/video-site-app.co
     StreamingVideoComponent,
     StearmingPerformanceComponent,
     VideoSiteAppComponent,
+    SocialMediaPerformanceComponent,
+    SocialMediaCreativeSummaryComponent,
+    TableComponent,
+    LogoSlideComponent,
+    PaidSearchSummaryComponent
   ],
   imports: [
     TemplateModule,

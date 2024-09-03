@@ -1,0 +1,20 @@
+<div class="main">
+    <div class="logo-box" (click)="triggerFileInput()">
+        <div class="logo">
+          <ng-container *ngIf="!uploadedImage; else imageTemplate">
+            {{ title }}
+          </ng-container>
+          <ng-template #imageTemplate>
+            <img [src]="uploadedImage" alt="Client Logo" class="uploaded-image" />
+            <button class="delete-btn" (click)="deleteImage($event)">X</button>
+          </ng-template>
+        </div>
+        <input
+          type="file"
+          #fileInput
+          (change)="onImageUpload($event)"
+          style="display: none"
+        />
+      </div>
+
+</div>
