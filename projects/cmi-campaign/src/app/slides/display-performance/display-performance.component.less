@@ -1,0 +1,115 @@
+.main{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+.body-container {
+  display: flex;
+  height: calc(100% - 220px);
+  position: relative;
+  top: 130px;
+  padding: 50px;
+}
+.left-container {
+  padding: 30px;
+  width: 44%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  text-align: start;
+  gap: 8px;
+  height: 80%;
+  top: 80px;
+  position: relative;
+}
+.style-container {
+  position: relative;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.card-component {
+  border-radius: 10px;
+  height: 80%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 12px;
+  gap: 6px;
+  padding-right: 40px;
+  box-sizing: border-box;
+  opacity: 0.8;
+}
+
+.style-div {
+  height: 80%;
+  position: absolute;
+  background-color: white;
+  width: 20px;
+  right: 20px;
+  top: 0px;
+}
+.right-container {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  background-color: #ccccd1;
+  border-radius: 60px;
+  padding: 30px 50px 10px 50px;
+  box-sizing: border-box;
+}
+
+h5 {
+  color: #455051;
+  text-decoration: underline;
+  padding-bottom: 3px;
+  display: inline;
+}
+h6 {
+  font-size: 18px;
+  color: #455051;
+}
+h3 {
+  font-size: 40px;
+}
+
+h4 {
+  color: #0f155b;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+.cards {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  flex: 1;
+}
+.card-one, .card-two, .card-three, .card-four {
+  flex: 1;
+  height: 66px;
+  border-radius: 20px;
+  border: 2px solid white;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-one { background-color: #0f155b; }
+.card-two { background-color: #00aaf4; }
+.card-three { background-color: #80d5f9; }
+.card-four { background-color: #c899c1; margin-bottom: 10px; }
+
+.number-editor ::ng-deep {
+  font-size: 36px;
+  min-width: 100px;
+}

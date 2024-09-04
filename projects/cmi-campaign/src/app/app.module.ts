@@ -64,7 +64,21 @@ import {AudioPerformanceOverviewAdobeSlide} from './slides/51-audio-performance-
 import {AudioPerformanceOverviewGcmSlide} from './slides/52-audio-performance-overview-gcm/audio-performance-overview-gcm.slide'
 import {GoogleAnalyticsSlide} from './slides/53-google-analytics/google-analytics.slide'
 import {RecommendationsSlide} from './slides/54-recommendations/recommendations.slide'
-
+import { CoverNewComponent } from './slides/cover-new/cover-new.component';
+import { CampaignHighlightsComponent } from './slides/campaign-highlights/campaign-highlights.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterNewComponent } from './components/footer-new/footer-new.component';
+import { TextBannerComponent } from './components/text-banner/text-banner.component';
+import { StreamingPerformanceComponent } from './slides/streaming-performance/streaming-performance.component';
+import { VideoSiteComponent } from './slides/video-site/video-site.component';
+import { StreamingNetworkComponent } from './slides/streaming-network/streaming-network.component';
+import { MonthlySummaryComponent } from './slides/monthly-summary/monthly-summary.component';
+import { PerformanceSummaryComponent } from './slides/performance-summary/performance-summary.component';
+import { TacticSummaryComponent } from './slides/tactic-summary/tactic-summary.component';
+import { VideoPerformanceComponent } from './slides/video-performance/video-performance.component'
+import { DisplayPerformanceComponent } from './slides/display-performance/display-performance.component'
+import { PaidSearchSummaryComponent } from './slides/paid-search-summary/paid-search-summary.component'
+import { CmiTableComponent } from './components/cmi-table/cmi-table.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -127,6 +141,21 @@ import {RecommendationsSlide} from './slides/54-recommendations/recommendations.
     DfpCreativeSlide,
     DfpPerformanceOverviewSlide,
     DfpInteractiveSlide,
+    CoverNewComponent,
+    CampaignHighlightsComponent,
+    HeaderComponent,
+    FooterNewComponent,
+    TextBannerComponent,
+    StreamingPerformanceComponent,
+    VideoSiteComponent,
+    StreamingNetworkComponent,
+    MonthlySummaryComponent,
+    PerformanceSummaryComponent,
+    TacticSummaryComponent,
+    VideoPerformanceComponent,
+    DisplayPerformanceComponent,
+    PaidSearchSummaryComponent,
+    CmiTableComponent
   ],
   imports: [
     TemplateModule,

@@ -6,8 +6,8 @@ import { Component } from "@angular/core";
   styleUrl: "./paid-search-summary.component.css",
 })
 export class PaidSearchSummaryComponent {
-  isConditionTrue: boolean = false;
-  violetHeader = true;
+  isConditionTrue: boolean = true;
+  violetHeader = false;
   evenRowVioletColor: boolean = true;
   oddRowVioletColor: boolean = true;
   headers = ["", " ", " ", " "];

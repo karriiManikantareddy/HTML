@@ -51,6 +51,10 @@ export abstract class CmiDataService {
   abstract simplifiSites(): Observable<any>
   abstract gcmSites(): Observable<any>
   abstract tveSites(): Observable<any>
+  abstract streamingPerformance(): Observable<any>;
+  abstract videoPerformance(): Observable<any>;
+  abstract displayPerformance(): Observable<any>;
+
 
   dates: Dates
 

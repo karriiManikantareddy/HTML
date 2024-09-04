@@ -1,0 +1,64 @@
+<slide name="Video Performance">
+  <section class="slide slide-cover">
+    <header [headerTitle]="'Video Performance'" [greyBox]="false"></header>
+    <div class="main">
+      <div class="body-container">
+        <div class="left-container">
+          <div class="style-container">
+            <div class="card-component" [ngStyle]="{ 'background-color': boxOne }">
+              <h5>Impressions Delivered</h5>
+              <h6>
+                No. of times your message was shown
+              </h6>
+            </div>
+            <div class="style-div"></div>
+          </div>
+          <div class="style-container">
+            <div class="card-component" [ngStyle]="{ 'background-color': boxTwo }">
+              <h5>Video Completion Rate</h5>
+              <h6>
+                Percentage of views where the video was watched to completion
+              </h6>
+            </div>
+            <div class="style-div"></div>
+          </div>
+          <div class="style-container">
+            <div
+              class="card-component"
+              [ngStyle]="{ 'background-color': boxThree }"
+            >
+              <h5>
+                Video Completions
+              </h5>
+              <h6>
+                No. of views that completed 100%% of your ad (by quartile)
+              </h6>
+            </div>
+            <div class="style-div"></div>
+          </div>
+          <div class="style-container">
+            <div class="card-component" [ngStyle]="{ 'background-color': boxFour }">
+              <h5>Unique Reach</h5>
+              <h6>
+                No. of unique users that the campaign potentially reached
+              </h6>
+            </div>
+            <div class="style-div"></div>
+          </div>
+        </div>
+        <div class="right-container">
+          <h4>Video Package</h4>
+          <div class="cards">
+            <div class="card-one"><h3>{{totals.impressions.value}}</h3></div>
+            <div class="card-two"><h3>{{totals.vcr.value | percent}}</h3></div>
+            <div class="card-three"><h3>{{totals.completions100.value}}</h3></div>
+            <div class="card-four">
+              <number-editor class="number-editor" [plainText]="true" id="Unique"></number-editor>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer-new></footer-new>
+  </section>
+</slide>

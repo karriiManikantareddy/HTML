@@ -1,0 +1,40 @@
+<slide [loading]="loading" name="Cover">
+  <section class="slide-cover">
+    <div class="main-container">
+      <div class="header-container">
+        <div class="image-container">
+          <img src="assets/img/cover-top.png" alt="header image" />
+        </div>
+        <div class="design-container">
+          <div class="blue-container">
+            <h2>Proof of Performance</h2>
+            <h2 class="text-2">{{ headerSubTitle }}</h2>
+          </div>
+          <div class="dark-blue"></div>
+          <div class="violet-container"></div>
+        </div>
+      </div>
+      <div class="body-container">
+        <div class="inner-container">
+          <div class="name-container">
+            <h1 [ngStyle]="{ color: '#1b195f', fontWeight: 'bold' }">
+              {{ campaignName }}
+            </h1>
+            <h3>
+              Performance <br />
+              <span>& Insights</span>
+            </h3>
+          </div>
+          <div class="logo">
+            <img src="assets/img/cover-logo.png" alt="cox logo" />
+          </div>
+        </div>
+        <img
+          class="cover-bottom"
+          src="assets/img/cover-bottom.png"
+          alt="body image"
+        />
+      </div>
+    </div>
+  </section>
+</slide>

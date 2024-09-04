@@ -6,6 +6,8 @@ import { WINDOW } from 'projects/template-module/src/lib/window.module'
 import {CmiDataService} from './cmi-data.service'
 import { ChartSeries } from 'projects/template-module/src/lib/services/result.model'
 export * from './cmi-data.service'
+import { map } from 'rxjs/operators'
+import { MetricValue } from 'projects/template-module/src/lib/services/result.model'
 
 @Injectable()
 export class CampaignDataService extends CmiDataService {
@@ -505,5 +507,58 @@ export class CampaignDataService extends CmiDataService {
     return this.dataService
       .load('mapped_audio_advertisers_creative')
       .pipe(catchError(() => of(null)))
+  }
+
+  protected metricsToHash(metrics: MetricValue[]): Partial<Record<string, MetricValue>> {
+    return metrics.reduce((memo, metric) => {
+      memo[metric.name] = metric
+      return memo
+    }, <Partial<Record<string, MetricValue>>> {})
+  }
+
+  streamingPerformance() {
+    return this.dataService
+      .load('streaming_performance')
+      .pipe(
+        map(result => {
+          console.log("data", result)
+          const row = result.rows[0];
+          if (row) {
+            return this.metricsToHash(row.metrics);
+          } else {
+            return {};
+          }
+        })
+      );
+  }
+
+  videoPerformance() {
+    return this.dataService
+      .load('video_performance')
+      .pipe(
+        map(result => {
+          const row = result.rows[0];
+          if (row) {
+            return this.metricsToHash(row.metrics);
+          } else {
+            return {};
+          }
+        })
+      );
+  }
+
+  displayPerformance() {
+    return this.dataService
+      .load('display_performance')
+      .pipe(
+        map(result => {
+          const row = result.rows[0];
+          if (row) {
+            return this.metricsToHash(row.metrics);
+          } else {
+            return {};
+          }
+        })
+      );
   }
 }
