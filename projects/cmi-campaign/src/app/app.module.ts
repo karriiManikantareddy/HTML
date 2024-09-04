@@ -79,6 +79,7 @@ import { VideoPerformanceComponent } from './slides/video-performance/video-perf
 import { DisplayPerformanceComponent } from './slides/display-performance/display-performance.component'
 import { PaidSearchSummaryComponent } from './slides/paid-search-summary/paid-search-summary.component'
 import { CmiTableComponent } from './components/cmi-table/cmi-table.component'
+import { SocialMediaPerformanceComponent } from './slides/social-media-performance/social-media-performance.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -155,7 +156,8 @@ import { CmiTableComponent } from './components/cmi-table/cmi-table.component'
     VideoPerformanceComponent,
     DisplayPerformanceComponent,
     PaidSearchSummaryComponent,
-    CmiTableComponent
+    CmiTableComponent,
+    SocialMediaPerformanceComponent,
   ],
   imports: [
     TemplateModule,

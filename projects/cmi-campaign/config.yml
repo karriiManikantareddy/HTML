@@ -32,3 +32,93 @@ data:
       - clicks
       - click_rate
     filters: tactic:any:Display
+  monthly_summary:
+    dataset: all
+    dimensions: [advertiser]
+    metrics:
+      - impressions
+      - clicks
+      - video_starts
+      - conversions
+  performance_summary:
+    dataset: all
+    dimensions: [advertiser, campaign]
+    metrics:
+      - impressions
+      - clicks
+      - click_rate
+      - conversions
+      - completions100
+  tactic_summary:
+    dataset: all
+    dimensions: [advertiser, tactic]
+    metrics:
+      - impressions
+      - clicks
+      - click_rate
+      - conversions
+      - completions100
+  streaming_creative:
+    dataset: all
+    dimensions: [advertiser, creative]
+    metrics:
+      - impressions
+      - vcr
+      - video_starts
+    filters: tactic:any:Streaming
+  streaming_network:
+    dataset: all
+    dimensions: [advertiser, domain]
+    metrics:
+      - impressions
+    filters: tactic:any:Streaming
+  video_creative:
+    dataset: all
+    dimensions: [advertiser, creative]
+    metrics:
+      - impressions
+      - vcr
+      - video_starts
+    filters: tactic:any:Online Video
+  video_site:
+    dataset: all
+    dimensions: [advertiser, domain]
+    metrics:
+      - impressions
+    filters: tactic:any:Online Video
+  display_creative:
+    dataset: all
+    dimensions: [advertiser, creative]
+    metrics:
+      - impressions
+      - clicks
+      - click_rate
+    filters: tactic:any:Display
+  social_media_performance:
+    dataset: all
+    dimensions: [advertiser, tactic]
+    metrics:
+      - impressions
+      - clicks
+      - click_rate
+    filters: tactic%3Aany%3ASocial%2520-%2520Linkedin%3BSocial%2520Media%2520-%2520Meta%3BSocial%2520-%2520Tik%2520Tok
+  social_media_creative:
+    dataset: all
+    dimensions: [advertiser, creative]
+    metrics:
+      - impressions
+      - clicks
+      - click_rate
+    filters: tactic%3Aany%3ASocial%2520-%2520Linkedin%3BSocial%2520Media%2520-%2520Meta%3BSocial%2520-%2520Tik%2520Tok
+  social_media_summary:
+    dataset: all
+    dimensions: [advertiser, campaign]
+    metrics:
+      - impressions
+      - clicks
+      - click_rate
+    filters: tactic%3Aany%3ASocial%2520-%2520Linkedin%3BSocial%2520Media%2520-%2520Meta%3BSocial%2520-%2520Tik%2520Tok
+  
+
+
+
